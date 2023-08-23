@@ -61,7 +61,3 @@ struct MoreView: View {
         }
     }
 }
-
-#Preview {
-    MoreView()
-}
