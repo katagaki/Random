@@ -31,7 +31,8 @@ struct SelectItemFromListView: View {
                 })
                 Divider()
                 HStack {
-                    TextField("New Item", text: $newItem)
+                    TextField("Randomly.Select.ItemFromList.NewItem", 
+                              text: $newItem)
                         .textFieldStyle(.roundedBorder)
                     Button {
                         items.append(
@@ -39,7 +40,7 @@ struct SelectItemFromListView: View {
                                        value: newItem))
                     } label: {
                         Image(systemName: "plus")
-                        Text("Add")
+                        Text("Shared.Add")
                             .bold()
                     }
                     .buttonStyle(.bordered)
@@ -53,7 +54,7 @@ struct SelectItemFromListView: View {
                     } label: {
                         HStack(alignment: .center, spacing: 4.0) {
                             Image(systemName: "doc.on.doc")
-                            Text("Copy")
+                            Text("Shared.Copy")
                                 .padding([.top, .bottom], 4.0)
                         }
                         .padding([.leading, .trailing], 20.0)
@@ -66,7 +67,7 @@ struct SelectItemFromListView: View {
                     } label: {
                         HStack(alignment: .center, spacing: 4.0) {
                             Image(systemName: "scope")
-                            Text("Select")
+                            Text("Randomly.Select")
                                 .bold()
                                 .padding([.top, .bottom], 4.0)
                         }
@@ -81,7 +82,7 @@ struct SelectItemFromListView: View {
                 .padding([.top, .bottom], 8.0)
             }
         }
-        .navigationTitle("Select Item From List")
+        .navigationTitle("Randomly.Select.ItemFromList.ViewTitle")
         .navigationBarTitleDisplayMode(.inline)
     }
 }

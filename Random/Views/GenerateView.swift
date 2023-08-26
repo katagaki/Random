@@ -29,12 +29,12 @@ struct GenerateView: View {
             case .number:
                 Divider()
                 VStack(alignment: .leading, spacing: 8.0) {
-                    Text("From")
+                    Text("Shared.RangeFrom")
                         .font(.body)
                         .bold()
                     TextField("", value: $rangeStart, format: .number)
                         .limitInputLength(value: $rangeStart, length: 17)
-                    Text("To")
+                    Text("Shared.RangeTo")
                         .font(.body)
                         .bold()
                     TextField("", value: $rangeEnd, format: .number)
@@ -52,7 +52,7 @@ struct GenerateView: View {
                 } label: {
                     HStack(alignment: .center, spacing: 4.0) {
                         Image(systemName: "doc.on.doc")
-                        Text("Copy")
+                        Text("Shared.Copy")
                             .padding([.top, .bottom], 4.0)
                     }
                     .padding([.leading, .trailing], 20.0)
@@ -63,7 +63,7 @@ struct GenerateView: View {
                 } label: {
                     HStack(alignment: .center, spacing: 4.0) {
                         Image(systemName: "sparkles")
-                        Text("Generate")
+                        Text("Randomly.Generate")
                             .bold()
                             .padding([.top, .bottom], 4.0)
                     }
@@ -80,7 +80,7 @@ struct GenerateView: View {
         .task {
             regenerate()
         }
-        .navigationTitle("Generate \(mode.rawValue)")
+        .navigationTitle(NSLocalizedString(mode.rawValue, comment: ""))
         .navigationBarTitleDisplayMode(.inline)
     }
     
@@ -107,9 +107,9 @@ struct GenerateView: View {
 }
 
 enum GenerateType: String {
-    case number = "Number"
-    case letter = "Letter"
-    case word = "Word"
+    case number = "Randomly.Generate.Number.ViewTitle"
+    case letter = "Randomly.Generate.Letter.ViewTitle"
+    case word = "Randomly.Generate.Word.ViewTitle"
 }
 
 // Modified input length limiter from:

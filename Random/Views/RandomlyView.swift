@@ -15,51 +15,61 @@ struct RandomlyView: View {
                     NavigationLink {
                         GenerateView(mode: .number)
                     } label: {
-                        ListRow(image: "ListIcon.Number", title: "Number")
+                        ListRow(image: "ListIcon.Number",
+                                title: "Randomly.Generate.Number")
                     }
                     NavigationLink {
                         GenerateView(mode: .letter)
                     } label: {
-                        ListRow(image: "ListIcon.Letter", title: "Letter")
+                        ListRow(image: "ListIcon.Letter",
+                                title: "Randomly.Generate.Letter")
                     }
                     NavigationLink {
                         GenerateView(mode: .word)
                     } label: {
-                        ListRow(image: "ListIcon.Word", title: "Word")
+                        ListRow(image: "ListIcon.Word", 
+                                title: "Randomly.Generate.Word")
                     }
 
                 } header: {
-                    ListSectionHeader(text: "Generate")
+                    ListSectionHeader(text: "Randomly.Generate")
                         .font(.body)
                 }
                 Section {
                     NavigationLink {
                         SelectItemFromListView()
                     } label: {
-                        ListRow(image: "ListIcon.List", title: "Item From List")
+                        ListRow(image: "ListIcon.List",
+                                title: "Randomly.Select.ItemFromList")
                     }
-                    ListRow(image: "ListIcon.Doc", title: "Word From Text")
+                    ListRow(image: "ListIcon.Doc",
+                            title: "Randomly.Select.WordFromText")
                 } header: {
-                    ListSectionHeader(text: "Select")
+                    ListSectionHeader(text: "Randomly.Select")
                         .font(.body)
                 }
                 Section {
-                    ListRow(image: "ListIcon.List", title: "List")
-                    ListRow(image: "ListIcon.Table", title: "Dictionary")
+                    ListRow(image: "ListIcon.List", 
+                            title: "Randomly.Sort.List")
+                    ListRow(image: "ListIcon.Table",
+                            title: "Randomly.Sort.Dictionary")
                 } header: {
-                    ListSectionHeader(text: "Sort")
+                    ListSectionHeader(text: "Randomly.Sort")
                         .font(.body)
                 }
                 Section {
-                    ListRow(image: "ListIcon.Coin", title: "Coin Flip")
-                    ListRow(image: "ListIcon.Die", title: "Dice Roll")
-                    ListRow(image: "ListIcon.Cards", title: "Card Draw")
+                    ListRow(image: "ListIcon.Coin", 
+                            title: "Randomly.Do.CoinFlip")
+                    ListRow(image: "ListIcon.Die",
+                            title: "Randomly.Do.DiceRoll")
+                    ListRow(image: "ListIcon.Cards",
+                            title: "Randomly.Do.CardDraw")
                 } header: {
-                    ListSectionHeader(text: "Do")
+                    ListSectionHeader(text: "Randomly.Do")
                         .font(.body)
                 }
             }
-            .navigationTitle("Randomly")
+            .navigationTitle("View.Randomly")
         }
     }
 }

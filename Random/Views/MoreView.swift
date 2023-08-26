@@ -21,8 +21,8 @@ struct MoreView: View {
                     Link(destination: URL(string: "https://x.com/katagaki_")!) {
                         HStack {
                             ListRow(image: "ListIcon.Twitter",
-                                    title: "Post on X",
-                                    subtitle: "@katagaki_",
+                                    title: "More.Help.Twitter",
+                                    subtitle: "More.Help.Twitter.Subtitle",
                                     includeSpacer: true)
                             Image(systemName: "safari")
                                 .opacity(0.5)
@@ -32,8 +32,8 @@ struct MoreView: View {
                     Link(destination: URL(string: "mailto:ktgk.public@icloud.com")!) {
                         HStack {
                             ListRow(image: "ListIcon.Email",
-                                    title: "Email Me",
-                                    subtitle: "ktgk.public@icloud.com",
+                                    title: "More.Help.Email",
+                                    subtitle: "More.Help.Email.Subtitle",
                                     includeSpacer: true)
                             Image(systemName: "arrow.up.forward.app")
                                 .opacity(0.5)
@@ -43,8 +43,8 @@ struct MoreView: View {
                     Link(destination: URL(string: "https://github.com/katagaki/Random")!) {
                         HStack {
                             ListRow(image: "ListIcon.GitHub",
-                                    title: "Read Source Code",
-                                    subtitle: "katagaki/Random",
+                                    title: "More.Help.GitHub",
+                                    subtitle: "More.Help.GitHub.Subtitle",
                                     includeSpacer: true)
                             Image(systemName: "safari")
                                 .opacity(0.5)
@@ -52,12 +52,12 @@ struct MoreView: View {
                         .foregroundColor(.primary)
                     }
                 } header: {
-                    ListSectionHeader(text: "Help & Support")
+                    ListSectionHeader(text: "More.Help")
                         .font(.body)
                 }
             }
             .listStyle(.insetGrouped)
-            .navigationTitle("More")
+            .navigationTitle("View.More")
         }
     }
 }

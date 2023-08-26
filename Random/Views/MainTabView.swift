@@ -13,17 +13,17 @@ struct MainTabView: View {
             RandomlyView()
                 .tabItem {
                     Image(systemName: "shuffle.circle.fill")
-                    Text("Randomly")
+                    Text("View.Randomly")
                 }
             NeatlyView()
                 .tabItem {
                     Image(systemName: "line.3.horizontal.decrease.circle.fill")
-                    Text("Neatly")
+                    Text("View.Neatly")
                 }
             MoreView()
                 .tabItem {
                     Image(systemName: "ellipsis")
-                    Text("More")
+                    Text("View.More")
                 }
         }
     }

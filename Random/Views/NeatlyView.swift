@@ -12,14 +12,14 @@ struct NeatlyView: View {
         NavigationStack {
             List {
                 Section {
-                    ListRow(image: "ListIcon.List", title: "List")
-                    ListRow(image: "ListIcon.Table", title: "Dictionary")
+                    ListRow(image: "ListIcon.List", title: "Neatly.Sort.List")
+                    ListRow(image: "ListIcon.Table", title: "Neatly.Sort.Dictionary")
                 } header: {
-                    ListSectionHeader(text: "Sort")
+                    ListSectionHeader(text: "Neatly.Sort")
                         .font(.body)
                 }
             }
-            .navigationTitle("Neatly")
+            .navigationTitle("View.Neatly")
         }
     }
 }

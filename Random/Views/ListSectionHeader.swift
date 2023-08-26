@@ -11,7 +11,7 @@ struct ListSectionHeader: View {
     var text: String
 
     var body: some View {
-        Text(text)
+        Text(NSLocalizedString(text, comment: ""))
             .fontWeight(.bold)
             .foregroundColor(.primary)
             .textCase(nil)
