@@ -64,6 +64,7 @@ struct GenerateView: View {
                     HStack(alignment: .center, spacing: 4.0) {
                         Image(systemName: "sparkles")
                         Text("Generate")
+                            .bold()
                             .padding([.top, .bottom], 4.0)
                     }
                     .frame(maxWidth: .infinity)
@@ -79,6 +80,8 @@ struct GenerateView: View {
         .task {
             regenerate()
         }
+        .navigationTitle("Generate \(mode.rawValue)")
+        .navigationBarTitleDisplayMode(.inline)
     }
     
     func regenerate() {
@@ -103,10 +106,10 @@ struct GenerateView: View {
     }
 }
 
-enum GenerateType {
-    case number
-    case letter
-    case word
+enum GenerateType: String {
+    case number = "Number"
+    case letter = "Letter"
+    case word = "Word"
 }
 
 // Modified input length limiter from:

@@ -25,7 +25,7 @@ struct RandomlyView: View {
                     NavigationLink {
                         GenerateView(mode: .word)
                     } label: {
-                        ListRow(image: "ListIcon.Word", title: "Words")
+                        ListRow(image: "ListIcon.Word", title: "Word")
                     }
 
                 } header: {
@@ -33,7 +33,11 @@ struct RandomlyView: View {
                         .font(.body)
                 }
                 Section {
-                    ListRow(image: "ListIcon.List", title: "Item From List")
+                    NavigationLink {
+                        SelectItemFromListView()
+                    } label: {
+                        ListRow(image: "ListIcon.List", title: "Item From List")
+                    }
                     ListRow(image: "ListIcon.Doc", title: "Word From Text")
                 } header: {
                     ListSectionHeader(text: "Select")
