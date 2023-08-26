@@ -5,6 +5,7 @@
 //  Created by シンジャスティン on 2023/08/26.
 //
 
+import Combine
 import SwiftUI
 
 struct GenerateView: View {
@@ -32,10 +33,12 @@ struct GenerateView: View {
                         .font(.body)
                         .bold()
                     TextField("", value: $rangeStart, format: .number)
+                        .limitInputLength(value: $rangeStart, length: 17)
                     Text("To")
                         .font(.body)
                         .bold()
                     TextField("", value: $rangeEnd, format: .number)
+                        .limitInputLength(value: $rangeEnd, length: 17)
                 }
                 .textFieldStyle(.roundedBorder)
                 .padding()
@@ -67,7 +70,7 @@ struct GenerateView: View {
                     .padding([.leading, .trailing], 20.0)
                 }
                 .buttonStyle(.borderedProminent)
-                .disabled(rangeEnd <= rangeStart)
+                .disabled(rangeEnd <= rangeStart || rangeStart < -99999999999999999 || rangeEnd > 99999999999999999)
             }
             .frame(maxWidth: .infinity)
             .padding([.leading, .trailing])
@@ -104,4 +107,32 @@ enum GenerateType {
     case number
     case letter
     case word
+}
+
+// Modified input length limiter from:
+// https://sanzaru84.medium.com/swiftui-an-updated-approach-to-limit-the-amount-of-characters-in-a-textfield-view-984c942a156
+
+struct TextFieldLimitModifer: ViewModifier {
+    @Binding var value: Int
+    var length: Int
+
+    func body(content: Content) -> some View {
+        if #available(iOS 14, *) {
+            content
+                .onChange(of: $value.wrappedValue) {
+                    value = Int(String($0).prefix(length))!
+                }
+        } else {
+            content
+                .onReceive(Just(value)) {
+                    value = Int(String($0).prefix(length))!
+                }
+        }
+    }
+}
+
+extension View {
+    func limitInputLength(value: Binding<Int>, length: Int) -> some View {
+        self.modifier(TextFieldLimitModifer(value: value, length: length))
+    }
 }
