@@ -19,6 +19,7 @@
 		E48A027E2A9A194900C31F40 /* Wordlist.txt in Resources */ = {isa = PBXBuildFile; fileRef = E48A027D2A9A194900C31F40 /* Wordlist.txt */; };
 		E48A02802A9A204E00C31F40 /* SelectItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48A027F2A9A204E00C31F40 /* SelectItem.swift */; };
 		E48A02832A9A253100C31F40 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = E48A02822A9A253100C31F40 /* Localizable.xcstrings */; };
+		E48A02852A9A2BDD00C31F40 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = E48A02842A9A2BDD00C31F40 /* InfoPlist.xcstrings */; };
 		E4DDD3EF266C8FC2003CC064 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4DDD3EE266C8FC2003CC064 /* Assets.xcassets */; };
 		E4DDD3F2266C8FC2003CC064 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4DDD3F0266C8FC2003CC064 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -36,6 +37,7 @@
 		E48A027D2A9A194900C31F40 /* Wordlist.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Wordlist.txt; sourceTree = "<group>"; };
 		E48A027F2A9A204E00C31F40 /* SelectItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectItem.swift; sourceTree = "<group>"; };
 		E48A02822A9A253100C31F40 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		E48A02842A9A2BDD00C31F40 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		E4DDD3E2266C8FC0003CC064 /* Random.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Random.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4DDD3EE266C8FC2003CC064 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4DDD3F1266C8FC2003CC064 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,6 +63,15 @@
 			path = Structs;
 			sourceTree = "<group>";
 		};
+		E48A02862A9A2C1C00C31F40 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				E48A02842A9A2BDD00C31F40 /* InfoPlist.xcstrings */,
+				E48A02822A9A253100C31F40 /* Localizable.xcstrings */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
 		E4DDD3D9266C8FC0003CC064 = {
 			isa = PBXGroup;
 			children = (
@@ -83,9 +94,9 @@
 				E4DDD3F3266C8FC2003CC064 /* Info.plist */,
 				E4DDD3EE266C8FC2003CC064 /* Assets.xcassets */,
 				E4DDD3F0266C8FC2003CC064 /* LaunchScreen.storyboard */,
-				E48A02822A9A253100C31F40 /* Localizable.xcstrings */,
 				E48A027D2A9A194900C31F40 /* Wordlist.txt */,
 				E48A02752A9A0C1400C31F40 /* App.swift */,
+				E48A02862A9A2C1C00C31F40 /* Strings */,
 				E48A02812A9A205100C31F40 /* Structs */,
 				E4DDD404266CB5EE003CC064 /* Views */,
 			);
@@ -167,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E48A027E2A9A194900C31F40 /* Wordlist.txt in Resources */,
+				E48A02852A9A2BDD00C31F40 /* InfoPlist.xcstrings in Resources */,
 				E4DDD3F2266C8FC2003CC064 /* LaunchScreen.storyboard in Resources */,
 				E48A02832A9A253100C31F40 /* Localizable.xcstrings in Resources */,
 				E4DDD3EF266C8FC2003CC064 /* Assets.xcassets in Resources */,
