@@ -14,8 +14,7 @@
             <objects>
                 <navigationController id="7Yy-0T-6Fa" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" id="x1p-U8-SgP">
-                        <imageReference key="image" image="sparkles" catalog="system"/>
-                        <imageReference key="selectedImage" image="sparkles" catalog="system"/>
+                        <imageReference key="image" image="shuffle.circle.fill" catalog="system"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mwv-MA-vmG">
                         <rect key="frame" x="0.0" y="48" width="414" height="44"/>
@@ -61,8 +60,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="7Yy-0T-6Fa" kind="relationship" relationship="viewControllers" id="rNo-Fv-EOy"/>
-                        <segue destination="hZL-bg-7p7" kind="relationship" relationship="viewControllers" id="6NB-bQ-Dtw"/>
-                        <segue destination="juP-XM-JJo" kind="relationship" relationship="viewControllers" id="ak2-eb-t3e"/>
                         <segue destination="oXC-i0-DeJ" kind="relationship" relationship="viewControllers" id="Oq9-Kp-J1k"/>
                         <segue destination="9JF-uC-bz3" kind="relationship" relationship="viewControllers" id="TbB-VE-toe"/>
                     </connections>
@@ -72,29 +69,11 @@
             <point key="canvasLocation" x="-1294" y="713"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="1G4-zA-7H1">
-            <objects>
-                <navigationController id="hZL-bg-7p7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" id="53D-nJ-bfs">
-                        <imageReference key="image" image="hand.point.up.left.fill" catalog="system"/>
-                        <imageReference key="selectedImage" image="hand.point.up.left.fill" catalog="system"/>
-                    </tabBarItem>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="l8Y-VF-tpB">
-                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7Wo-pO-Tih" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-423" y="713"/>
-        </scene>
-        <!--Navigation Controller-->
         <scene sceneID="oGr-Li-9zJ">
             <objects>
                 <navigationController id="oXC-i0-DeJ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" id="2Ba-wq-oU6">
-                        <imageReference key="image" image="gearshape.2.fill" catalog="system"/>
-                        <imageReference key="selectedImage" image="gearshape.2.fill" catalog="system"/>
+                        <imageReference key="image" image="line.3.horizontal.decrease.circle.fill" catalog="system"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="82C-sn-Q9y">
                         <rect key="frame" x="0.0" y="48" width="414" height="44"/>
@@ -103,7 +82,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vdj-lK-nmS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-423" y="2046"/>
+            <point key="canvasLocation" x="-423" y="713"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5CS-xW-S07">
@@ -111,7 +90,6 @@
                 <navigationController id="9JF-uC-bz3" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" id="0eV-tU-nRo">
                         <imageReference key="image" image="ellipsis" catalog="system"/>
-                        <imageReference key="selectedImage" image="ellipsis" catalog="system"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="DlE-qG-ZQO">
                         <rect key="frame" x="0.0" y="48" width="414" height="96"/>
@@ -120,33 +98,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cpb-sK-wH4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-423" y="2721"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="dlz-QW-01l">
-            <objects>
-                <navigationController id="juP-XM-JJo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" id="jef-Jq-B8u">
-                        <imageReference key="image" image="arrow.up.arrow.down.square.fill" catalog="system"/>
-                        <imageReference key="selectedImage" image="arrow.up.arrow.down.square.fill" catalog="system"/>
-                    </tabBarItem>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="dOk-7X-dOW">
-                        <rect key="frame" x="0.0" y="48" width="414" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ICp-v6-AjV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-423" y="1377"/>
+            <point key="canvasLocation" x="-423" y="1388"/>
         </scene>
     </scenes>
     <color key="tintColor" name="AccentColor"/>
     <resources>
-        <image name="arrow.up.arrow.down.square.fill" catalog="system" width="128" height="114"/>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
-        <image name="gearshape.2.fill" catalog="system" width="128" height="101"/>
-        <image name="hand.point.up.left.fill" catalog="system" width="120" height="128"/>
-        <image name="sparkles" catalog="system" width="115" height="128"/>
+        <image name="line.3.horizontal.decrease.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="shuffle.circle.fill" catalog="system" width="128" height="123"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.60000002384185791" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

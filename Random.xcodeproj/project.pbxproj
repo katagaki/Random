@@ -10,40 +10,28 @@
 		E477E7302A9602BF00517B72 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477E72F2A9602BF00517B72 /* MoreView.swift */; };
 		E477E7322A9602E900517B72 /* ListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477E7312A9602E900517B72 /* ListRow.swift */; };
 		E477E7342A9602F100517B72 /* ListSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477E7332A9602F100517B72 /* ListSectionHeader.swift */; };
-		E47E47A72674E6260065B8D3 /* SelectIFLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E47A62674E6260065B8D3 /* SelectIFLViewController.swift */; };
-		E47E47A92674F27F0065B8D3 /* SelectWFTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E47A82674F27F0065B8D3 /* SelectWFTViewController.swift */; };
-		E4B154542672284600EBC270 /* GenerateNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B154532672284600EBC270 /* GenerateNumberViewController.swift */; };
-		E4CDEF0426722BA500F5F01A /* GenerateLetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CDEF0326722BA500F5F01A /* GenerateLetterViewController.swift */; };
-		E4CDEF0626722E2A00F5F01A /* GenerateWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CDEF0526722E2A00F5F01A /* GenerateWordViewController.swift */; };
-		E4CDEF0926723C9900F5F01A /* DoDrawCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CDEF0826723C9900F5F01A /* DoDrawCardsViewController.swift */; };
-		E4DDD3E6266C8FC0003CC064 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DDD3E5266C8FC0003CC064 /* AppDelegate.swift */; };
-		E4DDD3E8266C8FC0003CC064 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DDD3E7266C8FC0003CC064 /* SceneDelegate.swift */; };
-		E4DDD3ED266C8FC0003CC064 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4DDD3EB266C8FC0003CC064 /* Main.storyboard */; };
+		E48A02702A99FA9B00C31F40 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48A026F2A99FA9B00C31F40 /* MainTabView.swift */; };
+		E48A02722A9A003B00C31F40 /* RandomlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48A02712A9A003B00C31F40 /* RandomlyView.swift */; };
+		E48A02742A9A02FB00C31F40 /* GenerateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48A02732A9A02FB00C31F40 /* GenerateView.swift */; };
+		E48A02762A9A0C1400C31F40 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48A02752A9A0C1400C31F40 /* App.swift */; };
+		E48A027A2A9A0F9900C31F40 /* NeatlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48A02792A9A0F9900C31F40 /* NeatlyView.swift */; };
 		E4DDD3EF266C8FC2003CC064 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4DDD3EE266C8FC2003CC064 /* Assets.xcassets */; };
 		E4DDD3F2266C8FC2003CC064 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4DDD3F0266C8FC2003CC064 /* LaunchScreen.storyboard */; };
-		E4DDD3FA266C9242003CC064 /* GenerateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DDD3F9266C9242003CC064 /* GenerateTableViewController.swift */; };
-		E4DDD401266CA827003CC064 /* Wordlist.txt in Resources */ = {isa = PBXBuildFile; fileRef = E4DDD400266CA827003CC064 /* Wordlist.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E477E72F2A9602BF00517B72 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
 		E477E7312A9602E900517B72 /* ListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRow.swift; sourceTree = "<group>"; };
 		E477E7332A9602F100517B72 /* ListSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSectionHeader.swift; sourceTree = "<group>"; };
-		E47E47A62674E6260065B8D3 /* SelectIFLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectIFLViewController.swift; sourceTree = "<group>"; };
-		E47E47A82674F27F0065B8D3 /* SelectWFTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWFTViewController.swift; sourceTree = "<group>"; };
-		E4B154532672284600EBC270 /* GenerateNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateNumberViewController.swift; sourceTree = "<group>"; };
-		E4CDEF0326722BA500F5F01A /* GenerateLetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateLetterViewController.swift; sourceTree = "<group>"; };
-		E4CDEF0526722E2A00F5F01A /* GenerateWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateWordViewController.swift; sourceTree = "<group>"; };
-		E4CDEF0826723C9900F5F01A /* DoDrawCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoDrawCardsViewController.swift; sourceTree = "<group>"; };
+		E48A026F2A99FA9B00C31F40 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		E48A02712A9A003B00C31F40 /* RandomlyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomlyView.swift; sourceTree = "<group>"; };
+		E48A02732A9A02FB00C31F40 /* GenerateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateView.swift; sourceTree = "<group>"; };
+		E48A02752A9A0C1400C31F40 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		E48A02792A9A0F9900C31F40 /* NeatlyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeatlyView.swift; sourceTree = "<group>"; };
 		E4DDD3E2266C8FC0003CC064 /* Random.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Random.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4DDD3E5266C8FC0003CC064 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E4DDD3E7266C8FC0003CC064 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E4DDD3EC266C8FC0003CC064 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E4DDD3EE266C8FC2003CC064 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4DDD3F1266C8FC2003CC064 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E4DDD3F3266C8FC2003CC064 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E4DDD3F9266C9242003CC064 /* GenerateTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateTableViewController.swift; sourceTree = "<group>"; };
-		E4DDD400266CA827003CC064 /* Wordlist.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Wordlist.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,13 +45,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E4CDEF0726723C2C00F5F01A /* Sort */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Sort;
-			sourceTree = "<group>";
-		};
 		E4DDD3D9266C8FC0003CC064 = {
 			isa = PBXGroup;
 			children = (
@@ -83,58 +64,27 @@
 		E4DDD3E4266C8FC0003CC064 /* Random */ = {
 			isa = PBXGroup;
 			children = (
-				E4DDD3FB266C9DD3003CC064 /* Generate */,
-				E4DDD402266CB5DE003CC064 /* Select */,
-				E4CDEF0726723C2C00F5F01A /* Sort */,
-				E4DDD403266CB5E9003CC064 /* Do */,
-				E4DDD404266CB5EE003CC064 /* More */,
-				E4DDD3E5266C8FC0003CC064 /* AppDelegate.swift */,
-				E4DDD3E7266C8FC0003CC064 /* SceneDelegate.swift */,
-				E4DDD3EE266C8FC2003CC064 /* Assets.xcassets */,
-				E4DDD3EB266C8FC0003CC064 /* Main.storyboard */,
-				E4DDD3F0266C8FC2003CC064 /* LaunchScreen.storyboard */,
 				E4DDD3F3266C8FC2003CC064 /* Info.plist */,
+				E4DDD3EE266C8FC2003CC064 /* Assets.xcassets */,
+				E4DDD3F0266C8FC2003CC064 /* LaunchScreen.storyboard */,
+				E48A02752A9A0C1400C31F40 /* App.swift */,
+				E4DDD404266CB5EE003CC064 /* Views */,
 			);
 			path = Random;
 			sourceTree = "<group>";
 		};
-		E4DDD3FB266C9DD3003CC064 /* Generate */ = {
+		E4DDD404266CB5EE003CC064 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E4DDD3F9266C9242003CC064 /* GenerateTableViewController.swift */,
-				E4B154532672284600EBC270 /* GenerateNumberViewController.swift */,
-				E4CDEF0326722BA500F5F01A /* GenerateLetterViewController.swift */,
-				E4CDEF0526722E2A00F5F01A /* GenerateWordViewController.swift */,
-				E4DDD400266CA827003CC064 /* Wordlist.txt */,
-			);
-			path = Generate;
-			sourceTree = "<group>";
-		};
-		E4DDD402266CB5DE003CC064 /* Select */ = {
-			isa = PBXGroup;
-			children = (
-				E47E47A62674E6260065B8D3 /* SelectIFLViewController.swift */,
-				E47E47A82674F27F0065B8D3 /* SelectWFTViewController.swift */,
-			);
-			path = Select;
-			sourceTree = "<group>";
-		};
-		E4DDD403266CB5E9003CC064 /* Do */ = {
-			isa = PBXGroup;
-			children = (
-				E4CDEF0826723C9900F5F01A /* DoDrawCardsViewController.swift */,
-			);
-			path = Do;
-			sourceTree = "<group>";
-		};
-		E4DDD404266CB5EE003CC064 /* More */ = {
-			isa = PBXGroup;
-			children = (
+				E48A026F2A99FA9B00C31F40 /* MainTabView.swift */,
+				E48A02712A9A003B00C31F40 /* RandomlyView.swift */,
+				E48A02732A9A02FB00C31F40 /* GenerateView.swift */,
+				E48A02792A9A0F9900C31F40 /* NeatlyView.swift */,
 				E477E72F2A9602BF00517B72 /* MoreView.swift */,
 				E477E7332A9602F100517B72 /* ListSectionHeader.swift */,
 				E477E7312A9602E900517B72 /* ListRow.swift */,
 			);
-			path = More;
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,8 +147,6 @@
 			files = (
 				E4DDD3F2266C8FC2003CC064 /* LaunchScreen.storyboard in Resources */,
 				E4DDD3EF266C8FC2003CC064 /* Assets.xcassets in Resources */,
-				E4DDD401266CA827003CC064 /* Wordlist.txt in Resources */,
-				E4DDD3ED266C8FC0003CC064 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,32 +157,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4DDD3E6266C8FC0003CC064 /* AppDelegate.swift in Sources */,
-				E4DDD3FA266C9242003CC064 /* GenerateTableViewController.swift in Sources */,
-				E47E47A92674F27F0065B8D3 /* SelectWFTViewController.swift in Sources */,
-				E47E47A72674E6260065B8D3 /* SelectIFLViewController.swift in Sources */,
-				E4CDEF0426722BA500F5F01A /* GenerateLetterViewController.swift in Sources */,
+				E48A027A2A9A0F9900C31F40 /* NeatlyView.swift in Sources */,
+				E48A02742A9A02FB00C31F40 /* GenerateView.swift in Sources */,
+				E48A02762A9A0C1400C31F40 /* App.swift in Sources */,
 				E477E7342A9602F100517B72 /* ListSectionHeader.swift in Sources */,
-				E4CDEF0926723C9900F5F01A /* DoDrawCardsViewController.swift in Sources */,
-				E4DDD3E8266C8FC0003CC064 /* SceneDelegate.swift in Sources */,
+				E48A02722A9A003B00C31F40 /* RandomlyView.swift in Sources */,
+				E48A02702A99FA9B00C31F40 /* MainTabView.swift in Sources */,
 				E477E7322A9602E900517B72 /* ListRow.swift in Sources */,
-				E4CDEF0626722E2A00F5F01A /* GenerateWordViewController.swift in Sources */,
 				E477E7302A9602BF00517B72 /* MoreView.swift in Sources */,
-				E4B154542672284600EBC270 /* GenerateNumberViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E4DDD3EB266C8FC0003CC064 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E4DDD3EC266C8FC0003CC064 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E4DDD3F0266C8FC2003CC064 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
