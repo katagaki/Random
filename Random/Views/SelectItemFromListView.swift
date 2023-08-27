@@ -12,6 +12,7 @@ struct SelectItemFromListView: View {
     @State var selectedItem: SelectItem? = nil
     @State var newItem: String = ""
     @State var items: [SelectItem] = []
+    @State var isAddingNewItem: Bool = false
 
     var body: some View {
         VStack(alignment: .center, spacing: 8.0) {
@@ -27,7 +28,10 @@ struct SelectItemFromListView: View {
                 .listStyle(.plain)
                 .padding(.bottom, -8.0)
                 .onChange(of: items, perform: { _ in
-                    scrollView.scrollTo(items.last!, anchor: .bottom)
+                    if items.count > 0 && isAddingNewItem {
+                        scrollView.scrollTo(items.last!, anchor: .bottom)
+                        isAddingNewItem = false
+                    }
                 })
                 Divider()
                 HStack {
@@ -35,15 +39,18 @@ struct SelectItemFromListView: View {
                               text: $newItem)
                         .textFieldStyle(.roundedBorder)
                     Button {
+                        isAddingNewItem = true
                         items.append(
                             SelectItem(id: UUID().uuidString,
                                        value: newItem))
+                        newItem = ""
                     } label: {
                         Image(systemName: "plus")
                         Text("Shared.Add")
                             .bold()
                     }
                     .buttonStyle(.bordered)
+                    .disabled(newItem == "")
                 }
                 .padding([.leading, .trailing])
                 .padding([.top, .bottom], 8.0)
@@ -55,7 +62,7 @@ struct SelectItemFromListView: View {
                         HStack(alignment: .center, spacing: 4.0) {
                             Image(systemName: "doc.on.doc")
                             Text("Shared.Copy")
-                                .padding([.top, .bottom], 4.0)
+                                .padding([.top, .bottom], 8.0)
                         }
                         .padding([.leading, .trailing], 20.0)
                     }
@@ -69,7 +76,7 @@ struct SelectItemFromListView: View {
                             Image(systemName: "scope")
                             Text("Randomly.Select")
                                 .bold()
-                                .padding([.top, .bottom], 4.0)
+                                .padding([.top, .bottom], 8.0)
                         }
                         .frame(maxWidth: .infinity)
                         .padding([.leading, .trailing], 20.0)
@@ -79,7 +86,8 @@ struct SelectItemFromListView: View {
                 }
                 .frame(maxWidth: .infinity)
                 .padding([.leading, .trailing])
-                .padding([.top, .bottom], 8.0)
+                .padding(.top, 8.0)
+                .padding(.bottom, 16.0)
             }
         }
         .navigationTitle("Randomly.Select.ItemFromList.ViewTitle")

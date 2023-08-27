@@ -53,7 +53,7 @@ struct GenerateView: View {
                     HStack(alignment: .center, spacing: 4.0) {
                         Image(systemName: "doc.on.doc")
                         Text("Shared.Copy")
-                            .padding([.top, .bottom], 4.0)
+                            .padding([.top, .bottom], 8.0)
                     }
                     .padding([.leading, .trailing], 20.0)
                 }
@@ -65,7 +65,7 @@ struct GenerateView: View {
                         Image(systemName: "sparkles")
                         Text("Randomly.Generate")
                             .bold()
-                            .padding([.top, .bottom], 4.0)
+                            .padding([.top, .bottom], 8.0)
                     }
                     .frame(maxWidth: .infinity)
                     .padding([.leading, .trailing], 20.0)
@@ -75,7 +75,8 @@ struct GenerateView: View {
             }
             .frame(maxWidth: .infinity)
             .padding([.leading, .trailing])
-            .padding([.top, .bottom], 8.0)
+            .padding(.top, 8.0)
+            .padding(.bottom, 16.0)
         }
         .task {
             regenerate()
