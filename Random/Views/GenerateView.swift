@@ -50,27 +50,21 @@ struct GenerateView: View {
                 Button {
                     UIPasteboard.general.string = result
                 } label: {
-                    HStack(alignment: .center, spacing: 4.0) {
-                        Image(systemName: "doc.on.doc")
-                        Text("Shared.Copy")
-                            .padding([.top, .bottom], 8.0)
-                    }
-                    .padding([.leading, .trailing], 20.0)
+                    LargeButtonLabel(iconName: "doc.on.doc",
+                                     text: "Shared.Copy")
                 }
                 .buttonStyle(.bordered)
+                .clipShape(RoundedRectangle(cornerRadius: 99))
                 Button {
                     regenerate()
                 } label: {
-                    HStack(alignment: .center, spacing: 4.0) {
-                        Image(systemName: "sparkles")
-                        Text("Randomly.Generate")
-                            .bold()
-                            .padding([.top, .bottom], 8.0)
-                    }
+                    LargeButtonLabel(iconName: "sparkles",
+                                     text: "Randomly.Generate")
+                    .bold()
                     .frame(maxWidth: .infinity)
-                    .padding([.leading, .trailing], 20.0)
                 }
                 .buttonStyle(.borderedProminent)
+                .clipShape(RoundedRectangle(cornerRadius: 99))
                 .disabled(rangeEnd <= rangeStart || rangeStart < -99999999999999999 || rangeEnd > 99999999999999999)
             }
             .frame(maxWidth: .infinity)

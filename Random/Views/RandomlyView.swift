@@ -42,8 +42,13 @@ struct RandomlyView: View {
                         ListRow(image: "ListIcon.List",
                                 title: "Randomly.Select.ItemFromList")
                     }
-                    ListRow(image: "ListIcon.Doc",
-                            title: "Randomly.Select.WordFromText")
+                    NavigationLink {
+                        Color.clear
+                    } label: {
+                        ListRow(image: "ListIcon.Doc",
+                                title: "Randomly.Select.WordFromText")
+                    }
+                    .disabled(true)
                 } header: {
                     ListSectionHeader(text: "Randomly.Select")
                         .font(.body)
@@ -54,23 +59,41 @@ struct RandomlyView: View {
                     } label: {
                         ListRow(image: "ListIcon.List", title: "Neatly.Sort.List")
                     }
-                    ListRow(image: "ListIcon.Table",
-                            title: "Randomly.Sort.Dictionary")
+                    NavigationLink {
+                        Color.clear
+                    } label: {
+                        ListRow(image: "ListIcon.Table",
+                                title: "Randomly.Sort.Dictionary")
+                    }
+                    .disabled(true)
                 } header: {
                     ListSectionHeader(text: "Randomly.Sort")
                         .font(.body)
                 }
                 Section {
-                    ListRow(image: "ListIcon.Coin", 
-                            title: "Randomly.Do.CoinFlip")
-                    ListRow(image: "ListIcon.Die",
-                            title: "Randomly.Do.DiceRoll")
-                    ListRow(image: "ListIcon.Cards",
-                            title: "Randomly.Do.CardDraw")
+                    NavigationLink {
+                        Color.clear
+                    } label: {
+                        ListRow(image: "ListIcon.Coin",
+                                title: "Randomly.Do.CoinFlip")
+                    }
+                    NavigationLink {
+                        Color.clear
+                    } label: {
+                        ListRow(image: "ListIcon.Die",
+                                title: "Randomly.Do.DiceRoll")
+                    }
+                    NavigationLink {
+                        Color.clear
+                    } label: {
+                        ListRow(image: "ListIcon.Cards",
+                                title: "Randomly.Do.CardDraw")
+                    }
                 } header: {
                     ListSectionHeader(text: "Randomly.Do")
                         .font(.body)
                 }
+                .disabled(true)
             }
             .navigationTitle("View.Randomly")
         }

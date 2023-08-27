@@ -1,0 +1,23 @@
+//
+//  LargeButtonLabel.swift
+//  Random
+//
+//  Created by シンジャスティン on 2023/08/27.
+//
+
+import SwiftUI
+
+struct LargeButtonLabel: View {
+
+    @State var iconName: String
+    @State var text: String
+
+    var body: some View {
+        HStack(alignment: .center, spacing: 4.0) {
+            Image(systemName: iconName)
+            Text(NSLocalizedString(text, comment: ""))
+                .padding([.top, .bottom], 8.0)
+        }
+        .padding([.leading, .trailing], 20.0)
+    }
+}

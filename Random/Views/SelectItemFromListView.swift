@@ -50,6 +50,7 @@ struct SelectItemFromListView: View {
                             .bold()
                     }
                     .buttonStyle(.bordered)
+                    .clipShape(RoundedRectangle(cornerRadius: 99))
                     .disabled(newItem == "")
                 }
                 .padding([.leading, .trailing])
@@ -59,29 +60,23 @@ struct SelectItemFromListView: View {
                     Button {
                         UIPasteboard.general.string = selectedItem!.value
                     } label: {
-                        HStack(alignment: .center, spacing: 4.0) {
-                            Image(systemName: "doc.on.doc")
-                            Text("Shared.Copy")
-                                .padding([.top, .bottom], 8.0)
-                        }
-                        .padding([.leading, .trailing], 20.0)
+                        LargeButtonLabel(iconName: "doc.on.doc",
+                                         text: "Shared.Copy")
                     }
                     .buttonStyle(.bordered)
+                    .clipShape(RoundedRectangle(cornerRadius: 99))
                     .disabled(selectedItem == nil)
                     Button {
                         selectedItem = items.randomElement()!
                         scrollView.scrollTo(selectedItem!, anchor: .center)
                     } label: {
-                        HStack(alignment: .center, spacing: 4.0) {
-                            Image(systemName: "scope")
-                            Text("Randomly.Select")
-                                .bold()
-                                .padding([.top, .bottom], 8.0)
-                        }
+                        LargeButtonLabel(iconName: "scope",
+                                         text: "Randomly.Select")
+                        .bold()
                         .frame(maxWidth: .infinity)
-                        .padding([.leading, .trailing], 20.0)
                     }
                     .buttonStyle(.borderedProminent)
+                    .clipShape(RoundedRectangle(cornerRadius: 99))
                     .disabled(items.count == 0)
                 }
                 .frame(maxWidth: .infinity)

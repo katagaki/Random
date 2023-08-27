@@ -17,7 +17,12 @@ struct NeatlyView: View {
                     } label: {
                         ListRow(image: "ListIcon.List", title: "Neatly.Sort.List")
                     }
-                    ListRow(image: "ListIcon.Table", title: "Neatly.Sort.Dictionary")
+                    NavigationLink {
+                        Color.clear
+                    } label: {
+                        ListRow(image: "ListIcon.Table", title: "Neatly.Sort.Dictionary")
+                    }
+                    .disabled(true)
                 } header: {
                     ListSectionHeader(text: "Neatly.Sort")
                         .font(.body)

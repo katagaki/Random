@@ -50,6 +50,7 @@ struct SortListView: View {
                             .bold()
                     }
                     .buttonStyle(.bordered)
+                    .clipShape(RoundedRectangle(cornerRadius: 99))
                     .disabled(newItem == "")
                 }
                 .padding([.leading, .trailing])
@@ -61,14 +62,11 @@ struct SortListView: View {
                             result += "\(item.value)\n"
                         })
                     } label: {
-                        HStack(alignment: .center, spacing: 4.0) {
-                            Image(systemName: "doc.on.doc")
-                            Text("Shared.Copy")
-                                .padding([.top, .bottom], 8.0)
-                        }
-                        .padding([.leading, .trailing], 20.0)
+                        LargeButtonLabel(iconName: "doc.on.doc",
+                                         text: "Shared.Copy")
                     }
                     .buttonStyle(.bordered)
+                    .clipShape(RoundedRectangle(cornerRadius: 99))
                     .disabled(items.count == 0)
                     Button {
                         switch mode {
@@ -80,16 +78,13 @@ struct SortListView: View {
                             }
                         }
                     } label: {
-                        HStack(alignment: .center, spacing: 4.0) {
-                            Image(systemName: "scope")
-                            Text("Shared.Sort")
-                                .bold()
-                                .padding([.top, .bottom], 8.0)
-                        }
+                        LargeButtonLabel(iconName: "scope",
+                                         text: "Shared.Sort")
+                        .bold()
                         .frame(maxWidth: .infinity)
-                        .padding([.leading, .trailing], 20.0)
                     }
                     .buttonStyle(.borderedProminent)
+                    .clipShape(RoundedRectangle(cornerRadius: 99))
                     .disabled(items.count == 0)
                 }
                 .frame(maxWidth: .infinity)

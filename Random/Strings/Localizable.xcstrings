@@ -511,6 +511,7 @@
       }
     },
     "Shared.Copy" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
