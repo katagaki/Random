@@ -22,7 +22,7 @@ struct GenerateView: View {
             Text(result)
                 .font(.system(size: 200.0, weight: .heavy))
                 .lineLimit(1)
-                .minimumScaleFactor(0.1)
+                .minimumScaleFactor(0.01)
                 .padding()
             Spacer()
             switch mode {
@@ -99,7 +99,7 @@ struct GenerateView: View {
                     let wordlist: String = try String(contentsOfFile: path, encoding: .utf8)
                     words = wordlist.components(separatedBy: .newlines)
                 } catch {
-                    words = []
+                    words.removeAll()
                 }
             }
             result = words.randomElement()!
