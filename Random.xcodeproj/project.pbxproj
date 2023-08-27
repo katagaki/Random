@@ -20,6 +20,7 @@
 		E48A02802A9A204E00C31F40 /* SelectItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48A027F2A9A204E00C31F40 /* SelectItem.swift */; };
 		E48A02832A9A253100C31F40 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = E48A02822A9A253100C31F40 /* Localizable.xcstrings */; };
 		E48A02852A9A2BDD00C31F40 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = E48A02842A9A2BDD00C31F40 /* InfoPlist.xcstrings */; };
+		E4BB8B012A9AFC40006A8A6E /* SortListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BB8B002A9AFC40006A8A6E /* SortListView.swift */; };
 		E4DDD3EF266C8FC2003CC064 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4DDD3EE266C8FC2003CC064 /* Assets.xcassets */; };
 		E4DDD3F2266C8FC2003CC064 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4DDD3F0266C8FC2003CC064 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -38,6 +39,7 @@
 		E48A027F2A9A204E00C31F40 /* SelectItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectItem.swift; sourceTree = "<group>"; };
 		E48A02822A9A253100C31F40 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		E48A02842A9A2BDD00C31F40 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
+		E4BB8B002A9AFC40006A8A6E /* SortListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortListView.swift; sourceTree = "<group>"; };
 		E4DDD3E2266C8FC0003CC064 /* Random.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Random.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4DDD3EE266C8FC2003CC064 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4DDD3F1266C8FC2003CC064 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				E48A02712A9A003B00C31F40 /* RandomlyView.swift */,
 				E48A02732A9A02FB00C31F40 /* GenerateView.swift */,
 				E48A027B2A9A115100C31F40 /* SelectItemFromListView.swift */,
+				E4BB8B002A9AFC40006A8A6E /* SortListView.swift */,
 				E48A02792A9A0F9900C31F40 /* NeatlyView.swift */,
 				E477E72F2A9602BF00517B72 /* MoreView.swift */,
 				E477E7332A9602F100517B72 /* ListSectionHeader.swift */,
@@ -197,6 +200,7 @@
 				E48A02762A9A0C1400C31F40 /* App.swift in Sources */,
 				E477E7342A9602F100517B72 /* ListSectionHeader.swift in Sources */,
 				E48A02802A9A204E00C31F40 /* SelectItem.swift in Sources */,
+				E4BB8B012A9AFC40006A8A6E /* SortListView.swift in Sources */,
 				E48A02722A9A003B00C31F40 /* RandomlyView.swift in Sources */,
 				E48A02702A99FA9B00C31F40 /* MainTabView.swift in Sources */,
 				E477E7322A9602E900517B72 /* ListRow.swift in Sources */,

@@ -49,8 +49,11 @@ struct RandomlyView: View {
                         .font(.body)
                 }
                 Section {
-                    ListRow(image: "ListIcon.List", 
-                            title: "Randomly.Sort.List")
+                    NavigationLink {
+                        SortListView(mode: .randomly)
+                    } label: {
+                        ListRow(image: "ListIcon.List", title: "Neatly.Sort.List")
+                    }
                     ListRow(image: "ListIcon.Table",
                             title: "Randomly.Sort.Dictionary")
                 } header: {

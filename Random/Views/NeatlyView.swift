@@ -12,7 +12,11 @@ struct NeatlyView: View {
         NavigationStack {
             List {
                 Section {
-                    ListRow(image: "ListIcon.List", title: "Neatly.Sort.List")
+                    NavigationLink {
+                        SortListView(mode: .neatly)
+                    } label: {
+                        ListRow(image: "ListIcon.List", title: "Neatly.Sort.List")
+                    }
                     ListRow(image: "ListIcon.Table", title: "Neatly.Sort.Dictionary")
                 } header: {
                     ListSectionHeader(text: "Neatly.Sort")
