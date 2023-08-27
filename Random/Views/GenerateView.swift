@@ -20,7 +20,7 @@ struct GenerateView: View {
         VStack(alignment: .center, spacing: 8.0) {
             Spacer()
             Text(result)
-                .font(.system(size: 200.0, weight: .heavy))
+                .font(.system(size: 200.0, weight: .heavy, design: .rounded))
                 .lineLimit(1)
                 .minimumScaleFactor(0.01)
                 .padding()
