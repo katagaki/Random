@@ -30,8 +30,8 @@ struct ActionBar: View {
                 primaryAction()
             } label: {
                 LargeButtonLabel(iconName: "scope",
-                                 text: 
-                                    NSLocalizedString(primaryActionText, 
+                                 text:
+                                    NSLocalizedString(primaryActionText,
                                                       comment: ""))
                 .bold()
                 .frame(maxWidth: .infinity)

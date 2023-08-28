@@ -29,7 +29,7 @@ struct GenerateView: View {
             switch mode {
             case .number:
                 Divider()
-                VStack(alignment: .leading, spacing: 8.0) {
+                VStack(alignment: .leading, spacing: 4.0) {
                     Text("Shared.RangeFrom")
                         .font(.body)
                         .bold()
@@ -49,7 +49,7 @@ struct GenerateView: View {
             default:
                 Divider()
             }
-            ActionBar(primaryActionText: "Randomly.Generate",
+            ActionBar(primaryActionText: "Shared.Generate",
                       copyDisabled: .constant(false),
                       primaryActionDisabled: .constant(rangeEnd <= rangeStart ||
                                                        rangeStart < -99999999999999999 ||

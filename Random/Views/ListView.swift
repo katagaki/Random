@@ -33,6 +33,20 @@ struct ListView: View {
                     isAddingNewItem = false
                 }
             })
+            .overlay {
+                if items.count == 0 {
+                    VStack(alignment: .center, spacing: 8.0) {
+                        Image(systemName: "questionmark.square.dashed")
+                            .resizable()
+                            .frame(width: 32,
+                                   height: 32)
+                            .foregroundStyle(.secondary)
+                        Text("Shared.List.NoItems")
+                            .font(.body)
+                            .foregroundStyle(.secondary)
+                    }
+                }
+            }
             Divider()
             HStack {
                 TextField("Shared.List.NewItem",
@@ -56,6 +70,9 @@ struct ListView: View {
             }
             .padding([.leading, .trailing])
             .padding([.top, .bottom], 8.0)
+        }
+        .onAppear {
+            isInputActive = true
         }
         .toolbar {
             ToolbarItemGroup(placement: .keyboard) {

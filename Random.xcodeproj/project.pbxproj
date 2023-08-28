@@ -26,6 +26,7 @@
 		E4EB91B12A9B76AC00C0C93C /* LargeButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EB91B02A9B76AC00C0C93C /* LargeButtonLabel.swift */; };
 		E4EB91B32A9C494F00C0C93C /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EB91B22A9C494F00C0C93C /* ListView.swift */; };
 		E4EB91B92A9C4E0D00C0C93C /* ActionBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EB91B82A9C4E0D00C0C93C /* ActionBar.swift */; };
+		E4EB91BB2A9C559700C0C93C /* SelectWordFromTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EB91BA2A9C559700C0C93C /* SelectWordFromTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		E4EB91B02A9B76AC00C0C93C /* LargeButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeButtonLabel.swift; sourceTree = "<group>"; };
 		E4EB91B22A9C494F00C0C93C /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		E4EB91B82A9C4E0D00C0C93C /* ActionBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionBar.swift; sourceTree = "<group>"; };
+		E4EB91BA2A9C559700C0C93C /* SelectWordFromTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWordFromTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 				E48A02712A9A003B00C31F40 /* RandomlyView.swift */,
 				E48A02732A9A02FB00C31F40 /* GenerateView.swift */,
 				E48A027B2A9A115100C31F40 /* SelectItemFromListView.swift */,
+				E4EB91BA2A9C559700C0C93C /* SelectWordFromTextView.swift */,
 			);
 			path = Randomly;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4EB91BB2A9C559700C0C93C /* SelectWordFromTextView.swift in Sources */,
 				E4EB91B12A9B76AC00C0C93C /* LargeButtonLabel.swift in Sources */,
 				E4EB91B32A9C494F00C0C93C /* ListView.swift in Sources */,
 				E48A027A2A9A0F9900C31F40 /* NeatlyView.swift in Sources */,

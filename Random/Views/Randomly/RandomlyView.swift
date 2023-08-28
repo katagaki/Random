@@ -32,7 +32,7 @@ struct RandomlyView: View {
                     }
 
                 } header: {
-                    ListSectionHeader(text: "Randomly.Generate")
+                    ListSectionHeader(text: "Shared.Generate")
                         .font(.body)
                 }
                 Section {
@@ -43,14 +43,13 @@ struct RandomlyView: View {
                                 title: "Randomly.Select.ItemFromList")
                     }
                     NavigationLink {
-                        Color.clear
+                        SelectWordFromTextView()
                     } label: {
                         ListRow(image: "ListIcon.Doc",
                                 title: "Randomly.Select.WordFromText")
                     }
-                    .disabled(true)
                 } header: {
-                    ListSectionHeader(text: "Randomly.Select")
+                    ListSectionHeader(text: "Shared.Select")
                         .font(.body)
                 }
                 Section {

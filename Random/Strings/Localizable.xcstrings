@@ -239,23 +239,6 @@
         }
       }
     },
-    "Randomly.Generate" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Generate"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "生成"
-          }
-        }
-      }
-    },
     "Randomly.Generate.Letter" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -358,23 +341,6 @@
         }
       }
     },
-    "Randomly.Select" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Select"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "選択"
-          }
-        }
-      }
-    },
     "Randomly.Select.ItemFromList" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -422,6 +388,108 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "テキストから言葉"
+          }
+        }
+      }
+    },
+    "Randomly.Select.WordFromText.LanguageDisclaimer" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This feature works best with English text."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「テキストから言葉を選択」機能は、英語のテキストに対応しています。\n日本語のテキストの場合、選択モードをご利用ください。"
+          }
+        }
+      }
+    },
+    "Randomly.Select.WordFromText.SelectionMode" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mode"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選択モード"
+          }
+        }
+      }
+    },
+    "Randomly.Select.WordFromText.SelectionMode.EnglishOnly" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "English Only"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "英語のみ"
+          }
+        }
+      }
+    },
+    "Randomly.Select.WordFromText.SelectionMode.KanjiOnly" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kanji Only"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "漢字を使用した言葉のみ"
+          }
+        }
+      }
+    },
+    "Randomly.Select.WordFromText.SelectionMode.ParticlesBestAttempt" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Particles (Best Attempt)"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "助詞で分ける（ベータ）"
+          }
+        }
+      }
+    },
+    "Randomly.Select.WordFromText.ViewTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select Word From Text"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "テキストから言葉を選択"
           }
         }
       }
@@ -527,6 +595,40 @@
         }
       }
     },
+    "Shared.EnterText" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter Text"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "テキストを入力"
+          }
+        }
+      }
+    },
+    "Shared.Generate" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Generate"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "生成"
+          }
+        }
+      }
+    },
     "Shared.List.NewItem" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -540,6 +642,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "新規項目"
+          }
+        }
+      }
+    },
+    "Shared.List.NoItems" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No items added to the list"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "項目はありません"
           }
         }
       }
@@ -576,6 +695,23 @@
         }
       }
     },
+    "Shared.Select" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選択"
+          }
+        }
+      }
+    },
     "Shared.Sort" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -604,7 +740,7 @@
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "リストを並べ替える"
           }
         }
