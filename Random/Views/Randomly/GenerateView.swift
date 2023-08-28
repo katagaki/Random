@@ -15,7 +15,7 @@ struct GenerateView: View {
     @State var rangeStart: Int = 1
     @State var rangeEnd: Int = 100
     @State var words: [String] = []
-    @FocusState var isInputActive: Bool
+    @FocusState var isTextFieldActive: Bool
 
     var body: some View {
         VStack(alignment: .center, spacing: 8.0) {
@@ -35,13 +35,13 @@ struct GenerateView: View {
                         .bold()
                     TextField("", value: $rangeStart, format: .number)
                         .limitInputLength(value: $rangeStart, length: 17)
-                        .focused($isInputActive)
+                        .focused($isTextFieldActive)
                     Text("Shared.RangeTo")
                         .font(.body)
                         .bold()
                     TextField("", value: $rangeEnd, format: .number)
                         .limitInputLength(value: $rangeEnd, length: 17)
-                        .focused($isInputActive)
+                        .focused($isTextFieldActive)
                 }
                 .textFieldStyle(.roundedBorder)
                 .padding()
@@ -49,7 +49,8 @@ struct GenerateView: View {
             default:
                 Divider()
             }
-            ActionBar(primaryActionText: "Shared.Generate",
+            ActionBar(primaryActionText: "Shared.Generate", 
+                      primaryActionIconName: "sparkles",
                       copyDisabled: .constant(false),
                       primaryActionDisabled: .constant(rangeEnd <= rangeStart ||
                                                        rangeStart < -99999999999999999 ||
@@ -70,7 +71,7 @@ struct GenerateView: View {
             ToolbarItemGroup(placement: .keyboard) {
                 Spacer()
                 Button("Shared.Done") {
-                    isInputActive = false
+                    isTextFieldActive = false
                 }
                 .bold()
             }
@@ -78,7 +79,7 @@ struct GenerateView: View {
         .navigationTitle(NSLocalizedString(mode.rawValue, comment: ""))
         .navigationBarTitleDisplayMode(.inline)
     }
-    
+
     func regenerate() {
         switch mode {
         case .number:
@@ -99,12 +100,6 @@ struct GenerateView: View {
             result = words.randomElement()!
         }
     }
-}
-
-enum GenerateType: String {
-    case number = "Randomly.Generate.Number.ViewTitle"
-    case letter = "Randomly.Generate.Letter.ViewTitle"
-    case word = "Randomly.Generate.Word.ViewTitle"
 }
 
 // Modified input length limiter from:

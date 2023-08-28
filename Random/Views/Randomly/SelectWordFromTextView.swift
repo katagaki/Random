@@ -46,7 +46,7 @@ struct SelectWordFromTextView: View {
     @State var mode: WordSelectionMode = .kanjiOnly
     @State var text: String = ""
     @State var selectedWord: String? = nil
-    @FocusState var isInputActive: Bool
+    @FocusState var isTextFieldActive: Bool
 
     var body: some View {
         VStack(alignment: .center, spacing: 8.0) {
@@ -62,7 +62,7 @@ struct SelectWordFromTextView: View {
                     .font(.body)
                     .bold()
                 TextEditor(text: $text)
-                    .focused($isInputActive)
+                    .focused($isTextFieldActive)
                     .cornerRadius(5)
                     .overlay(
                         RoundedRectangle(cornerRadius: 5)
@@ -80,7 +80,8 @@ struct SelectWordFromTextView: View {
             .padding([.leading, .trailing])
             .padding([.top, .bottom], 8.0)
             Divider()
-            ActionBar(primaryActionText: "Shared.Select",
+            ActionBar(primaryActionText: "Shared.Select", 
+                      primaryActionIconName: "lasso.sparkles",
                       copyDisabled: .constant(selectedWord == nil),
                       primaryActionDisabled: .constant(words().count == 0)) {
                 selectedWord = words().randomElement()!.lowercased()
@@ -95,13 +96,13 @@ struct SelectWordFromTextView: View {
             .padding(.bottom, 16.0)
         }
         .onAppear {
-            isInputActive = true
+            isTextFieldActive = true
         }
         .toolbar {
             ToolbarItemGroup(placement: .keyboard) {
                 Spacer()
                 Button("Shared.Done") {
-                    isInputActive = false
+                    isTextFieldActive = false
                 }
                 .bold()
             }
@@ -159,10 +160,4 @@ struct SelectWordFromTextView: View {
             return []
         }
     }
-}
-
-enum WordSelectionMode {
-    case english
-    case kanjiOnly
-    case particleBestAttempt
 }

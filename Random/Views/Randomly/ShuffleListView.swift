@@ -1,15 +1,14 @@
 //
-//  SortListView.swift
+//  ShuffleListView.swift
 //  Random
 //
-//  Created by シンジャスティン on 2023/08/27.
+//  Created by シンジャスティン on 2023/08/28.
 //
 
 import SwiftUI
 
-struct SortListView: View {
+struct ShuffleListView: View {
 
-    @State var mode: SortType
     @State var items: [SelectItem] = []
 
     var body: some View {
@@ -17,17 +16,11 @@ struct SortListView: View {
             ListView(selectedItem: .constant(nil),
                      items: $items)
             Divider()
-            ActionBar(primaryActionText: "Shared.Sort",
+            ActionBar(primaryActionText: "Shared.Shuffle",
+                      primaryActionIconName: "arrow.up.and.down.and.sparkles",
                       copyDisabled: .constant(items.count == 0),
                       primaryActionDisabled: .constant(items.count == 0)) {
-                switch mode {
-                case .randomly:
-                    items.shuffle()
-                case .neatly:
-                    items.sort { lhs, rhs in
-                        lhs.value < rhs.value
-                    }
-                }
+                items.shuffle()
             } copyAction: {
                 UIPasteboard.general.string = items.reduce(into: "", { result, item in
                     result += "\(item.value)\n"
@@ -38,12 +31,8 @@ struct SortListView: View {
             .padding(.top, 8.0)
             .padding(.bottom, 16.0)
         }
-        .navigationTitle("Shared.Sort.ViewTitle")
+        .navigationTitle("Shared.Shuffle.List.ViewTitle")
         .navigationBarTitleDisplayMode(.inline)
     }
 }
 
-enum SortType {
-    case randomly
-    case neatly
-}

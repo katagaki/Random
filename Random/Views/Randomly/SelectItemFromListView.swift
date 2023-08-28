@@ -18,7 +18,8 @@ struct SelectItemFromListView: View {
                 ListView(selectedItem: $selectedItem,
                          items: $items)
                 Divider()
-                ActionBar(primaryActionText: "Shared.Select",
+                ActionBar(primaryActionText: "Shared.Select", 
+                          primaryActionIconName: "lasso.sparkles",
                           copyDisabled: .constant(selectedItem == nil), primaryActionDisabled: .constant(items.count == 0)) {
                     selectedItem = items.randomElement()!
                     scrollView.scrollTo(selectedItem!, anchor: .center)

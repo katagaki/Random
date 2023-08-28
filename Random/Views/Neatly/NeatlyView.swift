@@ -13,18 +13,19 @@ struct NeatlyView: View {
             List {
                 Section {
                     NavigationLink {
-                        SortListView(mode: .neatly)
+                        SortListView()
                     } label: {
-                        ListRow(image: "ListIcon.List", title: "Neatly.Sort.List")
+                        ListRow(image: "ListIcon.List", 
+                                title: "Neatly.Sort.List")
                     }
                     NavigationLink {
-                        Color.clear
+                        SortDictionaryView()
                     } label: {
-                        ListRow(image: "ListIcon.Table", title: "Neatly.Sort.Dictionary")
+                        ListRow(image: "ListIcon.Table", 
+                                title: "Neatly.Sort.Dictionary")
                     }
-                    .disabled(true)
                 } header: {
-                    ListSectionHeader(text: "Neatly.Sort")
+                    ListSectionHeader(text: "Shared.Sort")
                         .font(.body)
                 }
             }

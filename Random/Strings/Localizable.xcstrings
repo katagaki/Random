@@ -120,23 +120,6 @@
         }
       }
     },
-    "Neatly.Sort" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sort"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "並べ替え"
-          }
-        }
-      }
-    },
     "Neatly.Sort.Dictionary" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -167,23 +150,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "リスト"
-          }
-        }
-      }
-    },
-    "Randomly.Do" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Do"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "その他"
           }
         }
       }
@@ -494,24 +460,7 @@
         }
       }
     },
-    "Randomly.Sort" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sort"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "並べ替え"
-          }
-        }
-      }
-    },
-    "Randomly.Sort.Dictionary" : {
+    "Randomly.Shuffle.Dictionary" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -528,7 +477,7 @@
         }
       }
     },
-    "Randomly.Sort.List" : {
+    "Randomly.Shuffle.List" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -574,6 +523,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "コピー"
+          }
+        }
+      }
+    },
+    "Shared.Do" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "その他"
           }
         }
       }
@@ -646,6 +612,40 @@
         }
       }
     },
+    "Shared.List.NewItem.Key" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Key"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "キー"
+          }
+        }
+      }
+    },
+    "Shared.List.NewItem.Value" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Value"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "値"
+          }
+        }
+      }
+    },
     "Shared.List.NoItems" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -712,6 +712,57 @@
         }
       }
     },
+    "Shared.Shuffle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shuffle"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "シャッフル"
+          }
+        }
+      }
+    },
+    "Shared.Shuffle.Dictionary.ViewTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shuffle a Dictionary"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "辞書をシャッフル"
+          }
+        }
+      }
+    },
+    "Shared.Shuffle.List.ViewTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shuffle a List"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "リストをシャッフル"
+          }
+        }
+      }
+    },
     "Shared.Sort" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -729,7 +780,58 @@
         }
       }
     },
-    "Shared.Sort.ViewTitle" : {
+    "Shared.Sort.ByKey" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sort By Key"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "キーで並べ替える"
+          }
+        }
+      }
+    },
+    "Shared.Sort.ByValue" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sort By Value"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "値で並べ替える"
+          }
+        }
+      }
+    },
+    "Shared.Sort.Dictionary.ViewTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sort a Dictionary"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "辞書を並べ替える"
+          }
+        }
+      }
+    },
+    "Shared.Sort.List.ViewTitle" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {

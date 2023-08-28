@@ -54,19 +54,19 @@ struct RandomlyView: View {
                 }
                 Section {
                     NavigationLink {
-                        SortListView(mode: .randomly)
+                        ShuffleListView()
                     } label: {
-                        ListRow(image: "ListIcon.List", title: "Neatly.Sort.List")
+                        ListRow(image: "ListIcon.List",
+                                title: "Randomly.Shuffle.List")
                     }
                     NavigationLink {
-                        Color.clear
+                        ShuffleDictionaryView()
                     } label: {
                         ListRow(image: "ListIcon.Table",
-                                title: "Randomly.Sort.Dictionary")
+                                title: "Randomly.Shuffle.Dictionary")
                     }
-                    .disabled(true)
                 } header: {
-                    ListSectionHeader(text: "Randomly.Sort")
+                    ListSectionHeader(text: "Shared.Shuffle")
                         .font(.body)
                 }
                 Section {
@@ -89,7 +89,7 @@ struct RandomlyView: View {
                                 title: "Randomly.Do.CardDraw")
                     }
                 } header: {
-                    ListSectionHeader(text: "Randomly.Do")
+                    ListSectionHeader(text: "Shared.Do")
                         .font(.body)
                 }
                 .disabled(true)

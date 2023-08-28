@@ -1,5 +1,5 @@
 //
-//  ListView.swift
+//  DictionaryView.swift
 //  Random
 //
 //  Created by シンジャスティン on 2023/08/28.
@@ -7,20 +7,27 @@
 
 import SwiftUI
 
-struct ListView: View {
+struct DictionaryView: View {
 
-    @Binding var selectedItem: SelectItem?
-    @State var newItem: String = ""
+    @State var newItemKey: String = ""
+    @State var newItemValue: String = ""
     @Binding var items: [SelectItem]
     @State var isAddingNewItem: Bool = false
-    @FocusState var isTextFieldActive: Bool
+    @FocusState var isKeyTextFieldActive: Bool
+    @FocusState var isValueTextFieldActive: Bool
 
     var body: some View {
         ScrollViewReader { scrollView in
-            List(selection: $selectedItem) {
+            List() {
                 ForEach(items, id: \.self) { item in
-                    Text(item.value)
-                        .font(.body)
+                    HStack(alignment: .center, spacing: 8.0) {
+                        Text(item.id)
+                            .font(.body)
+                            .foregroundStyle(.secondary)
+                        Spacer()
+                        Text(item.value)
+                            .font(.body)
+                    }
                 }
                 .onDelete { indexSet in
                     items.remove(atOffsets: indexSet)
@@ -50,11 +57,19 @@ struct ListView: View {
             }
             Divider()
             HStack(alignment: .center, spacing: 8.0) {
-                TextField("Shared.List.NewItem",
-                          text: $newItem)
+                TextField("Shared.List.NewItem.Key",
+                          text: $newItemKey)
+                .textFieldStyle(.roundedBorder)
+                .submitLabel(.next)
+                .focused($isKeyTextFieldActive)
+                .onSubmit {
+                    isValueTextFieldActive = true
+                }
+                TextField("Shared.List.NewItem.Value",
+                          text: $newItemValue)
                 .textFieldStyle(.roundedBorder)
                 .submitLabel(.done)
-                .focused($isTextFieldActive)
+                .focused($isValueTextFieldActive)
                 .onSubmit {
                     addNewItem()
                 }
@@ -67,19 +82,20 @@ struct ListView: View {
                 }
                 .buttonStyle(.bordered)
                 .clipShape(RoundedRectangle(cornerRadius: 99))
-                .disabled(newItem == "")
+                .disabled(newItemKey == "" || newItemValue == "")
             }
             .padding([.leading, .trailing])
             .padding([.top, .bottom], 8.0)
         }
         .onAppear {
-            isTextFieldActive = true
+            isKeyTextFieldActive = true
         }
         .toolbar {
             ToolbarItemGroup(placement: .keyboard) {
                 Spacer()
                 Button("Shared.Done") {
-                    isTextFieldActive = false
+                    isKeyTextFieldActive = false
+                    isValueTextFieldActive = false
                 }
                 .bold()
             }
@@ -89,9 +105,10 @@ struct ListView: View {
     func addNewItem() {
         isAddingNewItem = true
         items.append(
-            SelectItem(id: UUID().uuidString,
-                       value: newItem))
-        newItem = ""
-        isTextFieldActive = true
+            SelectItem(id: newItemKey,
+                       value: newItemValue))
+        newItemKey = ""
+        newItemValue = ""
+        isKeyTextFieldActive = true
     }
 }
