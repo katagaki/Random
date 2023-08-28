@@ -74,30 +74,30 @@ struct RandomlyView: View {
                     ListSectionHeader(text: "Shared.Shuffle")
                         .font(.body)
                 }
-                Section {
-                    NavigationLink {
-                        Color.clear
-                    } label: {
-                        ListRow(image: "ListIcon.Coin",
-                                title: "Randomly.Do.CoinFlip")
-                    }
-                    NavigationLink {
-                        Color.clear
-                    } label: {
-                        ListRow(image: "ListIcon.Die",
-                                title: "Randomly.Do.DiceRoll")
-                    }
-                    NavigationLink {
-                        Color.clear
-                    } label: {
-                        ListRow(image: "ListIcon.Cards",
-                                title: "Randomly.Do.CardDraw")
-                    }
-                } header: {
-                    ListSectionHeader(text: "Shared.Do")
-                        .font(.body)
-                }
-                .disabled(true)
+//                Section {
+//                    NavigationLink {
+//                        Color.clear
+//                    } label: {
+//                        ListRow(image: "ListIcon.Coin",
+//                                title: "Randomly.Do.CoinFlip")
+//                    }
+//                    NavigationLink {
+//                        Color.clear
+//                    } label: {
+//                        ListRow(image: "ListIcon.Die",
+//                                title: "Randomly.Do.DiceRoll")
+//                    }
+//                    NavigationLink {
+//                        Color.clear
+//                    } label: {
+//                        ListRow(image: "ListIcon.Cards",
+//                                title: "Randomly.Do.CardDraw")
+//                    }
+//                } header: {
+//                    ListSectionHeader(text: "Shared.Do")
+//                        .font(.body)
+//                }
+//                .disabled(true)
             }
             .navigationTitle("View.Randomly")
         }
