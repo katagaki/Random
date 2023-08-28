@@ -13,7 +13,7 @@ struct ListView: View {
     @State var newItem: String = ""
     @Binding var items: [SelectItem]
     @State var isAddingNewItem: Bool = false
-    @FocusState var isTextFieldActive: Bool
+    @FocusState var focusedField: FocusedField?
 
     var body: some View {
         ScrollViewReader { scrollView in
@@ -54,12 +54,13 @@ struct ListView: View {
                           text: $newItem)
                 .textFieldStyle(.roundedBorder)
                 .submitLabel(.done)
-                .focused($isTextFieldActive)
+                .focused($focusedField, equals: .newItemField)
                 .onSubmit {
                     addNewItem()
                 }
                 Button {
                     addNewItem()
+                    focusedField = .newItemField
                 } label: {
                     Image(systemName: "plus")
                     Text("Shared.Add")
@@ -73,25 +74,30 @@ struct ListView: View {
             .padding([.top, .bottom], 8.0)
         }
         .onAppear {
-            isTextFieldActive = true
+            focusedField = .newItemField
         }
         .toolbar {
             ToolbarItemGroup(placement: .keyboard) {
                 Spacer()
                 Button("Shared.Done") {
-                    isTextFieldActive = false
+                    focusedField = nil
                 }
                 .bold()
             }
         }
     }
-    
+
     func addNewItem() {
-        isAddingNewItem = true
-        items.append(
-            SelectItem(id: UUID().uuidString,
-                       value: newItem))
-        newItem = ""
-        isTextFieldActive = true
+        if newItem != "" {
+            isAddingNewItem = true
+            items.append(
+                SelectItem(id: UUID().uuidString,
+                           value: newItem))
+            newItem = ""
+        }
+    }
+
+    enum FocusedField: Hashable {
+        case newItemField
     }
 }

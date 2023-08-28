@@ -13,8 +13,7 @@ struct DictionaryView: View {
     @State var newItemValue: String = ""
     @Binding var items: [SelectItem]
     @State var isAddingNewItem: Bool = false
-    @FocusState var isKeyTextFieldActive: Bool
-    @FocusState var isValueTextFieldActive: Bool
+    @FocusState var focusedField: FocusedField?
 
     var body: some View {
         ScrollViewReader { scrollView in
@@ -61,20 +60,21 @@ struct DictionaryView: View {
                           text: $newItemKey)
                 .textFieldStyle(.roundedBorder)
                 .submitLabel(.next)
-                .focused($isKeyTextFieldActive)
+                .focused($focusedField, equals: .keyField)
                 .onSubmit {
-                    isValueTextFieldActive = true
+                    focusedField = .valueField
                 }
                 TextField("Shared.List.NewItem.Value",
                           text: $newItemValue)
                 .textFieldStyle(.roundedBorder)
                 .submitLabel(.done)
-                .focused($isValueTextFieldActive)
+                .focused($focusedField, equals: .valueField)
                 .onSubmit {
                     addNewItem()
                 }
                 Button {
                     addNewItem()
+                    focusedField = .keyField
                 } label: {
                     Image(systemName: "plus")
                     Text("Shared.Add")
@@ -88,27 +88,32 @@ struct DictionaryView: View {
             .padding([.top, .bottom], 8.0)
         }
         .onAppear {
-            isKeyTextFieldActive = true
+            focusedField = .keyField
         }
         .toolbar {
             ToolbarItemGroup(placement: .keyboard) {
                 Spacer()
                 Button("Shared.Done") {
-                    isKeyTextFieldActive = false
-                    isValueTextFieldActive = false
+                    focusedField = nil
                 }
                 .bold()
             }
         }
     }
-    
+
     func addNewItem() {
-        isAddingNewItem = true
-        items.append(
-            SelectItem(id: newItemKey,
-                       value: newItemValue))
-        newItemKey = ""
-        newItemValue = ""
-        isKeyTextFieldActive = true
+        if newItemKey != "" && newItemValue != "" {
+            isAddingNewItem = true
+            items.append(
+                SelectItem(id: newItemKey,
+                           value: newItemValue))
+            newItemKey = ""
+            newItemValue = ""
+        }
+    }
+
+    enum FocusedField: Hashable {
+        case keyField
+        case valueField
     }
 }
