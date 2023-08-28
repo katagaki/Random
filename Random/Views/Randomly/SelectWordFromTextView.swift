@@ -134,7 +134,7 @@ struct SelectWordFromTextView: View {
             var textComponents: [String] = []
             switch languageCode {
             case .english:
-                textComponents = text.components(separatedBy: .symbols
+                textComponents = text.components(separatedBy: .letters.inverted
                     .union(.whitespacesAndNewlines))
             case .japanese:
                 switch mode {
