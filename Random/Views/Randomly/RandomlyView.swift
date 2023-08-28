@@ -27,10 +27,15 @@ struct RandomlyView: View {
                     NavigationLink {
                         GenerateView(mode: .word)
                     } label: {
-                        ListRow(image: "ListIcon.Word", 
+                        ListRow(image: "ListIcon.Word",
                                 title: "Randomly.Generate.Word")
                     }
-
+                    NavigationLink {
+                        GeneratePasswordView()
+                    } label: {
+                        ListRow(image: "ListIcon.Password",
+                                title: "Randomly.Generate.Password")
+                    }
                 } header: {
                     ListSectionHeader(text: "Shared.Generate")
                         .font(.body)

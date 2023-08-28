@@ -33,6 +33,8 @@
 		E4EB91C82A9C76CC00C0C93C /* WordSelectionMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EB91C72A9C76CC00C0C93C /* WordSelectionMode.swift */; };
 		E4EB91CA2A9C82F900C0C93C /* ShuffleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EB91C92A9C82F900C0C93C /* ShuffleListView.swift */; };
 		E4EB91CC2A9C837F00C0C93C /* ShuffleDictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EB91CB2A9C837F00C0C93C /* ShuffleDictionaryView.swift */; };
+		E4EB91CE2A9C85CE00C0C93C /* GeneratePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EB91CD2A9C85CE00C0C93C /* GeneratePasswordView.swift */; };
+		E4EB91D12A9C873E00C0C93C /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EB91D02A9C873E00C0C93C /* Password.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		E4EB91C72A9C76CC00C0C93C /* WordSelectionMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSelectionMode.swift; sourceTree = "<group>"; };
 		E4EB91C92A9C82F900C0C93C /* ShuffleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuffleListView.swift; sourceTree = "<group>"; };
 		E4EB91CB2A9C837F00C0C93C /* ShuffleDictionaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuffleDictionaryView.swift; sourceTree = "<group>"; };
+		E4EB91CD2A9C85CE00C0C93C /* GeneratePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratePasswordView.swift; sourceTree = "<group>"; };
+		E4EB91D02A9C873E00C0C93C /* Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Password.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,11 +121,11 @@
 				E4DDD3EE266C8FC2003CC064 /* Assets.xcassets */,
 				E4DDD3F0266C8FC2003CC064 /* LaunchScreen.storyboard */,
 				E48A027D2A9A194900C31F40 /* Wordlist.txt */,
-				E48A02752A9A0C1400C31F40 /* App.swift */,
 				E48A02862A9A2C1C00C31F40 /* Strings */,
-				E4EB91C22A9C769300C0C93C /* Enums */,
-				E48A02812A9A205100C31F40 /* Structs */,
 				E4DDD404266CB5EE003CC064 /* Views */,
+				E48A02812A9A205100C31F40 /* Structs */,
+				E4EB91CF2A9C873300C0C93C /* Classes */,
+				E4EB91C22A9C769300C0C93C /* Enums */,
 			);
 			path = Random;
 			sourceTree = "<group>";
@@ -129,16 +133,12 @@
 		E4DDD404266CB5EE003CC064 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E48A02752A9A0C1400C31F40 /* App.swift */,
 				E48A026F2A99FA9B00C31F40 /* MainTabView.swift */,
 				E4EB91B42A9C4BB100C0C93C /* Randomly */,
 				E4EB91B52A9C4BB500C0C93C /* Neatly */,
 				E4EB91B62A9C4BB900C0C93C /* More */,
-				E4EB91B82A9C4E0D00C0C93C /* ActionBar.swift */,
-				E4EB91B22A9C494F00C0C93C /* ListView.swift */,
-				E4EB91BC2A9C6EED00C0C93C /* DictionaryView.swift */,
-				E4EB91B02A9B76AC00C0C93C /* LargeButtonLabel.swift */,
-				E477E7332A9602F100517B72 /* ListSectionHeader.swift */,
-				E477E7312A9602E900517B72 /* ListRow.swift */,
+				E4EB91D52A9C87C900C0C93C /* Shared */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -148,6 +148,7 @@
 			children = (
 				E48A02712A9A003B00C31F40 /* RandomlyView.swift */,
 				E48A02732A9A02FB00C31F40 /* GenerateView.swift */,
+				E4EB91CD2A9C85CE00C0C93C /* GeneratePasswordView.swift */,
 				E48A027B2A9A115100C31F40 /* SelectItemFromListView.swift */,
 				E4EB91BA2A9C559700C0C93C /* SelectWordFromTextView.swift */,
 				E4EB91C92A9C82F900C0C93C /* ShuffleListView.swift */,
@@ -181,6 +182,27 @@
 				E4EB91C72A9C76CC00C0C93C /* WordSelectionMode.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		E4EB91CF2A9C873300C0C93C /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E4EB91D02A9C873E00C0C93C /* Password.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		E4EB91D52A9C87C900C0C93C /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				E4EB91B82A9C4E0D00C0C93C /* ActionBar.swift */,
+				E4EB91B22A9C494F00C0C93C /* ListView.swift */,
+				E4EB91BC2A9C6EED00C0C93C /* DictionaryView.swift */,
+				E4EB91B02A9B76AC00C0C93C /* LargeButtonLabel.swift */,
+				E477E7332A9602F100517B72 /* ListSectionHeader.swift */,
+				E477E7312A9602E900517B72 /* ListRow.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +281,7 @@
 			files = (
 				E4EB91CC2A9C837F00C0C93C /* ShuffleDictionaryView.swift in Sources */,
 				E4EB91BD2A9C6EED00C0C93C /* DictionaryView.swift in Sources */,
+				E4EB91CE2A9C85CE00C0C93C /* GeneratePasswordView.swift in Sources */,
 				E4EB91BB2A9C559700C0C93C /* SelectWordFromTextView.swift in Sources */,
 				E4EB91B12A9B76AC00C0C93C /* LargeButtonLabel.swift in Sources */,
 				E4EB91B32A9C494F00C0C93C /* ListView.swift in Sources */,
@@ -277,6 +300,7 @@
 				E4EB91B92A9C4E0D00C0C93C /* ActionBar.swift in Sources */,
 				E477E7302A9602BF00517B72 /* MoreView.swift in Sources */,
 				E4EB91C82A9C76CC00C0C93C /* WordSelectionMode.swift in Sources */,
+				E4EB91D12A9C873E00C0C93C /* Password.swift in Sources */,
 				E48A027C2A9A115100C31F40 /* SelectItemFromListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

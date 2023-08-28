@@ -24,6 +24,7 @@ struct GenerateView: View {
                 .font(.system(size: 200.0, weight: .heavy, design: .rounded))
                 .lineLimit(1)
                 .minimumScaleFactor(0.01)
+                .textSelection(.enabled)
                 .padding()
             Spacer()
             switch mode {
