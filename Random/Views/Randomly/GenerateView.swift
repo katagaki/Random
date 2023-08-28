@@ -15,6 +15,7 @@ struct GenerateView: View {
     @State var rangeStart: Int = 1
     @State var rangeEnd: Int = 100
     @State var words: [String] = []
+    @FocusState var isInputActive: Bool
 
     var body: some View {
         VStack(alignment: .center, spacing: 8.0) {
@@ -34,11 +35,13 @@ struct GenerateView: View {
                         .bold()
                     TextField("", value: $rangeStart, format: .number)
                         .limitInputLength(value: $rangeStart, length: 17)
+                        .focused($isInputActive)
                     Text("Shared.RangeTo")
                         .font(.body)
                         .bold()
                     TextField("", value: $rangeEnd, format: .number)
                         .limitInputLength(value: $rangeEnd, length: 17)
+                        .focused($isInputActive)
                 }
                 .textFieldStyle(.roundedBorder)
                 .padding()
@@ -46,26 +49,14 @@ struct GenerateView: View {
             default:
                 Divider()
             }
-            HStack(alignment: .center, spacing: 8.0) {
-                Button {
-                    UIPasteboard.general.string = result
-                } label: {
-                    LargeButtonLabel(iconName: "doc.on.doc",
-                                     text: "Shared.Copy")
-                }
-                .buttonStyle(.bordered)
-                .clipShape(RoundedRectangle(cornerRadius: 99))
-                Button {
-                    regenerate()
-                } label: {
-                    LargeButtonLabel(iconName: "sparkles",
-                                     text: "Randomly.Generate")
-                    .bold()
-                    .frame(maxWidth: .infinity)
-                }
-                .buttonStyle(.borderedProminent)
-                .clipShape(RoundedRectangle(cornerRadius: 99))
-                .disabled(rangeEnd <= rangeStart || rangeStart < -99999999999999999 || rangeEnd > 99999999999999999)
+            ActionBar(primaryActionText: "Randomly.Generate",
+                      copyDisabled: .constant(false),
+                      primaryActionDisabled: .constant(rangeEnd <= rangeStart ||
+                                                       rangeStart < -99999999999999999 ||
+                                                       rangeEnd > 99999999999999999)) {
+                regenerate()
+            } copyAction: {
+                UIPasteboard.general.string = result
             }
             .frame(maxWidth: .infinity)
             .padding([.leading, .trailing])
@@ -74,6 +65,15 @@ struct GenerateView: View {
         }
         .task {
             regenerate()
+        }
+        .toolbar {
+            ToolbarItemGroup(placement: .keyboard) {
+                Spacer()
+                Button("Shared.Done") {
+                    isInputActive = false
+                }
+                .bold()
+            }
         }
         .navigationTitle(NSLocalizedString(mode.rawValue, comment: ""))
         .navigationBarTitleDisplayMode(.inline)
