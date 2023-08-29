@@ -30,7 +30,7 @@ struct GenerateView: View {
             switch mode {
             case .number:
                 Divider()
-                VStack(alignment: .leading, spacing: 4.0) {
+                HStack(alignment: .center, spacing: 4.0) {
                     Text("Shared.RangeFrom")
                         .font(.body)
                         .bold()
