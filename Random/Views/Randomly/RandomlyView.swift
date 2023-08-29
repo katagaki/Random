@@ -36,6 +36,12 @@ struct RandomlyView: View {
                         ListRow(image: "ListIcon.Password",
                                 title: "Randomly.Generate.Password")
                     }
+                    NavigationLink {
+                        GenerateColorView()
+                    } label: {
+                        ListRow(image: "ListIcon.Color",
+                                title: "Randomly.Generate.Color")
+                    }
                 } header: {
                     ListSectionHeader(text: "Shared.Generate")
                         .font(.body)

@@ -1,6 +1,12 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "#" : {
+
+    },
+    "%@" : {
+
+    },
     "More.Help" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -201,6 +207,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "サイコロを投げる"
+          }
+        }
+      }
+    },
+    "Randomly.Generate.Color" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Color"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "色"
+          }
+        }
+      }
+    },
+    "Randomly.Generate.Color.ViewTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Generate Color"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "色を生成"
           }
         }
       }
@@ -640,6 +680,23 @@
         }
       }
     },
+    "Shared.Blue" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blue"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "B"
+          }
+        }
+      }
+    },
     "Shared.Copy" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -653,6 +710,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "コピー"
+          }
+        }
+      }
+    },
+    "Shared.Copy.SwiftUICode" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SwiftUI Code"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SwiftUIコード"
           }
         }
       }
@@ -721,6 +795,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "生成"
+          }
+        }
+      }
+    },
+    "Shared.Green" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Green"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "G"
           }
         }
       }
@@ -821,6 +912,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "〜"
+          }
+        }
+      }
+    },
+    "Shared.Red" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Red"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "R"
           }
         }
       }
