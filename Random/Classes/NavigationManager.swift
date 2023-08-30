@@ -24,14 +24,14 @@ class NavigationManager: ObservableObject {
         }
     }
 
-    func push(_ component: ViewPath, for tab: TabType) {
+    func push(_ viewPath: ViewPath, for tab: TabType) {
         switch tab {
         case .randomly:
-            randomlyTabPath.append(component)
+            randomlyTabPath.append(viewPath)
         case .neatly:
-            neatlyTabPath.append(component)
+            neatlyTabPath.append(viewPath)
         case .more:
-            moreTabPath.append(component)
+            moreTabPath.append(viewPath)
         }
     }
 

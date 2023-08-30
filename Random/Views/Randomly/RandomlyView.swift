@@ -84,8 +84,8 @@ struct RandomlyView: View {
 //                }
 //                .disabled(true)
             }
-            .navigationDestination(for: ViewPath.self, destination: { component in
-                switch component {
+            .navigationDestination(for: ViewPath.self, destination: { viewPath in
+                switch viewPath {
                 case .rGenerateNumber:
                     GenerateView(mode: .number)
                 case .rGenerateLetter:

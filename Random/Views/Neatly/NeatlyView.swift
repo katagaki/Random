@@ -28,8 +28,8 @@ struct NeatlyView: View {
                         .font(.body)
                 }
             }
-            .navigationDestination(for: ViewPath.self, destination: { component in
-                switch component {
+            .navigationDestination(for: ViewPath.self, destination: { viewPath in
+                switch viewPath {
                 case .nSortList:
                     SortListView()
                 case .nSortDict:
