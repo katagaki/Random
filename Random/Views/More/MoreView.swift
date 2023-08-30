@@ -7,15 +7,12 @@
 
 import SwiftUI
 
-class MoreViewController: UIHostingController<MoreView> {
-    required init?(coder: NSCoder) {
-        super.init(coder: coder, rootView: MoreView())
-    }
-}
-
 struct MoreView: View {
+
+    @EnvironmentObject var navigationManager: NavigationManager
+
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $navigationManager.moreTabPath) {
             List {
                 Section {
                     Link(destination: URL(string: "https://x.com/katagaki_")!) {

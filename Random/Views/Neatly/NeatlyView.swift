@@ -8,20 +8,19 @@
 import SwiftUI
 
 struct NeatlyView: View {
+
+    @EnvironmentObject var navigationManager: NavigationManager
+
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $navigationManager.neatlyTabPath) {
             List {
                 Section {
-                    NavigationLink {
-                        SortListView()
-                    } label: {
-                        ListRow(image: "ListIcon.List", 
+                    NavigationLink(value: ViewPath.nSortList) {
+                        ListRow(image: "ListIcon.List",
                                 title: "Neatly.Sort.List")
                     }
-                    NavigationLink {
-                        SortDictionaryView()
-                    } label: {
-                        ListRow(image: "ListIcon.Table", 
+                    NavigationLink(value: ViewPath.nSortDict) {
+                        ListRow(image: "ListIcon.Table",
                                 title: "Neatly.Sort.Dictionary")
                     }
                 } header: {
@@ -29,6 +28,16 @@ struct NeatlyView: View {
                         .font(.body)
                 }
             }
+            .navigationDestination(for: ViewPath.self, destination: { component in
+                switch component {
+                case .nSortList:
+                    SortListView()
+                case .nSortDict:
+                    SortDictionaryView()
+                default:
+                    Color.clear
+                }
+            })
             .navigationTitle("View.Neatly")
         }
     }

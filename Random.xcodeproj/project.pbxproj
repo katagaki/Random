@@ -11,6 +11,10 @@
 		E477E7302A9602BF00517B72 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477E72F2A9602BF00517B72 /* MoreView.swift */; };
 		E477E7322A9602E900517B72 /* ListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477E7312A9602E900517B72 /* ListRow.swift */; };
 		E477E7342A9602F100517B72 /* ListSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477E7332A9602F100517B72 /* ListSectionHeader.swift */; };
+		E4876ADA2A9EE4EE00DC7FD9 /* ViewPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4876AD92A9EE4EE00DC7FD9 /* ViewPath.swift */; };
+		E4876ADC2A9EE60300DC7FD9 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4876ADB2A9EE60300DC7FD9 /* NavigationManager.swift */; };
+		E4876ADE2A9EEB0C00DC7FD9 /* TabManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4876ADD2A9EEB0C00DC7FD9 /* TabManager.swift */; };
+		E4876AE02A9EEB2100DC7FD9 /* TabType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4876ADF2A9EEB2100DC7FD9 /* TabType.swift */; };
 		E48A02702A99FA9B00C31F40 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48A026F2A99FA9B00C31F40 /* MainTabView.swift */; };
 		E48A02722A9A003B00C31F40 /* RandomlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48A02712A9A003B00C31F40 /* RandomlyView.swift */; };
 		E48A02742A9A02FB00C31F40 /* GenerateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48A02732A9A02FB00C31F40 /* GenerateView.swift */; };
@@ -43,6 +47,10 @@
 		E477E72F2A9602BF00517B72 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
 		E477E7312A9602E900517B72 /* ListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRow.swift; sourceTree = "<group>"; };
 		E477E7332A9602F100517B72 /* ListSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSectionHeader.swift; sourceTree = "<group>"; };
+		E4876AD92A9EE4EE00DC7FD9 /* ViewPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPath.swift; sourceTree = "<group>"; };
+		E4876ADB2A9EE60300DC7FD9 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
+		E4876ADD2A9EEB0C00DC7FD9 /* TabManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabManager.swift; sourceTree = "<group>"; };
+		E4876ADF2A9EEB2100DC7FD9 /* TabType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabType.swift; sourceTree = "<group>"; };
 		E48A026F2A99FA9B00C31F40 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		E48A02712A9A003B00C31F40 /* RandomlyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomlyView.swift; sourceTree = "<group>"; };
 		E48A02732A9A02FB00C31F40 /* GenerateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateView.swift; sourceTree = "<group>"; };
@@ -183,6 +191,8 @@
 			children = (
 				E4EB91C52A9C76B700C0C93C /* GenerateType.swift */,
 				E4EB91C72A9C76CC00C0C93C /* WordSelectionMode.swift */,
+				E4876ADF2A9EEB2100DC7FD9 /* TabType.swift */,
+				E4876AD92A9EE4EE00DC7FD9 /* ViewPath.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -191,6 +201,8 @@
 			isa = PBXGroup;
 			children = (
 				E4EB91D02A9C873E00C0C93C /* Password.swift */,
+				E4876ADB2A9EE60300DC7FD9 /* NavigationManager.swift */,
+				E4876ADD2A9EEB0C00DC7FD9 /* TabManager.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -282,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4876ADA2A9EE4EE00DC7FD9 /* ViewPath.swift in Sources */,
 				E4EB91CC2A9C837F00C0C93C /* ShuffleDictionaryView.swift in Sources */,
 				E4EB91BD2A9C6EED00C0C93C /* DictionaryView.swift in Sources */,
 				E4EB91CE2A9C85CE00C0C93C /* GeneratePasswordView.swift in Sources */,
@@ -289,9 +302,12 @@
 				E4EB91B12A9B76AC00C0C93C /* LargeButtonLabel.swift in Sources */,
 				E4EB91B32A9C494F00C0C93C /* ListView.swift in Sources */,
 				E48A027A2A9A0F9900C31F40 /* NeatlyView.swift in Sources */,
+				E4876ADE2A9EEB0C00DC7FD9 /* TabManager.swift in Sources */,
 				E44BD2AC2A9D919D0049FA9A /* GenerateColorView.swift in Sources */,
 				E48A02742A9A02FB00C31F40 /* GenerateView.swift in Sources */,
 				E48A02762A9A0C1400C31F40 /* App.swift in Sources */,
+				E4876ADC2A9EE60300DC7FD9 /* NavigationManager.swift in Sources */,
+				E4876AE02A9EEB2100DC7FD9 /* TabType.swift in Sources */,
 				E477E7342A9602F100517B72 /* ListSectionHeader.swift in Sources */,
 				E4EB91C62A9C76B700C0C93C /* GenerateType.swift in Sources */,
 				E4EB91CA2A9C82F900C0C93C /* ShuffleListView.swift in Sources */,

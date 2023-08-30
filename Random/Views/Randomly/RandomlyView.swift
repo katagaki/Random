@@ -8,37 +8,30 @@
 import SwiftUI
 
 struct RandomlyView: View {
+
+    @EnvironmentObject var navigationManager: NavigationManager
+
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $navigationManager.randomlyTabPath) {
             List {
                 Section {
-                    NavigationLink {
-                        GenerateView(mode: .number)
-                    } label: {
+                    NavigationLink(value: ViewPath.rGenerateNumber) {
                         ListRow(image: "ListIcon.Number",
                                 title: "Randomly.Generate.Number")
                     }
-                    NavigationLink {
-                        GenerateView(mode: .letter)
-                    } label: {
+                    NavigationLink(value: ViewPath.rGenerateLetter) {
                         ListRow(image: "ListIcon.Letter",
                                 title: "Randomly.Generate.Letter")
                     }
-                    NavigationLink {
-                        GenerateView(mode: .word)
-                    } label: {
+                    NavigationLink(value: ViewPath.rGenerateWord) {
                         ListRow(image: "ListIcon.Word",
                                 title: "Randomly.Generate.Word")
                     }
-                    NavigationLink {
-                        GeneratePasswordView()
-                    } label: {
+                    NavigationLink(value: ViewPath.rGeneratePassword) {
                         ListRow(image: "ListIcon.Password",
                                 title: "Randomly.Generate.Password")
                     }
-                    NavigationLink {
-                        GenerateColorView()
-                    } label: {
+                    NavigationLink(value: ViewPath.rGenerateColor) {
                         ListRow(image: "ListIcon.Color",
                                 title: "Randomly.Generate.Color")
                     }
@@ -47,15 +40,11 @@ struct RandomlyView: View {
                         .font(.body)
                 }
                 Section {
-                    NavigationLink {
-                        SelectItemFromListView()
-                    } label: {
+                    NavigationLink(value: ViewPath.rSelectItemFromList) {
                         ListRow(image: "ListIcon.List",
                                 title: "Randomly.Select.ItemFromList")
                     }
-                    NavigationLink {
-                        SelectWordFromTextView()
-                    } label: {
+                    NavigationLink(value: ViewPath.rSelectWordFromText) {
                         ListRow(image: "ListIcon.Doc",
                                 title: "Randomly.Select.WordFromText")
                     }
@@ -64,15 +53,11 @@ struct RandomlyView: View {
                         .font(.body)
                 }
                 Section {
-                    NavigationLink {
-                        ShuffleListView()
-                    } label: {
+                    NavigationLink(value: ViewPath.rShuffleList) {
                         ListRow(image: "ListIcon.List",
                                 title: "Randomly.Shuffle.List")
                     }
-                    NavigationLink {
-                        ShuffleDictionaryView()
-                    } label: {
+                    NavigationLink(value: ViewPath.rShuffleDict) {
                         ListRow(image: "ListIcon.Table",
                                 title: "Randomly.Shuffle.Dictionary")
                     }
@@ -81,21 +66,15 @@ struct RandomlyView: View {
                         .font(.body)
                 }
 //                Section {
-//                    NavigationLink {
-//                        Color.clear
-//                    } label: {
+//                    NavigationLink(value: ViewPath.rDoCoinFlip) {
 //                        ListRow(image: "ListIcon.Coin",
 //                                title: "Randomly.Do.CoinFlip")
 //                    }
-//                    NavigationLink {
-//                        Color.clear
-//                    } label: {
+//                    NavigationLink(value: ViewPath.rDoDiceRoll) {
 //                        ListRow(image: "ListIcon.Die",
 //                                title: "Randomly.Do.DiceRoll")
 //                    }
-//                    NavigationLink {
-//                        Color.clear
-//                    } label: {
+//                    NavigationLink(value: ViewPath.rDoCardDraw) {
 //                        ListRow(image: "ListIcon.Cards",
 //                                title: "Randomly.Do.CardDraw")
 //                    }
@@ -105,6 +84,33 @@ struct RandomlyView: View {
 //                }
 //                .disabled(true)
             }
+            .navigationDestination(for: ViewPath.self, destination: { component in
+                switch component {
+                case .rGenerateNumber:
+                    GenerateView(mode: .number)
+                case .rGenerateLetter:
+                    GenerateView(mode: .letter)
+                case .rGenerateWord:
+                    GenerateView(mode: .word)
+                case .rGeneratePassword:
+                    GeneratePasswordView()
+                case .rGenerateColor:
+                    GenerateColorView()
+                case .rSelectItemFromList:
+                    SelectItemFromListView()
+                case .rSelectWordFromText:
+                    SelectWordFromTextView()
+                case .rShuffleList:
+                    ShuffleListView()
+                case .rShuffleDict:
+                    ShuffleDictionaryView()
+                case .rDoCoinFlip, .rDoDiceRoll, .rDoCardDraw:
+                    Color.clear
+                    // TODO: Implement
+                default:
+                    Color.clear
+                }
+            })
             .navigationTitle("View.Randomly")
         }
     }
