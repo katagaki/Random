@@ -66,10 +66,10 @@ struct RandomlyView: View {
                         .font(.body)
                 }
                 Section {
-//                    NavigationLink(value: ViewPath.rDoCoinFlip) {
-//                        ListRow(image: "ListIcon.Coin",
-//                                title: "Randomly.Do.CoinFlip")
-//                    }
+                    NavigationLink(value: ViewPath.rDoCoinFlip) {
+                        ListRow(image: "ListIcon.Coin",
+                                title: "Randomly.Do.CoinFlip")
+                    }
                     NavigationLink(value: ViewPath.rDoDiceRoll) {
                         ListRow(image: "ListIcon.Die",
                                 title: "Randomly.Do.DiceRoll")
@@ -105,7 +105,9 @@ struct RandomlyView: View {
                     ShuffleDictionaryView()
                 case .rDoDiceRoll:
                     RollDiceView()
-                case .rDoCoinFlip, .rDoCardDraw:
+                case .rDoCoinFlip:
+                    FlipCoinView()
+                case .rDoCardDraw:
                     Color.clear
                     // TODO: Implement
                 default:

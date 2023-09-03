@@ -191,6 +191,17 @@
         }
       }
     },
+    "Randomly.Do.CoinFlip.ViewTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flip Coin"
+          }
+        }
+      }
+    },
     "Randomly.Do.DiceRoll" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -758,6 +769,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "その他"
+          }
+        }
+      }
+    },
+    "Shared.Do.FlipCoin" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flip Coin"
           }
         }
       }

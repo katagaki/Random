@@ -10,7 +10,7 @@ import SwiftUI
 
 struct RollDiceView: View {
 
-    let scene = SCNScene(named: "Scene Assets.scnassets/DiceWorld.scn")!
+    let scene = SCNScene(named: "Scene Assets.scnassets/Sandbox.scn")!
 
     var body: some View {
         SceneView(scene: scene,
@@ -91,7 +91,7 @@ struct RollDiceView: View {
     func addDice(number: Int) {
         resetScene()
         for index in 0..<number {
-            scene.rootNode.childNode(withName: "dice",
+            scene.rootNode.childNode(withName: "objects",
                                      recursively: false)!.addChildNode(
                                         dice(position: SCNVector3(0, 8 + (Double(index) * 1.5), 10),
                                              rotation: SCNVector3(randRadians(),
@@ -105,7 +105,7 @@ struct RollDiceView: View {
         scene.rootNode.childNode(withName: "worldFloor",
                                  recursively: true)!
             .geometry?.firstMaterial?.diffuse.contents = UIColor.systemBackground
-        scene.rootNode.childNode(withName: "dice", recursively: false)!.enumerateChildNodes { node, _ in
+        scene.rootNode.childNode(withName: "objects", recursively: false)!.enumerateChildNodes { node, _ in
             node.removeFromParentNode()
         }
     }
@@ -113,7 +113,7 @@ struct RollDiceView: View {
     func dice(position: SCNVector3, rotation: SCNVector3) -> SCNNode {
         let diceScene = SCNScene(named: "Scene Assets.scnassets/Dice.scn")
         let diceNode = diceScene!.rootNode.childNodes[0]
-        diceNode.physicsBody!.applyForce(SCNVector3(0, 0, -0.15),
+        diceNode.physicsBody!.applyForce(SCNVector3(0, 0, -1.5),
                                          asImpulse: true)
         diceNode.physicsBody!.applyTorque(SCNVector4(0.05, 0.05, 0.05, randRadians()),
                                           asImpulse: false)
