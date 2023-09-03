@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SelectItemFromListView: View {
 
-    @State var selectedItem: SelectItem? = nil
+    @State var selectedItem: SelectItem?
     @State var items: [SelectItem] = []
 
     var body: some View {
@@ -18,9 +18,10 @@ struct SelectItemFromListView: View {
                 ListView(selectedItem: $selectedItem,
                          items: $items)
                 Divider()
-                ActionBar(primaryActionText: "Shared.Select", 
+                ActionBar(primaryActionText: "Shared.Select",
                           primaryActionIconName: "lasso.sparkles",
-                          copyDisabled: .constant(selectedItem == nil), primaryActionDisabled: .constant(items.count == 0)) {
+                          copyDisabled: .constant(selectedItem == nil),
+                          primaryActionDisabled: .constant(items.count == 0)) {
                     selectedItem = items.randomElement()!
                     scrollView.scrollTo(selectedItem!, anchor: .center)
                 } copyAction: {

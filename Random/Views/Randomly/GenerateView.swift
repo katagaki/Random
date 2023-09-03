@@ -50,7 +50,7 @@ struct GenerateView: View {
             default:
                 Divider()
             }
-            ActionBar(primaryActionText: "Shared.Generate", 
+            ActionBar(primaryActionText: "Shared.Generate",
                       primaryActionIconName: "sparkles",
                       copyDisabled: .constant(false),
                       primaryActionDisabled: .constant(rangeEnd <= rangeStart ||
@@ -103,8 +103,10 @@ struct GenerateView: View {
     }
 }
 
+// swiftlint:disable line_length
 // Modified input length limiter from:
 // https://sanzaru84.medium.com/swiftui-an-updated-approach-to-limit-the-amount-of-characters-in-a-textfield-view-984c942a156
+// swiftlint:enable line_length
 
 struct TextFieldLimitModifer: ViewModifier {
     @Binding var value: Int

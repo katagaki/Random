@@ -500,12 +500,12 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Select Item From List"
+            "value" : "R"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "リストから項目を選択"
           }
         }
@@ -744,6 +744,91 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "その他"
+          }
+        }
+      }
+    },
+    "Shared.Do.RollDice" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Roll 1 Die"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "投げる"
+          }
+        }
+      }
+    },
+    "Shared.Do.RollDice.2" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Roll 2 Dice"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2個投げる"
+          }
+        }
+      }
+    },
+    "Shared.Do.RollDice.3" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Roll 3 Dice"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3個投げる"
+          }
+        }
+      }
+    },
+    "Shared.Do.RollDice.4" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Roll 4 Dice"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "4個投げる"
+          }
+        }
+      }
+    },
+    "Shared.Do.RollDice.5" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Roll 5 Dice"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "5個投げる"
           }
         }
       }

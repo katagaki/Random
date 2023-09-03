@@ -65,24 +65,23 @@ struct RandomlyView: View {
                     ListSectionHeader(text: "Shared.Shuffle")
                         .font(.body)
                 }
-//                Section {
+                Section {
 //                    NavigationLink(value: ViewPath.rDoCoinFlip) {
 //                        ListRow(image: "ListIcon.Coin",
 //                                title: "Randomly.Do.CoinFlip")
 //                    }
-//                    NavigationLink(value: ViewPath.rDoDiceRoll) {
-//                        ListRow(image: "ListIcon.Die",
-//                                title: "Randomly.Do.DiceRoll")
-//                    }
+                    NavigationLink(value: ViewPath.rDoDiceRoll) {
+                        ListRow(image: "ListIcon.Die",
+                                title: "Randomly.Do.DiceRoll")
+                    }
 //                    NavigationLink(value: ViewPath.rDoCardDraw) {
 //                        ListRow(image: "ListIcon.Cards",
 //                                title: "Randomly.Do.CardDraw")
 //                    }
-//                } header: {
-//                    ListSectionHeader(text: "Shared.Do")
-//                        .font(.body)
-//                }
-//                .disabled(true)
+                } header: {
+                    ListSectionHeader(text: "Shared.Do")
+                        .font(.body)
+                }
             }
             .navigationDestination(for: ViewPath.self, destination: { viewPath in
                 switch viewPath {
@@ -104,7 +103,9 @@ struct RandomlyView: View {
                     ShuffleListView()
                 case .rShuffleDict:
                     ShuffleDictionaryView()
-                case .rDoCoinFlip, .rDoDiceRoll, .rDoCardDraw:
+                case .rDoDiceRoll:
+                    RollDiceView()
+                case .rDoCoinFlip, .rDoCardDraw:
                     Color.clear
                     // TODO: Implement
                 default:

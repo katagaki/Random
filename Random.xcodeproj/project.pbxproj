@@ -25,6 +25,8 @@
 		E48A02802A9A204E00C31F40 /* SelectItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48A027F2A9A204E00C31F40 /* SelectItem.swift */; };
 		E48A02832A9A253100C31F40 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = E48A02822A9A253100C31F40 /* Localizable.xcstrings */; };
 		E48A02852A9A2BDD00C31F40 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = E48A02842A9A2BDD00C31F40 /* InfoPlist.xcstrings */; };
+		E48B351C2AA47F1E007BC65F /* RollDiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48B351B2AA47F1E007BC65F /* RollDiceView.swift */; };
+		E48B351E2AA48155007BC65F /* Scene Assets.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = E48B351D2AA48155007BC65F /* Scene Assets.scnassets */; };
 		E4BB8B012A9AFC40006A8A6E /* SortListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BB8B002A9AFC40006A8A6E /* SortListView.swift */; };
 		E4DDD3EF266C8FC2003CC064 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4DDD3EE266C8FC2003CC064 /* Assets.xcassets */; };
 		E4DDD3F2266C8FC2003CC064 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4DDD3F0266C8FC2003CC064 /* LaunchScreen.storyboard */; };
@@ -61,6 +63,8 @@
 		E48A027F2A9A204E00C31F40 /* SelectItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectItem.swift; sourceTree = "<group>"; };
 		E48A02822A9A253100C31F40 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		E48A02842A9A2BDD00C31F40 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
+		E48B351B2AA47F1E007BC65F /* RollDiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollDiceView.swift; sourceTree = "<group>"; };
+		E48B351D2AA48155007BC65F /* Scene Assets.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = "Scene Assets.scnassets"; sourceTree = "<group>"; };
 		E4BB8B002A9AFC40006A8A6E /* SortListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortListView.swift; sourceTree = "<group>"; };
 		E4DDD3E2266C8FC0003CC064 /* Random.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Random.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4DDD3EE266C8FC2003CC064 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 			children = (
 				E4DDD3F3266C8FC2003CC064 /* Info.plist */,
 				E4DDD3EE266C8FC2003CC064 /* Assets.xcassets */,
+				E48B351D2AA48155007BC65F /* Scene Assets.scnassets */,
 				E4DDD3F0266C8FC2003CC064 /* LaunchScreen.storyboard */,
 				E48A027D2A9A194900C31F40 /* Wordlist.txt */,
 				E48A02862A9A2C1C00C31F40 /* Strings */,
@@ -164,6 +169,7 @@
 				E4EB91BA2A9C559700C0C93C /* SelectWordFromTextView.swift */,
 				E4EB91C92A9C82F900C0C93C /* ShuffleListView.swift */,
 				E4EB91CB2A9C837F00C0C93C /* ShuffleDictionaryView.swift */,
+				E48B351B2AA47F1E007BC65F /* RollDiceView.swift */,
 			);
 			path = Randomly;
 			sourceTree = "<group>";
@@ -230,6 +236,7 @@
 				E4DDD3DE266C8FC0003CC064 /* Sources */,
 				E4DDD3DF266C8FC0003CC064 /* Frameworks */,
 				E4DDD3E0266C8FC0003CC064 /* Resources */,
+				E48B351F2AA48369007BC65F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -283,11 +290,33 @@
 				E48A02852A9A2BDD00C31F40 /* InfoPlist.xcstrings in Resources */,
 				E4DDD3F2266C8FC2003CC064 /* LaunchScreen.storyboard in Resources */,
 				E48A02832A9A253100C31F40 /* Localizable.xcstrings in Resources */,
+				E48B351E2AA48155007BC65F /* Scene Assets.scnassets in Resources */,
 				E4DDD3EF266C8FC2003CC064 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E48B351F2AA48369007BC65F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E4DDD3DE266C8FC0003CC064 /* Sources */ = {
@@ -317,6 +346,7 @@
 				E48A02722A9A003B00C31F40 /* RandomlyView.swift in Sources */,
 				E48A02702A99FA9B00C31F40 /* MainTabView.swift in Sources */,
 				E477E7322A9602E900517B72 /* ListRow.swift in Sources */,
+				E48B351C2AA47F1E007BC65F /* RollDiceView.swift in Sources */,
 				E4EB91B92A9C4E0D00C0C93C /* ActionBar.swift in Sources */,
 				E477E7302A9602BF00517B72 /* MoreView.swift in Sources */,
 				E4EB91C82A9C76CC00C0C93C /* WordSelectionMode.swift in Sources */,
@@ -464,8 +494,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 37;
 				DEVELOPMENT_TEAM = YYM4Z6MU8F;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = Random/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -488,8 +519,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 37;
 				DEVELOPMENT_TEAM = YYM4Z6MU8F;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = Random/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (

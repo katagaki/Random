@@ -17,7 +17,7 @@ struct DictionaryView: View {
 
     var body: some View {
         ScrollViewReader { scrollView in
-            List() {
+            List {
                 ForEach(items, id: \.self) { item in
                     HStack(alignment: .center, spacing: 8.0) {
                         Text(item.id)

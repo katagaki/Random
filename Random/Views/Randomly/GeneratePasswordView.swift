@@ -96,7 +96,7 @@ struct GeneratePasswordView: View {
         .navigationTitle("Randomly.Generate.Password.ViewTitle")
         .navigationBarTitleDisplayMode(.inline)
     }
-    
+
     func evaluatePasswordPolicy() {
         var policies: [Password.Policy] = []
         if useUppercase { policies.append(.containsUppercase) }

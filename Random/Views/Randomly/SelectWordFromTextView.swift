@@ -45,7 +45,7 @@ struct SelectWordFromTextView: View {
     """)
     @State var mode: WordSelectionMode = .kanjiOnly
     @State var text: String = ""
-    @State var selectedWord: String? = nil
+    @State var selectedWord: String?
     @FocusState var isTextFieldActive: Bool
 
     var body: some View {
@@ -80,7 +80,7 @@ struct SelectWordFromTextView: View {
             .padding([.leading, .trailing])
             .padding([.top, .bottom], 8.0)
             Divider()
-            ActionBar(primaryActionText: "Shared.Select", 
+            ActionBar(primaryActionText: "Shared.Select",
                       primaryActionIconName: "lasso.sparkles",
                       copyDisabled: .constant(selectedWord == nil),
                       primaryActionDisabled: .constant(words().count == 0)) {

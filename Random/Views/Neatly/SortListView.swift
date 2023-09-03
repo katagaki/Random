@@ -16,7 +16,7 @@ struct SortListView: View {
             ListView(selectedItem: .constant(nil),
                      items: $items)
             Divider()
-            ActionBar(primaryActionText: "Shared.Sort", 
+            ActionBar(primaryActionText: "Shared.Sort",
                       primaryActionIconName: "arrow.up.and.down",
                       copyDisabled: .constant(items.count == 0),
                       primaryActionDisabled: .constant(items.count == 0)) {

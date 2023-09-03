@@ -31,7 +31,7 @@ class Password: ObservableObject {
         repeat {
             let chars: String = characterSet(forPolicies: policies)
             let length: Int = secureRandomNumber(from: minLength, to: maxLength)
-            generated = String((0..<length).compactMap{ _ in
+            generated = String((0..<length).compactMap { _ in
                 chars.randomElement()
             })
         } while (!acceptability(ofPassword: generated))
@@ -59,10 +59,9 @@ class Password: ObservableObject {
         if password.trimmingCharacters(in: .whitespaces).count != password.count {
             return false
         } else {
-            for policy in policies {
-                if password.rangeOfCharacter(from: CharacterSet(charactersIn: policy.rawValue)) == nil {
-                    passwordAcceptable = false
-                }
+            for policy in policies where
+            password.rangeOfCharacter(from: CharacterSet(charactersIn: policy.rawValue)) == nil {
+                passwordAcceptable = false
             }
             return passwordAcceptable
         }
@@ -70,22 +69,23 @@ class Password: ObservableObject {
 
     func attributed() -> AttributedString {
         var attributedString = AttributedString(generated)
-        for i in attributedString.characters.indices {
-            let char: Character = attributedString.characters[i]
+        for indice in attributedString.characters.indices {
+            let char: Character = attributedString.characters[indice]
             switch true {
             case char.isUppercase:
-                attributedString[i..<attributedString.characters.index(after: i)].foregroundColor = .indigo
+                attributedString[indice..<attributedString.characters.index(after: indice)].foregroundColor = .indigo
             case char.isLowercase:
-                attributedString[i..<attributedString.characters.index(after: i)].foregroundColor = .blue
+                attributedString[indice..<attributedString.characters.index(after: indice)].foregroundColor = .blue
             case char.isNumber:
-                attributedString[i..<attributedString.characters.index(after: i)].foregroundColor = .red
+                attributedString[indice..<attributedString.characters.index(after: indice)].foregroundColor = .red
             default:
-                attributedString[i..<attributedString.characters.index(after: i)].foregroundColor = .orange
+                attributedString[indice..<attributedString.characters.index(after: indice)].foregroundColor = .orange
             }
         }
         return attributedString
     }
 
+    // swiftlint:disable identifier_name
     func secureRandomNumber(to: Int) -> Int {
         if to == 0 {
             return 0
@@ -93,7 +93,9 @@ class Password: ObservableObject {
             return secureRandomNumber() % to
         }
     }
+    // swiftlint:enable identifier_name
 
+    // swiftlint:disable identifier_name
     func secureRandomNumber(from: Int, to: Int) -> Int {
         let diff = to - from
         if from == to {
@@ -102,6 +104,7 @@ class Password: ObservableObject {
             return from + (secureRandomNumber() % diff)
         }
     }
+    // swiftlint:enable identifier_name
 
     func secureRandomNumber() -> Int {
         let bytesCount = 4

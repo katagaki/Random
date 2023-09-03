@@ -77,7 +77,7 @@ struct GenerateColorView: View {
                     UIPasteboard.general.string = "\(red), \(green), \(blue)"
                 } .secondaryAction {
                     Button {
-                        UIPasteboard.general.string = 
+                        UIPasteboard.general.string =
                         """
                         Color(red: \(red) / 255, green: \(green) / 255, blue: \(blue) / 255)
                         """
@@ -116,7 +116,7 @@ struct GenerateColorView: View {
         green = (0..<255).randomElement() ?? 0
         blue = (0..<255).randomElement() ?? 0
     }
-    
+
     func hex() -> String {
         Color(red: Double(red) / 255,
               green: Double(green) / 255,
@@ -132,18 +132,18 @@ struct GenerateColorView: View {
 extension Color {
     func toHex() -> String? {
         let uic = UIColor(self)
-        guard let components = uic.cgColor.components, 
+        guard let components = uic.cgColor.components,
                 components.count >= 3 else {
             return nil
         }
 
-        let r = Float(components[0])
-        let g = Float(components[1])
-        let b = Float(components[2])
+        let red = Float(components[0])
+        let green = Float(components[1])
+        let blue = Float(components[2])
 
         return String(format: "%02lX%02lX%02lX",
-                      lroundf(r * 255),
-                      lroundf(g * 255),
-                      lroundf(b * 255))
+                      lroundf(red * 255),
+                      lroundf(green * 255),
+                      lroundf(blue * 255))
     }
 }
