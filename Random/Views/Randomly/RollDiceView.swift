@@ -15,7 +15,7 @@ struct RollDiceView: View {
     var body: some View {
         SceneView(scene: scene,
                   pointOfView: scene.rootNode.childNode(withName: "camera", recursively: false)!,
-                  preferredFramesPerSecond: 60,
+                  preferredFramesPerSecond: 120,
                   antialiasingMode: .multisampling4X)
         .ignoresSafeArea(edges: [.top, .leading, .trailing])
         .overlay {
@@ -93,7 +93,7 @@ struct RollDiceView: View {
         for index in 0..<number {
             scene.rootNode.childNode(withName: "dice",
                                      recursively: false)!.addChildNode(
-                                        dice(position: SCNVector3(0, 8 + (Double(index) * 1), 10),
+                                        dice(position: SCNVector3(0, 8 + (Double(index) * 1.5), 10),
                                              rotation: SCNVector3(randRadians(),
                                                                   randRadians(),
                                                                   randRadians())))
