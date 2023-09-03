@@ -52,8 +52,6 @@ struct FlipCoinView: View {
 
     func resetScene() {
         scene.background.contents = UIColor.systemBackground
-        scene.rootNode.childNode(withName: "topDownLight", recursively: true)!
-            .isHidden = false
         scene.rootNode.childNode(withName: "worldFloor",
                                  recursively: true)!
             .geometry?.firstMaterial?.diffuse.contents = UIColor.systemBackground
