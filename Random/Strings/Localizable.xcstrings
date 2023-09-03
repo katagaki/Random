@@ -1,9 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "#" : {
-
-    },
     "%@" : {
 
     },
@@ -201,6 +198,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dice Roll"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "サイコロを投げる"
+          }
+        }
+      }
+    },
+    "Randomly.Do.DiceRoll.ViewTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Roll Dice"
           }
         },
         "ja" : {
@@ -500,12 +514,12 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "R"
+            "value" : "Select Item From List"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "リストから項目を選択"
           }
         }

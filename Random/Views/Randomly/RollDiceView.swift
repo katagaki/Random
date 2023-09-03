@@ -84,6 +84,8 @@ struct RollDiceView: View {
         .onAppear {
             resetScene()
         }
+        .navigationTitle("Randomly.Do.DiceRoll.ViewTitle")
+        .navigationBarTitleDisplayMode(.inline)
     }
 
     func addDice(number: Int) {

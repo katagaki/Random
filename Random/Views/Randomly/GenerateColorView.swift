@@ -30,7 +30,7 @@ struct GenerateColorView: View {
                 .frame(width: 200, height: 200)
                 .padding()
                 HStack(alignment: .center, spacing: 2.0) {
-                    Text("#")
+                    Text(verbatim: "#")
                         .font(.body)
                         .bold()
                         .foregroundStyle(.secondary)
@@ -122,10 +122,6 @@ struct GenerateColorView: View {
               green: Double(green) / 255,
               blue: Double(blue) / 255).toHex() ?? ""
     }
-}
-
-#Preview {
-    GenerateColorView(red: 0, green: 0, blue: 0)
 }
 
 // Adapted from https://blog.eidinger.info/from-hex-to-color-and-back-in-swiftui
