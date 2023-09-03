@@ -538,7 +538,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Select Item From List"
+            "value" : "Pick Item From List"
           }
         },
         "ja" : {
@@ -657,7 +657,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Select Word From Text"
+            "value" : "Pick Word From Text"
           }
         },
         "ja" : {
@@ -1079,7 +1079,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Select"
+            "value" : "Pick"
           }
         },
         "ja" : {
