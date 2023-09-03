@@ -2,7 +2,14 @@
   "sourceLanguage" : "en",
   "strings" : {
     "%@" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        }
+      }
     },
     "More.Help" : {
       "extractionState" : "manual",
@@ -198,6 +205,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Flip Coin"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コインを投げる"
           }
         }
       }
@@ -780,6 +793,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Flip Coin"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "投げる"
           }
         }
       }
