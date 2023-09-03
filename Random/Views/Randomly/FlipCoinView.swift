@@ -78,7 +78,3 @@ struct FlipCoinView: View {
     }
 
 }
-
-#Preview {
-    FlipCoinView()
-}
