@@ -17,7 +17,7 @@ struct RollDiceView: View {
                   pointOfView: scene.rootNode.childNode(withName: "camera", recursively: false)!,
                   preferredFramesPerSecond: 60,
                   antialiasingMode: .multisampling4X)
-        .ignoresSafeArea()
+        .ignoresSafeArea(edges: [.top, .leading, .trailing])
         .overlay {
             ZStack(alignment: .bottom) {
                 Color.clear
