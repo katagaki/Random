@@ -29,6 +29,7 @@ struct GenerateColorView: View {
                 )
                 .frame(width: 200, height: 200)
                 .padding()
+                .transition(.opacity)
                 HStack(alignment: .center, spacing: 2.0) {
                     Text(verbatim: "#")
                         .font(.body)
@@ -112,9 +113,11 @@ struct GenerateColorView: View {
     }
 
     func regenerate() {
-        red = (0..<255).randomElement() ?? 0
-        green = (0..<255).randomElement() ?? 0
-        blue = (0..<255).randomElement() ?? 0
+        withAnimation(.default.speed(2)) {
+            red = (0..<255).randomElement() ?? 0
+            green = (0..<255).randomElement() ?? 0
+            blue = (0..<255).randomElement() ?? 0
+        }
     }
 
     func hex() -> String {

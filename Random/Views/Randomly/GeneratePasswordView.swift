@@ -23,11 +23,14 @@ struct GeneratePasswordView: View {
     var body: some View {
         VStack(alignment: .center, spacing: 8.0) {
             Spacer()
-            Text(password.attributed())
-                .font(.system(size: 200.0, weight: .heavy, design: .monospaced))
-                .minimumScaleFactor(0.1)
-                .textSelection(.enabled)
-                .padding()
+            ScrollView(.horizontal) {
+                Text(password.attributed())
+                    .font(.system(size: 50, weight: .heavy, design: .monospaced))
+                    .lineLimit(1)
+                    .textSelection(.enabled)
+                    .padding()
+            }
+            .scrollIndicators(.hidden)
             Spacer()
             Divider()
             VStack(alignment: .leading, spacing: 8.0) {

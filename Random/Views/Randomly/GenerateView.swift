@@ -26,6 +26,8 @@ struct GenerateView: View {
                 .minimumScaleFactor(0.01)
                 .textSelection(.enabled)
                 .padding()
+                .transition(.scale.combined(with: .opacity))
+                .id(result)
             Spacer()
             switch mode {
             case .number:
@@ -82,23 +84,25 @@ struct GenerateView: View {
     }
 
     func regenerate() {
-        switch mode {
-        case .number:
-            result = String(Int.random(in: rangeStart...rangeEnd))
-        case .letter:
-            let letterIndex: Int = Int.random(in: 0...25)
-            result = String(Character(UnicodeScalar(65 + letterIndex)!))
-        case .word:
-            if words.count == 0 {
-                let path = Bundle.main.path(forResource: "Wordlist", ofType: "txt")!
-                do {
-                    let wordlist: String = try String(contentsOfFile: path, encoding: .utf8)
-                    words = wordlist.components(separatedBy: .newlines)
-                } catch {
-                    words.removeAll()
+        withAnimation(.default.speed(2)) {
+            switch mode {
+            case .number:
+                result = String(Int.random(in: rangeStart...rangeEnd))
+            case .letter:
+                let letterIndex: Int = Int.random(in: 0...25)
+                result = String(Character(UnicodeScalar(65 + letterIndex)!))
+            case .word:
+                if words.count == 0 {
+                    let path = Bundle.main.path(forResource: "Wordlist", ofType: "txt")!
+                    do {
+                        let wordlist: String = try String(contentsOfFile: path, encoding: .utf8)
+                        words = wordlist.components(separatedBy: .newlines)
+                    } catch {
+                        words.removeAll()
+                    }
                 }
+                result = words.randomElement()!
             }
-            result = words.randomElement()!
         }
     }
 }
