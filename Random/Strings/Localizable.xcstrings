@@ -1024,6 +1024,23 @@
         }
       }
     },
+    "Shared.Paste" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paste"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ペースト"
+          }
+        }
+      }
+    },
     "Shared.RangeFrom" : {
       "localizations" : {
         "en" : {

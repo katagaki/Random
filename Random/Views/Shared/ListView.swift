@@ -36,15 +36,37 @@ struct ListView: View {
             })
             .overlay {
                 if items.count == 0 {
-                    VStack(alignment: .center, spacing: 8.0) {
-                        Image(systemName: "questionmark.square.dashed")
-                            .resizable()
-                            .frame(width: 32,
-                                   height: 32)
-                            .foregroundStyle(.secondary)
-                        Text("Shared.List.NoItems")
-                            .font(.body)
-                            .foregroundStyle(.secondary)
+                    VStack(alignment: .center, spacing: 16.0) {
+                        VStack(alignment: .center, spacing: 8.0) {
+                            Image(systemName: "questionmark.square.dashed")
+                                .resizable()
+                                .frame(width: 32,
+                                       height: 32)
+                                .foregroundStyle(.secondary)
+                            Text("Shared.List.NoItems")
+                                .font(.body)
+                                .foregroundStyle(.secondary)
+                        }
+                        if UIPasteboard.general.hasStrings {
+                            Button {
+                                if let string = UIPasteboard.general.string {
+                                    let stringComponents = string.components(separatedBy: .newlines)
+                                    for stringComponent in stringComponents where
+                                    stringComponent.trimmingCharacters(in: .whitespacesAndNewlines) != ""{
+                                        items.append(
+                                            SelectItem(id: UUID().uuidString,
+                                                       value: stringComponent.trimmingCharacters(in:
+                                                            .whitespacesAndNewlines)))
+                                    }
+                                }
+                            } label: {
+                                LargeButtonLabel(iconName: "doc.on.clipboard",
+                                                 text: "Shared.Paste")
+                                .bold()
+                            }
+                            .buttonStyle(.borderedProminent)
+                            .clipShape(RoundedRectangle(cornerRadius: 99))
+                        }
                     }
                 }
             }
