@@ -21557,7 +21557,6 @@ asquint
 asquirm
 asrama
 asramas
-ass
 assacu
 assafetida
 assafoetida
@@ -21742,10 +21741,6 @@ asseverative
 asseveratively
 asseveratory
 assewer
-asshead
-assheadedness
-asshole
-assholes
 assi
 assibilate
 assibilated
@@ -42641,10 +42636,6 @@ bullrush
 bullrushes
 bulls
 bullseye
-bullshit
-bullshits
-bullshitted
-bullshitting
 bullshot
 bullshots
 bullskin
@@ -54156,7 +54147,6 @@ chickenhood
 chickening
 chickenpox
 chickens
-chickenshit
 chickenweed
 chickenwort
 chicker
@@ -119741,12 +119731,6 @@ fuci
 fucinita
 fuciphagous
 fucivorous
-fuck
-fucked
-fucker
-fucking
-fucks
-fuckwit
 fucoid
 fucoidal
 fucoideae
@@ -144069,7 +144053,6 @@ horser
 horseradish
 horseradishes
 horses
-horseshit
 horseshoe
 horseshoed
 horseshoeing
@@ -193939,7 +193922,6 @@ motherdom
 mothered
 motherer
 motherers
-motherfucker
 mothergate
 motherhood
 motherhouse
@@ -288544,20 +288526,11 @@ shist
 shyster
 shysters
 shists
-shit
 shita
 shitepoke
-shithead
 shitheel
 shither
-shits
-shittah
-shittahs
-shitted
 shitten
-shitty
-shittier
-shittiest
 shittim
 shittims
 shittimwood
