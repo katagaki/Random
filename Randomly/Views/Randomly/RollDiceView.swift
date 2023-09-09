@@ -98,6 +98,7 @@ struct RollDiceView: View {
                                                                   randRadians(),
                                                                   randRadians())))
         }
+        applyForce()
     }
 
     func resetScene() {
@@ -113,13 +114,18 @@ struct RollDiceView: View {
     func dice(position: SCNVector3, rotation: SCNVector3) -> SCNNode {
         let diceScene = SCNScene(named: "Scene Assets.scnassets/Dice.scn")
         let diceNode = diceScene!.rootNode.childNodes[0]
-        diceNode.physicsBody!.applyForce(SCNVector3(0, 0, -1.5),
-                                         asImpulse: true)
-        diceNode.physicsBody!.applyTorque(SCNVector4(0.05, 0.05, 0.05, randRadians()),
-                                          asImpulse: false)
         diceNode.eulerAngles = rotation
         diceNode.position = position
         return diceNode
+    }
+
+    func applyForce() {
+        for childNode in scene.rootNode.childNode(withName: "objects", recursively: false)!.childNodes {
+            childNode.physicsBody!.applyForce(SCNVector3(0, 0, -1.5),
+                                              asImpulse: true)
+            childNode.physicsBody!.applyTorque(SCNVector4(0.05, 0.05, 0.05, randRadians()),
+                                               asImpulse: false)
+        }
     }
 
     func randRadians() -> Float {
