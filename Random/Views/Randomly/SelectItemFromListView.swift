@@ -35,5 +35,14 @@ struct SelectItemFromListView: View {
         }
         .navigationTitle("Randomly.Select.ItemFromList.ViewTitle")
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    items.removeAll()
+                } label: {
+                    Text("Shared.Clear")
+                }
+            }
+        }
     }
 }

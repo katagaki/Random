@@ -52,8 +52,20 @@ struct MoreView: View {
                     ListSectionHeader(text: "More.Help")
                         .font(.body)
                 }
+                Section {
+                    NavigationLink(value: ViewPath.moreAttributions) {
+                        ListRow(image: "ListIcon.Attributions",
+                                title: "More.Attribution")
+                    }
+                }
             }
             .listStyle(.insetGrouped)
+            .navigationDestination(for: ViewPath.self, destination: { viewPath in
+                switch viewPath {
+                case .moreAttributions: LicensesView()
+                default: Color.clear
+                }
+            })
             .navigationTitle("View.More")
         }
     }

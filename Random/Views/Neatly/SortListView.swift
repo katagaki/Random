@@ -35,5 +35,14 @@ struct SortListView: View {
         }
         .navigationTitle("Shared.Sort.List.ViewTitle")
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    items.removeAll()
+                } label: {
+                    Text("Shared.Clear")
+                }
+            }
+        }
     }
 }

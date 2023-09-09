@@ -32,5 +32,14 @@ struct ShuffleDictionaryView: View {
         }
         .navigationTitle("Shared.Shuffle.Dictionary.ViewTitle")
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    items.removeAll()
+                } label: {
+                    Text("Shared.Clear")
+                }
+            }
+        }
     }
 }

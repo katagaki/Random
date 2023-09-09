@@ -11,6 +11,23 @@
         }
       }
     },
+    "More.Attribution" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Attributions"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "著者権表記"
+          }
+        }
+      }
+    },
     "More.Help" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -735,6 +752,23 @@
         }
       }
     },
+    "Shared.Clear" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clear"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "クリア"
+          }
+        }
+      }
+    },
     "Shared.Copy" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1290,6 +1324,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ランダムに"
+          }
+        }
+      }
+    },
+    "ViewTitle.Attributions" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Attributions"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "著者権表記"
           }
         }
       }

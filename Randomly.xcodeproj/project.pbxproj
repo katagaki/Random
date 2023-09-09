@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E4124A1A2AA4DF66004022AF /* FlipCoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4124A192AA4DF66004022AF /* FlipCoinView.swift */; };
+		E432A7782AACAE1F0043BCC9 /* License.swift in Sources */ = {isa = PBXBuildFile; fileRef = E432A7772AACAE1F0043BCC9 /* License.swift */; };
+		E432A77A2AACAE360043BCC9 /* LicensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E432A7792AACAE360043BCC9 /* LicensesView.swift */; };
 		E44BD2AC2A9D919D0049FA9A /* GenerateColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44BD2AB2A9D919D0049FA9A /* GenerateColorView.swift */; };
 		E477E7302A9602BF00517B72 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477E72F2A9602BF00517B72 /* MoreView.swift */; };
 		E477E7322A9602E900517B72 /* ListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477E7312A9602E900517B72 /* ListRow.swift */; };
@@ -47,6 +49,8 @@
 
 /* Begin PBXFileReference section */
 		E4124A192AA4DF66004022AF /* FlipCoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipCoinView.swift; sourceTree = "<group>"; };
+		E432A7772AACAE1F0043BCC9 /* License.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = License.swift; sourceTree = "<group>"; };
+		E432A7792AACAE360043BCC9 /* LicensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensesView.swift; sourceTree = "<group>"; };
 		E44BD2AB2A9D919D0049FA9A /* GenerateColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateColorView.swift; sourceTree = "<group>"; };
 		E477E72F2A9602BF00517B72 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
 		E477E7312A9602E900517B72 /* ListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRow.swift; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				E48A027F2A9A204E00C31F40 /* SelectItem.swift */,
+				E432A7772AACAE1F0043BCC9 /* License.swift */,
 			);
 			path = Structs;
 			sourceTree = "<group>";
@@ -191,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				E477E72F2A9602BF00517B72 /* MoreView.swift */,
+				E432A7792AACAE360043BCC9 /* LicensesView.swift */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -349,12 +355,14 @@
 				E48A02722A9A003B00C31F40 /* RandomlyView.swift in Sources */,
 				E48A02702A99FA9B00C31F40 /* MainTabView.swift in Sources */,
 				E477E7322A9602E900517B72 /* ListRow.swift in Sources */,
+				E432A7782AACAE1F0043BCC9 /* License.swift in Sources */,
 				E48B351C2AA47F1E007BC65F /* RollDiceView.swift in Sources */,
 				E4EB91B92A9C4E0D00C0C93C /* ActionBar.swift in Sources */,
 				E477E7302A9602BF00517B72 /* MoreView.swift in Sources */,
 				E4EB91C82A9C76CC00C0C93C /* WordSelectionMode.swift in Sources */,
 				E4EB91D12A9C873E00C0C93C /* Password.swift in Sources */,
 				E4124A1A2AA4DF66004022AF /* FlipCoinView.swift in Sources */,
+				E432A77A2AACAE360043BCC9 /* LicensesView.swift in Sources */,
 				E48A027C2A9A115100C31F40 /* SelectItemFromListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -498,7 +506,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 47;
+				CURRENT_PROJECT_VERSION = 48;
 				DEVELOPMENT_TEAM = YYM4Z6MU8F;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = Random/Info.plist;
@@ -527,7 +535,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 47;
+				CURRENT_PROJECT_VERSION = 48;
 				DEVELOPMENT_TEAM = YYM4Z6MU8F;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = Random/Info.plist;

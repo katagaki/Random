@@ -52,5 +52,14 @@ struct SortDictionaryView: View {
         }
         .navigationTitle("Shared.Sort.Dictionary.ViewTitle")
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    items.removeAll()
+                } label: {
+                    Text("Shared.Clear")
+                }
+            }
+        }
     }
 }
