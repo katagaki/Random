@@ -68,7 +68,7 @@
 		E48B351B2AA47F1E007BC65F /* RollDiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollDiceView.swift; sourceTree = "<group>"; };
 		E48B351D2AA48155007BC65F /* Scene Assets.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = "Scene Assets.scnassets"; sourceTree = "<group>"; };
 		E4BB8B002A9AFC40006A8A6E /* SortListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortListView.swift; sourceTree = "<group>"; };
-		E4DDD3E2266C8FC0003CC064 /* Random.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Random.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4DDD3E2266C8FC0003CC064 /* Randomly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Randomly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4DDD3EE266C8FC2003CC064 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4DDD3F1266C8FC2003CC064 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E4DDD3F3266C8FC2003CC064 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 		E4DDD3E3266C8FC0003CC064 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E4DDD3E2266C8FC0003CC064 /* Random.app */,
+				E4DDD3E2266C8FC0003CC064 /* Randomly.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -232,9 +232,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E4DDD3E1266C8FC0003CC064 /* Random */ = {
+		E4DDD3E1266C8FC0003CC064 /* Randomly */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E4DDD3F6266C8FC2003CC064 /* Build configuration list for PBXNativeTarget "Random" */;
+			buildConfigurationList = E4DDD3F6266C8FC2003CC064 /* Build configuration list for PBXNativeTarget "Randomly" */;
 			buildPhases = (
 				E4DDD3DE266C8FC0003CC064 /* Sources */,
 				E4DDD3DF266C8FC0003CC064 /* Frameworks */,
@@ -245,9 +245,9 @@
 			);
 			dependencies = (
 			);
-			name = Random;
+			name = Randomly;
 			productName = Random;
-			productReference = E4DDD3E2266C8FC0003CC064 /* Random.app */;
+			productReference = E4DDD3E2266C8FC0003CC064 /* Randomly.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -265,7 +265,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E4DDD3DD266C8FC0003CC064 /* Build configuration list for PBXProject "Random" */;
+			buildConfigurationList = E4DDD3DD266C8FC0003CC064 /* Build configuration list for PBXProject "Randomly" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -279,7 +279,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E4DDD3E1266C8FC0003CC064 /* Random */,
+				E4DDD3E1266C8FC0003CC064 /* Randomly */,
 			);
 		};
 /* End PBXProject section */
@@ -552,7 +552,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E4DDD3DD266C8FC0003CC064 /* Build configuration list for PBXProject "Random" */ = {
+		E4DDD3DD266C8FC0003CC064 /* Build configuration list for PBXProject "Randomly" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4DDD3F4266C8FC2003CC064 /* Debug */,
@@ -561,7 +561,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E4DDD3F6266C8FC2003CC064 /* Build configuration list for PBXNativeTarget "Random" */ = {
+		E4DDD3F6266C8FC2003CC064 /* Build configuration list for PBXNativeTarget "Randomly" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4DDD3F7266C8FC2003CC064 /* Debug */,

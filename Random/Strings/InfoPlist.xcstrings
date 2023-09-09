@@ -25,7 +25,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Random"
+            "value" : "Randomly"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ランダムリー"
           }
         }
       }
