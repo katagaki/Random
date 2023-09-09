@@ -122,7 +122,7 @@
 		E4DDD3D9266C8FC0003CC064 = {
 			isa = PBXGroup;
 			children = (
-				E4DDD3E4266C8FC0003CC064 /* Random */,
+				E4DDD3E4266C8FC0003CC064 /* Randomly */,
 				E4DDD3E3266C8FC0003CC064 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -135,7 +135,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E4DDD3E4266C8FC0003CC064 /* Random */ = {
+		E4DDD3E4266C8FC0003CC064 /* Randomly */ = {
 			isa = PBXGroup;
 			children = (
 				E4DDD3F3266C8FC2003CC064 /* Info.plist */,
@@ -149,7 +149,7 @@
 				E4EB91CF2A9C873300C0C93C /* Classes */,
 				E4EB91C22A9C769300C0C93C /* Enums */,
 			);
-			path = Random;
+			path = Randomly;
 			sourceTree = "<group>";
 		};
 		E4DDD404266CB5EE003CC064 /* Views */ = {
@@ -509,7 +509,7 @@
 				CURRENT_PROJECT_VERSION = 49;
 				DEVELOPMENT_TEAM = YYM4Z6MU8F;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				INFOPLIST_FILE = Random/Info.plist;
+				INFOPLIST_FILE = Randomly/Info.plist;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -538,7 +538,7 @@
 				CURRENT_PROJECT_VERSION = 49;
 				DEVELOPMENT_TEAM = YYM4Z6MU8F;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				INFOPLIST_FILE = Random/Info.plist;
+				INFOPLIST_FILE = Randomly/Info.plist;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
