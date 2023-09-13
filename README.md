@@ -4,7 +4,7 @@
 
 An app that helps you randomly (and neatly) generate, sort, select, and more.
 
-**Download: [TestFlight](https://testflight.apple.com/join/8pl62KIO)**
+**Download: [App Store](https://apps.apple.com/app/id1573431626)**
 
 ## Dice Model Specifications
 
