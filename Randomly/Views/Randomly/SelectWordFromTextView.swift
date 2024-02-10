@@ -9,7 +9,6 @@ import SwiftUI
 
 struct SelectWordFromTextView: View {
 
-    // TODO: Improve Japanese word selection using wordlist
     let japaneseKana = CharacterSet(charactersIn:
     """
     あいうえおぁぃぅぇぉ

@@ -10,7 +10,8 @@ import Foundation
 enum ViewPath {
     case rGenerateNumber
     case rGenerateLetter
-    case rGenerateWord
+    case rGenerateWordEnglish
+    case rGenerateWordJapanese
     case rGeneratePassword
     case rGenerateColor
     case rSelectItemFromList

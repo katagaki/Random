@@ -26,6 +26,12 @@ struct MainTabView: View {
                     Text("View.Neatly")
                 }
                 .tag(TabType.neatly)
+            DatasetsView()
+                .tabItem {
+                    Image(systemName: "list.bullet.rectangle.portrait.fill")
+                    Text("View.Datasets")
+                }
+                .tag(TabType.datasets)
             MoreView()
                 .tabItem {
                     Image(systemName: "ellipsis")

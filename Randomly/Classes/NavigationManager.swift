@@ -11,6 +11,7 @@ class NavigationManager: ObservableObject {
 
     @Published var randomlyTabPath: [ViewPath] = []
     @Published var neatlyTabPath: [ViewPath] = []
+    @Published var datasetsTabPath: [ViewPath] = []
     @Published var moreTabPath: [ViewPath] = []
 
     func popToRoot(for tab: TabType) {
@@ -19,6 +20,8 @@ class NavigationManager: ObservableObject {
             randomlyTabPath.removeAll()
         case .neatly:
             neatlyTabPath.removeAll()
+        case .datasets:
+            datasetsTabPath.removeAll()
         case .more:
             moreTabPath.removeAll()
         }
@@ -30,6 +33,8 @@ class NavigationManager: ObservableObject {
             randomlyTabPath.append(viewPath)
         case .neatly:
             neatlyTabPath.append(viewPath)
+        case .datasets:
+            datasetsTabPath.append(viewPath)
         case .more:
             moreTabPath.append(viewPath)
         }
@@ -44,6 +49,10 @@ class NavigationManager: ObservableObject {
         case .neatly:
             if !neatlyTabPath.isEmpty {
                 neatlyTabPath.removeLast()
+            }
+        case .datasets:
+            if !datasetsTabPath.isEmpty {
+                datasetsTabPath.removeLast()
             }
         case .more:
             if !moreTabPath.isEmpty {

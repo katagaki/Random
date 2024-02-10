@@ -11,6 +11,57 @@
         }
       }
     },
+    "Dataset.Tangolist" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Japanese"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "日本語"
+          }
+        }
+      }
+    },
+    "Dataset.Type.Wordlists" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wordlists"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "単語リスト"
+          }
+        }
+      }
+    },
+    "Dataset.Wordlist" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "English"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "英語"
+          }
+        }
+      }
+    },
     "More.Attribution" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -498,24 +549,24 @@
         }
       }
     },
-    "Randomly.Generate.Word" : {
+    "Randomly.Generate.WordEN" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Word"
+            "value" : "Word (English)"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "言葉"
+            "value" : "単語（英語）"
           }
         }
       }
     },
-    "Randomly.Generate.Word.ViewTitle" : {
+    "Randomly.Generate.WordEN.ViewTitle" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -527,7 +578,41 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "言葉を生成"
+            "value" : "英単語を生成"
+          }
+        }
+      }
+    },
+    "Randomly.Generate.WordJP" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Word (Japanese)"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "単語（日本語）"
+          }
+        }
+      }
+    },
+    "Randomly.Generate.WordJP.ViewTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Generate Word"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "単語を生成"
           }
         }
       }
@@ -1273,6 +1358,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "リストを並べ替える"
+          }
+        }
+      }
+    },
+    "View.Datasets" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Datasets"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "データセット"
           }
         }
       }

@@ -10,5 +10,6 @@ import Foundation
 enum GenerateType: String {
     case number = "Randomly.Generate.Number.ViewTitle"
     case letter = "Randomly.Generate.Letter.ViewTitle"
-    case word = "Randomly.Generate.Word.ViewTitle"
+    case englishWord = "Randomly.Generate.WordEN.ViewTitle"
+    case japaneseWord = "Randomly.Generate.WordJP.ViewTitle"
 }

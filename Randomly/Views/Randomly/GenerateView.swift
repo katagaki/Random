@@ -91,9 +91,20 @@ struct GenerateView: View {
             case .letter:
                 let letterIndex: Int = Int.random(in: 0...25)
                 result = String(Character(UnicodeScalar(65 + letterIndex)!))
-            case .word:
+            case .englishWord:
                 if words.count == 0 {
-                    let path = Bundle.main.path(forResource: "Wordlist", ofType: "txt")!
+                    let path = Bundle.main.path(forResource: "Wordlist-EN", ofType: "txt")!
+                    do {
+                        let wordlist: String = try String(contentsOfFile: path, encoding: .utf8)
+                        words = wordlist.components(separatedBy: .newlines)
+                    } catch {
+                        words.removeAll()
+                    }
+                }
+                result = words.randomElement()!
+            case .japaneseWord:
+                if words.count == 0 {
+                    let path = Bundle.main.path(forResource: "Wordlist-JP", ofType: "txt")!
                     do {
                         let wordlist: String = try String(contentsOfFile: path, encoding: .utf8)
                         words = wordlist.components(separatedBy: .newlines)

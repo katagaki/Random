@@ -23,9 +23,13 @@ struct RandomlyView: View {
                         ListRow(image: "ListIcon.Letter",
                                 title: "Randomly.Generate.Letter")
                     }
-                    NavigationLink(value: ViewPath.rGenerateWord) {
+                    NavigationLink(value: ViewPath.rGenerateWordEnglish) {
                         ListRow(image: "ListIcon.Word",
-                                title: "Randomly.Generate.Word")
+                                title: "Randomly.Generate.WordEN")
+                    }
+                    NavigationLink(value: ViewPath.rGenerateWordJapanese) {
+                        ListRow(image: "ListIcon.Word",
+                                title: "Randomly.Generate.WordJP")
                     }
                     NavigationLink(value: ViewPath.rGeneratePassword) {
                         ListRow(image: "ListIcon.Password",
@@ -89,8 +93,10 @@ struct RandomlyView: View {
                     GenerateView(mode: .number)
                 case .rGenerateLetter:
                     GenerateView(mode: .letter)
-                case .rGenerateWord:
-                    GenerateView(mode: .word)
+                case .rGenerateWordEnglish:
+                    GenerateView(mode: .englishWord)
+                case .rGenerateWordJapanese:
+                    GenerateView(mode: .japaneseWord)
                 case .rGeneratePassword:
                     GeneratePasswordView()
                 case .rGenerateColor:
