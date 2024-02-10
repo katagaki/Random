@@ -84,18 +84,18 @@ struct GeneratePasswordView: View {
             .padding(.top, 8.0)
             .padding(.bottom, 16.0)
         }
-        .onChange(of: useUppercase, perform: { _ in
+        .onChange(of: useUppercase) {
             evaluatePasswordPolicy()
-        })
-        .onChange(of: useLowercase, perform: { _ in
+        }
+        .onChange(of: useLowercase) {
             evaluatePasswordPolicy()
-        })
-        .onChange(of: useNumbers, perform: { _ in
+        }
+        .onChange(of: useNumbers) {
             evaluatePasswordPolicy()
-        })
-        .onChange(of: useSymbols, perform: { _ in
+        }
+        .onChange(of: useSymbols) {
             evaluatePasswordPolicy()
-        })
+        }
         .navigationTitle("Randomly.Generate.Password.ViewTitle")
         .navigationBarTitleDisplayMode(.inline)
     }
