@@ -23,13 +23,17 @@ struct RandomlyView: View {
                         ListRow(image: "ListIcon.Letter",
                                 title: "Randomly.Generate.Letter")
                     }
-                    NavigationLink(value: ViewPath.rGenerateWordEnglish) {
-                        ListRow(image: "ListIcon.Word",
-                                title: "Randomly.Generate.WordEN")
-                    }
-                    NavigationLink(value: ViewPath.rGenerateWordJapanese) {
-                        ListRow(image: "ListIcon.Word",
-                                title: "Randomly.Generate.WordJP")
+                    switch Locale.current.language.languageCode ?? .english {
+                    case .japanese:
+                        NavigationLink(value: ViewPath.rGenerateWordJapanese) {
+                            ListRow(image: "ListIcon.Word",
+                                    title: "Randomly.Generate.Word")
+                        }
+                    default:
+                        NavigationLink(value: ViewPath.rGenerateWordEnglish) {
+                            ListRow(image: "ListIcon.Word",
+                                    title: "Randomly.Generate.Word")
+                        }
                     }
                     NavigationLink(value: ViewPath.rGeneratePassword) {
                         ListRow(image: "ListIcon.Password",
