@@ -33,7 +33,7 @@ struct DatasetView: View {
         .searchable(text: $searchTerm)
         .onChange(of: searchTerm) { oldValue, newValue in
             if newValue.contains(oldValue) {
-                searchResults = data.filter({$0.lowercased().contains(newValue.lowercased())})
+                data = data.filter({$0.lowercased().contains(newValue.lowercased())})
             } else {
                 searchResults = data.filter({$0.lowercased().contains(newValue.lowercased())})
             }
