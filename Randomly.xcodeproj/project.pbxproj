@@ -10,6 +10,7 @@
 		E4124A1A2AA4DF66004022AF /* FlipCoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4124A192AA4DF66004022AF /* FlipCoinView.swift */; };
 		E432A7782AACAE1F0043BCC9 /* License.swift in Sources */ = {isa = PBXBuildFile; fileRef = E432A7772AACAE1F0043BCC9 /* License.swift */; };
 		E432A77A2AACAE360043BCC9 /* LicensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E432A7792AACAE360043BCC9 /* LicensesView.swift */; };
+		E447AAC32B775D29009A3D3E /* Komponents in Frameworks */ = {isa = PBXBuildFile; productRef = E447AAC22B775D29009A3D3E /* Komponents */; };
 		E44BD2AC2A9D919D0049FA9A /* GenerateColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44BD2AB2A9D919D0049FA9A /* GenerateColorView.swift */; };
 		E477E7302A9602BF00517B72 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477E72F2A9602BF00517B72 /* MoreView.swift */; };
 		E477E7322A9602E900517B72 /* ListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477E7312A9602E900517B72 /* ListRow.swift */; };
@@ -95,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E447AAC32B775D29009A3D3E /* Komponents in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +254,9 @@
 			dependencies = (
 			);
 			name = Randomly;
+			packageProductDependencies = (
+				E447AAC22B775D29009A3D3E /* Komponents */,
+			);
 			productName = Random;
 			productReference = E4DDD3E2266C8FC0003CC064 /* Randomly.app */;
 			productType = "com.apple.product-type.application";
@@ -264,7 +269,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					E4DDD3E1266C8FC0003CC064 = {
 						CreatedOnToolsVersion = 12.5;
@@ -281,6 +286,9 @@
 				ja,
 			);
 			mainGroup = E4DDD3D9266C8FC0003CC064;
+			packageReferences = (
+				E447AAC12B775D29009A3D3E /* XCRemoteSwiftPackageReference "Komponents" */,
+			);
 			productRefGroup = E4DDD3E3266C8FC0003CC064 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -386,6 +394,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -448,6 +457,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -506,7 +516,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 51;
+				CURRENT_PROJECT_VERSION = 52;
 				DEVELOPMENT_TEAM = YYM4Z6MU8F;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = Randomly/Info.plist;
@@ -517,7 +527,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tsubuzaki.Random;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -535,7 +545,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 51;
+				CURRENT_PROJECT_VERSION = 52;
 				DEVELOPMENT_TEAM = YYM4Z6MU8F;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = Randomly/Info.plist;
@@ -546,7 +556,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tsubuzaki.Random;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -579,6 +589,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E447AAC12B775D29009A3D3E /* XCRemoteSwiftPackageReference "Komponents" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/katagaki/Komponents";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E447AAC22B775D29009A3D3E /* Komponents */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E447AAC12B775D29009A3D3E /* XCRemoteSwiftPackageReference "Komponents" */;
+			productName = Komponents;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E4DDD3DA266C8FC0003CC064 /* Project object */;
 }
