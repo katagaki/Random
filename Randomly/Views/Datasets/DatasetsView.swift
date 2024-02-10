@@ -16,6 +16,7 @@ struct DatasetsView: View {
     ]
 
     var body: some View {
+        // TODO: Use view path for navigation stack
         NavigationStack {
             List {
                 Section {
