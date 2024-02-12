@@ -34,19 +34,13 @@ struct GeneratePasswordView: View {
             Spacer()
             Divider()
             VStack(alignment: .leading, spacing: 8.0) {
-                Text("Randomly.Generate.Password.MinLength")
-                HStack(alignment: .center, spacing: 8.0) {
-                    Text(String(Int(minLength)))
-                    Slider(value: $minLength, in: 8...128, step: 1) { _ in
-                        password.minLength = Int(minLength)
-                    }
+                Text("Randomly.Generate.Password.MinLength.\(String(Int(minLength)))")
+                Slider(value: $minLength, in: 8...128, step: 1) { _ in
+                    password.minLength = Int(minLength)
                 }
-                Text("Randomly.Generate.Password.MaxLength")
-                HStack(alignment: .center, spacing: 8.0) {
-                    Text(String(Int(maxLength)))
-                    Slider(value: $maxLength, in: 8...128, step: 1) { _ in
-                        password.maxLength = Int(maxLength)
-                    }
+                Text("Randomly.Generate.Password.MaxLength.\(String(Int(maxLength)))")
+                Slider(value: $maxLength, in: 8...128, step: 1) { _ in
+                    password.maxLength = Int(maxLength)
                 }
             }
             .padding()
