@@ -58,6 +58,8 @@ struct FlipCoinView: View {
         scene.rootNode.childNode(withName: "objects", recursively: false)!.enumerateChildNodes { node, _ in
             node.removeFromParentNode()
         }
+        scene.rootNode.childNode(withName: "ambientLight", recursively: true)!.light!.intensity = 300
+        scene.rootNode.childNode(withName: "topDownLight", recursively: true)!.light!.intensity = 500
     }
 
     func coin(rotation: SCNVector3) -> SCNNode {

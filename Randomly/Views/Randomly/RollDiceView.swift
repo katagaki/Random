@@ -110,6 +110,8 @@ struct RollDiceView: View {
         scene.rootNode.childNode(withName: "objects", recursively: false)!.enumerateChildNodes { node, _ in
             node.removeFromParentNode()
         }
+        scene.rootNode.childNode(withName: "ambientLight", recursively: true)!.light!.intensity = 700
+        scene.rootNode.childNode(withName: "topDownLight", recursively: true)!.light!.intensity = 1000
     }
 
     func dice(position: SCNVector3, rotation: SCNVector3) -> SCNNode {
