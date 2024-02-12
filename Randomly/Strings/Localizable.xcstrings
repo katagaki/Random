@@ -411,13 +411,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%1$@ of %2$@"
+            "value" : "%2$@ of %1$@"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%1$@ オブ %2$@"
+            "value" : "%2$@ オブ %1$@"
           }
         }
       }
