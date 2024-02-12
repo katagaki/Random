@@ -14,10 +14,31 @@ struct MoreView: View {
 
     var body: some View {
         NavigationStack(path: $navigationManager.moreTabPath) {
-            MoreList(repoName: "katagaki/Random", viewPath: ViewPath.moreAttributions) { }
+            MoreList(repoName: "katagaki/Random", viewPath: ViewPath.moreAttributions) {
+                Section {
+                    NavigationLink(value: ViewPath.moreDatasets) {
+                        ListRow(image: "ListIcon.Datasets", title: "More.Datasets")
+                    }
+                } header: {
+                    ListSectionHeader(text: "More.General")
+                }
+            }
             .navigationDestination(for: ViewPath.self, destination: { viewPath in
                 switch viewPath {
-                case .moreAttributions: LicensesView()
+                case .moreDatasets: DatasetsView()
+                case .moreAttributions: LicensesView(licenses: [
+                    License(libraryName: "english-words", text:
+"""
+This app uses data from the repository english-words.
+For more information, visit https://github.com/dwyl/english-words.
+"""),
+                    License(libraryName: "japanese", text:
+"""
+This app uses data from the repository japanese, which is licensed by the Creative Commons (CC BY) Attribution.
+For more information, visit https://github.com/hingston/japanese.
+License information can be found at https://creativecommons.org/licenses/by/2.5/.
+""")
+                ])
                 default: Color.clear
                 }
             })

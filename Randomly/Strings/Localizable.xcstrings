@@ -62,138 +62,53 @@
         }
       }
     },
-    "More.Attribution" : {
+    "More.Datasets" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Attributions"
+            "value" : "Datasets"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "著者権表記"
+            "value" : "内部データ一覧"
           }
         }
       }
     },
-    "More.Help" : {
+    "More.Datasets.ViewTitle" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Help & Support"
+            "value" : "Datasets"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "サポート"
+            "value" : "内部データ"
           }
         }
       }
     },
-    "More.Help.Email" : {
+    "More.General" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Email Me"
+            "value" : "General"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "メールを送信"
-          }
-        }
-      }
-    },
-    "More.Help.Email.Subtitle" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ktgk.public@icloud.com"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ktgk.public@icloud.com"
-          }
-        }
-      }
-    },
-    "More.Help.GitHub" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Read Source Code"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ソースコードを閲覧"
-          }
-        }
-      }
-    },
-    "More.Help.GitHub.Subtitle" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "katagaki/Random"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "katagaki/Random"
-          }
-        }
-      }
-    },
-    "More.Help.Twitter" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Post on X"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Xでポスト"
-          }
-        }
-      }
-    },
-    "More.Help.Twitter.Subtitle" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "@katagaki_"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "@katagaki_"
+            "value" : "一般"
           }
         }
       }
@@ -1341,22 +1256,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "リストを並べ替える"
-          }
-        }
-      }
-    },
-    "View.Datasets" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Datasets"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "データセット"
           }
         }
       }

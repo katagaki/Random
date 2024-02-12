@@ -5,6 +5,7 @@
 //  Created by シンジャスティン on 2023/08/28.
 //
 
+import Komponents
 import SwiftUI
 
 struct ListView: View {
@@ -28,12 +29,12 @@ struct ListView: View {
             }
             .listStyle(.plain)
             .padding(.bottom, -8.0)
-            .onChange(of: items, perform: { _ in
+            .onChange(of: items) {
                 if items.count > 0 && isAddingNewItem {
                     scrollView.scrollTo(items.last!, anchor: .bottom)
                     isAddingNewItem = false
                 }
-            })
+            }
             .overlay {
                 if items.count == 0 {
                     VStack(alignment: .center, spacing: 16.0) {

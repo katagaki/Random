@@ -5,6 +5,7 @@
 //  Created by シンジャスティン on 2023/08/28.
 //
 
+import Komponents
 import SwiftUI
 
 struct ActionBar: View {

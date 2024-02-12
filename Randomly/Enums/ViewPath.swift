@@ -23,5 +23,6 @@ enum ViewPath {
     case rDoCardDraw
     case nSortList
     case nSortDict
+    case moreDatasets
     case moreAttributions
 }

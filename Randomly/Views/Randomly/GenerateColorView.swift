@@ -5,6 +5,7 @@
 //  Created by シンジャスティン on 2023/08/29.
 //
 
+import Komponents
 import SwiftUI
 
 struct GenerateColorView: View {

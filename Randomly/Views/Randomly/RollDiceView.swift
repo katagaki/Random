@@ -5,6 +5,7 @@
 //  Created by シン・ジャスティン on 3/9/23.
 //
 
+import Komponents
 import SceneKit
 import SwiftUI
 
