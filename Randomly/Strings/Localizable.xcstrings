@@ -164,7 +164,7 @@
         }
       }
     },
-    "Randomly.Do.CardDraw.(cardNumber)" : {
+    "Randomly.Do.CardDraw.(number)" : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -174,7 +174,7 @@
         }
       }
     },
-    "Randomly.Do.CardDraw.(cardType)" : {
+    "Randomly.Do.CardDraw.(type.rawValue)" : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
@@ -473,6 +473,22 @@
         }
       }
     },
+    "Randomly.Do.CardDraw.NumberToDraw.%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Number of Cards to Draw: %@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "枚数：%@"
+          }
+        }
+      }
+    },
     "Randomly.Do.CardDraw.Spade" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -694,34 +710,34 @@
         }
       }
     },
-    "Randomly.Generate.Password.MaxLength" : {
+    "Randomly.Generate.Password.MaxLength.%@" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Maximum Number of Characters"
+            "value" : "Maximum Number of Characters: %@"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "〜"
+            "value" : "最大文字数：%@"
           }
         }
       }
     },
-    "Randomly.Generate.Password.MinLength" : {
+    "Randomly.Generate.Password.MinLength.%@" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Minimum Number of Characters"
+            "value" : "Minimum Number of Characters: %@"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "文字数"
+            "value" : "最小文字数：%@"
           }
         }
       }

@@ -14,6 +14,8 @@
 		E447AACA2B77B486009A3D3E /* DatasetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E447AAC92B77B486009A3D3E /* DatasetView.swift */; };
 		E447AACC2B77BBDE009A3D3E /* Wordlist-JP.txt in Resources */ = {isa = PBXBuildFile; fileRef = E447AACB2B77BBDE009A3D3E /* Wordlist-JP.txt */; };
 		E447AACE2B79C1EB009A3D3E /* DrawCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E447AACD2B79C1EB009A3D3E /* DrawCardView.swift */; };
+		E447AAD02B7AD771009A3D3E /* PlayingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E447AACF2B7AD771009A3D3E /* PlayingCard.swift */; };
+		E447AAD22B7AD7C4009A3D3E /* PlayingCardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E447AAD12B7AD7C4009A3D3E /* PlayingCardType.swift */; };
 		E44BD2AC2A9D919D0049FA9A /* GenerateColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44BD2AB2A9D919D0049FA9A /* GenerateColorView.swift */; };
 		E477E7302A9602BF00517B72 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477E72F2A9602BF00517B72 /* MoreView.swift */; };
 		E4876ADA2A9EE4EE00DC7FD9 /* ViewPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4876AD92A9EE4EE00DC7FD9 /* ViewPath.swift */; };
@@ -55,6 +57,8 @@
 		E447AAC92B77B486009A3D3E /* DatasetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatasetView.swift; sourceTree = "<group>"; };
 		E447AACB2B77BBDE009A3D3E /* Wordlist-JP.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Wordlist-JP.txt"; sourceTree = "<group>"; };
 		E447AACD2B79C1EB009A3D3E /* DrawCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawCardView.swift; sourceTree = "<group>"; };
+		E447AACF2B7AD771009A3D3E /* PlayingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCard.swift; sourceTree = "<group>"; };
+		E447AAD12B7AD7C4009A3D3E /* PlayingCardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardType.swift; sourceTree = "<group>"; };
 		E44BD2AB2A9D919D0049FA9A /* GenerateColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateColorView.swift; sourceTree = "<group>"; };
 		E477E72F2A9602BF00517B72 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
 		E4876AD92A9EE4EE00DC7FD9 /* ViewPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPath.swift; sourceTree = "<group>"; };
@@ -115,8 +119,9 @@
 		E48A02812A9A205100C31F40 /* Structs */ = {
 			isa = PBXGroup;
 			children = (
-				E48A027F2A9A204E00C31F40 /* SelectItem.swift */,
 				E447AAC72B77B248009A3D3E /* Dataset.swift */,
+				E447AACF2B7AD771009A3D3E /* PlayingCard.swift */,
+				E48A027F2A9A204E00C31F40 /* SelectItem.swift */,
 			);
 			path = Structs;
 			sourceTree = "<group>";
@@ -218,9 +223,10 @@
 			isa = PBXGroup;
 			children = (
 				E4EB91C52A9C76B700C0C93C /* GenerateType.swift */,
-				E4EB91C72A9C76CC00C0C93C /* WordSelectionMode.swift */,
+				E447AAD12B7AD7C4009A3D3E /* PlayingCardType.swift */,
 				E4876ADF2A9EEB2100DC7FD9 /* TabType.swift */,
 				E4876AD92A9EE4EE00DC7FD9 /* ViewPath.swift */,
+				E4EB91C72A9C76CC00C0C93C /* WordSelectionMode.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -349,12 +355,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E447AAD02B7AD771009A3D3E /* PlayingCard.swift in Sources */,
 				E4876ADA2A9EE4EE00DC7FD9 /* ViewPath.swift in Sources */,
 				E4EB91CC2A9C837F00C0C93C /* ShuffleDictionaryView.swift in Sources */,
 				E4EB91BD2A9C6EED00C0C93C /* DictionaryView.swift in Sources */,
 				E4EB91CE2A9C85CE00C0C93C /* GeneratePasswordView.swift in Sources */,
 				E447AAC82B77B248009A3D3E /* Dataset.swift in Sources */,
 				E4EB91BB2A9C559700C0C93C /* SelectWordFromTextView.swift in Sources */,
+				E447AAD22B7AD7C4009A3D3E /* PlayingCardType.swift in Sources */,
 				E4EB91B32A9C494F00C0C93C /* ListView.swift in Sources */,
 				E48A027A2A9A0F9900C31F40 /* NeatlyView.swift in Sources */,
 				E4876ADE2A9EEB0C00DC7FD9 /* TabManager.swift in Sources */,

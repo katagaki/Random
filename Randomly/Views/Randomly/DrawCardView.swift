@@ -9,74 +9,94 @@ import SwiftUI
 
 struct DrawCardView: View {
 
-    let cardTypes: [String] = ["Club", "Diamond", "Heart", "Spade"]
-    let cardNumbers: [Int] = Array(1...13)
-    @State var cardType: String?
-    @State var cardNumber: Int?
+    @State var cardsInDeck: [PlayingCard] = []
+    @State var cardsDrawn: [PlayingCard] = []
+    @State var numberOfCardsToDraw: Float = 1.0
 
     var body: some View {
-        VStack(alignment: .center, spacing: 8.0) {
-            Spacer()
-            if let cardType, let cardNumber {
-                Image("\(cardType)\(cardNumber)")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 350.0, height: 350.0)
-                .foregroundStyle(Color.white)
-                .background {
-                    Group {
-                        if cardType == "Club" || cardType == "Spade" {
+        ScrollView {
+            let scale: Float = 1.0 - (0.07 * (numberOfCardsToDraw - 1))
+            VStack(alignment: .center, spacing: 16.0) {
+                ForEach(cardsDrawn) { card in
+                    Image(card.imageName())
+                        .resizable()
+                        .scaledToFit()
+                        .foregroundStyle(Color.white)
+                        .frame(maxWidth: .infinity,
+                               minHeight: CGFloat(350.0 * scale),
+                               maxHeight: CGFloat(350.0 * scale))
+                        .background {
                             Rectangle()
-                                .fill(Color.black)
-                        } else {
-                            Rectangle()
-                                .fill(Color.red)
+                                .fill(card.color())
+                                .frame(width: CGFloat(225.0 * scale), height: CGFloat(310.0 * scale))
                         }
-                    }
-                    .frame(width: 225.0, height: 310.0)
+                        .drawingGroup()
+                        .shadow(color: .black.opacity(0.2), radius: 10.0, y: 12.0)
+                        .transition(.push(from: .top).combined(with: .scale))
+                        .id(card.imageName())
                 }
-                .drawingGroup()
-                .shadow(color: .black.opacity(0.2), radius: 10.0, y: 12.0)
-                .transition(.push(from: .top).combined(with: .scale))
-                .id("\(cardType)\(cardNumber)")
             }
-            Spacer()
-            ActionBar(primaryActionText: "Shared.Draw",
-                      primaryActionIconName: "sparkles",
-                      copyDisabled: .constant(false),
-                      primaryActionDisabled: .constant(false)) {
-                drawCard()
-            } copyAction: {
-                UIPasteboard.general.string = cardName()
-            }
-            .frame(maxWidth: .infinity)
-            .padding([.leading, .trailing])
-            .padding(.top, 8.0)
-            .padding(.bottom, 16.0)
         }
+        .safeAreaInset(edge: .bottom) {
+            VStack(alignment: .center, spacing: 8.0) {
+                VStack(alignment: .leading, spacing: 8.0) {
+                    Text("Randomly.Do.CardDraw.NumberToDraw.\(String(Int(numberOfCardsToDraw)))")
+                    Slider(value: $numberOfCardsToDraw, in: 1...6, step: 1)
+                }
+                .padding()
+                ActionBar(primaryActionText: "Shared.Draw",
+                          primaryActionIconName: "sparkles",
+                          copyDisabled: .constant(false),
+                          primaryActionDisabled: .constant(false)) {
+                    drawCards()
+                } copyAction: {
+                    let cardNames: String = cardsDrawn.reduce(into: "", { partialResult, card in
+                        partialResult += card.name() + "\n"
+                    })
+                    UIPasteboard.general.string = cardNames.trimmingCharacters(in: .whitespacesAndNewlines)
+                }
+                .frame(maxWidth: .infinity)
+                .padding([.leading, .trailing])
+                .padding(.top, 8.0)
+                .padding(.bottom, 16.0)
+            }
+            .background(Material.bar)
+            .overlay(alignment: .top) {
+                Rectangle()
+                    .frame(height: 1/3)
+                    .foregroundColor(.black.opacity(0.2))
+            }
+        }
+        .toolbarBackground(.hidden, for: .tabBar)
         .task {
-            drawCard()
+            drawCards()
+        }
+        .onChange(of: numberOfCardsToDraw) {
+            drawCards()
         }
         .navigationTitle("Randomly.Do.CardDraw.ViewTitle")
         .navigationBarTitleDisplayMode(.inline)
     }
 
-    func drawCard() {
+    func drawCards() {
         withAnimation(.default.speed(2)) {
-            cardType = cardTypes.randomElement()!
-            cardNumber = cardNumbers.randomElement()!
+            resetDeck()
+            for _ in 0..<Int(numberOfCardsToDraw) {
+                cardsDrawn.append(cardsInDeck.remove(at: (0..<cardsInDeck.count).randomElement()!))
+            }
         }
     }
 
-    func cardName() -> String {
-        if let cardType, let cardNumber {
-            let cardTypeLocalizedString = NSLocalizedString("Randomly.Do.CardDraw.\(cardType)", comment: "")
-            let cardNumberLocalizedString = NSLocalizedString("Randomly.Do.CardDraw.\(cardNumber)", comment: "")
-            return String.localizedStringWithFormat(
-                NSLocalizedString("Randomly.Do.CardDraw.CardName.%1$@.%2$@", comment: ""),
-                cardTypeLocalizedString,
-                cardNumberLocalizedString)
+    func resetDeck() {
+        let cardTypes: [PlayingCardType] = [.club, .diamond, .heart, .spade]
+        let cardNumbers: [Int] = Array(1...13)
+        cardsDrawn.removeAll()
+        cardsInDeck.removeAll()
+        for cardType in cardTypes {
+            for cardNumber in cardNumbers {
+                cardsInDeck.append(PlayingCard(type: cardType, number: cardNumber))
+            }
         }
-        return ""
+        cardsInDeck.shuffle()
     }
 }

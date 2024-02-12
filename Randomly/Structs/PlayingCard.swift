@@ -6,11 +6,14 @@
 //
 
 import Foundation
+import SwiftUI
 
-struct PlayingCard {
-    var type: DrawnCardType
+struct PlayingCard: Identifiable {
+
+    let id = UUID()
+    var type: PlayingCardType
     var number: Int
-    
+
     func name() -> String {
         let cardTypeLocalizedString = NSLocalizedString("Randomly.Do.CardDraw.\(type.rawValue)", comment: "")
         let cardNumberLocalizedString = NSLocalizedString("Randomly.Do.CardDraw.\(number)", comment: "")
@@ -18,5 +21,18 @@ struct PlayingCard {
             NSLocalizedString("Randomly.Do.CardDraw.CardName.%1$@.%2$@", comment: ""),
             cardTypeLocalizedString,
             cardNumberLocalizedString)
+    }
+
+    func imageName() -> String {
+        return "\(type.rawValue)\(number)"
+    }
+
+    func color() -> Color {
+        switch type {
+        case .club, .spade:
+            return Color.black
+        case .diamond, .heart:
+            return Color.red
+        }
     }
 }
