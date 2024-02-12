@@ -21,6 +21,7 @@ struct MoreView: View {
                     }
                 } header: {
                     ListSectionHeader(text: "More.General")
+                        .font(.body)
                 }
             }
             .navigationDestination(for: ViewPath.self, destination: { viewPath in

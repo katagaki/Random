@@ -27,6 +27,7 @@ struct DatasetsView: View {
                 }
             } header: {
                 ListSectionHeader(text: "Dataset.Type.Wordlists")
+                    .font(.body)
             }
         }
         .navigationTitle("More.Datasets.ViewTitle")
