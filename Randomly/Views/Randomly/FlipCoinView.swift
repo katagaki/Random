@@ -18,9 +18,7 @@ struct FlipCoinView: View {
                   preferredFramesPerSecond: 120,
                   antialiasingMode: .multisampling4X)
         .ignoresSafeArea(edges: [.top, .leading, .trailing])
-        .overlay {
-            ZStack(alignment: .bottom) {
-                Color.clear
+        .safeAreaInset(edge: .bottom) {
                 ActionBar(primaryActionText: "Shared.Do.FlipCoin",
                           primaryActionIconName: "hands.sparkles.fill",
                           copyDisabled: .constant(true),
@@ -30,9 +28,13 @@ struct FlipCoinView: View {
                 }
                     .frame(maxWidth: .infinity)
                     .padding([.leading, .trailing])
-                    .padding(.top, 8.0)
-                    .padding(.bottom, 16.0)
-            }
+                    .padding([.top, .bottom], 16.0)
+                    .background(Material.bar)
+                    .overlay(alignment: .top) {
+                        Rectangle()
+                            .frame(height: 1/3)
+                            .foregroundColor(.primary.opacity(0.2))
+                    }
         }
         .onAppear {
             resetScene()

@@ -13,9 +13,7 @@ struct SortDictionaryView: View {
     @State var items: [SelectItem] = []
 
     var body: some View {
-        VStack(alignment: .center, spacing: 8.0) {
-            DictionaryView(items: $items)
-            Divider()
+        DictionaryView(items: $items) {
             ScrollView(.horizontal) {
                 ActionBar(primaryActionText: "Shared.Sort.ByValue",
                           primaryActionIconName: "arrow.up.and.down",
@@ -46,11 +44,11 @@ struct SortDictionaryView: View {
                 }
                 .frame(maxWidth: .infinity)
                 .padding([.leading, .trailing])
-                .padding(.top, 8.0)
-                .padding(.bottom, 16.0)
             }
             .scrollIndicators(.hidden)
+            .padding([.leading, .trailing], 0.0)
         }
+        .toolbarBackground(.hidden, for: .tabBar)
         .navigationTitle("Shared.Sort.Dictionary.ViewTitle")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {

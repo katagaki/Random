@@ -8,13 +8,14 @@
 import Komponents
 import SwiftUI
 
-struct ListView: View {
+struct ListView<Content: View>: View {
 
     @Binding var selectedItem: SelectItem?
     @State var newItem: String = ""
     @Binding var items: [SelectItem]
     @State var isAddingNewItem: Bool = false
     @FocusState var focusedField: FocusedField?
+    @ViewBuilder var bottomView: () -> Content
 
     var body: some View {
         ScrollViewReader { scrollView in
@@ -71,30 +72,41 @@ struct ListView: View {
                     }
                 }
             }
-            Divider()
-            HStack(alignment: .center, spacing: 8.0) {
-                TextField("Shared.List.NewItem",
-                          text: $newItem)
-                .textFieldStyle(.roundedBorder)
-                .submitLabel(.done)
-                .focused($focusedField, equals: .newItemField)
-                .onSubmit {
-                    addNewItem()
+            .safeAreaInset(edge: .bottom) {
+                VStack(alignment: .center, spacing: 16.0) {
+                    HStack(alignment: .center, spacing: 8.0) {
+                        TextField("Shared.List.NewItem",
+                                  text: $newItem)
+                        .textFieldStyle(.roundedBorder)
+                        .submitLabel(.done)
+                        .focused($focusedField, equals: .newItemField)
+                        .onSubmit {
+                            addNewItem()
+                        }
+                        Button {
+                            addNewItem()
+                            focusedField = .newItemField
+                        } label: {
+                            Image(systemName: "plus")
+                            Text("Shared.Add")
+                                .bold()
+                        }
+                        .buttonStyle(.bordered)
+                        .clipShape(RoundedRectangle(cornerRadius: 99))
+                        .disabled(newItem == "")
+                    }
+                    bottomView()
+                        .frame(maxWidth: .infinity)
                 }
-                Button {
-                    addNewItem()
-                    focusedField = .newItemField
-                } label: {
-                    Image(systemName: "plus")
-                    Text("Shared.Add")
-                        .bold()
+                .padding([.top, .bottom], 16.0)
+                .padding([.leading, .trailing])
+                .background(Material.bar)
+                .overlay(alignment: .top) {
+                    Rectangle()
+                        .frame(height: 1/3)
+                        .foregroundColor(.primary.opacity(0.2))
                 }
-                .buttonStyle(.bordered)
-                .clipShape(RoundedRectangle(cornerRadius: 99))
-                .disabled(newItem == "")
             }
-            .padding([.leading, .trailing])
-            .padding([.top, .bottom], 8.0)
         }
         .onAppear {
             focusedField = .newItemField

@@ -19,67 +19,69 @@ struct RollDiceView: View {
                   preferredFramesPerSecond: 120,
                   antialiasingMode: .multisampling4X)
         .ignoresSafeArea(edges: [.top, .leading, .trailing])
-        .overlay {
-            ZStack(alignment: .bottom) {
-                Color.clear
-                ScrollView(.horizontal) {
-                    ActionBar(primaryActionText: "Shared.Do.RollDice.5",
-                              primaryActionIconName: "dice.fill",
-                              copyDisabled: .constant(true),
-                              copyHidden: true,
-                              primaryActionDisabled: .constant(false)) {
-                        addDice(number: 5)
-                    }
-                        .secondaryAction({
-                            HStack(alignment: .center, spacing: 8.0) {
-                              Button {
-                                  addDice(number: 1)
-                              } label: {
-                                  LargeButtonLabel(iconName: "dice.fill",
-                                                   text: "Shared.Do.RollDice")
-                                  .bold()
-                                  .frame(maxWidth: .infinity)
-                              }
-                              .buttonStyle(.borderedProminent)
-                              .clipShape(RoundedRectangle(cornerRadius: 99))
-                              Button {
-                                  addDice(number: 2)
-                              } label: {
-                                  LargeButtonLabel(iconName: "dice.fill",
-                                                   text: "Shared.Do.RollDice.2")
-                                  .bold()
-                                  .frame(maxWidth: .infinity)
-                              }
-                              .buttonStyle(.borderedProminent)
-                              .clipShape(RoundedRectangle(cornerRadius: 99))
-                              Button {
-                                  addDice(number: 3)
-                              } label: {
-                                  LargeButtonLabel(iconName: "dice.fill",
-                                                   text: "Shared.Do.RollDice.3")
-                                  .bold()
-                                  .frame(maxWidth: .infinity)
-                              }
-                              .buttonStyle(.borderedProminent)
-                              .clipShape(RoundedRectangle(cornerRadius: 99))
-                              Button {
-                                  addDice(number: 4)
-                              } label: {
-                                  LargeButtonLabel(iconName: "dice.fill",
-                                                   text: "Shared.Do.RollDice.4")
-                                  .bold()
-                                  .frame(maxWidth: .infinity)
-                              }
-                              .buttonStyle(.borderedProminent)
-                              .clipShape(RoundedRectangle(cornerRadius: 99))
-                            }
-                        })
-                        .frame(maxWidth: .infinity)
-                        .padding([.leading, .trailing])
-                        .padding(.top, 8.0)
-                        .padding(.bottom, 16.0)
+        .safeAreaInset(edge: .bottom) {
+            ScrollView(.horizontal) {
+                ActionBar(primaryActionText: "Shared.Do.RollDice.5",
+                          primaryActionIconName: "dice.fill",
+                          copyDisabled: .constant(true),
+                          copyHidden: true,
+                          primaryActionDisabled: .constant(false)) {
+                    addDice(number: 5)
                 }
-                .scrollIndicators(.hidden)
+                    .secondaryAction({
+                        HStack(alignment: .center, spacing: 8.0) {
+                          Button {
+                              addDice(number: 1)
+                          } label: {
+                              LargeButtonLabel(iconName: "dice.fill",
+                                               text: "Shared.Do.RollDice")
+                              .bold()
+                              .frame(maxWidth: .infinity)
+                          }
+                          .buttonStyle(.borderedProminent)
+                          .clipShape(RoundedRectangle(cornerRadius: 99))
+                          Button {
+                              addDice(number: 2)
+                          } label: {
+                              LargeButtonLabel(iconName: "dice.fill",
+                                               text: "Shared.Do.RollDice.2")
+                              .bold()
+                              .frame(maxWidth: .infinity)
+                          }
+                          .buttonStyle(.borderedProminent)
+                          .clipShape(RoundedRectangle(cornerRadius: 99))
+                          Button {
+                              addDice(number: 3)
+                          } label: {
+                              LargeButtonLabel(iconName: "dice.fill",
+                                               text: "Shared.Do.RollDice.3")
+                              .bold()
+                              .frame(maxWidth: .infinity)
+                          }
+                          .buttonStyle(.borderedProminent)
+                          .clipShape(RoundedRectangle(cornerRadius: 99))
+                          Button {
+                              addDice(number: 4)
+                          } label: {
+                              LargeButtonLabel(iconName: "dice.fill",
+                                               text: "Shared.Do.RollDice.4")
+                              .bold()
+                              .frame(maxWidth: .infinity)
+                          }
+                          .buttonStyle(.borderedProminent)
+                          .clipShape(RoundedRectangle(cornerRadius: 99))
+                        }
+                    })
+                    .frame(maxWidth: .infinity)
+                    .padding([.leading, .trailing])
+            }
+            .scrollIndicators(.hidden)
+            .padding([.top, .bottom], 16.0)
+            .background(Material.bar)
+            .overlay(alignment: .top) {
+                Rectangle()
+                    .frame(height: 1/3)
+                    .foregroundColor(.primary.opacity(0.2))
             }
         }
         .onAppear {

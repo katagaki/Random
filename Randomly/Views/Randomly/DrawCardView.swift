@@ -38,12 +38,11 @@ struct DrawCardView: View {
             }
         }
         .safeAreaInset(edge: .bottom) {
-            VStack(alignment: .center, spacing: 8.0) {
+            VStack(alignment: .center, spacing: 16.0) {
                 VStack(alignment: .leading, spacing: 8.0) {
                     Text("Randomly.Do.CardDraw.NumberToDraw.\(String(Int(numberOfCardsToDraw)))")
                     Slider(value: $numberOfCardsToDraw, in: 1...6, step: 1)
                 }
-                .padding()
                 ActionBar(primaryActionText: "Shared.Draw",
                           primaryActionIconName: "sparkles",
                           copyDisabled: .constant(false),
@@ -56,15 +55,14 @@ struct DrawCardView: View {
                     UIPasteboard.general.string = cardNames.trimmingCharacters(in: .whitespacesAndNewlines)
                 }
                 .frame(maxWidth: .infinity)
-                .padding([.leading, .trailing])
-                .padding(.top, 8.0)
-                .padding(.bottom, 16.0)
             }
+            .padding([.top, .bottom], 16.0)
+            .padding([.leading, .trailing])
             .background(Material.bar)
             .overlay(alignment: .top) {
                 Rectangle()
                     .frame(height: 1/3)
-                    .foregroundColor(.black.opacity(0.2))
+                    .foregroundColor(.primary.opacity(0.2))
             }
         }
         .toolbarBackground(.hidden, for: .tabBar)
