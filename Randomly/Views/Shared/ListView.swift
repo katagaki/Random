@@ -54,7 +54,7 @@ struct ListView<Content: View>: View {
                                 if let string = UIPasteboard.general.string {
                                     let stringComponents = string.components(separatedBy: .newlines)
                                     for stringComponent in stringComponents where
-                                    stringComponent.trimmingCharacters(in: .whitespacesAndNewlines) != ""{
+                                    stringComponent.trimmingCharacters(in: .whitespacesAndNewlines) != "" {
                                         items.append(
                                             SelectItem(id: UUID().uuidString,
                                                        value: stringComponent.trimmingCharacters(in:
