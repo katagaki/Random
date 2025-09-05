@@ -128,17 +128,10 @@ struct TextFieldLimitModifer: ViewModifier {
     var length: Int
 
     func body(content: Content) -> some View {
-        if #available(iOS 14, *) {
-            content
-                .onChange(of: $value.wrappedValue) {
-                    value = Int(String($0).prefix(length))!
-                }
-        } else {
-            content
-                .onReceive(Just(value)) {
-                    value = Int(String($0).prefix(length))!
-                }
-        }
+        content
+            .onReceive(Just(value)) {
+                value = Int(String($0).prefix(length))!
+            }
     }
 }
 
