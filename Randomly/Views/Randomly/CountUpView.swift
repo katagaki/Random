@@ -40,6 +40,7 @@ struct CountUpView: View {
                             .bold()
                         TextField("", value: $startingValue, format: .number)
                             .textFieldStyle(.roundedBorder)
+                            .keyboardType(.numberPad)
                             .focused($isTextFieldActive)
                     }
 
@@ -58,10 +59,12 @@ struct CountUpView: View {
                                 Text("Shared.RangeFrom")
                                     .font(.body)
                                 TextField("", value: $rangeStart, format: .number)
+                                    .keyboardType(.numberPad)
                                     .focused($isTextFieldActive)
                                 Text("Shared.RangeTo")
                                     .font(.body)
                                 TextField("", value: $rangeEnd, format: .number)
+                                    .keyboardType(.numberPad)
                                     .focused($isTextFieldActive)
                             }
                             .textFieldStyle(.roundedBorder)
@@ -73,6 +76,7 @@ struct CountUpView: View {
                                 .bold()
                             TextField("", value: $incrementValue, format: .number)
                                 .textFieldStyle(.roundedBorder)
+                                .keyboardType(.numberPad)
                                 .focused($isTextFieldActive)
                         }
                     }

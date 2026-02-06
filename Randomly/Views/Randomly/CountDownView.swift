@@ -40,6 +40,7 @@ struct CountDownView: View {
                             .bold()
                         TextField("", value: $startingValue, format: .number)
                             .textFieldStyle(.roundedBorder)
+                            .keyboardType(.numberPad)
                             .focused($isTextFieldActive)
                     }
 
@@ -58,10 +59,12 @@ struct CountDownView: View {
                                 Text("Shared.RangeFrom")
                                     .font(.body)
                                 TextField("", value: $rangeStart, format: .number)
+                                    .keyboardType(.numberPad)
                                     .focused($isTextFieldActive)
                                 Text("Shared.RangeTo")
                                     .font(.body)
                                 TextField("", value: $rangeEnd, format: .number)
+                                    .keyboardType(.numberPad)
                                     .focused($isTextFieldActive)
                             }
                             .textFieldStyle(.roundedBorder)
@@ -72,6 +75,7 @@ struct CountDownView: View {
                                 .font(.body)
                                 .bold()
                             TextField("", value: $decrementValue, format: .number)
+                                .keyboardType(.numberPad)
                                 .textFieldStyle(.roundedBorder)
                                 .focused($isTextFieldActive)
                         }
