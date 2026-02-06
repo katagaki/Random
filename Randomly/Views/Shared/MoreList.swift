@@ -36,28 +36,7 @@ struct MoreList<Content: View>: View {
                     .font(.body)
             }
             
-            Section {
-                HStack {
-                    Text("More.Version")
-                    Spacer()
-                    if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
-                        Text(version)
-                            .foregroundStyle(.secondary)
-                    }
-                }
-                
-                HStack {
-                    Text("More.Build")
-                    Spacer()
-                    if let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
-                        Text(build)
-                            .foregroundStyle(.secondary)
-                    }
-                }
-            } header: {
-                ListSectionHeader(text: "More.AppInformation")
-                    .font(.body)
-            }
+
         }
     }
 }

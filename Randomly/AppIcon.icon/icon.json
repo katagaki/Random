@@ -1,0 +1,129 @@
+{
+  "fill" : {
+    "linear-gradient" : [
+      "display-p3:0.68627,0.90196,0.51765,1.00000",
+      "display-p3:0.21569,0.49804,0.21176,1.00000"
+    ],
+    "orientation" : {
+      "start" : {
+        "x" : 0.5,
+        "y" : 0
+      },
+      "stop" : {
+        "x" : 0.5,
+        "y" : 0.7
+      }
+    }
+  },
+  "groups" : [
+    {
+      "blend-mode-specializations" : [
+        {
+          "value" : "hard-light"
+        },
+        {
+          "appearance" : "dark",
+          "value" : "normal"
+        },
+        {
+          "appearance" : "tinted",
+          "value" : "hard-light"
+        }
+      ],
+      "layers" : [
+        {
+          "fill-specializations" : [
+            {
+              "appearance" : "dark",
+              "value" : {
+                "linear-gradient" : [
+                  "display-p3:0.68627,0.90196,0.51765,1.00000",
+                  "srgb:0.21569,0.87843,0.21176,1.00000"
+                ],
+                "orientation" : {
+                  "start" : {
+                    "x" : 0.5,
+                    "y" : 0
+                  },
+                  "stop" : {
+                    "x" : 0.5,
+                    "y" : 0.7
+                  }
+                }
+              }
+            }
+          ],
+          "image-name" : "Randomly.004.png",
+          "name" : "Shuffle"
+        },
+        {
+          "fill-specializations" : [
+            {
+              "appearance" : "dark",
+              "value" : {
+                "solid" : "srgb:0.68627,0.90196,0.51765,1.00000"
+              }
+            }
+          ],
+          "image-name" : "Randomly.005.png",
+          "name" : "Right 1a",
+          "opacity" : 0.77
+        },
+        {
+          "fill-specializations" : [
+            {
+              "appearance" : "dark",
+              "value" : {
+                "solid" : "srgb:0.21569,0.87843,0.21176,1.00000"
+              }
+            }
+          ],
+          "image-name" : "Randomly.006.png",
+          "name" : "Right 1b",
+          "opacity" : 0.56
+        },
+        {
+          "fill-specializations" : [
+            {
+              "appearance" : "dark",
+              "value" : {
+                "solid" : "srgb:0.68627,0.90196,0.51765,1.00000"
+              }
+            }
+          ],
+          "image-name" : "Randomly.007.png",
+          "name" : "Right 2a",
+          "opacity" : 0.33
+        },
+        {
+          "fill-specializations" : [
+            {
+              "appearance" : "dark",
+              "value" : {
+                "solid" : "srgb:0.21569,0.87843,0.21176,1.00000"
+              }
+            }
+          ],
+          "image-name" : "Randomly.008.png",
+          "name" : "Right 2b",
+          "opacity" : 0.11
+        }
+      ],
+      "name" : "Arrows",
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 1
+      },
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.5
+      }
+    }
+  ],
+  "supported-platforms" : {
+    "circles" : [
+      "watchOS"
+    ],
+    "squares" : "shared"
+  }
+}

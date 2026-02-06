@@ -11,21 +11,30 @@ struct NeatlyView: View {
 
     @EnvironmentObject var navigationManager: NavigationManager
 
+    let columns = [
+        GridItem(.flexible(), spacing: 12),
+        GridItem(.flexible(), spacing: 12)
+    ]
+    
     var body: some View {
         NavigationStack(path: $navigationManager.neatlyTabPath) {
-            List {
-                Section {
-                    NavigationLink(value: ViewPath.nSortList) {
-                        Label("Neatly.Sort.List", systemImage: "list.bullet")
+            ScrollView {
+                VStack(alignment: .leading, spacing: 20) {
+                    VStack(alignment: .leading, spacing: 12) {
+                        ListSectionHeader(text: "Shared.Sort")
+                            .font(.body)
+                            .padding(.horizontal)
+                        
+                        LazyVGrid(columns: columns, spacing: 12) {
+                            GridCardView(destination: ViewPath.nSortList, title: "Neatly.Sort.List", icon: "list.bullet", iconColor: .blue)
+                            GridCardView(destination: ViewPath.nSortDict, title: "Neatly.Sort.Dictionary", icon: "tablecells", iconColor: .purple)
+                        }
+                        .padding(.horizontal)
                     }
-                    NavigationLink(value: ViewPath.nSortDict) {
-                        Label("Neatly.Sort.Dictionary", systemImage: "tablecells")
-                    }
-                } header: {
-                    ListSectionHeader(text: "Shared.Sort")
-                        .font(.body)
                 }
+                .padding(.vertical)
             }
+            .background(Color(.systemGroupedBackground))
             .navigationDestination(for: ViewPath.self, destination: { viewPath in
                 switch viewPath {
                 case .nSortList:

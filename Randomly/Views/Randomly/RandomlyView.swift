@@ -11,76 +11,78 @@ struct RandomlyView: View {
 
     @EnvironmentObject var navigationManager: NavigationManager
 
+    let columns = [
+        GridItem(.flexible(), spacing: 12),
+        GridItem(.flexible(), spacing: 12)
+    ]
+    
     var body: some View {
         NavigationStack(path: $navigationManager.randomlyTabPath) {
-            List {
-                Section {
-                    NavigationLink(value: ViewPath.rGenerateNumber) {
-                        Label("Randomly.Generate.Number", systemImage: "number")
-                    }
-                    NavigationLink(value: ViewPath.rGenerateLetter) {
-                        Label("Randomly.Generate.Letter", systemImage: "character")
-                    }
-                    switch Locale.current.language.languageCode ?? .english {
-                    case .japanese:
-                        NavigationLink(value: ViewPath.rGenerateWordJapanese) {
-                            Label("Randomly.Generate.Word", systemImage: "textformat")
+            ScrollView {
+                VStack(alignment: .leading, spacing: 20) {
+                    VStack(alignment: .leading, spacing: 12) {
+                        ListSectionHeader(text: "Shared.Generate")
+                            .font(.body)
+                            .padding(.horizontal)
+                        
+                        LazyVGrid(columns: columns, spacing: 12) {
+                            GridCardView(destination: ViewPath.rGenerateNumber, title: "Randomly.Generate.Number", icon: "number", iconColor: .blue)
+                            GridCardView(destination: ViewPath.rGenerateLetter, title: "Randomly.Generate.Letter", icon: "character", iconColor: .green)
+                            
+                            switch Locale.current.language.languageCode ?? .english {
+                            case .japanese:
+                                GridCardView(destination: ViewPath.rGenerateWordJapanese, title: "Randomly.Generate.Word", icon: "textformat", iconColor: .purple)
+                            default:
+                                GridCardView(destination: ViewPath.rGenerateWordEnglish, title: "Randomly.Generate.Word", icon: "textformat", iconColor: .purple)
+                            }
+                            
+                            GridCardView(destination: ViewPath.rGenerateCountry, title: "Randomly.Generate.Country", icon: "globe", iconColor: .cyan)
+                            GridCardView(destination: ViewPath.rGeneratePassword, title: "Randomly.Generate.Password", icon: "key.fill", iconColor: .orange)
+                            GridCardView(destination: ViewPath.rGenerateColor, title: "Randomly.Generate.Color", icon: "paintpalette.fill", iconColor: .pink)
                         }
-                    default:
-                        NavigationLink(value: ViewPath.rGenerateWordEnglish) {
-                            Label("Randomly.Generate.Word", systemImage: "textformat")
+                        .padding(.horizontal)
+                    }
+                    
+                    VStack(alignment: .leading, spacing: 12) {
+                        ListSectionHeader(text: "Shared.Select")
+                            .font(.body)
+                            .padding(.horizontal)
+                        
+                        LazyVGrid(columns: columns, spacing: 12) {
+                            GridCardView(destination: ViewPath.rSelectItemFromList, title: "Randomly.Select.ItemFromList", icon: "list.bullet", iconColor: .indigo)
+                            GridCardView(destination: ViewPath.rSelectWordFromText, title: "Randomly.Select.WordFromText", icon: "doc.text", iconColor: .teal)
                         }
+                        .padding(.horizontal)
                     }
-                    NavigationLink(value: ViewPath.rGenerateCountry) {
-                        Label("Randomly.Generate.Country", systemImage: "globe")
+                    
+                    VStack(alignment: .leading, spacing: 12) {
+                        ListSectionHeader(text: "Shared.Shuffle")
+                            .font(.body)
+                            .padding(.horizontal)
+                        
+                        LazyVGrid(columns: columns, spacing: 12) {
+                            GridCardView(destination: ViewPath.rShuffleList, title: "Randomly.Shuffle.List", icon: "list.bullet", iconColor: .mint)
+                            GridCardView(destination: ViewPath.rShuffleDict, title: "Randomly.Shuffle.Dictionary", icon: "tablecells", iconColor: .brown)
+                        }
+                        .padding(.horizontal)
                     }
-                    NavigationLink(value: ViewPath.rGeneratePassword) {
-                        Label("Randomly.Generate.Password", systemImage: "key.fill")
+                    
+                    VStack(alignment: .leading, spacing: 12) {
+                        ListSectionHeader(text: "Shared.Do")
+                            .font(.body)
+                            .padding(.horizontal)
+                        
+                        LazyVGrid(columns: columns, spacing: 12) {
+                            GridCardView(destination: ViewPath.rDoCoinFlip, title: "Randomly.Do.CoinFlip", icon: "centsign.circle.fill", iconColor: .yellow)
+                            GridCardView(destination: ViewPath.rDoDiceRoll, title: "Randomly.Do.DiceRoll", icon: "die.face.5.fill", iconColor: .red)
+                            GridCardView(destination: ViewPath.rDoCardDraw, title: "Randomly.Do.CardDraw", icon: "square.on.square.fill", iconColor: .purple)
+                        }
+                        .padding(.horizontal)
                     }
-                    NavigationLink(value: ViewPath.rGenerateColor) {
-                        Label("Randomly.Generate.Color", systemImage: "paintpalette.fill")
-                    }
-                } header: {
-                    ListSectionHeader(text: "Shared.Generate")
-                        .font(.body)
                 }
-                Section {
-                    NavigationLink(value: ViewPath.rSelectItemFromList) {
-                        Label("Randomly.Select.ItemFromList", systemImage: "list.bullet")
-                    }
-                    NavigationLink(value: ViewPath.rSelectWordFromText) {
-                        Label("Randomly.Select.WordFromText", systemImage: "doc.text")
-                    }
-                } header: {
-                    ListSectionHeader(text: "Shared.Select")
-                        .font(.body)
-                }
-                Section {
-                    NavigationLink(value: ViewPath.rShuffleList) {
-                        Label("Randomly.Shuffle.List", systemImage: "list.bullet")
-                    }
-                    NavigationLink(value: ViewPath.rShuffleDict) {
-                        Label("Randomly.Shuffle.Dictionary", systemImage: "tablecells")
-                    }
-                } header: {
-                    ListSectionHeader(text: "Shared.Shuffle")
-                        .font(.body)
-                }
-                Section {
-                    NavigationLink(value: ViewPath.rDoCoinFlip) {
-                        Label("Randomly.Do.CoinFlip", systemImage: "centsign.circle.fill")
-                    }
-                    NavigationLink(value: ViewPath.rDoDiceRoll) {
-                        Label("Randomly.Do.DiceRoll", systemImage: "die.face.5.fill")
-                    }
-                    NavigationLink(value: ViewPath.rDoCardDraw) {
-                        Label("Randomly.Do.CardDraw", systemImage: "square.on.square.fill")
-                    }
-                } header: {
-                    ListSectionHeader(text: "Shared.Do")
-                        .font(.body)
-                }
+                .padding(.vertical)
             }
+            .background(Color(.systemGroupedBackground))
             .navigationDestination(for: ViewPath.self, destination: { viewPath in
                 switch viewPath {
                 case .rGenerateNumber:
