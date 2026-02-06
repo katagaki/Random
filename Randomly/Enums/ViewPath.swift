@@ -22,6 +22,8 @@ enum ViewPath {
     case rDoCoinFlip
     case rDoDiceRoll
     case rDoCardDraw
+    case rCountUp
+    case rCountDown
     case nSortList
     case nSortDict
     case moreDatasets
