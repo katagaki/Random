@@ -22,30 +22,30 @@ struct RandomlyView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 28.0) {
                     VStack(alignment: .leading, spacing: 12) {
-                        ListSectionHeader(text: "Shared.Select")
+                        ListSectionHeader(text: "Shared.Pick")
                             .font(.body)
                             .padding(.horizontal)
 
                         LazyVGrid(columns: columns, spacing: 12) {
-                            GridCardView(destination: ViewPath.selectNumber, title: "Select.Number",
+                            GridCardView(destination: ViewPath.pickNumber, title: "Select.Number",
                                          icon: "number", iconColor: .blue)
-                            GridCardView(destination: ViewPath.selectLetter, title: "Select.Letter",
+                            GridCardView(destination: ViewPath.pickLetter, title: "Select.Letter",
                                          icon: "character", iconColor: .green)
 
                             switch Locale.current.language.languageCode ?? .english {
                             case .japanese:
-                                GridCardView(destination: ViewPath.selectWordJapanese, title: "Select.Word",
+                                GridCardView(destination: ViewPath.pickWordJapanese, title: "Select.Word",
                                              icon: "textformat.abc", iconColor: .teal)
                             default:
-                                GridCardView(destination: ViewPath.selectWordEnglish, title: "Select.Word",
+                                GridCardView(destination: ViewPath.pickWordEnglish, title: "Select.Word",
                                              icon: "textformat.abc", iconColor: .teal)
                             }
 
-                            GridCardView(destination: ViewPath.selectDate, title: "Generate.Date",
+                            GridCardView(destination: ViewPath.pickDate, title: "Generate.Date",
                                          icon: "calendar", iconColor: .red)
-                            GridCardView(destination: ViewPath.selectTime, title: "Generate.Time",
+                            GridCardView(destination: ViewPath.pickTime, title: "Generate.Time",
                                          icon: "clock.fill", iconColor: .red)
-                            GridCardView(destination: ViewPath.selectCountry, title: "Generate.Country",
+                            GridCardView(destination: ViewPath.pickCountry, title: "Generate.Country",
                                          icon: "globe", iconColor: .purple)
                         }
                         .padding(.horizontal)
@@ -75,14 +75,14 @@ struct RandomlyView: View {
                     }
 
                     VStack(alignment: .leading, spacing: 12) {
-                        ListSectionHeader(text: "Shared.Pick")
+                        ListSectionHeader(text: "Shared.Extract")
                             .font(.body)
                             .padding(.horizontal)
 
                         LazyVGrid(columns: columns, spacing: 12) {
-                            GridCardView(destination: ViewPath.selectItemFromList, title: "Select.ItemFromList",
+                            GridCardView(destination: ViewPath.extractItemFromList, title: "Select.ItemFromList",
                                          icon: "list.bullet", iconColor: .indigo)
-                            GridCardView(destination: ViewPath.selectWordFromText, title: "Select.WordFromText",
+                            GridCardView(destination: ViewPath.extractWordFromText, title: "Select.WordFromText",
                                          icon: "doc.text", iconColor: .teal)
                         }
                         .padding(.horizontal)
@@ -151,20 +151,20 @@ struct RandomlyView: View {
             .background(Color(.systemGroupedBackground))
             .navigationDestination(for: ViewPath.self, destination: { viewPath in
                 switch viewPath {
-                case .selectNumber:
-                    SelectView(mode: .number)
-                case .selectLetter:
-                    SelectView(mode: .letter)
-                case .selectWordEnglish:
-                    SelectView(mode: .englishWord)
-                case .selectWordJapanese:
-                    SelectView(mode: .japaneseWord)
-                case .selectDate:
-                    SelectDateView()
-                case .selectTime:
-                    SelectTimeView()
-                case .selectCountry:
-                    SelectCountryView()
+                case .pickNumber:
+                    PickNumberLetterWordView(mode: .number)
+                case .pickLetter:
+                    PickNumberLetterWordView(mode: .letter)
+                case .pickWordEnglish:
+                    PickNumberLetterWordView(mode: .englishWord)
+                case .pickWordJapanese:
+                    PickNumberLetterWordView(mode: .japaneseWord)
+                case .pickDate:
+                    PickDateView()
+                case .pickTime:
+                    PickTimeView()
+                case .pickCountry:
+                    PickCountryView()
                 case .generatePassword:
                     GeneratePasswordView()
                 case .generateColor:
@@ -173,10 +173,10 @@ struct RandomlyView: View {
                     GenerateCoordinateView()
                 case .generateWord:
                     GenerateWordView()
-                case .selectItemFromList:
-                    SelectItemFromListView()
-                case .selectWordFromText:
-                    SelectWordFromTextView()
+                case .extractItemFromList:
+                    ExtractItemFromListView()
+                case .extractWordFromText:
+                    ExtractWordFromTextView()
                 case .shuffleList:
                     ShuffleListView()
                 case .shuffleDict:

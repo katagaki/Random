@@ -1,5 +1,5 @@
 //
-//  SelectItemFromListView.swift
+//  ExtractItemFromListView.swift
 //  Random
 //
 //  Created by シンジャスティン on 2023/08/26.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SelectItemFromListView: View {
+struct ExtractItemFromListView: View {
 
     @State var selectedItem: SelectItem?
     @State var items: [SelectItem] = []
@@ -17,7 +17,7 @@ struct SelectItemFromListView: View {
             ScrollViewReader { scrollView in
                 ListView(selectedItem: $selectedItem,
                          items: $items) {
-                    ActionBar(primaryActionText: "Shared.Select",
+                    ActionBar(primaryActionText: "Shared.Extract",
                               primaryActionIconName: "lasso.sparkles",
                               copyDisabled: .constant(selectedItem == nil),
                               primaryActionDisabled: .constant(items.count == 0)) {

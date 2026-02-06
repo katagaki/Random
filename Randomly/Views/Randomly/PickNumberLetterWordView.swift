@@ -1,5 +1,5 @@
 //
-//  SelectView.swift
+//  PickNumberLetterWordView.swift
 //  Random
 //
 //  Created by シンジャスティン on 2023/08/26.
@@ -8,7 +8,7 @@
 import Combine
 import SwiftUI
 
-struct SelectView: View {
+struct PickNumberLetterWordView: View {
 
     @State var mode: GenerateType
     @State var result: String = ""
@@ -52,7 +52,7 @@ struct SelectView: View {
             default:
                 Divider()
             }
-            ActionBar(primaryActionText: "Shared.Generate",
+            ActionBar(primaryActionText: "Shared.Pick",
                       primaryActionIconName: "sparkles",
                       copyDisabled: .constant(false),
                       primaryActionDisabled: .constant(rangeEnd <= rangeStart ||

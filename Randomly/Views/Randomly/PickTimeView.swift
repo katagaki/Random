@@ -1,5 +1,5 @@
 //
-//  SelectTimeView.swift
+//  PickTimeView.swift
 //  Random
 //
 //  Created by シンジャスティン on 2023/08/29.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SelectTimeView: View {
+struct PickTimeView: View {
 
     @State var generatedTime: Date = Date()
     @FocusState var isTextFieldActive: Bool
@@ -25,7 +25,7 @@ struct SelectTimeView: View {
                 .id(generatedTime)
             Spacer()
             Divider()
-            ActionBar(primaryActionText: "Shared.Generate",
+            ActionBar(primaryActionText: "Shared.Pick",
                       primaryActionIconName: "sparkles",
                       copyDisabled: .constant(false),
                       primaryActionDisabled: .constant(false)) {

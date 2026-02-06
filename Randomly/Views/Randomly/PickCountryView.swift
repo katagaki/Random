@@ -1,5 +1,5 @@
 //
-//  SelectCountryView.swift
+//  PickCountryView.swift
 //  Random
 //
 //  Created by シンジャスティン on 2026/02/05.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SelectCountryView: View {
+struct PickCountryView: View {
 
     @State var selectedCountry: Country?
 
@@ -45,7 +45,7 @@ struct SelectCountryView: View {
             }
             Spacer()
             Divider()
-            ActionBar(primaryActionText: "Shared.Generate",
+            ActionBar(primaryActionText: "Shared.Pick",
                       primaryActionIconName: "sparkles",
                       copyDisabled: .constant(selectedCountry == nil),
                       primaryActionDisabled: .constant(false)) {

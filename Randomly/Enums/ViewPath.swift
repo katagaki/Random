@@ -8,19 +8,19 @@
 import Foundation
 
 enum ViewPath {
-    case selectNumber
-    case selectLetter
-    case selectWordEnglish
-    case selectWordJapanese
-    case selectDate
-    case selectTime
-    case selectCountry
+    case pickNumber
+    case pickLetter
+    case pickWordEnglish
+    case pickWordJapanese
+    case pickDate
+    case pickTime
+    case pickCountry
     case generateWord
     case generatePassword
     case generateColor
     case generateCoordinate
-    case selectItemFromList
-    case selectWordFromText
+    case extractItemFromList
+    case extractWordFromText
     case shuffleList
     case shuffleDict
     case sortList

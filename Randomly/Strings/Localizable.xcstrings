@@ -11,6 +11,193 @@
         }
       }
     },
+    "Count.Decrement" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Decrement"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "減らす"
+          }
+        }
+      }
+    },
+    "Count.DecrementRange" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Decrement Range"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "減少範囲"
+          }
+        }
+      }
+    },
+    "Count.DecrementValue" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Decrement Value"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "減少値"
+          }
+        }
+      }
+    },
+    "Count.Down" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Down"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "数値を減らす"
+          }
+        }
+      }
+    },
+    "Count.Increment" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Increment"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "増やす"
+          }
+        }
+      }
+    },
+    "Count.IncrementRange" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Increment Range"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "増加範囲"
+          }
+        }
+      }
+    },
+    "Count.IncrementValue" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Increment Value"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "増加値"
+          }
+        }
+      }
+    },
+    "Count.Start" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開始"
+          }
+        }
+      }
+    },
+    "Count.StartingValue" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Starting Value"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開始値"
+          }
+        }
+      }
+    },
+    "Count.Up" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Up"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "数値を増やす"
+          }
+        }
+      }
+    },
+    "Count.UseRandomRange" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use Random Range"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ランダムな範囲を使用"
+          }
+        }
+      }
+    },
     "Country.Afghanistan" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -3445,329 +3632,6 @@
         }
       }
     },
-    "More.About" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "About"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "このアプリについて"
-          }
-        }
-      }
-    },
-    "More.Attributions" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Attributions"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "著者権表記"
-          }
-        }
-      }
-    },
-    "More.Datasets" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Datasets"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "内部データ一覧"
-          }
-        }
-      }
-    },
-    "More.Datasets.ViewTitle" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Datasets"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "内部データ"
-          }
-        }
-      }
-    },
-    "More.General" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "General"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "一般"
-          }
-        }
-      }
-    },
-    "More.ViewOnGitHub" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "View on GitHub"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "GitHubでソースコードを閲覧"
-          }
-        }
-      }
-    },
-    "Count.DecrementValue" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Decrement Value"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "減少値"
-          }
-        }
-      }
-    },
-    "Count.IncrementValue" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Increment Value"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "増加値"
-          }
-        }
-      }
-    },
-    "Sort.Dictionary" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dictionary"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "辞書"
-          }
-        }
-      }
-    },
-    "Sort.List" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "List"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "リスト"
-          }
-        }
-      }
-    },
-    "Count.Decrement" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Decrement"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "減らす"
-          }
-        }
-      }
-    },
-    "Count.DecrementRange" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Decrement Range"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "減少範囲"
-          }
-        }
-      }
-    },
-    "Count.Down" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Count Down"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "数値を減らす"
-          }
-        }
-      }
-    },
-    "Count.Increment" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Increment"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "増やす"
-          }
-        }
-      }
-    },
-    "Count.IncrementRange" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Increment Range"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "増加範囲"
-          }
-        }
-      }
-    },
-    "Count.Start" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Start"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "開始"
-          }
-        }
-      }
-    },
-    "Count.StartingValue" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Starting Value"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "開始値"
-          }
-        }
-      }
-    },
-    "Count.Up" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Count Up"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "数値を増やす"
-          }
-        }
-      }
-    },
-    "Count.UseRandomRange" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Use Random Range"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ランダムな範囲を使用"
-          }
-        }
-      }
-    },
     "Do.CardDraw" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -4113,7 +3977,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Draw Card"
+            "value" : "Draw Cards"
           }
         },
         "ja" : {
@@ -4351,13 +4215,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Generate Country"
+            "value" : "Pick a Country"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "国を生成"
+            "value" : "国を選択"
           }
         }
       }
@@ -4385,13 +4249,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Generate Date"
+            "value" : "Pick a Date"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "日付を生成"
+            "value" : "日付を選択"
           }
         }
       }
@@ -4419,13 +4283,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Generate Letter"
+            "value" : "Pick a Letter"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "英文字を生成"
+            "value" : "英文字を選択"
           }
         }
       }
@@ -4453,7 +4317,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Generate Number"
+            "value" : "Pick a Number"
           }
         },
         "ja" : {
@@ -4617,13 +4481,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Generate Time"
+            "value" : "Pick a Time"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "時刻を生成"
+            "value" : "時刻を選択"
           }
         }
       }
@@ -4640,7 +4504,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "単語"
+            "value" : "英単語"
           }
         }
       }
@@ -4673,41 +4537,109 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "単語を生成"
-          }
-        }
-      }
-    },
-    "Generate.WordEN.ViewTitle" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Generate Word"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
             "value" : "英単語を生成"
           }
         }
       }
     },
-    "Generate.WordJP.ViewTitle" : {
+    "More.About" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Generate Word"
+            "value" : "About"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "単語を生成"
+            "value" : "このアプリについて"
+          }
+        }
+      }
+    },
+    "More.Attributions" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Attributions"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "著者権表記"
+          }
+        }
+      }
+    },
+    "More.Datasets" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Datasets"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "内部データ一覧"
+          }
+        }
+      }
+    },
+    "More.Datasets.ViewTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Datasets"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "内部データ"
+          }
+        }
+      }
+    },
+    "More.General" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "General"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一般"
+          }
+        }
+      }
+    },
+    "More.ViewOnGitHub" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "View on GitHub"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GitHubでソースコードを閲覧"
           }
         }
       }
@@ -4742,6 +4674,108 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "リストから項目を選択"
+          }
+        }
+      }
+    },
+    "Select.Letter" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Letter"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "英文字"
+          }
+        }
+      }
+    },
+    "Select.Letter.ViewTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pick a Letter"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "英文字を選択"
+          }
+        }
+      }
+    },
+    "Select.Number" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Number"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "乱数"
+          }
+        }
+      }
+    },
+    "Select.Number.ViewTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pick a Number"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "乱数を選択"
+          }
+        }
+      }
+    },
+    "Select.Word" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Word"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "単語"
+          }
+        }
+      }
+    },
+    "Select.WordEN.ViewTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pick a Word"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "英単語を選択"
           }
         }
       }
@@ -4865,149 +4899,13 @@
         }
       }
     },
-    "Shuffle.Dictionary" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dictionary"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "辞書"
-          }
-        }
-      }
-    },
-    "Shuffle.List" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "List"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "リスト"
-          }
-        }
-      }
-    },
-    "Select.Letter" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Letter"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "英文字"
-          }
-        }
-      }
-    },
-    "Select.Letter.ViewTitle" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Select Letter"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "英文字を選択"
-          }
-        }
-      }
-    },
-    "Select.Number" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Number"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "乱数"
-          }
-        }
-      }
-    },
-    "Select.Number.ViewTitle" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Select Number"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "乱数を選択"
-          }
-        }
-      }
-    },
-    "Select.Word" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Word"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "単語"
-          }
-        }
-      }
-    },
-    "Select.WordEN.ViewTitle" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Select Word"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "英単語を選択"
-          }
-        }
-      }
-    },
     "Select.WordJP.ViewTitle" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Select Word"
+            "value" : "Pick a Word"
           }
         },
         "ja" : {
@@ -5289,6 +5187,23 @@
         }
       }
     },
+    "Shared.Extract" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Extract"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "抽出"
+          }
+        }
+      }
+    },
     "Shared.Generate" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -5471,7 +5386,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "抽出"
+            "value" : "選択"
           }
         }
       }
@@ -5542,23 +5457,6 @@
         }
       }
     },
-    "Shared.Select" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pick"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "選択"
-          }
-        }
-      }
-    },
     "Shared.Shuffle" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -5582,7 +5480,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Shuffle a Dictionary"
+            "value" : "Shuffle Dictionary"
           }
         },
         "ja" : {
@@ -5599,7 +5497,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Shuffle a List"
+            "value" : "Shuffle List"
           }
         },
         "ja" : {
@@ -5667,7 +5565,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sort a Dictionary"
+            "value" : "Sort Dictionary"
           }
         },
         "ja" : {
@@ -5684,13 +5582,81 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sort a List"
+            "value" : "Sort List"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "リストを並べ替える"
+          }
+        }
+      }
+    },
+    "Shuffle.Dictionary" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dictionary"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "辞書"
+          }
+        }
+      }
+    },
+    "Shuffle.List" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "List"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "リスト"
+          }
+        }
+      }
+    },
+    "Sort.Dictionary" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dictionary"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "辞書"
+          }
+        }
+      }
+    },
+    "Sort.List" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "List"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "リスト"
           }
         }
       }

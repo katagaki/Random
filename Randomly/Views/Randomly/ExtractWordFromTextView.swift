@@ -1,5 +1,5 @@
 //
-//  SelectWordFromTextView.swift
+//  ExtractWordFromTextView.swift
 //  Random
 //
 //  Created by シンジャスティン on 2023/08/28.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SelectWordFromTextView: View {
+struct ExtractWordFromTextView: View {
 
     let japaneseKana = CharacterSet(charactersIn:
     """
@@ -79,7 +79,7 @@ struct SelectWordFromTextView: View {
             .padding([.leading, .trailing])
             .padding([.top, .bottom], 8.0)
             Divider()
-            ActionBar(primaryActionText: "Shared.Select",
+            ActionBar(primaryActionText: "Shared.Extract",
                       primaryActionIconName: "lasso.sparkles",
                       copyDisabled: .constant(selectedWord == nil),
                       primaryActionDisabled: .constant(words().count == 0)) {

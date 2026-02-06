@@ -1,5 +1,5 @@
 //
-//  SelectDateView.swift
+//  PickDateView.swift
 //  Random
 //
 //  Created by シンジャスティン on 2023/08/29.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SelectDateView: View {
+struct PickDateView: View {
 
     @State var generatedDate: Date = Date()
     @State var startDate: Date = Date(timeIntervalSince1970: 885686400)
@@ -44,7 +44,7 @@ struct SelectDateView: View {
             }
             .padding()
             Divider()
-            ActionBar(primaryActionText: "Shared.Generate",
+            ActionBar(primaryActionText: "Shared.Pick",
                       primaryActionIconName: "sparkles",
                       copyDisabled: .constant(false),
                       primaryActionDisabled: .constant(endDate <= startDate)) {
