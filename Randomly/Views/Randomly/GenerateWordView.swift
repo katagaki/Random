@@ -13,7 +13,7 @@ struct GenerateWordView: View {
         "a", "e", "i", "o", "u"
     ]
     private static let consonants = [
-        "b", "c", "d", "f", "g", "h", "j", "k", "l", "m", 
+        "b", "c", "d", "f", "g", "h", "j", "k", "l", "m",
         "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"
     ]
     private static let startClusters = [
