@@ -11,9 +11,28 @@ struct GridCardView<Destination: Hashable>: View {
     let destination: Destination
     let title: LocalizedStringKey
     let icon: String
-    let iconColor: Color
+    let iconColor: Color?
+    let iconGradient: LinearGradient?
 
     @State private var isPressed = false
+
+    // Convenience initializer for solid colors
+    init(destination: Destination, title: LocalizedStringKey, icon: String, iconColor: Color) {
+        self.destination = destination
+        self.title = title
+        self.icon = icon
+        self.iconColor = iconColor
+        self.iconGradient = nil
+    }
+
+    // Initializer for gradients
+    init(destination: Destination, title: LocalizedStringKey, icon: String, iconGradient: LinearGradient) {
+        self.destination = destination
+        self.title = title
+        self.icon = icon
+        self.iconColor = nil
+        self.iconGradient = iconGradient
+    }
 
     private var cornerRadius: CGFloat {
         if #available(iOS 26.0, *) {
@@ -39,7 +58,7 @@ struct GridCardView<Destination: Hashable>: View {
                     .scaledToFit()
                     .frame(width: 24.0, height: 24.0)
                     .padding(4.0)
-                    .foregroundStyle(iconColor)
+                    .foregroundStyle(iconGradient != nil ? AnyShapeStyle(iconGradient!) : AnyShapeStyle(iconColor ?? .primary))
                 Spacer()
                 Text(title)
                     .font(.subheadline)

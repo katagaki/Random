@@ -34,18 +34,23 @@ struct RandomlyView: View {
                             switch Locale.current.language.languageCode ?? .english {
                             case .japanese:
                                 GridCardView(destination: ViewPath.rGenerateWordJapanese, title: "Randomly.Generate.Word",
-                                             icon: "textformat", iconColor: .purple)
+                                             icon: "textformat", iconColor: .teal)
                             default:
                                 GridCardView(destination: ViewPath.rGenerateWordEnglish, title: "Randomly.Generate.Word",
-                                             icon: "textformat", iconColor: .purple)
+                                             icon: "textformat", iconColor: .teal)
                             }
 
                             GridCardView(destination: ViewPath.rGenerateCountry, title: "Randomly.Generate.Country",
-                                         icon: "globe", iconColor: .cyan)
+                                         icon: "globe", iconColor: .purple)
                             GridCardView(destination: ViewPath.rGeneratePassword, title: "Randomly.Generate.Password",
                                          icon: "key.fill", iconColor: .orange)
                             GridCardView(destination: ViewPath.rGenerateColor, title: "Randomly.Generate.Color",
-                                         icon: "paintpalette.fill", iconColor: .pink)
+                                         icon: "paintpalette.fill",
+                                         iconGradient: LinearGradient(
+                                             colors: [.red, .orange, .yellow, .green, .cyan, .blue, .purple],
+                                             startPoint: .leading,
+                                             endPoint: .trailing
+                                         ))
                         }
                         .padding(.horizontal)
                     }
@@ -89,7 +94,7 @@ struct RandomlyView: View {
                             GridCardView(destination: ViewPath.rDoDiceRoll, title: "Randomly.Do.DiceRoll",
                                          icon: "die.face.5.fill", iconColor: .red)
                             GridCardView(destination: ViewPath.rDoCardDraw, title: "Randomly.Do.CardDraw",
-                                         icon: "square.on.square.fill", iconColor: .purple)
+                                         icon: "square.on.square.fill", iconColor: .gray)
                         }
                         .padding(.horizontal)
                     }
