@@ -855,7 +855,7 @@
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "北朝鮮"
           }
         }
@@ -3201,7 +3201,7 @@
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "アメリカ"
           }
         }
@@ -4147,13 +4147,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Coin Flip"
+            "value" : "Coin Toss"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "コインを投げる"
+            "value" : "コイントス"
           }
         }
       }
@@ -4164,13 +4164,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Flip Coin"
+            "value" : "Toss Coin"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "コインを投げる"
+            "value" : "コイントス"
           }
         }
       }
@@ -4187,7 +4187,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "サイコロを投げる"
+            "value" : "サイコロを振る"
           }
         }
       }
@@ -4204,7 +4204,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "サイコロを投げる"
+            "value" : "サイコロを振る"
           }
         }
       }
@@ -4341,6 +4341,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "国を生成"
+          }
+        }
+      }
+    },
+    "Randomly.Generate.Date" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Date"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "日付"
+          }
+        }
+      }
+    },
+    "Randomly.Generate.Date.ViewTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Generate Date"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "日付を生成"
           }
         }
       }
@@ -4539,6 +4573,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "パスワードを生成"
+          }
+        }
+      }
+    },
+    "Randomly.Generate.Time" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Time"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "時刻"
+          }
+        }
+      }
+    },
+    "Randomly.Generate.Time.ViewTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Generate Time"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "時刻を生成"
           }
         }
       }
@@ -4905,7 +4973,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Flip Coin"
+            "value" : "Toss Coin"
           }
         },
         "ja" : {
@@ -4922,13 +4990,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Roll 1 Die"
+            "value" : "Roll 1"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "投げる"
+            "value" : "1個"
           }
         }
       }
@@ -4939,13 +5007,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Roll 2 Dice"
+            "value" : "Roll 2"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "2個投げる"
+            "value" : "2個"
           }
         }
       }
@@ -4956,13 +5024,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Roll 3 Dice"
+            "value" : "Roll 3"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "3個投げる"
+            "value" : "3個"
           }
         }
       }
@@ -4973,13 +5041,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Roll 4 Dice"
+            "value" : "Roll 4"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "4個投げる"
+            "value" : "4個"
           }
         }
       }
@@ -4990,13 +5058,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Roll 5 Dice"
+            "value" : "Roll 5"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "5個投げる"
+            "value" : "5個"
           }
         }
       }
@@ -5154,6 +5222,23 @@
         }
       }
     },
+    "Shared.OtherFeatures" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "その他"
+          }
+        }
+      }
+    },
     "Shared.Paste" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -5167,6 +5252,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ペースト"
+          }
+        }
+      }
+    },
+    "Shared.Pick" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pick"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "抽出"
           }
         }
       }
@@ -5317,7 +5419,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "並べ替える"
+            "value" : "並べ替え"
           }
         }
       }

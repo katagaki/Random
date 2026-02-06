@@ -21,7 +21,7 @@ struct RandomlyView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 28.0) {
                     VStack(alignment: .leading, spacing: 12) {
-                        ListSectionHeader(text: "Shared.Generate")
+                        ListSectionHeader(text: "Shared.Select")
                             .font(.body)
                             .padding(.horizontal)
 
@@ -40,8 +40,22 @@ struct RandomlyView: View {
                                              icon: "textformat", iconColor: .teal)
                             }
 
+                            GridCardView(destination: ViewPath.rGenerateDate, title: "Randomly.Generate.Date",
+                                         icon: "calendar", iconColor: .red)
+                            GridCardView(destination: ViewPath.rGenerateTime, title: "Randomly.Generate.Time",
+                                         icon: "clock.fill", iconColor: .red)
                             GridCardView(destination: ViewPath.rGenerateCountry, title: "Randomly.Generate.Country",
                                          icon: "globe", iconColor: .purple)
+                        }
+                        .padding(.horizontal)
+                    }
+
+                    VStack(alignment: .leading, spacing: 12) {
+                        ListSectionHeader(text: "Shared.Generate")
+                            .font(.body)
+                            .padding(.horizontal)
+
+                        LazyVGrid(columns: columns, spacing: 12) {
                             GridCardView(destination: ViewPath.rGeneratePassword, title: "Randomly.Generate.Password",
                                          icon: "key.fill", iconColor: .orange)
                             GridCardView(destination: ViewPath.rGenerateColor, title: "Randomly.Generate.Color",
@@ -56,7 +70,7 @@ struct RandomlyView: View {
                     }
 
                     VStack(alignment: .leading, spacing: 12) {
-                        ListSectionHeader(text: "Shared.Select")
+                        ListSectionHeader(text: "Shared.Pick")
                             .font(.body)
                             .padding(.horizontal)
 
@@ -84,7 +98,21 @@ struct RandomlyView: View {
                     }
 
                     VStack(alignment: .leading, spacing: 12) {
-                        ListSectionHeader(text: "Shared.Do")
+                        ListSectionHeader(text: "Shared.Count")
+                            .font(.body)
+                            .padding(.horizontal)
+
+                        LazyVGrid(columns: columns, spacing: 12) {
+                            GridCardView(destination: ViewPath.rCountUp, title: "Randomly.Count.Up",
+                                         icon: "plus.circle.fill", iconColor: Locale.current.language.languageCode == .japanese ? .red : .green)
+                            GridCardView(destination: ViewPath.rCountDown, title: "Randomly.Count.Down",
+                                         icon: "minus.circle.fill", iconColor: Locale.current.language.languageCode == .japanese ? .blue : .red)
+                        }
+                        .padding(.horizontal)
+                    }
+
+                    VStack(alignment: .leading, spacing: 12) {
+                        ListSectionHeader(text: "Shared.OtherFeatures")
                             .font(.body)
                             .padding(.horizontal)
 
@@ -95,20 +123,6 @@ struct RandomlyView: View {
                                          icon: "die.face.5.fill", iconColor: .red)
                             GridCardView(destination: ViewPath.rDoCardDraw, title: "Randomly.Do.CardDraw",
                                          icon: "square.on.square.fill", iconColor: .gray)
-                        }
-                        .padding(.horizontal)
-                    }
-
-                    VStack(alignment: .leading, spacing: 12) {
-                        ListSectionHeader(text: "Shared.Count")
-                            .font(.body)
-                            .padding(.horizontal)
-
-                        LazyVGrid(columns: columns, spacing: 12) {
-                            GridCardView(destination: ViewPath.rCountUp, title: "Randomly.Count.Up",
-                                         icon: "plus.circle.fill", iconColor: Locale.current.language.languageCode == .japanese ? .red : .green)
-                            GridCardView(destination: ViewPath.rCountDown, title: "Randomly.Count.Down",
-                                         icon: "minus.circle.fill", iconColor: Locale.current.language.languageCode == .japanese ? .blue : .red)
                         }
                         .padding(.horizontal)
                     }
@@ -132,6 +146,10 @@ struct RandomlyView: View {
                     GenerateColorView()
                 case .rGenerateCountry:
                     GenerateCountryView()
+                case .rGenerateDate:
+                    GenerateDateView()
+                case .rGenerateTime:
+                    GenerateTimeView()
                 case .rSelectItemFromList:
                     SelectItemFromListView()
                 case .rSelectWordFromText:

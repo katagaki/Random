@@ -34,6 +34,9 @@ struct SortDictionaryView: View {
                     } label: {
                         Label("Shared.Sort.ByKey", systemImage: "arrow.up.and.down")
                             .bold()
+                            .padding(.horizontal, 4.0)
+                            .frame(minHeight: 42.0)
+
                         .frame(maxWidth: .infinity)
                     }
                     .buttonStyle(.borderedProminent)

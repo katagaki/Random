@@ -84,6 +84,8 @@ struct GenerateColorView: View {
                         """
                     } label: {
                         Label("Shared.Copy.SwiftUICode", systemImage: "doc.on.doc")
+                            .padding(.horizontal, 4.0)
+                            .frame(minHeight: 42.0)
                     }
                     .buttonStyle(.bordered)
                     .clipShape(RoundedRectangle(cornerRadius: 99))
