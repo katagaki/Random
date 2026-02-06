@@ -9,6 +9,5 @@ import Foundation
 
 enum TabType {
     case randomly
-    case neatly
     case more
 }

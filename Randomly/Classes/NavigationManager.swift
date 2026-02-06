@@ -10,15 +10,12 @@ import Foundation
 class NavigationManager: ObservableObject {
 
     @Published var randomlyTabPath: [ViewPath] = []
-    @Published var neatlyTabPath: [ViewPath] = []
     @Published var moreTabPath: [ViewPath] = []
 
     func popToRoot(for tab: TabType) {
         switch tab {
         case .randomly:
             randomlyTabPath.removeAll()
-        case .neatly:
-            neatlyTabPath.removeAll()
         case .more:
             moreTabPath.removeAll()
         }
@@ -28,8 +25,6 @@ class NavigationManager: ObservableObject {
         switch tab {
         case .randomly:
             randomlyTabPath.append(viewPath)
-        case .neatly:
-            neatlyTabPath.append(viewPath)
         case .more:
             moreTabPath.append(viewPath)
         }
@@ -40,10 +35,6 @@ class NavigationManager: ObservableObject {
         case .randomly:
             if !randomlyTabPath.isEmpty {
                 randomlyTabPath.removeLast()
-            }
-        case .neatly:
-            if !neatlyTabPath.isEmpty {
-                neatlyTabPath.removeLast()
             }
         case .more:
             if !moreTabPath.isEmpty {
