@@ -4294,40 +4294,6 @@
         }
       }
     },
-    "Generate.Number" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Number"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "乱数"
-          }
-        }
-      }
-    },
-    "Generate.Number.ViewTitle" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pick a Number"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "乱数を生成"
-          }
-        }
-      }
-    },
     "Generate.Password" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -4741,7 +4707,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "乱数を選択"
+            "value" : "乱数を生成"
           }
         }
       }
