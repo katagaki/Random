@@ -41,7 +41,6 @@ struct SelectTimeView: View {
         .task {
             regenerate()
         }
-        .keyboardToolbar(isFocused: $isTextFieldActive)
         .navigationTitle("Randomly.Generate.Time.ViewTitle")
         .navigationBarTitleDisplayMode(.inline)
     }

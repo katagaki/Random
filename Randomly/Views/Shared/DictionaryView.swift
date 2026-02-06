@@ -102,7 +102,6 @@ struct DictionaryView<Content: View>: View {
         .onAppear {
             focusedField = .keyField
         }
-        .keyboardToolbar(focusedField: $focusedField)
     }
 
     func addNewItem() {

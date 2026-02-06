@@ -124,7 +124,6 @@ struct CountUpView: View {
                 .padding(.bottom, 16.0)
             }
         }
-        .keyboardToolbar(isFocused: $isTextFieldActive)
         .navigationTitle("Randomly.Count.Up")
         .navigationBarTitleDisplayMode(.inline)
     }

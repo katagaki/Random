@@ -57,7 +57,6 @@ struct GenerateCoordinateView: View {
         .task {
             regenerate()
         }
-        .keyboardToolbar(isFocused: $isTextFieldActive)
         .navigationTitle("Randomly.Generate.Coordinate.ViewTitle")
         .navigationBarTitleDisplayMode(.inline)
     }

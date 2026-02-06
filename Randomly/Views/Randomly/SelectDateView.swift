@@ -60,7 +60,6 @@ struct SelectDateView: View {
         .task {
             regenerate()
         }
-        .keyboardToolbar(isFocused: $isTextFieldActive)
         .navigationTitle("Randomly.Generate.Date.ViewTitle")
         .navigationBarTitleDisplayMode(.inline)
     }

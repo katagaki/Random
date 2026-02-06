@@ -109,7 +109,6 @@ struct ListView<Content: View>: View {
         .onAppear {
             focusedField = .newItemField
         }
-        .keyboardToolbar(focusedField: $focusedField)
     }
 
     func addNewItem() {

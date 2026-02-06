@@ -83,6 +83,7 @@ struct SelectWordFromTextView: View {
                       primaryActionIconName: "lasso.sparkles",
                       copyDisabled: .constant(selectedWord == nil),
                       primaryActionDisabled: .constant(words().count == 0)) {
+                isTextFieldActive = false
                 selectedWord = words().randomElement()!.lowercased()
             } copyAction: {
                 if let selectedWord = selectedWord {
@@ -97,7 +98,6 @@ struct SelectWordFromTextView: View {
         .onAppear {
             isTextFieldActive = true
         }
-        .keyboardToolbar(isFocused: $isTextFieldActive)
         .toolbar {
             if let languageCode = Locale.current.language.languageCode {
                 if languageCode != .english {

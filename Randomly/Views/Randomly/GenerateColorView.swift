@@ -100,7 +100,6 @@ struct GenerateColorView: View {
         .task {
             regenerate()
         }
-        .keyboardToolbar(isFocused: $isTextFieldActive)
         .navigationTitle("Randomly.Generate.Color.ViewTitle")
         .navigationBarTitleDisplayMode(.inline)
     }

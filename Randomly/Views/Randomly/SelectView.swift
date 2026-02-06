@@ -70,7 +70,6 @@ struct SelectView: View {
         .task {
             regenerate()
         }
-        .keyboardToolbar(isFocused: $isTextFieldActive)
         .navigationTitle(NSLocalizedString(mode.rawValue, comment: ""))
         .navigationBarTitleDisplayMode(.inline)
     }
