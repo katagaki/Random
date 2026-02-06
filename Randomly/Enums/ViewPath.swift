@@ -26,6 +26,8 @@ enum ViewPath {
     case rCountDown
     case nSortList
     case nSortDict
+    case nCountUp
+    case nCountDown
     case moreDatasets
     case moreAttributions
 }

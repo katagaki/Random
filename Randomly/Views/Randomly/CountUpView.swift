@@ -28,7 +28,7 @@ struct CountUpView: View {
                 .transition(.scale.combined(with: .opacity))
                 .id(currentValue)
             Spacer()
-            
+
             if !hasStarted {
                 Divider()
                 VStack(alignment: .leading, spacing: 16.0) {
@@ -40,7 +40,7 @@ struct CountUpView: View {
                             .textFieldStyle(.roundedBorder)
                             .focused($isTextFieldActive)
                     }
-                    
+
                     VStack(alignment: .leading, spacing: 8.0) {
                         Text("Randomly.Count.IncrementRange")
                             .font(.body)
@@ -63,7 +63,7 @@ struct CountUpView: View {
             } else {
                 Divider()
             }
-            
+
             if !hasStarted {
                 ActionBar(primaryActionText: "Randomly.Count.Start",
                           primaryActionIconName: "play.fill",
@@ -109,21 +109,21 @@ struct CountUpView: View {
         .navigationTitle("Randomly.Count.Up")
         .navigationBarTitleDisplayMode(.inline)
     }
-    
+
     func start() {
         withAnimation(.default.speed(2)) {
             currentValue = startingValue
             hasStarted = true
         }
     }
-    
+
     func reset() {
         withAnimation(.default.speed(2)) {
             startingValue = currentValue
             hasStarted = false
         }
     }
-    
+
     func increment() {
         withAnimation(.default.speed(2)) {
             let randomIncrement = Int.random(in: rangeStart...rangeEnd)

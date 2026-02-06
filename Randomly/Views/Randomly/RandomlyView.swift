@@ -106,9 +106,9 @@ struct RandomlyView: View {
 
                         LazyVGrid(columns: columns, spacing: 12) {
                             GridCardView(destination: ViewPath.rCountUp, title: "Randomly.Count.Up",
-                                         icon: "arrow.up", iconColor: Locale.current.language.languageCode == .japanese ? .red : .green)
+                                         icon: "plus.circle.fill", iconColor: Locale.current.language.languageCode == .japanese ? .red : .green)
                             GridCardView(destination: ViewPath.rCountDown, title: "Randomly.Count.Down",
-                                         icon: "arrow.down", iconColor: Locale.current.language.languageCode == .japanese ? .blue : .red)
+                                         icon: "minus.circle.fill", iconColor: Locale.current.language.languageCode == .japanese ? .blue : .red)
                         }
                         .padding(.horizontal)
                     }

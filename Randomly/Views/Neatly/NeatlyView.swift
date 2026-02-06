@@ -33,6 +33,20 @@ struct NeatlyView: View {
                         }
                         .padding(.horizontal)
                     }
+
+                    VStack(alignment: .leading, spacing: 12) {
+                        ListSectionHeader(text: "Shared.Count")
+                            .font(.body)
+                            .padding(.horizontal)
+
+                        LazyVGrid(columns: columns, spacing: 12) {
+                            GridCardView(destination: ViewPath.nCountUp, title: "Neatly.Count.Up",
+                                         icon: "plus.circle.fill", iconColor: Locale.current.language.languageCode == .japanese ? .red : .green)
+                            GridCardView(destination: ViewPath.nCountDown, title: "Neatly.Count.Down",
+                                         icon: "minus.circle.fill", iconColor: Locale.current.language.languageCode == .japanese ? .blue : .red)
+                        }
+                        .padding(.horizontal)
+                    }
                 }
                 .padding(.vertical)
             }
@@ -43,6 +57,10 @@ struct NeatlyView: View {
                     SortListView()
                 case .nSortDict:
                     SortDictionaryView()
+                case .nCountUp:
+                    NeatlyCountUpView()
+                case .nCountDown:
+                    NeatlyCountDownView()
                 default:
                     Color.clear
                 }

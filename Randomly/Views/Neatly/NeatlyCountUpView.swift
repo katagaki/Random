@@ -1,5 +1,5 @@
 //
-//  CountDownView.swift
+//  NeatlyCountUpView.swift
 //  Random
 //
 //  Created by シンジャスティン on 2023/08/26.
@@ -7,11 +7,10 @@
 
 import SwiftUI
 
-struct CountDownView: View {
+struct NeatlyCountUpView: View {
 
-    @State var rangeStart: Int = 1
-    @State var rangeEnd: Int = 10
-    @State var startingValue: Int = 100
+    @State var incrementValue: Int = 1
+    @State var startingValue: Int = 0
     @State var currentValue: Int = 0
     @State var hasStarted: Bool = false
     @FocusState var isTextFieldActive: Bool
@@ -42,20 +41,12 @@ struct CountDownView: View {
                     }
 
                     VStack(alignment: .leading, spacing: 8.0) {
-                        Text("Randomly.Count.DecrementRange")
+                        Text("Neatly.Count.IncrementValue")
                             .font(.body)
                             .bold()
-                        HStack(alignment: .center, spacing: 4.0) {
-                            Text("Shared.RangeFrom")
-                                .font(.body)
-                            TextField("", value: $rangeStart, format: .number)
-                                .focused($isTextFieldActive)
-                            Text("Shared.RangeTo")
-                                .font(.body)
-                            TextField("", value: $rangeEnd, format: .number)
-                                .focused($isTextFieldActive)
-                        }
-                        .textFieldStyle(.roundedBorder)
+                        TextField("", value: $incrementValue, format: .number)
+                            .textFieldStyle(.roundedBorder)
+                            .focused($isTextFieldActive)
                     }
                 }
                 .padding()
@@ -69,7 +60,7 @@ struct CountDownView: View {
                           primaryActionIconName: "play.fill",
                           copyDisabled: .constant(true),
                           copyHidden: true,
-                          primaryActionDisabled: .constant(rangeEnd <= rangeStart)) {
+                          primaryActionDisabled: .constant(false)) {
                     start()
                 } copyAction: {
                     // Copy not available before starting
@@ -79,12 +70,12 @@ struct CountDownView: View {
                 .padding(.top, 8.0)
                 .padding(.bottom, 16.0)
             } else {
-                ActionBar(primaryActionText: "Randomly.Count.Decrement",
-                          primaryActionIconName: "minus",
+                ActionBar(primaryActionText: "Randomly.Count.Increment",
+                          primaryActionIconName: "plus",
                           copyDisabled: .constant(true),
                           copyHidden: true,
                           primaryActionDisabled: .constant(false)) {
-                    decrement()
+                    increment()
                 } copyAction: {
                     // Copy not available
                 }
@@ -106,7 +97,7 @@ struct CountDownView: View {
             }
         }
         .keyboardToolbar(isFocused: $isTextFieldActive)
-        .navigationTitle("Randomly.Count.Down")
+        .navigationTitle("Neatly.Count.Up")
         .navigationBarTitleDisplayMode(.inline)
     }
 
@@ -124,10 +115,9 @@ struct CountDownView: View {
         }
     }
 
-    func decrement() {
+    func increment() {
         withAnimation(.default.speed(2)) {
-            let randomDecrement = Int.random(in: rangeStart...rangeEnd)
-            currentValue -= randomDecrement
+            currentValue += incrementValue
         }
     }
 }
