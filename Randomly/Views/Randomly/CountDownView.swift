@@ -9,8 +9,10 @@ import SwiftUI
 
 struct CountDownView: View {
 
+    @State var useRange: Bool = false
     @State var rangeStart: Int = 1
     @State var rangeEnd: Int = 10
+    @State var decrementValue: Int = 1
     @State var startingValue: Int = 100
     @State var currentValue: Int = 0
     @State var hasStarted: Bool = false
@@ -41,21 +43,38 @@ struct CountDownView: View {
                             .focused($isTextFieldActive)
                     }
 
-                    VStack(alignment: .leading, spacing: 8.0) {
-                        Text("Randomly.Count.DecrementRange")
+                    Toggle(isOn: $useRange) {
+                        Text("Randomly.Count.UseRandomRange")
                             .font(.body)
                             .bold()
-                        HStack(alignment: .center, spacing: 4.0) {
-                            Text("Shared.RangeFrom")
+                    }
+
+                    if useRange {
+                        VStack(alignment: .leading, spacing: 8.0) {
+                            Text("Randomly.Count.DecrementRange")
                                 .font(.body)
-                            TextField("", value: $rangeStart, format: .number)
-                                .focused($isTextFieldActive)
-                            Text("Shared.RangeTo")
+                                .bold()
+                            HStack(alignment: .center, spacing: 4.0) {
+                                Text("Shared.RangeFrom")
+                                    .font(.body)
+                                TextField("", value: $rangeStart, format: .number)
+                                    .focused($isTextFieldActive)
+                                Text("Shared.RangeTo")
+                                    .font(.body)
+                                TextField("", value: $rangeEnd, format: .number)
+                                    .focused($isTextFieldActive)
+                            }
+                            .textFieldStyle(.roundedBorder)
+                        }
+                    } else {
+                        VStack(alignment: .leading, spacing: 8.0) {
+                            Text("Neatly.Count.DecrementValue")
                                 .font(.body)
-                            TextField("", value: $rangeEnd, format: .number)
+                                .bold()
+                            TextField("", value: $decrementValue, format: .number)
+                                .textFieldStyle(.roundedBorder)
                                 .focused($isTextFieldActive)
                         }
-                        .textFieldStyle(.roundedBorder)
                     }
                 }
                 .padding()
@@ -69,7 +88,7 @@ struct CountDownView: View {
                           primaryActionIconName: "play.fill",
                           copyDisabled: .constant(true),
                           copyHidden: true,
-                          primaryActionDisabled: .constant(rangeEnd <= rangeStart)) {
+                          primaryActionDisabled: .constant(useRange && rangeEnd <= rangeStart)) {
                     start()
                 } copyAction: {
                     // Copy not available before starting
@@ -126,8 +145,12 @@ struct CountDownView: View {
 
     func decrement() {
         withAnimation(.default.speed(2)) {
-            let randomDecrement = Int.random(in: rangeStart...rangeEnd)
-            currentValue -= randomDecrement
+            if useRange {
+                let randomDecrement = Int.random(in: rangeStart...rangeEnd)
+                currentValue -= randomDecrement
+            } else {
+                currentValue -= decrementValue
+            }
         }
     }
 }

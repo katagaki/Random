@@ -3564,23 +3564,6 @@
         }
       }
     },
-    "Neatly.Count.Down" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Count Down"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "数値を減らす"
-          }
-        }
-      }
-    },
     "Neatly.Count.IncrementValue" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -3594,57 +3577,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "増加値"
-          }
-        }
-      }
-    },
-    "Neatly.Count.Up" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Count Up"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "数値を増やす"
-          }
-        }
-      }
-    },
-    "Neatly.Sort.Dictionary" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dictionary"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "辞書"
-          }
-        }
-      }
-    },
-    "Neatly.Sort.List" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "List"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "リスト"
           }
         }
       }
@@ -3781,6 +3713,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "数値を増やす"
+          }
+        }
+      }
+    },
+    "Randomly.Count.UseRandomRange" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use Random Range"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ランダムな範囲を使用"
           }
         }
       }
@@ -5509,23 +5458,6 @@
         }
       }
     },
-    "View.Neatly" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Neatly"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "順序で"
-          }
-        }
-      }
-    },
     "View.Randomly" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -5538,7 +5470,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ランダムに"
+            "value" : "ランダムリー"
           }
         }
       }

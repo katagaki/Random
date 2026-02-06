@@ -1,5 +1,5 @@
 //
-//  GenerateView.swift
+//  SelectView.swift
 //  Random
 //
 //  Created by シンジャスティン on 2023/08/26.
@@ -8,7 +8,7 @@
 import Combine
 import SwiftUI
 
-struct GenerateView: View {
+struct SelectView: View {
 
     @State var mode: GenerateType
     @State var result: String = ""

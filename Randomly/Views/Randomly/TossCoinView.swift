@@ -1,5 +1,5 @@
 //
-//  FlipCoinView.swift
+//  TossCoinView.swift
 //  Random
 //
 //  Created by シン・ジャスティン on 3/9/23.
@@ -8,7 +8,7 @@
 import SceneKit
 import SwiftUI
 
-struct FlipCoinView: View {
+struct TossCoinView: View {
 
     let scene = SCNScene(named: "Scene Assets.scnassets/Sandbox.scn")!
 

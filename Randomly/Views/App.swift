@@ -10,13 +10,11 @@ import SwiftUI
 @main
 struct RandomlyApp: App {
 
-    @StateObject var tabManager = TabManager()
     @StateObject var navigationManager = NavigationManager()
 
     var body: some Scene {
         WindowGroup {
-            MainTabView()
-                .environmentObject(tabManager)
+            RandomlyView()
                 .environmentObject(navigationManager)
         }
     }

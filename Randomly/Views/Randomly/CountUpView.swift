@@ -9,8 +9,10 @@ import SwiftUI
 
 struct CountUpView: View {
 
+    @State var useRange: Bool = false
     @State var rangeStart: Int = 1
     @State var rangeEnd: Int = 10
+    @State var incrementValue: Int = 1
     @State var startingValue: Int = 0
     @State var currentValue: Int = 0
     @State var hasStarted: Bool = false
@@ -41,21 +43,38 @@ struct CountUpView: View {
                             .focused($isTextFieldActive)
                     }
 
-                    VStack(alignment: .leading, spacing: 8.0) {
-                        Text("Randomly.Count.IncrementRange")
+                    Toggle(isOn: $useRange) {
+                        Text("Randomly.Count.UseRandomRange")
                             .font(.body)
                             .bold()
-                        HStack(alignment: .center, spacing: 4.0) {
-                            Text("Shared.RangeFrom")
+                    }
+
+                    if useRange {
+                        VStack(alignment: .leading, spacing: 8.0) {
+                            Text("Randomly.Count.IncrementRange")
                                 .font(.body)
-                            TextField("", value: $rangeStart, format: .number)
-                                .focused($isTextFieldActive)
-                            Text("Shared.RangeTo")
+                                .bold()
+                            HStack(alignment: .center, spacing: 4.0) {
+                                Text("Shared.RangeFrom")
+                                    .font(.body)
+                                TextField("", value: $rangeStart, format: .number)
+                                    .focused($isTextFieldActive)
+                                Text("Shared.RangeTo")
+                                    .font(.body)
+                                TextField("", value: $rangeEnd, format: .number)
+                                    .focused($isTextFieldActive)
+                            }
+                            .textFieldStyle(.roundedBorder)
+                        }
+                    } else {
+                        VStack(alignment: .leading, spacing: 8.0) {
+                            Text("Neatly.Count.IncrementValue")
                                 .font(.body)
-                            TextField("", value: $rangeEnd, format: .number)
+                                .bold()
+                            TextField("", value: $incrementValue, format: .number)
+                                .textFieldStyle(.roundedBorder)
                                 .focused($isTextFieldActive)
                         }
-                        .textFieldStyle(.roundedBorder)
                     }
                 }
                 .padding()
@@ -69,7 +88,7 @@ struct CountUpView: View {
                           primaryActionIconName: "play.fill",
                           copyDisabled: .constant(true),
                           copyHidden: true,
-                          primaryActionDisabled: .constant(rangeEnd <= rangeStart)) {
+                          primaryActionDisabled: .constant(useRange && rangeEnd <= rangeStart)) {
                     start()
                 } copyAction: {
                     // Copy not available before starting
@@ -126,8 +145,12 @@ struct CountUpView: View {
 
     func increment() {
         withAnimation(.default.speed(2)) {
-            let randomIncrement = Int.random(in: rangeStart...rangeEnd)
-            currentValue += randomIncrement
+            if useRange {
+                let randomIncrement = Int.random(in: rangeStart...rangeEnd)
+                currentValue += randomIncrement
+            } else {
+                currentValue += incrementValue
+            }
         }
     }
 }

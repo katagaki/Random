@@ -1,5 +1,5 @@
 //
-//  GenerateDateView.swift
+//  SelectDateView.swift
 //  Random
 //
 //  Created by シンジャスティン on 2023/08/29.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct GenerateDateView: View {
+struct SelectDateView: View {
 
     @State var generatedDate: Date = Date()
     @State var startDate: Date = Date(timeIntervalSince1970: 0)
@@ -34,13 +34,12 @@ struct GenerateDateView: View {
                         .bold()
                     DatePicker("", selection: $startDate, displayedComponents: [.date])
                         .labelsHidden()
-                }
-                HStack(alignment: .center, spacing: 4.0) {
                     Text("Shared.RangeTo")
                         .font(.body)
                         .bold()
                     DatePicker("", selection: $endDate, displayedComponents: [.date])
                         .labelsHidden()
+                    Spacer(minLength: 0.0)
                 }
             }
             .padding()

@@ -1,5 +1,5 @@
 //
-//  GenerateCountryView.swift
+//  SelectCountryView.swift
 //  Random
 //
 //  Created by シンジャスティン on 2026/02/05.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct GenerateCountryView: View {
+struct SelectCountryView: View {
 
     @State var selectedCountry: Country?
 

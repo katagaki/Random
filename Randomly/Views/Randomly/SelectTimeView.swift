@@ -1,5 +1,5 @@
 //
-//  GenerateTimeView.swift
+//  SelectTimeView.swift
 //  Random
 //
 //  Created by シンジャスティン on 2023/08/29.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct GenerateTimeView: View {
+struct SelectTimeView: View {
 
     @State var generatedTime: Date = Date()
     @FocusState var isTextFieldActive: Bool

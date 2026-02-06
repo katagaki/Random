@@ -6,10 +6,6 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		E447AAC32B775D29009A3D3E /* Komponents in Frameworks */ = {isa = PBXBuildFile; productRef = E447AAC22B775D29009A3D3E /* Komponents */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
 		E4DDD3E2266C8FC0003CC064 /* Randomly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Randomly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -40,7 +36,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E447AAC32B775D29009A3D3E /* Komponents in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,7 +79,6 @@
 			);
 			name = Randomly;
 			packageProductDependencies = (
-				E447AAC22B775D29009A3D3E /* Komponents */,
 			);
 			productName = Random;
 			productReference = E4DDD3E2266C8FC0003CC064 /* Randomly.app */;
@@ -115,7 +109,6 @@
 			);
 			mainGroup = E4DDD3D9266C8FC0003CC064;
 			packageReferences = (
-				E447AAC12B775D29009A3D3E /* XCRemoteSwiftPackageReference "Komponents" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E4DDD3E3266C8FC0003CC064 /* Products */;
@@ -371,25 +364,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		E447AAC12B775D29009A3D3E /* XCRemoteSwiftPackageReference "Komponents" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/katagaki/Komponents";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		E447AAC22B775D29009A3D3E /* Komponents */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E447AAC12B775D29009A3D3E /* XCRemoteSwiftPackageReference "Komponents" */;
-			productName = Komponents;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E4DDD3DA266C8FC0003CC064 /* Project object */;
 }

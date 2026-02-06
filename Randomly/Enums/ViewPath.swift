@@ -8,28 +8,26 @@
 import Foundation
 
 enum ViewPath {
-    case rGenerateNumber
-    case rGenerateLetter
-    case rGenerateWordEnglish
-    case rGenerateWordJapanese
-    case rGeneratePassword
-    case rGenerateColor
-    case rGenerateCountry
-    case rGenerateDate
-    case rGenerateTime
-    case rSelectItemFromList
-    case rSelectWordFromText
-    case rShuffleList
-    case rShuffleDict
-    case rDoCoinFlip
-    case rDoDiceRoll
-    case rDoCardDraw
-    case rCountUp
-    case rCountDown
-    case nSortList
-    case nSortDict
-    case nCountUp
-    case nCountDown
+    case selectNumber
+    case selectLetter
+    case selectWordEnglish
+    case selectWordJapanese
+    case selectDate
+    case selectTime
+    case selectCountry
+    case generatePassword
+    case generateColor
+    case selectItemFromList
+    case selectWordFromText
+    case shuffleList
+    case shuffleDict
+    case sortList
+    case sortDict
+    case countUp
+    case countDown
+    case tossCoin
+    case rollDice
+    case drawCard
     case moreDatasets
     case moreAttributions
 }
