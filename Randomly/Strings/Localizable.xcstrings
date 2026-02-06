@@ -4260,6 +4260,56 @@
         }
       }
     },
+    "Randomly.Generate.Word" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Word"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "単語"
+          }
+        }
+      }
+    },
+    "Randomly.Generate.Word.ViewTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Generate Word"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "単語を生成"
+          }
+        }
+      }
+    },
+    "Randomly.Generate.Word.Length.%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Word Length: %@ letters"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "単語の長さ：%@文字"
+          }
+        }
+      }
+    },
     "Randomly.Generate.Country" : {
       "extractionState" : "manual",
       "localizations" : {

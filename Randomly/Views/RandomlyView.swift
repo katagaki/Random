@@ -35,10 +35,10 @@ struct RandomlyView: View {
                             switch Locale.current.language.languageCode ?? .english {
                             case .japanese:
                                 GridCardView(destination: ViewPath.selectWordJapanese, title: "Randomly.Generate.Word",
-                                             icon: "textformat", iconColor: .teal)
+                                             icon: "textformat.abc", iconColor: .teal)
                             default:
                                 GridCardView(destination: ViewPath.selectWordEnglish, title: "Randomly.Generate.Word",
-                                             icon: "textformat", iconColor: .teal)
+                                             icon: "textformat.abc", iconColor: .teal)
                             }
 
                             GridCardView(destination: ViewPath.selectDate, title: "Randomly.Generate.Date",
@@ -57,6 +57,8 @@ struct RandomlyView: View {
                             .padding(.horizontal)
 
                         LazyVGrid(columns: columns, spacing: 12) {
+                            GridCardView(destination: ViewPath.generateWord, title: "Randomly.Generate.Word",
+                                         icon: "textformat.abc", iconColor: .teal)
                             GridCardView(destination: ViewPath.generatePassword, title: "Randomly.Generate.Password",
                                          icon: "key.fill", iconColor: .orange)
                             GridCardView(destination: ViewPath.generateColor, title: "Randomly.Generate.Color",
@@ -169,6 +171,8 @@ struct RandomlyView: View {
                     GenerateColorView()
                 case .generateCoordinate:
                     GenerateCoordinateView()
+                case .generateWord:
+                    GenerateWordView()
                 case .selectItemFromList:
                     SelectItemFromListView()
                 case .selectWordFromText:
