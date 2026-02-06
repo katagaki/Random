@@ -28,6 +28,17 @@ struct DatasetsView: View {
                 ListSectionHeader(text: "Dataset.Type.Wordlists")
                     .font(.body)
             }
+
+            Section {
+                NavigationLink {
+                    CountriesView()
+                } label: {
+                    Text(NSLocalizedString("Dataset.Countries", comment: ""))
+                }
+            } header: {
+                ListSectionHeader(text: "Dataset.Type.Countries")
+                    .font(.body)
+            }
         }
         .navigationTitle("More.Datasets.ViewTitle")
         .listStyle(.insetGrouped)

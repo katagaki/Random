@@ -14,7 +14,7 @@ struct GridCardView<Destination: Hashable>: View {
     let iconColor: Color
 
     @State private var isPressed = false
-    
+
     private var cornerRadius: CGFloat {
         if #available(iOS 26.0, *) {
             return 24.0
@@ -58,10 +58,10 @@ struct GridCardView<Destination: Hashable>: View {
 
 struct PressableCardButtonStyle: ButtonStyle {
     @Binding var isPressed: Bool
-    
+
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .onChange(of: configuration.isPressed) { oldValue, newValue in
+            .onChange(of: configuration.isPressed) { _, newValue in
                 isPressed = newValue
             }
     }

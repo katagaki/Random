@@ -15,7 +15,7 @@ struct NeatlyView: View {
         GridItem(.flexible(), spacing: 12),
         GridItem(.flexible(), spacing: 12)
     ]
-    
+
     var body: some View {
         NavigationStack(path: $navigationManager.neatlyTabPath) {
             ScrollView {
@@ -24,10 +24,12 @@ struct NeatlyView: View {
                         ListSectionHeader(text: "Shared.Sort")
                             .font(.body)
                             .padding(.horizontal)
-                        
+
                         LazyVGrid(columns: columns, spacing: 12) {
-                            GridCardView(destination: ViewPath.nSortList, title: "Neatly.Sort.List", icon: "list.bullet", iconColor: .blue)
-                            GridCardView(destination: ViewPath.nSortDict, title: "Neatly.Sort.Dictionary", icon: "tablecells", iconColor: .purple)
+                            GridCardView(destination: ViewPath.nSortList, title: "Neatly.Sort.List",
+                                         icon: "list.bullet", iconColor: .blue)
+                            GridCardView(destination: ViewPath.nSortDict, title: "Neatly.Sort.Dictionary",
+                                         icon: "tablecells", iconColor: .purple)
                         }
                         .padding(.horizontal)
                     }

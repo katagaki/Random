@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct ListSectionHeader: View {
-    
+
     let text: LocalizedStringKey
-    
+
     var body: some View {
         Text(text)
-            .textCase(.uppercase)
-            .foregroundStyle(.secondary)
+            .foregroundStyle(.primary)
+            .font(.body)
+            .bold()
     }
 }

@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct LicensesView: View {
-    
+
     let licenses: [License]
-    
+
     var body: some View {
         List {
             ForEach(licenses, id: \.libraryName) { license in

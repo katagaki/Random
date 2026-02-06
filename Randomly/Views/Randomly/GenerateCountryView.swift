@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct GenerateCountryView: View {
-    
+
     @State var selectedCountry: Country?
-    
+
     var body: some View {
         VStack(alignment: .center, spacing: 8.0) {
             Spacer()
@@ -24,7 +24,7 @@ struct GenerateCountryView: View {
                         .multilineTextAlignment(.center)
                         .transition(.scale.combined(with: .opacity))
                         .id(country.id)
-                    
+
                     VStack(spacing: 12.0) {
                         InfoRow(label: "Randomly.Generate.Country.ISOCode", value: country.isoCode)
                         InfoRow(label: "Randomly.Generate.Country.CountryCode", value: country.countryCode)
@@ -67,7 +67,7 @@ struct GenerateCountryView: View {
         .navigationTitle("Randomly.Generate.Country.ViewTitle")
         .navigationBarTitleDisplayMode(.inline)
     }
-    
+
     func regenerate() {
         withAnimation(.default.speed(2)) {
             selectedCountry = Country.allCountries.randomElement()
@@ -78,7 +78,7 @@ struct GenerateCountryView: View {
 struct InfoRow: View {
     let label: String
     let value: String
-    
+
     var body: some View {
         HStack {
             Text(NSLocalizedString(label, comment: ""))

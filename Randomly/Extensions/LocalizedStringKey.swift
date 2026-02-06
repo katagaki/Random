@@ -12,7 +12,7 @@ extension LocalizedStringKey {
     static let datasetTangolist: LocalizedStringKey = "Dataset.Tangolist"
     static let datasetTypeWordlists: LocalizedStringKey = "Dataset.Type.Wordlists"
     static let datasetWordlist: LocalizedStringKey = "Dataset.Wordlist"
-    
+
     // MARK: - More
     static let moreAbout: LocalizedStringKey = "More.About"
     static let moreAppInformation: LocalizedStringKey = "More.AppInformation"
@@ -23,11 +23,11 @@ extension LocalizedStringKey {
     static let moreGeneral: LocalizedStringKey = "More.General"
     static let moreVersion: LocalizedStringKey = "More.Version"
     static let moreViewOnGitHub: LocalizedStringKey = "More.ViewOnGitHub"
-    
+
     // MARK: - Neatly
     static let neatlySortDictionary: LocalizedStringKey = "Neatly.Sort.Dictionary"
     static let neatlySortList: LocalizedStringKey = "Neatly.Sort.List"
-    
+
     // MARK: - Randomly (Do)
     static let randomlyDoCardDraw: LocalizedStringKey = "Randomly.Do.CardDraw"
     static let randomlyDoCardDraw1: LocalizedStringKey = "Randomly.Do.CardDraw.1"
@@ -52,7 +52,7 @@ extension LocalizedStringKey {
     static let randomlyDoCoinFlipViewTitle: LocalizedStringKey = "Randomly.Do.CoinFlip.ViewTitle"
     static let randomlyDoDiceRoll: LocalizedStringKey = "Randomly.Do.DiceRoll"
     static let randomlyDoDiceRollViewTitle: LocalizedStringKey = "Randomly.Do.DiceRoll.ViewTitle"
-    
+
     // MARK: - Randomly (Generate)
     static let randomlyGenerateColor: LocalizedStringKey = "Randomly.Generate.Color"
     static let randomlyGenerateColorViewTitle: LocalizedStringKey = "Randomly.Generate.Color.ViewTitle"
@@ -71,7 +71,7 @@ extension LocalizedStringKey {
     static let randomlyGenerateWord: LocalizedStringKey = "Randomly.Generate.Word"
     static let randomlyGenerateWordENViewTitle: LocalizedStringKey = "Randomly.Generate.WordEN.ViewTitle"
     static let randomlyGenerateWordJPViewTitle: LocalizedStringKey = "Randomly.Generate.WordJP.ViewTitle"
-    
+
     // MARK: - Randomly (Select)
     static let randomlySelectItemFromList: LocalizedStringKey = "Randomly.Select.ItemFromList"
     static let randomlySelectItemFromListViewTitle: LocalizedStringKey = "Randomly.Select.ItemFromList.ViewTitle"
@@ -82,11 +82,11 @@ extension LocalizedStringKey {
     static let randomlySelectWordFromTextSelectionModeKanjiOnly: LocalizedStringKey = "Randomly.Select.WordFromText.SelectionMode.KanjiOnly"
     static let randomlySelectWordFromTextSelectionModeParticlesBestAttempt: LocalizedStringKey = "Randomly.Select.WordFromText.SelectionMode.ParticlesBestAttempt"
     static let randomlySelectWordFromTextViewTitle: LocalizedStringKey = "Randomly.Select.WordFromText.ViewTitle"
-    
+
     // MARK: - Randomly (Shuffle)
     static let randomlyShuffleDictionary: LocalizedStringKey = "Randomly.Shuffle.Dictionary"
     static let randomlyShuffleList: LocalizedStringKey = "Randomly.Shuffle.List"
-    
+
     // MARK: - Shared
     static let sharedAdd: LocalizedStringKey = "Shared.Add"
     static let sharedBlue: LocalizedStringKey = "Shared.Blue"
@@ -122,12 +122,12 @@ extension LocalizedStringKey {
     static let sharedSortByValue: LocalizedStringKey = "Shared.Sort.ByValue"
     static let sharedSortDictionaryViewTitle: LocalizedStringKey = "Shared.Sort.Dictionary.ViewTitle"
     static let sharedSortListViewTitle: LocalizedStringKey = "Shared.Sort.List.ViewTitle"
-    
+
     // MARK: - View
     static let viewMore: LocalizedStringKey = "View.More"
     static let viewNeatly: LocalizedStringKey = "View.Neatly"
     static let viewRandomly: LocalizedStringKey = "View.Randomly"
-    
+
     // MARK: - View Titles
     static let viewTitleAttributions: LocalizedStringKey = "ViewTitle.Attributions"
 }
