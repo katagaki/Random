@@ -5,7 +5,6 @@
 //  Created by シンジャスティン on 2023/08/26.
 //
 
-import Komponents
 import SwiftUI
 
 struct RandomlyView: View {
@@ -17,32 +16,29 @@ struct RandomlyView: View {
             List {
                 Section {
                     NavigationLink(value: ViewPath.rGenerateNumber) {
-                        ListRow(image: "ListIcon.Number",
-                                title: "Randomly.Generate.Number")
+                        Label("Randomly.Generate.Number", systemImage: "number")
                     }
                     NavigationLink(value: ViewPath.rGenerateLetter) {
-                        ListRow(image: "ListIcon.Letter",
-                                title: "Randomly.Generate.Letter")
+                        Label("Randomly.Generate.Letter", systemImage: "character")
                     }
                     switch Locale.current.language.languageCode ?? .english {
                     case .japanese:
                         NavigationLink(value: ViewPath.rGenerateWordJapanese) {
-                            ListRow(image: "ListIcon.Word",
-                                    title: "Randomly.Generate.Word")
+                            Label("Randomly.Generate.Word", systemImage: "textformat")
                         }
                     default:
                         NavigationLink(value: ViewPath.rGenerateWordEnglish) {
-                            ListRow(image: "ListIcon.Word",
-                                    title: "Randomly.Generate.Word")
+                            Label("Randomly.Generate.Word", systemImage: "textformat")
                         }
                     }
+                    NavigationLink(value: ViewPath.rGenerateCountry) {
+                        Label("Randomly.Generate.Country", systemImage: "globe")
+                    }
                     NavigationLink(value: ViewPath.rGeneratePassword) {
-                        ListRow(image: "ListIcon.Password",
-                                title: "Randomly.Generate.Password")
+                        Label("Randomly.Generate.Password", systemImage: "key.fill")
                     }
                     NavigationLink(value: ViewPath.rGenerateColor) {
-                        ListRow(image: "ListIcon.Color",
-                                title: "Randomly.Generate.Color")
+                        Label("Randomly.Generate.Color", systemImage: "paintpalette.fill")
                     }
                 } header: {
                     ListSectionHeader(text: "Shared.Generate")
@@ -50,12 +46,10 @@ struct RandomlyView: View {
                 }
                 Section {
                     NavigationLink(value: ViewPath.rSelectItemFromList) {
-                        ListRow(image: "ListIcon.List",
-                                title: "Randomly.Select.ItemFromList")
+                        Label("Randomly.Select.ItemFromList", systemImage: "list.bullet")
                     }
                     NavigationLink(value: ViewPath.rSelectWordFromText) {
-                        ListRow(image: "ListIcon.Doc",
-                                title: "Randomly.Select.WordFromText")
+                        Label("Randomly.Select.WordFromText", systemImage: "doc.text")
                     }
                 } header: {
                     ListSectionHeader(text: "Shared.Select")
@@ -63,12 +57,10 @@ struct RandomlyView: View {
                 }
                 Section {
                     NavigationLink(value: ViewPath.rShuffleList) {
-                        ListRow(image: "ListIcon.List",
-                                title: "Randomly.Shuffle.List")
+                        Label("Randomly.Shuffle.List", systemImage: "list.bullet")
                     }
                     NavigationLink(value: ViewPath.rShuffleDict) {
-                        ListRow(image: "ListIcon.Table",
-                                title: "Randomly.Shuffle.Dictionary")
+                        Label("Randomly.Shuffle.Dictionary", systemImage: "tablecells")
                     }
                 } header: {
                     ListSectionHeader(text: "Shared.Shuffle")
@@ -76,16 +68,13 @@ struct RandomlyView: View {
                 }
                 Section {
                     NavigationLink(value: ViewPath.rDoCoinFlip) {
-                        ListRow(image: "ListIcon.Coin",
-                                title: "Randomly.Do.CoinFlip")
+                        Label("Randomly.Do.CoinFlip", systemImage: "centsign.circle.fill")
                     }
                     NavigationLink(value: ViewPath.rDoDiceRoll) {
-                        ListRow(image: "ListIcon.Die",
-                                title: "Randomly.Do.DiceRoll")
+                        Label("Randomly.Do.DiceRoll", systemImage: "die.face.5.fill")
                     }
                     NavigationLink(value: ViewPath.rDoCardDraw) {
-                        ListRow(image: "ListIcon.Cards",
-                                title: "Randomly.Do.CardDraw")
+                        Label("Randomly.Do.CardDraw", systemImage: "square.on.square.fill")
                     }
                 } header: {
                     ListSectionHeader(text: "Shared.Do")
@@ -106,6 +95,8 @@ struct RandomlyView: View {
                     GeneratePasswordView()
                 case .rGenerateColor:
                     GenerateColorView()
+                case .rGenerateCountry:
+                    GenerateCountryView()
                 case .rSelectItemFromList:
                     SelectItemFromListView()
                 case .rSelectWordFromText:

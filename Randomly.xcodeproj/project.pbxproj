@@ -7,93 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E4124A1A2AA4DF66004022AF /* FlipCoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4124A192AA4DF66004022AF /* FlipCoinView.swift */; };
 		E447AAC32B775D29009A3D3E /* Komponents in Frameworks */ = {isa = PBXBuildFile; productRef = E447AAC22B775D29009A3D3E /* Komponents */; };
-		E447AAC62B77622E009A3D3E /* DatasetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E447AAC52B77622E009A3D3E /* DatasetsView.swift */; };
-		E447AAC82B77B248009A3D3E /* Dataset.swift in Sources */ = {isa = PBXBuildFile; fileRef = E447AAC72B77B248009A3D3E /* Dataset.swift */; };
-		E447AACA2B77B486009A3D3E /* DatasetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E447AAC92B77B486009A3D3E /* DatasetView.swift */; };
-		E447AACC2B77BBDE009A3D3E /* Wordlist-JP.txt in Resources */ = {isa = PBXBuildFile; fileRef = E447AACB2B77BBDE009A3D3E /* Wordlist-JP.txt */; };
-		E447AACE2B79C1EB009A3D3E /* DrawCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E447AACD2B79C1EB009A3D3E /* DrawCardView.swift */; };
-		E447AAD02B7AD771009A3D3E /* PlayingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E447AACF2B7AD771009A3D3E /* PlayingCard.swift */; };
-		E447AAD22B7AD7C4009A3D3E /* PlayingCardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E447AAD12B7AD7C4009A3D3E /* PlayingCardType.swift */; };
-		E44BD2AC2A9D919D0049FA9A /* GenerateColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44BD2AB2A9D919D0049FA9A /* GenerateColorView.swift */; };
-		E477E7302A9602BF00517B72 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477E72F2A9602BF00517B72 /* MoreView.swift */; };
-		E4876ADA2A9EE4EE00DC7FD9 /* ViewPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4876AD92A9EE4EE00DC7FD9 /* ViewPath.swift */; };
-		E4876ADC2A9EE60300DC7FD9 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4876ADB2A9EE60300DC7FD9 /* NavigationManager.swift */; };
-		E4876ADE2A9EEB0C00DC7FD9 /* TabManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4876ADD2A9EEB0C00DC7FD9 /* TabManager.swift */; };
-		E4876AE02A9EEB2100DC7FD9 /* TabType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4876ADF2A9EEB2100DC7FD9 /* TabType.swift */; };
-		E48A02702A99FA9B00C31F40 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48A026F2A99FA9B00C31F40 /* MainTabView.swift */; };
-		E48A02722A9A003B00C31F40 /* RandomlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48A02712A9A003B00C31F40 /* RandomlyView.swift */; };
-		E48A02742A9A02FB00C31F40 /* GenerateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48A02732A9A02FB00C31F40 /* GenerateView.swift */; };
-		E48A02762A9A0C1400C31F40 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48A02752A9A0C1400C31F40 /* App.swift */; };
-		E48A027A2A9A0F9900C31F40 /* NeatlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48A02792A9A0F9900C31F40 /* NeatlyView.swift */; };
-		E48A027C2A9A115100C31F40 /* SelectItemFromListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48A027B2A9A115100C31F40 /* SelectItemFromListView.swift */; };
-		E48A027E2A9A194900C31F40 /* Wordlist-EN.txt in Resources */ = {isa = PBXBuildFile; fileRef = E48A027D2A9A194900C31F40 /* Wordlist-EN.txt */; };
-		E48A02802A9A204E00C31F40 /* SelectItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48A027F2A9A204E00C31F40 /* SelectItem.swift */; };
-		E48A02832A9A253100C31F40 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = E48A02822A9A253100C31F40 /* Localizable.xcstrings */; };
-		E48A02852A9A2BDD00C31F40 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = E48A02842A9A2BDD00C31F40 /* InfoPlist.xcstrings */; };
-		E48B351C2AA47F1E007BC65F /* RollDiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48B351B2AA47F1E007BC65F /* RollDiceView.swift */; };
-		E48B351E2AA48155007BC65F /* Scene Assets.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = E48B351D2AA48155007BC65F /* Scene Assets.scnassets */; };
-		E4BB8B012A9AFC40006A8A6E /* SortListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BB8B002A9AFC40006A8A6E /* SortListView.swift */; };
-		E4DDD3EF266C8FC2003CC064 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4DDD3EE266C8FC2003CC064 /* Assets.xcassets */; };
-		E4DDD3F2266C8FC2003CC064 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4DDD3F0266C8FC2003CC064 /* LaunchScreen.storyboard */; };
-		E4EB91B32A9C494F00C0C93C /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EB91B22A9C494F00C0C93C /* ListView.swift */; };
-		E4EB91B92A9C4E0D00C0C93C /* ActionBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EB91B82A9C4E0D00C0C93C /* ActionBar.swift */; };
-		E4EB91BB2A9C559700C0C93C /* SelectWordFromTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EB91BA2A9C559700C0C93C /* SelectWordFromTextView.swift */; };
-		E4EB91BD2A9C6EED00C0C93C /* DictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EB91BC2A9C6EED00C0C93C /* DictionaryView.swift */; };
-		E4EB91BF2A9C765900C0C93C /* SortDictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EB91BE2A9C765900C0C93C /* SortDictionaryView.swift */; };
-		E4EB91C62A9C76B700C0C93C /* GenerateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EB91C52A9C76B700C0C93C /* GenerateType.swift */; };
-		E4EB91C82A9C76CC00C0C93C /* WordSelectionMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EB91C72A9C76CC00C0C93C /* WordSelectionMode.swift */; };
-		E4EB91CA2A9C82F900C0C93C /* ShuffleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EB91C92A9C82F900C0C93C /* ShuffleListView.swift */; };
-		E4EB91CC2A9C837F00C0C93C /* ShuffleDictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EB91CB2A9C837F00C0C93C /* ShuffleDictionaryView.swift */; };
-		E4EB91CE2A9C85CE00C0C93C /* GeneratePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EB91CD2A9C85CE00C0C93C /* GeneratePasswordView.swift */; };
-		E4EB91D12A9C873E00C0C93C /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EB91D02A9C873E00C0C93C /* Password.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E4124A192AA4DF66004022AF /* FlipCoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipCoinView.swift; sourceTree = "<group>"; };
-		E447AAC52B77622E009A3D3E /* DatasetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatasetsView.swift; sourceTree = "<group>"; };
-		E447AAC72B77B248009A3D3E /* Dataset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dataset.swift; sourceTree = "<group>"; };
-		E447AAC92B77B486009A3D3E /* DatasetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatasetView.swift; sourceTree = "<group>"; };
-		E447AACB2B77BBDE009A3D3E /* Wordlist-JP.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Wordlist-JP.txt"; sourceTree = "<group>"; };
-		E447AACD2B79C1EB009A3D3E /* DrawCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawCardView.swift; sourceTree = "<group>"; };
-		E447AACF2B7AD771009A3D3E /* PlayingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCard.swift; sourceTree = "<group>"; };
-		E447AAD12B7AD7C4009A3D3E /* PlayingCardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardType.swift; sourceTree = "<group>"; };
-		E44BD2AB2A9D919D0049FA9A /* GenerateColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateColorView.swift; sourceTree = "<group>"; };
-		E477E72F2A9602BF00517B72 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
-		E4876AD92A9EE4EE00DC7FD9 /* ViewPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPath.swift; sourceTree = "<group>"; };
-		E4876ADB2A9EE60300DC7FD9 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
-		E4876ADD2A9EEB0C00DC7FD9 /* TabManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabManager.swift; sourceTree = "<group>"; };
-		E4876ADF2A9EEB2100DC7FD9 /* TabType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabType.swift; sourceTree = "<group>"; };
-		E48A026F2A99FA9B00C31F40 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
-		E48A02712A9A003B00C31F40 /* RandomlyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomlyView.swift; sourceTree = "<group>"; };
-		E48A02732A9A02FB00C31F40 /* GenerateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateView.swift; sourceTree = "<group>"; };
-		E48A02752A9A0C1400C31F40 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
-		E48A02792A9A0F9900C31F40 /* NeatlyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeatlyView.swift; sourceTree = "<group>"; };
-		E48A027B2A9A115100C31F40 /* SelectItemFromListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectItemFromListView.swift; sourceTree = "<group>"; };
-		E48A027D2A9A194900C31F40 /* Wordlist-EN.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Wordlist-EN.txt"; sourceTree = "<group>"; };
-		E48A027F2A9A204E00C31F40 /* SelectItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectItem.swift; sourceTree = "<group>"; };
-		E48A02822A9A253100C31F40 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
-		E48A02842A9A2BDD00C31F40 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
-		E48B351B2AA47F1E007BC65F /* RollDiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollDiceView.swift; sourceTree = "<group>"; };
-		E48B351D2AA48155007BC65F /* Scene Assets.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = "Scene Assets.scnassets"; sourceTree = "<group>"; };
-		E4BB8B002A9AFC40006A8A6E /* SortListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortListView.swift; sourceTree = "<group>"; };
 		E4DDD3E2266C8FC0003CC064 /* Randomly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Randomly.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4DDD3EE266C8FC2003CC064 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E4DDD3F1266C8FC2003CC064 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E4DDD3F3266C8FC2003CC064 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E4EB91B22A9C494F00C0C93C /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
-		E4EB91B82A9C4E0D00C0C93C /* ActionBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionBar.swift; sourceTree = "<group>"; };
-		E4EB91BA2A9C559700C0C93C /* SelectWordFromTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWordFromTextView.swift; sourceTree = "<group>"; };
-		E4EB91BC2A9C6EED00C0C93C /* DictionaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryView.swift; sourceTree = "<group>"; };
-		E4EB91BE2A9C765900C0C93C /* SortDictionaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortDictionaryView.swift; sourceTree = "<group>"; };
-		E4EB91C52A9C76B700C0C93C /* GenerateType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateType.swift; sourceTree = "<group>"; };
-		E4EB91C72A9C76CC00C0C93C /* WordSelectionMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSelectionMode.swift; sourceTree = "<group>"; };
-		E4EB91C92A9C82F900C0C93C /* ShuffleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuffleListView.swift; sourceTree = "<group>"; };
-		E4EB91CB2A9C837F00C0C93C /* ShuffleDictionaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuffleDictionaryView.swift; sourceTree = "<group>"; };
-		E4EB91CD2A9C85CE00C0C93C /* GeneratePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratePasswordView.swift; sourceTree = "<group>"; };
-		E4EB91D02A9C873E00C0C93C /* Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Password.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		E420ACBE2F34E3E900918578 /* Exceptions for "Randomly" folder in "Randomly" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = E4DDD3E1266C8FC0003CC064 /* Randomly */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		E420AC8B2F34E3E900918578 /* Randomly */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E420ACBE2F34E3E900918578 /* Exceptions for "Randomly" folder in "Randomly" target */,
+			);
+			path = Randomly;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		E4DDD3DF266C8FC0003CC064 /* Frameworks */ = {
@@ -107,38 +47,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E447AAC42B776222009A3D3E /* Datasets */ = {
-			isa = PBXGroup;
-			children = (
-				E447AAC52B77622E009A3D3E /* DatasetsView.swift */,
-				E447AAC92B77B486009A3D3E /* DatasetView.swift */,
-			);
-			path = Datasets;
-			sourceTree = "<group>";
-		};
-		E48A02812A9A205100C31F40 /* Structs */ = {
-			isa = PBXGroup;
-			children = (
-				E447AAC72B77B248009A3D3E /* Dataset.swift */,
-				E447AACF2B7AD771009A3D3E /* PlayingCard.swift */,
-				E48A027F2A9A204E00C31F40 /* SelectItem.swift */,
-			);
-			path = Structs;
-			sourceTree = "<group>";
-		};
-		E48A02862A9A2C1C00C31F40 /* Strings */ = {
-			isa = PBXGroup;
-			children = (
-				E48A02842A9A2BDD00C31F40 /* InfoPlist.xcstrings */,
-				E48A02822A9A253100C31F40 /* Localizable.xcstrings */,
-			);
-			path = Strings;
-			sourceTree = "<group>";
-		};
 		E4DDD3D9266C8FC0003CC064 = {
 			isa = PBXGroup;
 			children = (
-				E4DDD3E4266C8FC0003CC064 /* Randomly */,
+				E420AC8B2F34E3E900918578 /* Randomly */,
 				E4DDD3E3266C8FC0003CC064 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -149,106 +61,6 @@
 				E4DDD3E2266C8FC0003CC064 /* Randomly.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		E4DDD3E4266C8FC0003CC064 /* Randomly */ = {
-			isa = PBXGroup;
-			children = (
-				E4DDD3F3266C8FC2003CC064 /* Info.plist */,
-				E4DDD3EE266C8FC2003CC064 /* Assets.xcassets */,
-				E48B351D2AA48155007BC65F /* Scene Assets.scnassets */,
-				E4DDD3F0266C8FC2003CC064 /* LaunchScreen.storyboard */,
-				E48A027D2A9A194900C31F40 /* Wordlist-EN.txt */,
-				E447AACB2B77BBDE009A3D3E /* Wordlist-JP.txt */,
-				E48A02862A9A2C1C00C31F40 /* Strings */,
-				E4DDD404266CB5EE003CC064 /* Views */,
-				E48A02812A9A205100C31F40 /* Structs */,
-				E4EB91CF2A9C873300C0C93C /* Classes */,
-				E4EB91C22A9C769300C0C93C /* Enums */,
-			);
-			path = Randomly;
-			sourceTree = "<group>";
-		};
-		E4DDD404266CB5EE003CC064 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				E48A02752A9A0C1400C31F40 /* App.swift */,
-				E48A026F2A99FA9B00C31F40 /* MainTabView.swift */,
-				E4EB91B42A9C4BB100C0C93C /* Randomly */,
-				E4EB91B52A9C4BB500C0C93C /* Neatly */,
-				E4EB91B62A9C4BB900C0C93C /* More */,
-				E4EB91D52A9C87C900C0C93C /* Shared */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		E4EB91B42A9C4BB100C0C93C /* Randomly */ = {
-			isa = PBXGroup;
-			children = (
-				E48A02712A9A003B00C31F40 /* RandomlyView.swift */,
-				E48A02732A9A02FB00C31F40 /* GenerateView.swift */,
-				E4EB91CD2A9C85CE00C0C93C /* GeneratePasswordView.swift */,
-				E44BD2AB2A9D919D0049FA9A /* GenerateColorView.swift */,
-				E48A027B2A9A115100C31F40 /* SelectItemFromListView.swift */,
-				E4EB91BA2A9C559700C0C93C /* SelectWordFromTextView.swift */,
-				E4EB91C92A9C82F900C0C93C /* ShuffleListView.swift */,
-				E4EB91CB2A9C837F00C0C93C /* ShuffleDictionaryView.swift */,
-				E48B351B2AA47F1E007BC65F /* RollDiceView.swift */,
-				E4124A192AA4DF66004022AF /* FlipCoinView.swift */,
-				E447AACD2B79C1EB009A3D3E /* DrawCardView.swift */,
-			);
-			path = Randomly;
-			sourceTree = "<group>";
-		};
-		E4EB91B52A9C4BB500C0C93C /* Neatly */ = {
-			isa = PBXGroup;
-			children = (
-				E48A02792A9A0F9900C31F40 /* NeatlyView.swift */,
-				E4BB8B002A9AFC40006A8A6E /* SortListView.swift */,
-				E4EB91BE2A9C765900C0C93C /* SortDictionaryView.swift */,
-			);
-			path = Neatly;
-			sourceTree = "<group>";
-		};
-		E4EB91B62A9C4BB900C0C93C /* More */ = {
-			isa = PBXGroup;
-			children = (
-				E447AAC42B776222009A3D3E /* Datasets */,
-				E477E72F2A9602BF00517B72 /* MoreView.swift */,
-			);
-			path = More;
-			sourceTree = "<group>";
-		};
-		E4EB91C22A9C769300C0C93C /* Enums */ = {
-			isa = PBXGroup;
-			children = (
-				E4EB91C52A9C76B700C0C93C /* GenerateType.swift */,
-				E447AAD12B7AD7C4009A3D3E /* PlayingCardType.swift */,
-				E4876ADF2A9EEB2100DC7FD9 /* TabType.swift */,
-				E4876AD92A9EE4EE00DC7FD9 /* ViewPath.swift */,
-				E4EB91C72A9C76CC00C0C93C /* WordSelectionMode.swift */,
-			);
-			path = Enums;
-			sourceTree = "<group>";
-		};
-		E4EB91CF2A9C873300C0C93C /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				E4EB91D02A9C873E00C0C93C /* Password.swift */,
-				E4876ADB2A9EE60300DC7FD9 /* NavigationManager.swift */,
-				E4876ADD2A9EEB0C00DC7FD9 /* TabManager.swift */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		E4EB91D52A9C87C900C0C93C /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				E4EB91B82A9C4E0D00C0C93C /* ActionBar.swift */,
-				E4EB91B22A9C494F00C0C93C /* ListView.swift */,
-				E4EB91BC2A9C6EED00C0C93C /* DictionaryView.swift */,
-			);
-			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +78,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				E420AC8B2F34E3E900918578 /* Randomly */,
 			);
 			name = Randomly;
 			packageProductDependencies = (
@@ -317,13 +132,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E48A027E2A9A194900C31F40 /* Wordlist-EN.txt in Resources */,
-				E48A02852A9A2BDD00C31F40 /* InfoPlist.xcstrings in Resources */,
-				E4DDD3F2266C8FC2003CC064 /* LaunchScreen.storyboard in Resources */,
-				E48A02832A9A253100C31F40 /* Localizable.xcstrings in Resources */,
-				E447AACC2B77BBDE009A3D3E /* Wordlist-JP.txt in Resources */,
-				E48B351E2AA48155007BC65F /* Scene Assets.scnassets in Resources */,
-				E4DDD3EF266C8FC2003CC064 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,54 +163,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E447AAD02B7AD771009A3D3E /* PlayingCard.swift in Sources */,
-				E4876ADA2A9EE4EE00DC7FD9 /* ViewPath.swift in Sources */,
-				E4EB91CC2A9C837F00C0C93C /* ShuffleDictionaryView.swift in Sources */,
-				E4EB91BD2A9C6EED00C0C93C /* DictionaryView.swift in Sources */,
-				E4EB91CE2A9C85CE00C0C93C /* GeneratePasswordView.swift in Sources */,
-				E447AAC82B77B248009A3D3E /* Dataset.swift in Sources */,
-				E4EB91BB2A9C559700C0C93C /* SelectWordFromTextView.swift in Sources */,
-				E447AAD22B7AD7C4009A3D3E /* PlayingCardType.swift in Sources */,
-				E4EB91B32A9C494F00C0C93C /* ListView.swift in Sources */,
-				E48A027A2A9A0F9900C31F40 /* NeatlyView.swift in Sources */,
-				E4876ADE2A9EEB0C00DC7FD9 /* TabManager.swift in Sources */,
-				E44BD2AC2A9D919D0049FA9A /* GenerateColorView.swift in Sources */,
-				E48A02742A9A02FB00C31F40 /* GenerateView.swift in Sources */,
-				E447AACA2B77B486009A3D3E /* DatasetView.swift in Sources */,
-				E48A02762A9A0C1400C31F40 /* App.swift in Sources */,
-				E4876ADC2A9EE60300DC7FD9 /* NavigationManager.swift in Sources */,
-				E4876AE02A9EEB2100DC7FD9 /* TabType.swift in Sources */,
-				E4EB91C62A9C76B700C0C93C /* GenerateType.swift in Sources */,
-				E4EB91CA2A9C82F900C0C93C /* ShuffleListView.swift in Sources */,
-				E48A02802A9A204E00C31F40 /* SelectItem.swift in Sources */,
-				E4BB8B012A9AFC40006A8A6E /* SortListView.swift in Sources */,
-				E4EB91BF2A9C765900C0C93C /* SortDictionaryView.swift in Sources */,
-				E48A02722A9A003B00C31F40 /* RandomlyView.swift in Sources */,
-				E48A02702A99FA9B00C31F40 /* MainTabView.swift in Sources */,
-				E48B351C2AA47F1E007BC65F /* RollDiceView.swift in Sources */,
-				E4EB91B92A9C4E0D00C0C93C /* ActionBar.swift in Sources */,
-				E477E7302A9602BF00517B72 /* MoreView.swift in Sources */,
-				E4EB91C82A9C76CC00C0C93C /* WordSelectionMode.swift in Sources */,
-				E4EB91D12A9C873E00C0C93C /* Password.swift in Sources */,
-				E447AACE2B79C1EB009A3D3E /* DrawCardView.swift in Sources */,
-				E4124A1A2AA4DF66004022AF /* FlipCoinView.swift in Sources */,
-				E48A027C2A9A115100C31F40 /* SelectItemFromListView.swift in Sources */,
-				E447AAC62B77622E009A3D3E /* DatasetsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		E4DDD3F0266C8FC2003CC064 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E4DDD3F1266C8FC2003CC064 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		E4DDD3F4266C8FC2003CC064 /* Debug */ = {
@@ -546,7 +310,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tsubuzaki.Random;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -574,7 +338,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tsubuzaki.Random;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

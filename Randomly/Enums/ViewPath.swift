@@ -14,6 +14,7 @@ enum ViewPath {
     case rGenerateWordJapanese
     case rGeneratePassword
     case rGenerateColor
+    case rGenerateCountry
     case rSelectItemFromList
     case rSelectWordFromText
     case rShuffleList

@@ -5,7 +5,6 @@
 //  Created by シンジャスティン on 2023/08/28.
 //
 
-import Komponents
 import SwiftUI
 
 struct SortDictionaryView: View {
@@ -33,9 +32,8 @@ struct SortDictionaryView: View {
                             lhs.id < rhs.id
                         }
                     } label: {
-                        LargeButtonLabel(iconName: "arrow.up.and.down",
-                                         text: "Shared.Sort.ByKey")
-                        .bold()
+                        Label("Shared.Sort.ByKey", systemImage: "arrow.up.and.down")
+                            .bold()
                         .frame(maxWidth: .infinity)
                     }
                     .buttonStyle(.borderedProminent)

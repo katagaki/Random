@@ -97,14 +97,8 @@ struct SelectWordFromTextView: View {
         .onAppear {
             isTextFieldActive = true
         }
+        .keyboardToolbar(isFocused: $isTextFieldActive)
         .toolbar {
-            ToolbarItemGroup(placement: .keyboard) {
-                Spacer()
-                Button("Shared.Done") {
-                    isTextFieldActive = false
-                }
-                .bold()
-            }
             if let languageCode = Locale.current.language.languageCode {
                 if languageCode != .english {
                     ToolbarItem(placement: .navigationBarTrailing) {

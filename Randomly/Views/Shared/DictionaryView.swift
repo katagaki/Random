@@ -102,15 +102,7 @@ struct DictionaryView<Content: View>: View {
         .onAppear {
             focusedField = .keyField
         }
-        .toolbar {
-            ToolbarItemGroup(placement: .keyboard) {
-                Spacer()
-                Button("Shared.Done") {
-                    focusedField = nil
-                }
-                .bold()
-            }
-        }
+        .keyboardToolbar(focusedField: $focusedField)
     }
 
     func addNewItem() {

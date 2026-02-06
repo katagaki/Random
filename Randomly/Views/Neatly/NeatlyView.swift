@@ -5,7 +5,6 @@
 //  Created by シンジャスティン on 2023/08/26.
 //
 
-import Komponents
 import SwiftUI
 
 struct NeatlyView: View {
@@ -17,12 +16,10 @@ struct NeatlyView: View {
             List {
                 Section {
                     NavigationLink(value: ViewPath.nSortList) {
-                        ListRow(image: "ListIcon.List",
-                                title: "Neatly.Sort.List")
+                        Label("Neatly.Sort.List", systemImage: "list.bullet")
                     }
                     NavigationLink(value: ViewPath.nSortDict) {
-                        ListRow(image: "ListIcon.Table",
-                                title: "Neatly.Sort.Dictionary")
+                        Label("Neatly.Sort.Dictionary", systemImage: "tablecells")
                     }
                 } header: {
                     ListSectionHeader(text: "Shared.Sort")

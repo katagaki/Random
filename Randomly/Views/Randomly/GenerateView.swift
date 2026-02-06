@@ -70,15 +70,7 @@ struct GenerateView: View {
         .task {
             regenerate()
         }
-        .toolbar {
-            ToolbarItemGroup(placement: .keyboard) {
-                Spacer()
-                Button("Shared.Done") {
-                    isTextFieldActive = false
-                }
-                .bold()
-            }
-        }
+        .keyboardToolbar(isFocused: $isTextFieldActive)
         .navigationTitle(NSLocalizedString(mode.rawValue, comment: ""))
         .navigationBarTitleDisplayMode(.inline)
     }

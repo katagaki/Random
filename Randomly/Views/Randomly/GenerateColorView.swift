@@ -5,7 +5,6 @@
 //  Created by シンジャスティン on 2023/08/29.
 //
 
-import Komponents
 import SwiftUI
 
 struct GenerateColorView: View {
@@ -84,8 +83,7 @@ struct GenerateColorView: View {
                         Color(red: \(red) / 255, green: \(green) / 255, blue: \(blue) / 255)
                         """
                     } label: {
-                        LargeButtonLabel(iconName: "doc.on.doc",
-                                         text: "Shared.Copy.SwiftUICode")
+                        Label("Shared.Copy.SwiftUICode", systemImage: "doc.on.doc")
                     }
                     .buttonStyle(.bordered)
                     .clipShape(RoundedRectangle(cornerRadius: 99))
@@ -100,15 +98,7 @@ struct GenerateColorView: View {
         .task {
             regenerate()
         }
-        .toolbar {
-            ToolbarItemGroup(placement: .keyboard) {
-                Spacer()
-                Button("Shared.Done") {
-                    isTextFieldActive = false
-                }
-                .bold()
-            }
-        }
+        .keyboardToolbar(isFocused: $isTextFieldActive)
         .navigationTitle("Randomly.Generate.Color.ViewTitle")
         .navigationBarTitleDisplayMode(.inline)
     }

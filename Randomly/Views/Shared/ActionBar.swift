@@ -5,12 +5,11 @@
 //  Created by シンジャスティン on 2023/08/28.
 //
 
-import Komponents
 import SwiftUI
 
 struct ActionBar: View {
 
-    @State var primaryActionText: String
+    @State var primaryActionText: LocalizedStringKey
     @State var primaryActionIconName: String
     @Binding var copyDisabled: Bool
     @State var copyHidden: Bool = false
@@ -33,8 +32,9 @@ struct ActionBar: View {
                     copyAction()
                 }
             } label: {
-                LargeButtonLabel(iconName: "doc.on.doc",
-                                 text: "Shared.Copy")
+                Label(.sharedCopy, systemImage: "doc.on.doc")
+                    .padding(.horizontal, 4.0)
+                    .frame(minHeight: 42.0)
             }
             .buttonStyle(.bordered)
             .clipShape(RoundedRectangle(cornerRadius: 99))
@@ -47,10 +47,10 @@ struct ActionBar: View {
         Button {
             primaryAction()
         } label: {
-            LargeButtonLabel(iconName: primaryActionIconName,
-                             text: primaryActionText)
-            .bold()
-            .frame(maxWidth: .infinity)
+            Label(primaryActionText, systemImage: primaryActionIconName)
+                .bold()
+                .padding(.horizontal, 4.0)
+                .frame(maxWidth: .infinity, minHeight: 42.0)
         }
         .buttonStyle(.borderedProminent)
         .clipShape(RoundedRectangle(cornerRadius: 99))

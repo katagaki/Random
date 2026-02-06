@@ -5,7 +5,6 @@
 //  Created by シンジャスティン on 2023/08/28.
 //
 
-import Komponents
 import SwiftUI
 
 struct ListView<Content: View>: View {
@@ -62,9 +61,8 @@ struct ListView<Content: View>: View {
                                     }
                                 }
                             } label: {
-                                LargeButtonLabel(iconName: "doc.on.clipboard",
-                                                 text: "Shared.Paste")
-                                .bold()
+                                Label("Shared.Paste", systemImage: "doc.on.clipboard")
+                                    .bold()
                             }
                             .buttonStyle(.borderedProminent)
                             .clipShape(RoundedRectangle(cornerRadius: 99))
@@ -111,15 +109,7 @@ struct ListView<Content: View>: View {
         .onAppear {
             focusedField = .newItemField
         }
-        .toolbar {
-            ToolbarItemGroup(placement: .keyboard) {
-                Spacer()
-                Button("Shared.Done") {
-                    focusedField = nil
-                }
-                .bold()
-            }
-        }
+        .keyboardToolbar(focusedField: $focusedField)
     }
 
     func addNewItem() {

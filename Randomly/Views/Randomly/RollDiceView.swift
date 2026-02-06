@@ -5,7 +5,6 @@
 //  Created by シン・ジャスティン on 3/9/23.
 //
 
-import Komponents
 import SceneKit
 import SwiftUI
 
@@ -33,40 +32,40 @@ struct RollDiceView: View {
                           Button {
                               addDice(number: 1)
                           } label: {
-                              LargeButtonLabel(iconName: "dice.fill",
-                                               text: "Shared.Do.RollDice")
-                              .bold()
-                              .frame(maxWidth: .infinity)
+                              Label("Shared.Do.RollDice", systemImage: "dice.fill")
+                                  .bold()
+                                  .padding(.horizontal, 4.0)
+                                  .frame(minHeight: 42.0)
                           }
                           .buttonStyle(.borderedProminent)
                           .clipShape(RoundedRectangle(cornerRadius: 99))
                           Button {
                               addDice(number: 2)
                           } label: {
-                              LargeButtonLabel(iconName: "dice.fill",
-                                               text: "Shared.Do.RollDice.2")
-                              .bold()
-                              .frame(maxWidth: .infinity)
+                              Label("Shared.Do.RollDice.2", systemImage: "dice.fill")
+                                  .bold()
+                                  .padding(.horizontal, 4.0)
+                                  .frame(minHeight: 42.0)
                           }
                           .buttonStyle(.borderedProminent)
                           .clipShape(RoundedRectangle(cornerRadius: 99))
                           Button {
                               addDice(number: 3)
                           } label: {
-                              LargeButtonLabel(iconName: "dice.fill",
-                                               text: "Shared.Do.RollDice.3")
-                              .bold()
-                              .frame(maxWidth: .infinity)
+                              Label("Shared.Do.RollDice.3", systemImage: "dice.fill")
+                                  .bold()
+                                  .padding(.horizontal, 4.0)
+                                  .frame(minHeight: 42.0)
                           }
                           .buttonStyle(.borderedProminent)
                           .clipShape(RoundedRectangle(cornerRadius: 99))
                           Button {
                               addDice(number: 4)
                           } label: {
-                              LargeButtonLabel(iconName: "dice.fill",
-                                               text: "Shared.Do.RollDice.4")
-                              .bold()
-                              .frame(maxWidth: .infinity)
+                              Label("Shared.Do.RollDice.4", systemImage: "dice.fill")
+                                  .bold()
+                                  .padding(.horizontal, 4.0)
+                                  .frame(minHeight: 42.0)
                           }
                           .buttonStyle(.borderedProminent)
                           .clipShape(RoundedRectangle(cornerRadius: 99))

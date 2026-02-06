@@ -5,7 +5,6 @@
 //  Created by シンジャスティン on 2023/08/23.
 //
 
-import Komponents
 import SwiftUI
 
 struct MoreView: View {
@@ -17,7 +16,7 @@ struct MoreView: View {
             MoreList(repoName: "katagaki/Random", viewPath: ViewPath.moreAttributions) {
                 Section {
                     NavigationLink(value: ViewPath.moreDatasets) {
-                        ListRow(image: "ListIcon.Datasets", title: "More.Datasets")
+                        Label("More.Datasets", systemImage: "cylinder.split.1x2")
                     }
                 } header: {
                     ListSectionHeader(text: "More.General")
