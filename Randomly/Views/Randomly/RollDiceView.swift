@@ -86,7 +86,7 @@ struct RollDiceView: View {
         .onAppear {
             resetScene()
         }
-        .navigationTitle("Randomly.Do.DiceRoll.ViewTitle")
+        .navigationTitle("Do.DiceRoll.ViewTitle")
         .navigationBarTitleDisplayMode(.inline)
     }
 

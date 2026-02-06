@@ -40,7 +40,7 @@ struct DrawCardView: View {
         .safeAreaInset(edge: .bottom) {
             VStack(alignment: .center, spacing: 16.0) {
                 VStack(alignment: .leading, spacing: 8.0) {
-                    Text("Randomly.Do.CardDraw.NumberToDraw.\(String(Int(numberOfCardsToDraw)))")
+                    Text("Do.CardDraw.NumberToDraw.\(String(Int(numberOfCardsToDraw)))")
                     Slider(value: $numberOfCardsToDraw, in: 1...6, step: 1)
                 }
                 ActionBar(primaryActionText: "Shared.Draw",
@@ -72,7 +72,7 @@ struct DrawCardView: View {
         .onChange(of: numberOfCardsToDraw) {
             drawCards()
         }
-        .navigationTitle("Randomly.Do.CardDraw.ViewTitle")
+        .navigationTitle("Do.CardDraw.ViewTitle")
         .navigationBarTitleDisplayMode(.inline)
     }
 

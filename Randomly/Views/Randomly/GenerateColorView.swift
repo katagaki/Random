@@ -100,7 +100,7 @@ struct GenerateColorView: View {
         .task {
             regenerate()
         }
-        .navigationTitle("Randomly.Generate.Color.ViewTitle")
+        .navigationTitle("Generate.Color.ViewTitle")
         .navigationBarTitleDisplayMode(.inline)
     }
 

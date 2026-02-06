@@ -41,7 +41,7 @@ struct SelectTimeView: View {
         .task {
             regenerate()
         }
-        .navigationTitle("Randomly.Generate.Time.ViewTitle")
+        .navigationTitle("Generate.Time.ViewTitle")
         .navigationBarTitleDisplayMode(.inline)
     }
 

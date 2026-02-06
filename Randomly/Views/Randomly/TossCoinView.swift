@@ -39,7 +39,7 @@ struct TossCoinView: View {
         .onAppear {
             resetScene()
         }
-        .navigationTitle("Randomly.Do.CoinFlip.ViewTitle")
+        .navigationTitle("Do.CoinFlip.ViewTitle")
         .navigationBarTitleDisplayMode(.inline)
     }
 

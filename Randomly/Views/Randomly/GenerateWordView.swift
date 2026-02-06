@@ -45,7 +45,7 @@ struct GenerateWordView: View {
             Spacer()
             Divider()
             VStack(alignment: .leading, spacing: 8.0) {
-                Text("Randomly.Generate.Word.Length.\(String(Int(wordLength)))")
+                Text("Generate.Word.Length.\(String(Int(wordLength)))")
                 Slider(value: $wordLength, in: 3...20, step: 1)
             }
             .padding()
@@ -63,7 +63,7 @@ struct GenerateWordView: View {
             .padding(.top, 8.0)
             .padding(.bottom, 16.0)
         }
-        .navigationTitle("Randomly.Generate.Word.ViewTitle")
+        .navigationTitle("Generate.Word.ViewTitle")
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
             generateWord()

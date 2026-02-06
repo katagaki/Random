@@ -57,7 +57,7 @@ struct GenerateCoordinateView: View {
         .task {
             regenerate()
         }
-        .navigationTitle("Randomly.Generate.Coordinate.ViewTitle")
+        .navigationTitle("Generate.Coordinate.ViewTitle")
         .navigationBarTitleDisplayMode(.inline)
     }
 

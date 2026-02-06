@@ -34,11 +34,11 @@ struct GeneratePasswordView: View {
             Spacer()
             Divider()
             VStack(alignment: .leading, spacing: 8.0) {
-                Text("Randomly.Generate.Password.MinLength.\(String(Int(minLength)))")
+                Text("Generate.Password.MinLength.\(String(Int(minLength)))")
                 Slider(value: $minLength, in: 8...128, step: 1) { _ in
                     password.minLength = Int(minLength)
                 }
-                Text("Randomly.Generate.Password.MaxLength.\(String(Int(maxLength)))")
+                Text("Generate.Password.MaxLength.\(String(Int(maxLength)))")
                 Slider(value: $maxLength, in: 8...128, step: 1) { _ in
                     password.maxLength = Int(maxLength)
                 }
@@ -47,19 +47,19 @@ struct GeneratePasswordView: View {
             Divider()
             VStack(alignment: .leading, spacing: 8.0) {
                 Toggle(isOn: $useUppercase, label: {
-                    Text("Randomly.Generate.Password.Policy.Uppercase")
+                    Text("Generate.Password.Policy.Uppercase")
                 })
                 Divider()
                 Toggle(isOn: $useLowercase, label: {
-                    Text("Randomly.Generate.Password.Policy.Lowercase")
+                    Text("Generate.Password.Policy.Lowercase")
                 })
                 Divider()
                 Toggle(isOn: $useNumbers, label: {
-                    Text("Randomly.Generate.Password.Policy.Numbers")
+                    Text("Generate.Password.Policy.Numbers")
                 })
                 Divider()
                 Toggle(isOn: $useSymbols, label: {
-                    Text("Randomly.Generate.Password.Policy.Symbols")
+                    Text("Generate.Password.Policy.Symbols")
                 })
             }
             .padding([.leading, .trailing])
@@ -90,7 +90,7 @@ struct GeneratePasswordView: View {
         .onChange(of: useSymbols) {
             evaluatePasswordPolicy()
         }
-        .navigationTitle("Randomly.Generate.Password.ViewTitle")
+        .navigationTitle("Generate.Password.ViewTitle")
         .navigationBarTitleDisplayMode(.inline)
     }
 

@@ -17,29 +17,31 @@ struct SelectCountryView: View {
             if let country = selectedCountry {
                 VStack(spacing: 24.0) {
                     Text(country.name)
-                        .font(.system(size: 60.0, weight: .heavy, design: .rounded))
-                        .lineLimit(2)
-                        .minimumScaleFactor(0.5)
+                        .font(.system(size: 50.0, weight: .heavy, design: .rounded))
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.01)
                         .textSelection(.enabled)
                         .multilineTextAlignment(.center)
                         .transition(.scale.combined(with: .opacity))
                         .id(country.id)
 
                     VStack(spacing: 12.0) {
-                        InfoRow(label: "Randomly.Generate.Country.ISOCode", value: country.isoCode)
-                        InfoRow(label: "Randomly.Generate.Country.CountryCode", value: country.countryCode)
-                        InfoRow(label: "Randomly.Generate.Country.TimeZone", value: country.timeZone)
+                        InfoRow(label: "Generate.Country.ISOCode", value: country.isoCode)
+                        InfoRow(label: "Generate.Country.CountryCode", value: country.countryCode)
+                        InfoRow(label: "Generate.Country.TimeZone", value: country.timeZone)
                     }
                     .font(.system(size: 18.0, design: .rounded))
                     .padding(.horizontal)
                 }
                 .padding()
+                .frame(maxWidth: .infinity)
             } else {
-                Text("Randomly.Generate.Country.Placeholder")
+                Text("Generate.Country.Placeholder")
                     .font(.system(size: 40.0, weight: .medium, design: .rounded))
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
                     .padding()
+                    .frame(maxWidth: .infinity)
             }
             Spacer()
             Divider()
@@ -64,8 +66,11 @@ struct SelectCountryView: View {
             .padding(.top, 8.0)
             .padding(.bottom, 16.0)
         }
-        .navigationTitle("Randomly.Generate.Country.ViewTitle")
+        .navigationTitle("Generate.Country.ViewTitle")
         .navigationBarTitleDisplayMode(.inline)
+        .task {
+            regenerate()
+        }
     }
 
     func regenerate() {

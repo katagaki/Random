@@ -8,8 +8,8 @@
 import Foundation
 
 enum GenerateType: String {
-    case number = "Randomly.Generate.Number.ViewTitle"
-    case letter = "Randomly.Generate.Letter.ViewTitle"
-    case englishWord = "Randomly.Generate.WordEN.ViewTitle"
-    case japaneseWord = "Randomly.Generate.WordJP.ViewTitle"
+    case number = "Select.Number.ViewTitle"
+    case letter = "Select.Letter.ViewTitle"
+    case englishWord = "Select.WordEN.ViewTitle"
+    case japaneseWord = "Select.WordJP.ViewTitle"
 }

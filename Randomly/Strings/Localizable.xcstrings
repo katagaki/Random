@@ -3547,7 +3547,7 @@
         }
       }
     },
-    "Neatly.Count.DecrementValue" : {
+    "Count.DecrementValue" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -3564,7 +3564,7 @@
         }
       }
     },
-    "Neatly.Count.IncrementValue" : {
+    "Count.IncrementValue" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -3581,7 +3581,7 @@
         }
       }
     },
-    "Neatly.Sort.Dictionary" : {
+    "Sort.Dictionary" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -3598,7 +3598,7 @@
         }
       }
     },
-    "Neatly.Sort.List" : {
+    "Sort.List" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -3615,7 +3615,7 @@
         }
       }
     },
-    "Randomly.Count.Decrement" : {
+    "Count.Decrement" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -3632,7 +3632,7 @@
         }
       }
     },
-    "Randomly.Count.DecrementRange" : {
+    "Count.DecrementRange" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -3649,7 +3649,7 @@
         }
       }
     },
-    "Randomly.Count.Down" : {
+    "Count.Down" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -3666,7 +3666,7 @@
         }
       }
     },
-    "Randomly.Count.Increment" : {
+    "Count.Increment" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -3683,7 +3683,7 @@
         }
       }
     },
-    "Randomly.Count.IncrementRange" : {
+    "Count.IncrementRange" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -3700,7 +3700,7 @@
         }
       }
     },
-    "Randomly.Count.Start" : {
+    "Count.Start" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -3717,7 +3717,7 @@
         }
       }
     },
-    "Randomly.Count.StartingValue" : {
+    "Count.StartingValue" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -3734,7 +3734,7 @@
         }
       }
     },
-    "Randomly.Count.Up" : {
+    "Count.Up" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -3751,7 +3751,7 @@
         }
       }
     },
-    "Randomly.Count.UseRandomRange" : {
+    "Count.UseRandomRange" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -3768,7 +3768,7 @@
         }
       }
     },
-    "Randomly.Do.CardDraw" : {
+    "Do.CardDraw" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -3785,7 +3785,7 @@
         }
       }
     },
-    "Randomly.Do.CardDraw.1" : {
+    "Do.CardDraw.1" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -3802,7 +3802,7 @@
         }
       }
     },
-    "Randomly.Do.CardDraw.2" : {
+    "Do.CardDraw.2" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -3819,7 +3819,7 @@
         }
       }
     },
-    "Randomly.Do.CardDraw.3" : {
+    "Do.CardDraw.3" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -3836,7 +3836,7 @@
         }
       }
     },
-    "Randomly.Do.CardDraw.4" : {
+    "Do.CardDraw.4" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -3853,7 +3853,7 @@
         }
       }
     },
-    "Randomly.Do.CardDraw.5" : {
+    "Do.CardDraw.5" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -3870,7 +3870,7 @@
         }
       }
     },
-    "Randomly.Do.CardDraw.6" : {
+    "Do.CardDraw.6" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -3887,7 +3887,7 @@
         }
       }
     },
-    "Randomly.Do.CardDraw.7" : {
+    "Do.CardDraw.7" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -3904,7 +3904,7 @@
         }
       }
     },
-    "Randomly.Do.CardDraw.8" : {
+    "Do.CardDraw.8" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -3921,7 +3921,7 @@
         }
       }
     },
-    "Randomly.Do.CardDraw.9" : {
+    "Do.CardDraw.9" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -3938,7 +3938,7 @@
         }
       }
     },
-    "Randomly.Do.CardDraw.10" : {
+    "Do.CardDraw.10" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -3955,7 +3955,7 @@
         }
       }
     },
-    "Randomly.Do.CardDraw.11" : {
+    "Do.CardDraw.11" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -3972,7 +3972,7 @@
         }
       }
     },
-    "Randomly.Do.CardDraw.12" : {
+    "Do.CardDraw.12" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -3989,7 +3989,7 @@
         }
       }
     },
-    "Randomly.Do.CardDraw.13" : {
+    "Do.CardDraw.13" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4006,7 +4006,7 @@
         }
       }
     },
-    "Randomly.Do.CardDraw.CardName.%1$@.%2$@" : {
+    "Do.CardDraw.CardName.%1$@.%2$@" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4023,7 +4023,7 @@
         }
       }
     },
-    "Randomly.Do.CardDraw.Club" : {
+    "Do.CardDraw.Club" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4040,7 +4040,7 @@
         }
       }
     },
-    "Randomly.Do.CardDraw.Diamond" : {
+    "Do.CardDraw.Diamond" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4057,7 +4057,7 @@
         }
       }
     },
-    "Randomly.Do.CardDraw.Heart" : {
+    "Do.CardDraw.Heart" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4074,7 +4074,7 @@
         }
       }
     },
-    "Randomly.Do.CardDraw.NumberToDraw.%@" : {
+    "Do.CardDraw.NumberToDraw.%@" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4090,7 +4090,7 @@
         }
       }
     },
-    "Randomly.Do.CardDraw.Spade" : {
+    "Do.CardDraw.Spade" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4107,7 +4107,7 @@
         }
       }
     },
-    "Randomly.Do.CardDraw.ViewTitle" : {
+    "Do.CardDraw.ViewTitle" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4124,7 +4124,7 @@
         }
       }
     },
-    "Randomly.Do.CoinFlip" : {
+    "Do.CoinFlip" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4141,7 +4141,7 @@
         }
       }
     },
-    "Randomly.Do.CoinFlip.ViewTitle" : {
+    "Do.CoinFlip.ViewTitle" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4158,7 +4158,7 @@
         }
       }
     },
-    "Randomly.Do.DiceRoll" : {
+    "Do.DiceRoll" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4175,7 +4175,7 @@
         }
       }
     },
-    "Randomly.Do.DiceRoll.ViewTitle" : {
+    "Do.DiceRoll.ViewTitle" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4192,7 +4192,7 @@
         }
       }
     },
-    "Randomly.Generate.Color" : {
+    "Generate.Color" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4209,7 +4209,7 @@
         }
       }
     },
-    "Randomly.Generate.Color.ViewTitle" : {
+    "Generate.Color.ViewTitle" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4226,7 +4226,7 @@
         }
       }
     },
-    "Randomly.Generate.Coordinate" : {
+    "Generate.Coordinate" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4243,7 +4243,7 @@
         }
       }
     },
-    "Randomly.Generate.Coordinate.ViewTitle" : {
+    "Generate.Coordinate.ViewTitle" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4260,57 +4260,7 @@
         }
       }
     },
-    "Randomly.Generate.Word" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Word"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "単語"
-          }
-        }
-      }
-    },
-    "Randomly.Generate.Word.ViewTitle" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Generate Word"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "単語を生成"
-          }
-        }
-      }
-    },
-    "Randomly.Generate.Word.Length.%@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Word Length: %@ letters"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "単語の長さ：%@文字"
-          }
-        }
-      }
-    },
-    "Randomly.Generate.Country" : {
+    "Generate.Country" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4327,7 +4277,7 @@
         }
       }
     },
-    "Randomly.Generate.Country.CountryCode" : {
+    "Generate.Country.CountryCode" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4344,7 +4294,7 @@
         }
       }
     },
-    "Randomly.Generate.Country.ISOCode" : {
+    "Generate.Country.ISOCode" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4361,7 +4311,7 @@
         }
       }
     },
-    "Randomly.Generate.Country.Placeholder" : {
+    "Generate.Country.Placeholder" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4378,7 +4328,7 @@
         }
       }
     },
-    "Randomly.Generate.Country.TimeZone" : {
+    "Generate.Country.TimeZone" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4395,7 +4345,7 @@
         }
       }
     },
-    "Randomly.Generate.Country.ViewTitle" : {
+    "Generate.Country.ViewTitle" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4412,7 +4362,7 @@
         }
       }
     },
-    "Randomly.Generate.Date" : {
+    "Generate.Date" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4429,7 +4379,7 @@
         }
       }
     },
-    "Randomly.Generate.Date.ViewTitle" : {
+    "Generate.Date.ViewTitle" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4446,7 +4396,7 @@
         }
       }
     },
-    "Randomly.Generate.Letter" : {
+    "Generate.Letter" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4463,7 +4413,7 @@
         }
       }
     },
-    "Randomly.Generate.Letter.ViewTitle" : {
+    "Generate.Letter.ViewTitle" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4480,7 +4430,7 @@
         }
       }
     },
-    "Randomly.Generate.Number" : {
+    "Generate.Number" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4497,7 +4447,7 @@
         }
       }
     },
-    "Randomly.Generate.Number.ViewTitle" : {
+    "Generate.Number.ViewTitle" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4514,7 +4464,7 @@
         }
       }
     },
-    "Randomly.Generate.Password" : {
+    "Generate.Password" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4531,7 +4481,7 @@
         }
       }
     },
-    "Randomly.Generate.Password.MaxLength.%@" : {
+    "Generate.Password.MaxLength.%@" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4547,7 +4497,7 @@
         }
       }
     },
-    "Randomly.Generate.Password.MinLength.%@" : {
+    "Generate.Password.MinLength.%@" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4563,7 +4513,7 @@
         }
       }
     },
-    "Randomly.Generate.Password.Policy.Lowercase" : {
+    "Generate.Password.Policy.Lowercase" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4579,7 +4529,7 @@
         }
       }
     },
-    "Randomly.Generate.Password.Policy.Numbers" : {
+    "Generate.Password.Policy.Numbers" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4595,7 +4545,7 @@
         }
       }
     },
-    "Randomly.Generate.Password.Policy.Symbols" : {
+    "Generate.Password.Policy.Symbols" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4611,7 +4561,7 @@
         }
       }
     },
-    "Randomly.Generate.Password.Policy.Uppercase" : {
+    "Generate.Password.Policy.Uppercase" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4627,7 +4577,7 @@
         }
       }
     },
-    "Randomly.Generate.Password.ViewTitle" : {
+    "Generate.Password.ViewTitle" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4644,7 +4594,7 @@
         }
       }
     },
-    "Randomly.Generate.Time" : {
+    "Generate.Time" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4661,7 +4611,7 @@
         }
       }
     },
-    "Randomly.Generate.Time.ViewTitle" : {
+    "Generate.Time.ViewTitle" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4678,7 +4628,7 @@
         }
       }
     },
-    "Randomly.Generate.Word" : {
+    "Generate.Word" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4695,24 +4645,23 @@
         }
       }
     },
-    "Randomly.Generate.WordEN.ViewTitle" : {
-      "extractionState" : "manual",
+    "Generate.Word.Length.%@" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Generate Word"
+            "value" : "Word Length: %@ letters"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "英単語を生成"
+            "value" : "単語の長さ：%@文字"
           }
         }
       }
     },
-    "Randomly.Generate.WordJP.ViewTitle" : {
+    "Generate.Word.ViewTitle" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4729,7 +4678,41 @@
         }
       }
     },
-    "Randomly.Select.ItemFromList" : {
+    "Generate.WordEN.ViewTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Generate Word"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "英単語を生成"
+          }
+        }
+      }
+    },
+    "Generate.WordJP.ViewTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Generate Word"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "単語を生成"
+          }
+        }
+      }
+    },
+    "Select.ItemFromList" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4746,7 +4729,7 @@
         }
       }
     },
-    "Randomly.Select.ItemFromList.ViewTitle" : {
+    "Select.ItemFromList.ViewTitle" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4763,7 +4746,7 @@
         }
       }
     },
-    "Randomly.Select.WordFromText" : {
+    "Select.WordFromText" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4780,7 +4763,7 @@
         }
       }
     },
-    "Randomly.Select.WordFromText.LanguageDisclaimer" : {
+    "Select.WordFromText.LanguageDisclaimer" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4797,7 +4780,7 @@
         }
       }
     },
-    "Randomly.Select.WordFromText.SelectionMode" : {
+    "Select.WordFromText.SelectionMode" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4814,7 +4797,7 @@
         }
       }
     },
-    "Randomly.Select.WordFromText.SelectionMode.EnglishOnly" : {
+    "Select.WordFromText.SelectionMode.EnglishOnly" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4831,7 +4814,7 @@
         }
       }
     },
-    "Randomly.Select.WordFromText.SelectionMode.KanjiOnly" : {
+    "Select.WordFromText.SelectionMode.KanjiOnly" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4848,7 +4831,7 @@
         }
       }
     },
-    "Randomly.Select.WordFromText.SelectionMode.ParticlesBestAttempt" : {
+    "Select.WordFromText.SelectionMode.ParticlesBestAttempt" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4865,7 +4848,7 @@
         }
       }
     },
-    "Randomly.Select.WordFromText.ViewTitle" : {
+    "Select.WordFromText.ViewTitle" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4882,7 +4865,7 @@
         }
       }
     },
-    "Randomly.Shuffle.Dictionary" : {
+    "Shuffle.Dictionary" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4899,7 +4882,7 @@
         }
       }
     },
-    "Randomly.Shuffle.List" : {
+    "Shuffle.List" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -4912,6 +4895,125 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "リスト"
+          }
+        }
+      }
+    },
+    "Select.Letter" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Letter"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "英文字"
+          }
+        }
+      }
+    },
+    "Select.Letter.ViewTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select Letter"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "英文字を選択"
+          }
+        }
+      }
+    },
+    "Select.Number" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Number"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "乱数"
+          }
+        }
+      }
+    },
+    "Select.Number.ViewTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select Number"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "乱数を選択"
+          }
+        }
+      }
+    },
+    "Select.Word" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Word"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "単語"
+          }
+        }
+      }
+    },
+    "Select.WordEN.ViewTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select Word"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "英単語を選択"
+          }
+        }
+      }
+    },
+    "Select.WordJP.ViewTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select Word"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "単語を選択"
           }
         }
       }

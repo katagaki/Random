@@ -30,7 +30,7 @@ struct SelectItemFromListView: View {
             }
         }
         .toolbarBackground(.hidden, for: .tabBar)
-        .navigationTitle("Randomly.Select.ItemFromList.ViewTitle")
+        .navigationTitle("Select.ItemFromList.ViewTitle")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {

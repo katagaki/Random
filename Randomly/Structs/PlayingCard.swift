@@ -15,10 +15,10 @@ struct PlayingCard: Identifiable {
     var number: Int
 
     func name() -> String {
-        let cardTypeLocalizedString = NSLocalizedString("Randomly.Do.CardDraw.\(type.rawValue)", comment: "")
-        let cardNumberLocalizedString = NSLocalizedString("Randomly.Do.CardDraw.\(number)", comment: "")
+        let cardTypeLocalizedString = NSLocalizedString("Do.CardDraw.\(type.rawValue)", comment: "")
+        let cardNumberLocalizedString = NSLocalizedString("Do.CardDraw.\(number)", comment: "")
         return String.localizedStringWithFormat(
-            NSLocalizedString("Randomly.Do.CardDraw.CardName.%1$@.%2$@", comment: ""),
+            NSLocalizedString("Do.CardDraw.CardName.%1$@.%2$@", comment: ""),
             cardTypeLocalizedString,
             cardNumberLocalizedString)
     }

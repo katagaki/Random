@@ -70,7 +70,7 @@ struct SelectWordFromTextView: View {
                     )
                 if let languageCode = Locale.current.language.languageCode {
                     if languageCode != .english {
-                        Text("Randomly.Select.WordFromText.LanguageDisclaimer")
+                        Text("Select.WordFromText.LanguageDisclaimer")
                             .font(.caption)
                             .foregroundStyle(.secondary)
                     }
@@ -103,22 +103,22 @@ struct SelectWordFromTextView: View {
                 if languageCode != .english {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Menu {
-                            Picker("Randomly.Select.WordFromText.SelectionMode", selection: $mode) {
-                                Text("Randomly.Select.WordFromText.SelectionMode.EnglishOnly")
+                            Picker("Select.WordFromText.SelectionMode", selection: $mode) {
+                                Text("Select.WordFromText.SelectionMode.EnglishOnly")
                                     .tag(WordSelectionMode.english)
-                                Text("Randomly.Select.WordFromText.SelectionMode.KanjiOnly")
+                                Text("Select.WordFromText.SelectionMode.KanjiOnly")
                                     .tag(WordSelectionMode.kanjiOnly)
-                                Text("Randomly.Select.WordFromText.SelectionMode.ParticlesBestAttempt")
+                                Text("Select.WordFromText.SelectionMode.ParticlesBestAttempt")
                                     .tag(WordSelectionMode.particleBestAttempt)
                             }
                         } label: {
-                            Text("Randomly.Select.WordFromText.SelectionMode")
+                            Text("Select.WordFromText.SelectionMode")
                         }
                     }
                 }
             }
         }
-        .navigationTitle("Randomly.Select.WordFromText.ViewTitle")
+        .navigationTitle("Select.WordFromText.ViewTitle")
         .navigationBarTitleDisplayMode(.inline)
     }
 

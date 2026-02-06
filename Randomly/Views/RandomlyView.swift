@@ -27,25 +27,25 @@ struct RandomlyView: View {
                             .padding(.horizontal)
 
                         LazyVGrid(columns: columns, spacing: 12) {
-                            GridCardView(destination: ViewPath.selectNumber, title: "Randomly.Generate.Number",
+                            GridCardView(destination: ViewPath.selectNumber, title: "Select.Number",
                                          icon: "number", iconColor: .blue)
-                            GridCardView(destination: ViewPath.selectLetter, title: "Randomly.Generate.Letter",
+                            GridCardView(destination: ViewPath.selectLetter, title: "Select.Letter",
                                          icon: "character", iconColor: .green)
 
                             switch Locale.current.language.languageCode ?? .english {
                             case .japanese:
-                                GridCardView(destination: ViewPath.selectWordJapanese, title: "Randomly.Generate.Word",
+                                GridCardView(destination: ViewPath.selectWordJapanese, title: "Select.Word",
                                              icon: "textformat.abc", iconColor: .teal)
                             default:
-                                GridCardView(destination: ViewPath.selectWordEnglish, title: "Randomly.Generate.Word",
+                                GridCardView(destination: ViewPath.selectWordEnglish, title: "Select.Word",
                                              icon: "textformat.abc", iconColor: .teal)
                             }
 
-                            GridCardView(destination: ViewPath.selectDate, title: "Randomly.Generate.Date",
+                            GridCardView(destination: ViewPath.selectDate, title: "Generate.Date",
                                          icon: "calendar", iconColor: .red)
-                            GridCardView(destination: ViewPath.selectTime, title: "Randomly.Generate.Time",
+                            GridCardView(destination: ViewPath.selectTime, title: "Generate.Time",
                                          icon: "clock.fill", iconColor: .red)
-                            GridCardView(destination: ViewPath.selectCountry, title: "Randomly.Generate.Country",
+                            GridCardView(destination: ViewPath.selectCountry, title: "Generate.Country",
                                          icon: "globe", iconColor: .purple)
                         }
                         .padding(.horizontal)
@@ -57,18 +57,18 @@ struct RandomlyView: View {
                             .padding(.horizontal)
 
                         LazyVGrid(columns: columns, spacing: 12) {
-                            GridCardView(destination: ViewPath.generateWord, title: "Randomly.Generate.Word",
+                            GridCardView(destination: ViewPath.generateWord, title: "Generate.Word",
                                          icon: "textformat.abc", iconColor: .teal)
-                            GridCardView(destination: ViewPath.generatePassword, title: "Randomly.Generate.Password",
+                            GridCardView(destination: ViewPath.generatePassword, title: "Generate.Password",
                                          icon: "key.fill", iconColor: .orange)
-                            GridCardView(destination: ViewPath.generateColor, title: "Randomly.Generate.Color",
+                            GridCardView(destination: ViewPath.generateColor, title: "Generate.Color",
                                          icon: "paintpalette.fill",
                                          iconGradient: LinearGradient(
                                              colors: [.red, .orange, .yellow, .green, .cyan, .blue, .purple],
                                              startPoint: .leading,
                                              endPoint: .trailing
                                          ))
-                            GridCardView(destination: ViewPath.generateCoordinate, title: "Randomly.Generate.Coordinate",
+                            GridCardView(destination: ViewPath.generateCoordinate, title: "Generate.Coordinate",
                                          icon: "mappin.and.ellipse", iconColor: .blue)
                         }
                         .padding(.horizontal)
@@ -80,9 +80,9 @@ struct RandomlyView: View {
                             .padding(.horizontal)
 
                         LazyVGrid(columns: columns, spacing: 12) {
-                            GridCardView(destination: ViewPath.selectItemFromList, title: "Randomly.Select.ItemFromList",
+                            GridCardView(destination: ViewPath.selectItemFromList, title: "Select.ItemFromList",
                                          icon: "list.bullet", iconColor: .indigo)
-                            GridCardView(destination: ViewPath.selectWordFromText, title: "Randomly.Select.WordFromText",
+                            GridCardView(destination: ViewPath.selectWordFromText, title: "Select.WordFromText",
                                          icon: "doc.text", iconColor: .teal)
                         }
                         .padding(.horizontal)
@@ -94,9 +94,9 @@ struct RandomlyView: View {
                             .padding(.horizontal)
 
                         LazyVGrid(columns: columns, spacing: 12) {
-                            GridCardView(destination: ViewPath.shuffleList, title: "Randomly.Shuffle.List",
+                            GridCardView(destination: ViewPath.shuffleList, title: "Shuffle.List",
                                          icon: "list.bullet", iconColor: .mint)
-                            GridCardView(destination: ViewPath.shuffleDict, title: "Randomly.Shuffle.Dictionary",
+                            GridCardView(destination: ViewPath.shuffleDict, title: "Shuffle.Dictionary",
                                          icon: "tablecells", iconColor: .brown)
                         }
                         .padding(.horizontal)
@@ -108,9 +108,9 @@ struct RandomlyView: View {
                             .padding(.horizontal)
 
                         LazyVGrid(columns: columns, spacing: 12) {
-                            GridCardView(destination: ViewPath.sortList, title: "Neatly.Sort.List",
+                            GridCardView(destination: ViewPath.sortList, title: "Sort.List",
                                          icon: "list.bullet", iconColor: .mint)
-                            GridCardView(destination: ViewPath.sortDict, title: "Neatly.Sort.Dictionary",
+                            GridCardView(destination: ViewPath.sortDict, title: "Sort.Dictionary",
                                          icon: "tablecells", iconColor: .brown)
                         }
                         .padding(.horizontal)
@@ -122,9 +122,9 @@ struct RandomlyView: View {
                             .padding(.horizontal)
 
                         LazyVGrid(columns: columns, spacing: 12) {
-                            GridCardView(destination: ViewPath.countUp, title: "Randomly.Count.Up",
+                            GridCardView(destination: ViewPath.countUp, title: "Count.Up",
                                          icon: "plus.circle.fill", iconColor: Locale.current.language.languageCode == .japanese ? .red : .green)
-                            GridCardView(destination: ViewPath.countDown, title: "Randomly.Count.Down",
+                            GridCardView(destination: ViewPath.countDown, title: "Count.Down",
                                          icon: "minus.circle.fill", iconColor: Locale.current.language.languageCode == .japanese ? .blue : .red)
                         }
                         .padding(.horizontal)
@@ -136,11 +136,11 @@ struct RandomlyView: View {
                             .padding(.horizontal)
 
                         LazyVGrid(columns: columns, spacing: 12) {
-                            GridCardView(destination: ViewPath.tossCoin, title: "Randomly.Do.CoinFlip",
+                            GridCardView(destination: ViewPath.tossCoin, title: "Do.CoinFlip",
                                          icon: "centsign.circle.fill", iconColor: .yellow)
-                            GridCardView(destination: ViewPath.rollDice, title: "Randomly.Do.DiceRoll",
+                            GridCardView(destination: ViewPath.rollDice, title: "Do.DiceRoll",
                                          icon: "die.face.5.fill", iconColor: .red)
-                            GridCardView(destination: ViewPath.drawCard, title: "Randomly.Do.CardDraw",
+                            GridCardView(destination: ViewPath.drawCard, title: "Do.CardDraw",
                                          icon: "square.on.square.fill", iconColor: .gray)
                         }
                         .padding(.horizontal)

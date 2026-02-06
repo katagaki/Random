@@ -10,7 +10,7 @@ import SwiftUI
 struct SelectDateView: View {
 
     @State var generatedDate: Date = Date()
-    @State var startDate: Date = Date(timeIntervalSince1970: 0)
+    @State var startDate: Date = Date(timeIntervalSince1970: 885686400)
     @State var endDate: Date = Date()
     @FocusState var isTextFieldActive: Bool
 
@@ -60,7 +60,7 @@ struct SelectDateView: View {
         .task {
             regenerate()
         }
-        .navigationTitle("Randomly.Generate.Date.ViewTitle")
+        .navigationTitle("Generate.Date.ViewTitle")
         .navigationBarTitleDisplayMode(.inline)
     }
 

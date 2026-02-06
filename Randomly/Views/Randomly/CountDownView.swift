@@ -35,7 +35,7 @@ struct CountDownView: View {
                 Divider()
                 VStack(alignment: .leading, spacing: 16.0) {
                     VStack(alignment: .leading, spacing: 8.0) {
-                        Text("Randomly.Count.StartingValue")
+                        Text("Count.StartingValue")
                             .font(.body)
                             .bold()
                         TextField("", value: $startingValue, format: .number)
@@ -44,14 +44,14 @@ struct CountDownView: View {
                     }
 
                     Toggle(isOn: $useRange) {
-                        Text("Randomly.Count.UseRandomRange")
+                        Text("Count.UseRandomRange")
                             .font(.body)
                             .bold()
                     }
 
                     if useRange {
                         VStack(alignment: .leading, spacing: 8.0) {
-                            Text("Randomly.Count.DecrementRange")
+                            Text("Count.DecrementRange")
                                 .font(.body)
                                 .bold()
                             HStack(alignment: .center, spacing: 4.0) {
@@ -68,7 +68,7 @@ struct CountDownView: View {
                         }
                     } else {
                         VStack(alignment: .leading, spacing: 8.0) {
-                            Text("Neatly.Count.DecrementValue")
+                            Text("Count.DecrementValue")
                                 .font(.body)
                                 .bold()
                             TextField("", value: $decrementValue, format: .number)
@@ -84,7 +84,7 @@ struct CountDownView: View {
             }
 
             if !hasStarted {
-                ActionBar(primaryActionText: "Randomly.Count.Start",
+                ActionBar(primaryActionText: "Count.Start",
                           primaryActionIconName: "play.fill",
                           copyDisabled: .constant(true),
                           copyHidden: true,
@@ -98,7 +98,7 @@ struct CountDownView: View {
                 .padding(.top, 8.0)
                 .padding(.bottom, 16.0)
             } else {
-                ActionBar(primaryActionText: "Randomly.Count.Decrement",
+                ActionBar(primaryActionText: "Count.Decrement",
                           primaryActionIconName: "minus",
                           copyDisabled: .constant(true),
                           copyHidden: true,
@@ -124,7 +124,7 @@ struct CountDownView: View {
                 .padding(.bottom, 16.0)
             }
         }
-        .navigationTitle("Randomly.Count.Down")
+        .navigationTitle("Count.Down")
         .navigationBarTitleDisplayMode(.inline)
     }
 
