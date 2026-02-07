@@ -17,24 +17,18 @@ struct PickTimeView: View {
             Spacer()
             LargeDisplayTextView(formattedTime())
             Spacer()
-            Divider()
-            ActionBar(primaryActionText: "Shared.Pick",
-                      primaryActionIconName: "sparkles",
-                      copyDisabled: .constant(false),
-                      primaryActionDisabled: .constant(false)) {
-                regenerate()
-            } copyAction: {
-                UIPasteboard.general.string = formattedTime()
-            }
-            .frame(maxWidth: .infinity)
-            .horizontalPadding()
-            .padding(.top, 8.0)
-            .padding(.bottom, 16.0)
         }
         .task {
             regenerate()
         }
         .randomlyNavigation(title: "Generate.Time.ViewTitle")
+        .actionBar(
+            text: "Shared.Pick",
+            icon: "sparkles",
+            action: regenerate,
+            disabled: .constant(false),
+            copyValue: .constant(formattedTime())
+        )
     }
 
     func regenerate() {

@@ -28,13 +28,35 @@ class Password: ObservableObject {
     }
 
     func regenerate() {
+        regenerate(animated: false)
+    }
+
+    func regenerate(animated: Bool) {
+        var newPassword: String
         repeat {
             let chars: String = characterSet(forPolicies: policies)
             let length: Int = secureRandomNumber(from: minLength, to: maxLength)
-            generated = String((0..<length).compactMap { _ in
+            newPassword = String((0..<length).compactMap { _ in
                 chars.randomElement()
             })
-        } while (!acceptability(ofPassword: generated))
+        } while (!acceptability(ofPassword: newPassword))
+
+        if animated {
+            // Clear the password with animation
+            generated = ""
+
+            // Animate character-by-character addition
+            Task {
+                for char in newPassword {
+                    try? await Task.sleep(for: .milliseconds(30))
+                    await MainActor.run {
+                        generated.append(char)
+                    }
+                }
+            }
+        } else {
+            generated = newPassword
+        }
     }
 
     private func characterSet(forPolicies policies: [Policy]) -> String {

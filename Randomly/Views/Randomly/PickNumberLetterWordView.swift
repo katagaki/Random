@@ -17,6 +17,12 @@ struct PickNumberLetterWordView: View {
     @State var words: [String] = []
     @FocusState var isTextFieldActive: Bool
 
+    var isPickDisabled: Bool {
+        rangeEnd <= rangeStart ||
+        rangeStart < -99999999999999999 ||
+        rangeEnd > 99999999999999999
+    }
+
     var body: some View {
         VStack(alignment: .center, spacing: 8.0) {
             Spacer()
@@ -24,48 +30,45 @@ struct PickNumberLetterWordView: View {
             Spacer()
             switch mode {
             case .number:
-                Divider()
-                HStack(alignment: .center, spacing: 4.0) {
-                    Text("Shared.RangeFrom")
-                        .font(.body)
-                        .bold()
-                    TextField("", value: $rangeStart, format: .number)
-                        .limitInputLength(value: $rangeStart, length: 17)
-                        .keyboardType(.numberPad)
-                        .focused($isTextFieldActive)
-                    Text("Shared.RangeTo")
-                        .font(.body)
-                        .bold()
-                    TextField("", value: $rangeEnd, format: .number)
-                        .limitInputLength(value: $rangeEnd, length: 17)
-                        .keyboardType(.numberPad)
-                        .focused($isTextFieldActive)
+                VStack(alignment: .center, spacing: 0.0) {
+                    Divider()
+                    HStack(alignment: .center, spacing: 4.0) {
+                        Text("Shared.RangeFrom")
+                            .font(.body)
+                            .bold()
+                        TextField("", value: $rangeStart, format: .number)
+                            .limitInputLength(value: $rangeStart, length: 17)
+                            .keyboardType(.numberPad)
+                            .focused($isTextFieldActive)
+                        Text("Shared.RangeTo")
+                            .font(.body)
+                            .bold()
+                        TextField("", value: $rangeEnd, format: .number)
+                            .limitInputLength(value: $rangeEnd, length: 17)
+                            .keyboardType(.numberPad)
+                            .focused($isTextFieldActive)
+                    }
+                    .textFieldStyle(.roundedBorder)
+                    .padding()
                 }
-                .textFieldStyle(.roundedBorder)
-                .padding()
-                Divider()
-            default:
-                Divider()
+                .frame(maxWidth: .infinity)
+            default: EmptyView()
             }
-            ActionBar(primaryActionText: "Shared.Pick",
-                      primaryActionIconName: "sparkles",
-                      copyDisabled: .constant(false),
-                      primaryActionDisabled: .constant(rangeEnd <= rangeStart ||
-                                                       rangeStart < -99999999999999999 ||
-                                                       rangeEnd > 99999999999999999)) {
-                regenerate()
-            } copyAction: {
-                UIPasteboard.general.string = result
-            }
-            .frame(maxWidth: .infinity)
-            .horizontalPadding()
-            .padding(.top, 8.0)
-            .padding(.bottom, 16.0)
         }
         .task {
             regenerate()
         }
         .randomlyNavigation(title: LocalizedStringKey(mode.rawValue))
+        .actionBar(
+            text: "Shared.Pick",
+            icon: "sparkles",
+            action: regenerate,
+            disabled: .constant(rangeEnd <= rangeStart ||
+                                rangeStart < -99999999999999999 ||
+                                rangeEnd > 99999999999999999),
+            copyValue: .constant(result)
+        )
+
     }
 
     func regenerate() {

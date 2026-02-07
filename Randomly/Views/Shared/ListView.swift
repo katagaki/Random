@@ -94,7 +94,7 @@ struct ListView<Content: View>: View {
                     bottomView()
                         .frame(maxWidth: .infinity)
                 }
-                .horizontalPadding()
+                .frame(maxWidth: .infinity)
                 .bottomBarBackground()
             }
         }

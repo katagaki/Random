@@ -16,6 +16,10 @@ struct GenerateCoordinateView: View {
     @State var position: MapCameraPosition = .automatic
     @FocusState var isTextFieldActive: Bool
 
+    var copyText: String {
+        "\(String(format: "%.6f", latitude)), \(String(format: "%.6f", longitude))"
+    }
+
     var body: some View {
         VStack(alignment: .center, spacing: 8.0) {
             Map(position: $position) {
@@ -40,25 +44,19 @@ struct GenerateCoordinateView: View {
             .focused($isTextFieldActive)
             .disabled(true)
             .padding()
-            Divider()
-            ActionBar(primaryActionText: "Shared.Generate",
-                      primaryActionIconName: "sparkles",
-                      copyDisabled: .constant(false),
-                      primaryActionDisabled: .constant(false)) {
-                regenerate()
-            } copyAction: {
-                UIPasteboard.general.string = "\(String(format: "%.6f", latitude)), \(String(format: "%.6f", longitude))"
-            }
-            .frame(maxWidth: .infinity)
-            .padding([.leading, .trailing])
-            .padding(.top, 8.0)
-            .padding(.bottom, 16.0)
         }
         .task {
             regenerate()
         }
         .navigationTitle("Generate.Coordinate.ViewTitle")
         .navigationBarTitleDisplayMode(.inline)
+        .actionBar(
+            text: "Shared.Generate",
+            icon: "sparkles",
+            action: regenerate,
+            disabled: .constant(false),
+            copyValue: .constant(copyText)
+        )
     }
 
     func regenerate() {

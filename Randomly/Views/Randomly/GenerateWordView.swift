@@ -28,80 +28,85 @@ struct GenerateWordView: View {
         "ea", "ee", "oo", "ou", "ai", "ay", "ey"
     ]
 
-    @State var generatedWord: String = ""
+    @State var word: String = ""
     @State var wordLength: Float = 8
 
     var body: some View {
         VStack(alignment: .center, spacing: 8.0) {
             Spacer()
             ScrollView(.horizontal) {
-                Text(generatedWord)
-                    .font(.system(size: 50, weight: .heavy, design: .monospaced))
+                Text(word)
+                    .font(.system(size: 50, weight: .heavy, design: .rounded))
                     .lineLimit(1)
                     .textSelection(.enabled)
                     .padding()
+                    .contentTransition(.numericText())
             }
             .scrollIndicators(.hidden)
             Spacer()
-            Divider()
-            VStack(alignment: .leading, spacing: 8.0) {
-                Text("Generate.Word.Length.\(String(Int(wordLength)))")
-                Slider(value: $wordLength, in: 3...20, step: 1)
+            VStack(alignment: .center, spacing: 0.0) {
+                Divider()
+                VStack(alignment: .leading, spacing: 8.0) {
+                    Text("Generate.Word.Length.\(String(Int(wordLength)))")
+                    Slider(value: $wordLength, in: 3...20, step: 1)
+                }
+                .padding()
             }
-            .padding()
-            Divider()
-            ActionBar(primaryActionText: "Shared.Generate",
-                      primaryActionIconName: "sparkles",
-                      copyDisabled: .constant(generatedWord.isEmpty),
-                      primaryActionDisabled: .constant(false)) {
-                generateWord()
-            } copyAction: {
-                UIPasteboard.general.string = generatedWord
-            }
-            .frame(maxWidth: .infinity)
-            .horizontalPadding()
-            .padding(.top, 8.0)
-            .padding(.bottom, 16.0)
         }
         .randomlyNavigation(title: "Generate.Word.ViewTitle")
         .onAppear {
             generateWord()
         }
+        .actionBar(
+            text: "Shared.Generate",
+            icon: "sparkles",
+            action: generateWord,
+            disabled: .constant(false),
+            copyValue: .constant(word),
+            copyDisabled: .constant(word.isEmpty)
+        )
     }
 
     func generateWord() {
         let length = Int(wordLength)
-        var word = ""
+
+        // Build word parts synchronously
+        var parts: [String] = []
+        var lastWasVowel = false
+        var currentLength = 0
 
         // Start with consonant or cluster (70% chance for cluster at the beginning)
         if length >= 3 && Bool.random() {
             if let cluster = Self.startClusters.randomElement() {
-                word.append(cluster)
+                parts.append(cluster)
+                currentLength += cluster.count
             }
         } else {
             if let consonant = Self.consonants.randomElement() {
-                word.append(consonant)
+                parts.append(consonant)
+                currentLength += 1
             }
         }
 
         // Build the rest of the word with a pattern
-        var lastWasVowel = false
-
-        while word.count < length {
-            let remaining = length - word.count
+        while currentLength < length {
+            let remaining = length - currentLength
 
             if lastWasVowel {
                 // Add consonant or cluster
-                if remaining >= 2 && Bool.random() && word.count < length - 1 {
+                if remaining >= 2 && Bool.random() && currentLength < length - 1 {
                     // Use a consonant cluster
                     if let cluster = Self.middleClusters.randomElement() {
                         let addCount = min(cluster.count, remaining)
-                        word.append(String(cluster.prefix(addCount)))
+                        let part = String(cluster.prefix(addCount))
+                        parts.append(part)
+                        currentLength += part.count
                     }
                 } else {
                     // Add single consonant
                     if let consonant = Self.consonants.randomElement() {
-                        word.append(consonant)
+                        parts.append(consonant)
+                        currentLength += 1
                     }
                 }
                 lastWasVowel = false
@@ -111,22 +116,40 @@ struct GenerateWordView: View {
                     // Add double vowel (30% chance)
                     if let doubleVowel = Self.doubleVowels.randomElement() {
                         let addCount = min(doubleVowel.count, remaining)
-                        word.append(String(doubleVowel.prefix(addCount)))
+                        let part = String(doubleVowel.prefix(addCount))
+                        parts.append(part)
+                        currentLength += part.count
                     }
                 } else {
                     // Add single vowel
                     if let vowel = Self.vowels.randomElement() {
-                        word.append(vowel)
+                        parts.append(vowel)
+                        currentLength += 1
                     }
                 }
                 lastWasVowel = true
             }
         }
 
-        // Ensure we don't exceed the target length
-        word = String(word.prefix(length))
+        // Clear the word with animation
+        withAnimation(.default.speed(2)) {
+            word = ""
+        }
 
-        // Capitalize first letter
-        generatedWord = word.prefix(1).uppercased() + word.dropFirst()
+        // Animate each part being added
+        Task {
+            for part in parts {
+                try? await Task.sleep(for: .milliseconds(30))
+                await MainActor.run {
+                    withAnimation(.default.speed(2)) {
+                        word.append(part)
+                        // Ensure we don't exceed the target length
+                        if word.count > length {
+                            word = String(word.prefix(length))
+                        }
+                    }
+                }
+            }
+        }
     }
 }

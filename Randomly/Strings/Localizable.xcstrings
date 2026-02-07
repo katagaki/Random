@@ -4633,12 +4633,12 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pick Item From List"
+            "value" : "Select Item From List"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "リストから項目を選択"
           }
         }
@@ -4854,12 +4854,12 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pick Word From Text"
+            "value" : "Select Word From Text"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "テキストから言葉を選択"
           }
         }
@@ -4955,13 +4955,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SwiftUI Code"
+            "value" : "Copy SwiftUI Code"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SwiftUIコード"
+            "value" : "SwiftUIコードをコピー"
           }
         }
       }
@@ -5159,12 +5159,12 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Extract"
+            "value" : "Select"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "抽出"
           }
         }

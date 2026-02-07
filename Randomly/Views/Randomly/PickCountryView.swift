@@ -11,6 +11,16 @@ struct PickCountryView: View {
 
     @State var selectedCountry: Country?
 
+    var copyText: String {
+        guard let country = selectedCountry else { return "" }
+        return """
+        \(country.name)
+        ISO: \(country.isoCode)
+        Country Code: \(country.countryCode)
+        Time Zone: \(country.timeZone)
+        """
+    }
+
     var body: some View {
         VStack(alignment: .center, spacing: 8.0) {
             Spacer()
@@ -44,32 +54,19 @@ struct PickCountryView: View {
                     .frame(maxWidth: .infinity)
             }
             Spacer()
-            Divider()
-            ActionBar(primaryActionText: "Shared.Pick",
-                      primaryActionIconName: "sparkles",
-                      copyDisabled: .constant(selectedCountry == nil),
-                      primaryActionDisabled: .constant(false)) {
-                regenerate()
-            } copyAction: {
-                if let country = selectedCountry {
-                    let text = """
-                    \(country.name)
-                    ISO: \(country.isoCode)
-                    Country Code: \(country.countryCode)
-                    Time Zone: \(country.timeZone)
-                    """
-                    UIPasteboard.general.string = text
-                }
-            }
-            .frame(maxWidth: .infinity)
-            .horizontalPadding()
-            .padding(.top, 8.0)
-            .padding(.bottom, 16.0)
         }
         .randomlyNavigation(title: "Generate.Country.ViewTitle")
         .task {
             regenerate()
         }
+        .actionBar(
+            text: "Shared.Pick",
+            icon: "sparkles",
+            action: regenerate,
+            disabled: .constant(false),
+            copyValue: .constant(copyText),
+            copyDisabled: .constant(selectedCountry == nil)
+        )
     }
 
     func regenerate() {

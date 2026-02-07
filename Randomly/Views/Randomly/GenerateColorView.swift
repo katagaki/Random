@@ -67,41 +67,29 @@ struct GenerateColorView: View {
             .focused($isTextFieldActive)
             .disabled(true)
             .padding()
-            Divider()
-            ScrollView(.horizontal) {
-                ActionBar(primaryActionText: "Shared.Generate",
-                          primaryActionIconName: "sparkles",
-                          copyDisabled: .constant(false),
-                          primaryActionDisabled: .constant(false)) {
-                    regenerate()
-                } copyAction: {
-                    UIPasteboard.general.string = "\(red), \(green), \(blue)"
-                } .secondaryAction {
-                    Button {
-                        UIPasteboard.general.string =
-                        """
-                        Color(red: \(red) / 255, green: \(green) / 255, blue: \(blue) / 255)
-                        """
-                    } label: {
-                        Label("Shared.Copy.SwiftUICode", systemImage: "doc.on.doc")
-                            .padding(.horizontal, 4.0)
-                            .frame(minHeight: 42.0)
-                    }
-                    .buttonStyle(.bordered)
-                    .clipShape(RoundedRectangle(cornerRadius: 99))
-                }
-                .frame(maxWidth: .infinity)
-                .padding([.leading, .trailing])
-                .padding(.top, 8.0)
-                .padding(.bottom, 16.0)
-            }
-            .scrollIndicators(.hidden)
         }
         .task {
             regenerate()
         }
         .navigationTitle("Generate.Color.ViewTitle")
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button(.sharedCopySwiftUICode) {
+                    UIPasteboard.general.string =
+                    """
+                    Color(red: \(red) / 255, green: \(green) / 255, blue: \(blue) / 255)
+                    """
+                }
+            }
+        }
+        .actionBar(
+            text: "Shared.Generate",
+            icon: "sparkles",
+            action: regenerate,
+            disabled: .constant(false),
+            copyValue: .constant("\(red), \(green), \(blue)")
+        )
     }
 
     func regenerate() {

@@ -19,41 +19,37 @@ struct PickDateView: View {
             Spacer()
             LargeDisplayTextView(formattedDate())
             Spacer()
-            Divider()
-            VStack(alignment: .leading, spacing: 8.0) {
-                HStack(alignment: .center, spacing: 4.0) {
-                    Text("Shared.RangeFrom")
-                        .font(.body)
-                        .bold()
-                    DatePicker("", selection: $startDate, displayedComponents: [.date])
-                        .labelsHidden()
-                    Text("Shared.RangeTo")
-                        .font(.body)
-                        .bold()
-                    DatePicker("", selection: $endDate, displayedComponents: [.date])
-                        .labelsHidden()
-                    Spacer(minLength: 0.0)
+            VStack(alignment: .center, spacing: 0.0) {
+                Divider()
+                VStack(alignment: .leading, spacing: 8.0) {
+                    HStack(alignment: .center, spacing: 4.0) {
+                        Text("Shared.RangeFrom")
+                            .font(.body)
+                            .bold()
+                        DatePicker("", selection: $startDate, displayedComponents: [.date])
+                            .labelsHidden()
+                        Text("Shared.RangeTo")
+                            .font(.body)
+                            .bold()
+                        DatePicker("", selection: $endDate, displayedComponents: [.date])
+                            .labelsHidden()
+                        Spacer(minLength: 0.0)
+                    }
                 }
+                .padding()
             }
-            .padding()
-            Divider()
-            ActionBar(primaryActionText: "Shared.Pick",
-                      primaryActionIconName: "sparkles",
-                      copyDisabled: .constant(false),
-                      primaryActionDisabled: .constant(endDate <= startDate)) {
-                regenerate()
-            } copyAction: {
-                UIPasteboard.general.string = formattedDate()
-            }
-            .frame(maxWidth: .infinity)
-            .horizontalPadding()
-            .padding(.top, 8.0)
-            .padding(.bottom, 16.0)
         }
         .task {
             regenerate()
         }
         .randomlyNavigation(title: "Generate.Date.ViewTitle")
+        .actionBar(
+            text: "Shared.Pick",
+            icon: "sparkles",
+            action: regenerate,
+            disabled: .constant(endDate <= startDate),
+            copyValue: .constant(formattedDate())
+        )
     }
 
     func regenerate() {

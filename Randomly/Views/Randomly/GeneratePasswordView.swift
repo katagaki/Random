@@ -12,7 +12,8 @@ struct GeneratePasswordView: View {
     @ObservedObject var password = Password(
         forPolicies: [.containsUppercase, .containsLowercase, .containsNumbers, .containsSymbols],
         withMinLength: 8,
-        withMaxLength: 20)
+        withMaxLength: 20
+    )
     @State var minLength: Float = 8
     @State var maxLength: Float = 20
     @State var useLowercase: Bool = true
@@ -29,6 +30,7 @@ struct GeneratePasswordView: View {
                     .lineLimit(1)
                     .textSelection(.enabled)
                     .padding()
+                    .contentTransition(.numericText())
             }
             .scrollIndicators(.hidden)
             Spacer()
@@ -62,21 +64,7 @@ struct GeneratePasswordView: View {
                     Text("Generate.Password.Policy.Symbols")
                 })
             }
-            .padding([.leading, .trailing])
-            Divider()
-            ActionBar(primaryActionText: "Shared.Generate",
-                      primaryActionIconName: "sparkles",
-                      copyDisabled: .constant(false),
-                      primaryActionDisabled: .constant(maxLength < minLength ||
-                                                       !useUppercase && !useLowercase && !useNumbers && !useSymbols)) {
-                password.regenerate()
-            } copyAction: {
-                UIPasteboard.general.string = password.generated
-            }
-            .frame(maxWidth: .infinity)
-            .horizontalPadding()
-            .padding(.top, 8.0)
-            .padding(.bottom, 16.0)
+            .padding([.horizontal, .bottom])
         }
         .onChange(of: useUppercase) {
             evaluatePasswordPolicy()
@@ -91,6 +79,14 @@ struct GeneratePasswordView: View {
             evaluatePasswordPolicy()
         }
         .randomlyNavigation(title: "Generate.Password.ViewTitle")
+        .actionBar(
+            text: "Shared.Generate",
+            icon: "sparkles",
+            action: { password.regenerate(animated: true) },
+            disabled: .constant(maxLength < minLength ||
+                               !useUppercase && !useLowercase && !useNumbers && !useSymbols),
+            copyValue: .constant(password.generated)
+        )
     }
 
     func evaluatePasswordPolicy() {
