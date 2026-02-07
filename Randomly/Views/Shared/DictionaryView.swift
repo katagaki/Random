@@ -85,7 +85,6 @@ struct DictionaryView<Content: View>: View {
                         .pillButton()
                         .disabled(newItemKey == "" || newItemValue == "")
                     }
-                    .horizontalPadding()
                     bottomView()
                         .frame(maxWidth: .infinity)
                 }
