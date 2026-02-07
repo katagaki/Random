@@ -21,7 +21,9 @@ struct ActionBar: View {
         HStack(alignment: .center, spacing: 8.0) {
             copyButton()
             primaryActionButton()
+                .layoutPriority(1)
         }
+        .frame(maxWidth: .infinity)
     }
 
     @ViewBuilder
@@ -63,8 +65,11 @@ struct ActionBar: View {
         HStack(alignment: .center, spacing: 8.0) {
             copyButton()
             secondaryActionButton()
+                .layoutPriority(1)
             primaryActionButton()
+                .layoutPriority(1)
         }
+        .frame(maxWidth: .infinity)
     }
 }
 

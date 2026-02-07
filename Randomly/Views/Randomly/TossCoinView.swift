@@ -14,21 +14,17 @@ struct TossCoinView: View {
 
     var body: some View {
         SceneKitContainer(scene: scene)
-        .safeAreaInset(edge: .bottom) {
-                ActionBar(primaryActionText: "Shared.Do.FlipCoin",
-                          primaryActionIconName: "hands.sparkles.fill",
-                          copyDisabled: .constant(true),
-                          copyHidden: true,
-                          primaryActionDisabled: .constant(false)) {
-                    flipCoin()
-                }
-                    .frame(maxWidth: .infinity)
-                    .bottomBarBackground()
-        }
-        .onAppear {
-            resetScene()
-        }
-        .randomlyNavigation(title: "Do.CoinFlip.ViewTitle")
+            .actionBar(
+                text: "Shared.Do.FlipCoin",
+                icon: "hands.sparkles.fill",
+                action: flipCoin,
+                disabled: .constant(false),
+                copyHidden: true
+            )
+            .onAppear {
+                resetScene()
+            }
+            .randomlyNavigation(title: "Do.CoinFlip.ViewTitle")
     }
 
     func flipCoin() {

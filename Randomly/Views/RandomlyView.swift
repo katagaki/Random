@@ -178,13 +178,13 @@ struct RandomlyView: View {
                 case .selectWordFromText:
                     SelectWordFromTextView()
                 case .shuffleList:
-                    ShuffleListView()
+                    SortShuffleListView(mode: .shuffle)
                 case .shuffleDict:
-                    ShuffleDictionaryView()
+                    SortShuffleDictionaryView(mode: .shuffle)
                 case .sortList:
-                    SortListView()
+                    SortShuffleListView(mode: .sort)
                 case .sortDict:
-                    SortDictionaryView()
+                    SortShuffleDictionaryView(mode: .sort)
                 case .countUp:
                     CountView(mode: .up)
                 case .countDown:

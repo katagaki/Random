@@ -4639,7 +4639,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "リストから項目を選択"
+            "value" : "リストから項目を抽出"
           }
         }
       }
@@ -4860,7 +4860,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "テキストから言葉を選択"
+            "value" : "テキストから言葉を抽出"
           }
         }
       }
@@ -5498,13 +5498,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sort By Key"
+            "value" : "By Key"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "キーで並べ替える"
+            "value" : "キーで"
           }
         }
       }
@@ -5515,13 +5515,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sort By Value"
+            "value" : "By Value"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "値で並べ替える"
+            "value" : "値で"
           }
         }
       }

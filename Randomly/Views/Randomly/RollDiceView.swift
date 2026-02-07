@@ -13,66 +13,106 @@ struct RollDiceView: View {
     let scene = SCNScene(named: "Scene Assets.scnassets/Sandbox.scn")!
 
     var body: some View {
+        if #available(iOS 26.0, *) {
+            ios26Body
+        } else {
+            legacyBody
+        }
+    }
+
+    @available(iOS 26.0, *)
+    var ios26Body: some View {
         SceneKitContainer(scene: scene)
-        .safeAreaInset(edge: .bottom) {
-            ScrollView(.horizontal) {
-                ActionBar(primaryActionText: "Shared.Do.RollDice.5",
-                          primaryActionIconName: "dice.fill",
-                          copyDisabled: .constant(true),
-                          copyHidden: true,
-                          primaryActionDisabled: .constant(false)) {
-                    addDice(number: 5)
-                }
-                    .secondaryAction({
-                        HStack(alignment: .center, spacing: 8.0) {
-                          Button {
-                              addDice(number: 1)
-                          } label: {
-                              Label("Shared.Do.RollDice", systemImage: "dice.fill")
-                                  .bold()
-                                  .padding(.horizontal, 4.0)
-                                  .frame(minHeight: 42.0)
-                          }
-                          .prominentPillButton()
-                          Button {
-                              addDice(number: 2)
-                          } label: {
-                              Label("Shared.Do.RollDice.2", systemImage: "dice.fill")
-                                  .bold()
-                                  .padding(.horizontal, 4.0)
-                                  .frame(minHeight: 42.0)
-                          }
-                          .prominentPillButton()
-                          Button {
-                              addDice(number: 3)
-                          } label: {
-                              Label("Shared.Do.RollDice.3", systemImage: "dice.fill")
-                                  .bold()
-                                  .padding(.horizontal, 4.0)
-                                  .frame(minHeight: 42.0)
-                          }
-                          .prominentPillButton()
-                          Button {
-                              addDice(number: 4)
-                          } label: {
-                              Label("Shared.Do.RollDice.4", systemImage: "dice.fill")
-                                  .bold()
-                                  .padding(.horizontal, 4.0)
-                                  .frame(minHeight: 42.0)
-                          }
-                          .prominentPillButton()
-                        }
-                    })
-                    .frame(maxWidth: .infinity)
-                    .horizontalPadding()
+            .onAppear {
+                resetScene()
             }
-            .scrollIndicators(.hidden)
-            .bottomBarBackground()
-        }
-        .onAppear {
-            resetScene()
-        }
-        .randomlyNavigation(title: "Do.DiceRoll.ViewTitle")
+            .randomlyNavigation(title: "Do.DiceRoll.ViewTitle")
+            .toolbar {
+                ToolbarItemGroup(placement: .bottomBar) {
+                    Button("Shared.Do.RollDice.5", systemImage: "5.square.fill") {
+                        addDice(number: 5)
+                    }
+                    Button("Shared.Do.RollDice.4", systemImage: "4.square.fill") {
+                        addDice(number: 4)
+                    }
+                    Button("Shared.Do.RollDice.3", systemImage: "3.square.fill") {
+                        addDice(number: 3)
+                    }
+                    Button("Shared.Do.RollDice.2", systemImage: "2.square.fill") {
+                        addDice(number: 2)
+                    }
+                }
+                ToolbarSpacer(.flexible, placement: .bottomBar)
+                ToolbarItem(placement: .bottomBar) {
+                    Button("Shared.Do.RollDice", systemImage: "1.square.fill") {
+                        addDice(number: 1)
+                    }
+                    .buttonStyle(.glassProminent)
+                }
+            }
+    }
+
+    var legacyBody: some View {
+        SceneKitContainer(scene: scene)
+            .safeAreaInset(edge: .bottom) {
+                ScrollView(.horizontal) {
+                    ActionBar(
+                        primaryActionText: "Shared.Do.RollDice.5",
+                        primaryActionIconName: "dice.fill",
+                        copyDisabled: .constant(true),
+                        copyHidden: true,
+                        primaryActionDisabled: .constant(false)
+                    ) {
+                        addDice(number: 5)
+                    }
+                    .secondaryAction {
+                        HStack(alignment: .center, spacing: 8.0) {
+                            Button {
+                                addDice(number: 1)
+                            } label: {
+                                Label("Shared.Do.RollDice", systemImage: "dice.fill")
+                                    .bold()
+                                    .padding(.horizontal, 4.0)
+                                    .frame(minHeight: 42.0)
+                            }
+                            .prominentPillButton()
+                            Button {
+                                addDice(number: 2)
+                            } label: {
+                                Label("Shared.Do.RollDice.2", systemImage: "dice.fill")
+                                    .bold()
+                                    .padding(.horizontal, 4.0)
+                                    .frame(minHeight: 42.0)
+                            }
+                            .prominentPillButton()
+                            Button {
+                                addDice(number: 3)
+                            } label: {
+                                Label("Shared.Do.RollDice.3", systemImage: "dice.fill")
+                                    .bold()
+                                    .padding(.horizontal, 4.0)
+                                    .frame(minHeight: 42.0)
+                            }
+                            .prominentPillButton()
+                            Button {
+                                addDice(number: 4)
+                            } label: {
+                                Label("Shared.Do.RollDice.4", systemImage: "dice.fill")
+                                    .bold()
+                                    .padding(.horizontal, 4.0)
+                                    .frame(minHeight: 42.0)
+                            }
+                            .prominentPillButton()
+                        }
+                    }
+                }
+                .scrollIndicators(.hidden)
+                .bottomBarBackground()
+            }
+            .onAppear {
+                resetScene()
+            }
+            .randomlyNavigation(title: "Do.DiceRoll.ViewTitle")
     }
 
     func addDice(number: Int) {

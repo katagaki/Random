@@ -1,5 +1,5 @@
 //
-//  SortDictionaryView.swift
+//  SortShuffleDictionaryView.swift
 //  Random
 //
 //  Created by シンジャスティン on 2023/08/28.
@@ -7,13 +7,15 @@
 
 import SwiftUI
 
-struct SortDictionaryView: View {
+struct SortShuffleDictionaryView: View {
 
+    @State var mode: DictionaryOperationMode
     @State var items: [SelectItem] = []
 
     var body: some View {
         DictionaryView(items: $items) {
-            ScrollView(.horizontal) {
+            switch mode {
+            case .sort:
                 ActionBar(primaryActionText: "Shared.Sort.ByValue",
                           primaryActionIconName: "arrow.up.and.down",
                           copyDisabled: .constant(items.count == 0),
@@ -37,19 +39,28 @@ struct SortDictionaryView: View {
                             .padding(.horizontal, 4.0)
                             .frame(minHeight: 42.0)
 
-                        .frame(maxWidth: .infinity)
+                            .frame(maxWidth: .infinity)
                     }
                     .buttonStyle(.borderedProminent)
                     .clipShape(RoundedRectangle(cornerRadius: 99))
                     .disabled(items.count == 0)
                 }
                 .frame(maxWidth: .infinity)
-                .padding([.leading, .trailing])
+            case .shuffle:
+                ActionBar(primaryActionText: "Shared.Shuffle",
+                          primaryActionIconName: "arrow.up.and.down.and.sparkles",
+                          copyDisabled: .constant(items.count == 0),
+                          primaryActionDisabled: .constant(items.count == 0)) {
+                    items.shuffle()
+                } copyAction: {
+                    UIPasteboard.general.string = items.reduce(into: "", { result, item in
+                        result += "\(item.value)\n"
+                    })
+                }
+                .frame(maxWidth: .infinity)
             }
-            .scrollIndicators(.hidden)
-            .padding([.leading, .trailing], 0.0)
         }
-        .navigationTitle("Shared.Sort.Dictionary.ViewTitle")
+        .navigationTitle(mode == .sort ? "Shared.Sort.Dictionary.ViewTitle" : "Shared.Shuffle.Dictionary.ViewTitle")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {

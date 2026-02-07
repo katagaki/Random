@@ -1,13 +1,15 @@
 //
-//  ShuffleListView.swift
+//  SortShuffleListView.swift
 //  Random
 //
-//  Created by シンジャスティン on 2023/08/28.
+//  Created by シンジャスティン on 2023/08/27.
 //
 
 import SwiftUI
 
-struct ShuffleListView: View {
+struct SortShuffleListView: View {
+
+    let mode: ListOperationMode
 
     @State var items: [SelectItem] = []
     @State var newItem: String = ""
@@ -73,7 +75,7 @@ struct ShuffleListView: View {
                 }
             }
         }
-        .navigationTitle("Shared.Shuffle.List.ViewTitle")
+        .navigationTitle(navigationTitle)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
@@ -105,8 +107,8 @@ struct ShuffleListView: View {
                 .disabled(items.isEmpty)
             }
             ToolbarItemGroup(placement: .bottomBar) {
-                Button(.sharedShuffle, systemImage: "arrow.up.and.down.and.sparkles") {
-                    items.shuffle()
+                Button(operationButtonLabel, systemImage: operationButtonIcon) {
+                    performOperation()
                 }
                 .buttonStyle(.glassProminent)
                 .disabled(items.isEmpty)
@@ -121,11 +123,11 @@ struct ShuffleListView: View {
         VStack(alignment: .center, spacing: 8.0) {
             ListView(selectedItem: .constant(nil),
                      items: $items) {
-                ActionBar(primaryActionText: "Shared.Shuffle",
-                          primaryActionIconName: "arrow.up.and.down.and.sparkles",
+                ActionBar(primaryActionText: operationButtonLabelKey,
+                          primaryActionIconName: operationButtonIcon,
                           copyDisabled: .constant(items.count == 0),
                           primaryActionDisabled: .constant(items.count == 0)) {
-                    items.shuffle()
+                    performOperation()
                 } copyAction: {
                     UIPasteboard.general.string = items.reduce(into: "", { result, item in
                         result += "\(item.value)\n"
@@ -133,7 +135,7 @@ struct ShuffleListView: View {
                 }
             }
         }
-        .navigationTitle("Shared.Shuffle.List.ViewTitle")
+        .navigationTitle(navigationTitle)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
@@ -143,6 +145,55 @@ struct ShuffleListView: View {
                     Text("Shared.Clear")
                 }
             }
+        }
+    }
+
+    // Computed properties for mode-specific values
+    private var navigationTitle: LocalizedStringKey {
+        switch mode {
+        case .sort:
+            return "Shared.Sort.List.ViewTitle"
+        case .shuffle:
+            return "Shared.Shuffle.List.ViewTitle"
+        }
+    }
+
+    private var operationButtonLabel: LocalizedStringKey {
+        switch mode {
+        case .sort:
+            return "Shared.Sort"
+        case .shuffle:
+            return "Shared.Shuffle"
+        }
+    }
+
+    private var operationButtonLabelKey: LocalizedStringKey {
+        switch mode {
+        case .sort:
+            return "Shared.Sort"
+        case .shuffle:
+            return "Shared.Shuffle"
+        }
+    }
+
+    private var operationButtonIcon: String {
+        switch mode {
+        case .sort:
+            return "arrow.up.and.down"
+        case .shuffle:
+            return "arrow.up.and.down.and.sparkles"
+        }
+    }
+
+    // Operation execution
+    private func performOperation() {
+        switch mode {
+        case .sort:
+            items.sort { lhs, rhs in
+                lhs.value < rhs.value
+            }
+        case .shuffle:
+            items.shuffle()
         }
     }
 
