@@ -25,7 +25,6 @@ struct ShuffleDictionaryView: View {
             }
             .padding([.leading, .trailing])
         }
-        .toolbarBackground(.hidden, for: .tabBar)
         .navigationTitle("Shared.Shuffle.Dictionary.ViewTitle")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {

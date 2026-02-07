@@ -4638,7 +4638,7 @@
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "リストから項目を選択"
           }
         }
@@ -4859,7 +4859,7 @@
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "テキストから言葉を選択"
           }
         }
@@ -4883,6 +4883,7 @@
       }
     },
     "Shared.Add" : {
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -5153,23 +5154,6 @@
         }
       }
     },
-    "Shared.Extract" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Select"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "抽出"
-          }
-        }
-      }
-    },
     "Shared.Generate" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -5419,6 +5403,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "リセット"
+          }
+        }
+      }
+    },
+    "Shared.Select" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "抽出"
           }
         }
       }

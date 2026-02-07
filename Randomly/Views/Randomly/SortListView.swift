@@ -29,7 +29,6 @@ struct SortListView: View {
                 }
             }
         }
-        .toolbarBackground(.hidden, for: .tabBar)
         .navigationTitle("Shared.Sort.List.ViewTitle")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {

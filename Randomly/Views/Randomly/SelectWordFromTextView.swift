@@ -1,5 +1,5 @@
 //
-//  ExtractWordFromTextView.swift
+//  SelectWordFromTextView.swift
 //  Random
 //
 //  Created by シンジャスティン on 2023/08/28.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ExtractWordFromTextView: View {
+struct SelectWordFromTextView: View {
 
     let japaneseKana = CharacterSet(charactersIn:
     """
@@ -49,51 +49,27 @@ struct ExtractWordFromTextView: View {
 
     var body: some View {
         VStack(alignment: .center, spacing: 8.0) {
-            LargeDisplayTextView(selectedWord ?? "", fontSize: 200)
-                .frame(height: 70)
-            Divider()
-            VStack(alignment: .leading, spacing: 4.0) {
-                Text("Shared.EnterText")
-                    .font(.body)
-                    .bold()
-                TextEditor(text: $text)
-                    .focused($isTextFieldActive)
-                    .cornerRadius(5)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 5)
-                            .stroke(.primary, lineWidth: 1/3)
-                            .opacity(0.3)
-                    )
-                if let languageCode = Locale.current.language.languageCode {
-                    if languageCode != .english {
-                        Text("Select.WordFromText.LanguageDisclaimer")
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
-                    }
-                }
-            }
-            .padding([.leading, .trailing])
-            .padding([.top, .bottom], 8.0)
-            Divider()
-            ActionBar(primaryActionText: "Shared.Extract",
-                      primaryActionIconName: "lasso.sparkles",
-                      copyDisabled: .constant(selectedWord == nil),
-                      primaryActionDisabled: .constant(words().count == 0)) {
-                isTextFieldActive = false
-                selectedWord = words().randomElement()!.lowercased()
-            } copyAction: {
-                if let selectedWord = selectedWord {
-                    UIPasteboard.general.string = selectedWord
-                }
-            }
-            .frame(maxWidth: .infinity)
-            .horizontalPadding()
-            .padding(.top, 8.0)
-            .padding(.bottom, 16.0)
+            textContent
         }
+        .navigationTitle("Select.WordFromText.ViewTitle")
+        .navigationBarTitleDisplayMode(.inline)
         .onAppear {
             isTextFieldActive = true
         }
+        .actionBar(
+            text: "Shared.Select",
+            icon: "lasso.sparkles",
+            action: {
+                isTextFieldActive = false
+                selectedWord = words().randomElement()!.lowercased()
+            },
+            disabled: .constant(words().count == 0),
+            copyValue: .init(
+                get: { selectedWord ?? "" },
+                set: { _ in }
+            ),
+            copyDisabled: .constant(selectedWord == nil)
+        )
         .toolbar {
             if let languageCode = Locale.current.language.languageCode {
                 if languageCode != .english {
@@ -114,8 +90,48 @@ struct ExtractWordFromTextView: View {
                 }
             }
         }
-        .navigationTitle("Select.WordFromText.ViewTitle")
-        .navigationBarTitleDisplayMode(.inline)
+    }
+
+    var textContent: some View {
+        VStack(alignment: .center, spacing: 8.0) {
+            LargeDisplayTextView(selectedWord ?? "", fontSize: 200)
+                .frame(height: 70)
+            Divider()
+            VStack(alignment: .leading, spacing: 4.0) {
+                Text("Shared.EnterText")
+                    .font(.body)
+                    .bold()
+                TextEditor(text: $text)
+                    .focused($isTextFieldActive)
+                    .cornerRadius(5)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 5)
+                            .stroke(.primary, lineWidth: 1/3)
+                            .opacity(0.3)
+                    )
+                HStack {
+                    if let languageCode = Locale.current.language.languageCode {
+                        if languageCode != .english {
+                            Text("Select.WordFromText.LanguageDisclaimer")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                    Spacer()
+                    if isTextFieldActive {
+                        Button {
+                            isTextFieldActive = false
+                        } label: {
+                            Label("Shared.Done", systemImage: "keyboard.chevron.compact.down")
+                                .labelStyle(.iconOnly)
+                        }
+                        .buttonStyle(.bordered)
+                    }
+                }
+            }
+            .padding([.leading, .trailing])
+            .padding([.top, .bottom], 8.0)
+        }
     }
 
     func words() -> [String] {

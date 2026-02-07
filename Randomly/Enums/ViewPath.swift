@@ -19,8 +19,8 @@ enum ViewPath {
     case generatePassword
     case generateColor
     case generateCoordinate
-    case extractItemFromList
-    case extractWordFromText
+    case selectItemFromList
+    case selectWordFromText
     case shuffleList
     case shuffleDict
     case sortList

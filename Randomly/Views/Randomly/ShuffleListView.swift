@@ -27,7 +27,6 @@ struct ShuffleListView: View {
                 }
             }
         }
-        .toolbarBackground(.hidden, for: .tabBar)
         .navigationTitle("Shared.Shuffle.List.ViewTitle")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {

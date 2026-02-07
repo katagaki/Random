@@ -49,7 +49,6 @@ struct SortDictionaryView: View {
             .scrollIndicators(.hidden)
             .padding([.leading, .trailing], 0.0)
         }
-        .toolbarBackground(.hidden, for: .tabBar)
         .navigationTitle("Shared.Sort.Dictionary.ViewTitle")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {

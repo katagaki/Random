@@ -59,7 +59,6 @@ struct DrawCardView: View {
             .horizontalPadding()
             .bottomBarBackground()
         }
-        .toolbarBackground(.hidden, for: .tabBar)
         .task {
             drawCards()
         }

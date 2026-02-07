@@ -75,14 +75,14 @@ struct RandomlyView: View {
                     }
 
                     VStack(alignment: .leading, spacing: 12) {
-                        ListSectionHeader(text: "Shared.Extract")
+                        ListSectionHeader(text: "Shared.Select")
                             .font(.body)
                             .padding(.horizontal)
 
                         LazyVGrid(columns: columns, spacing: 12) {
-                            GridCardView(destination: ViewPath.extractItemFromList, title: "Select.ItemFromList",
+                            GridCardView(destination: ViewPath.selectItemFromList, title: "Select.ItemFromList",
                                          icon: "list.bullet", iconColor: .indigo)
-                            GridCardView(destination: ViewPath.extractWordFromText, title: "Select.WordFromText",
+                            GridCardView(destination: ViewPath.selectWordFromText, title: "Select.WordFromText",
                                          icon: "doc.text", iconColor: .teal)
                         }
                         .padding(.horizontal)
@@ -173,10 +173,10 @@ struct RandomlyView: View {
                     GenerateCoordinateView()
                 case .generateWord:
                     GenerateWordView()
-                case .extractItemFromList:
-                    ExtractItemFromListView()
-                case .extractWordFromText:
-                    ExtractWordFromTextView()
+                case .selectItemFromList:
+                    SelectItemFromListView()
+                case .selectWordFromText:
+                    SelectWordFromTextView()
                 case .shuffleList:
                     ShuffleListView()
                 case .shuffleDict:
