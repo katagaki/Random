@@ -21,7 +21,7 @@ struct CountDownView: View {
     var body: some View {
         VStack(alignment: .center, spacing: 8.0) {
             Spacer()
-            LargeDisplayTextView(String(currentValue), fontSize: 200)
+            LargeDisplayTextView(String(currentValue), fontSize: 200, transitionDirection: .flipDown)
             Spacer()
 
             if !hasStarted {
