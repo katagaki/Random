@@ -19,6 +19,85 @@ struct CountUpView: View {
     @FocusState var isTextFieldActive: Bool
 
     var body: some View {
+        if #available(iOS 26.0, *) {
+            ios26Body
+        } else {
+            legacyBody
+        }
+    }
+
+    @available(iOS 26.0, *)
+    var ios26Body: some View {
+        VStack(alignment: .center, spacing: 8.0) {
+            Spacer()
+            LargeDisplayTextView(String(currentValue), fontSize: 200, transitionDirection: .flipUp)
+            Spacer()
+
+            if !hasStarted {
+                Divider()
+                VStack(alignment: .leading, spacing: 16.0) {
+                    VStack(alignment: .leading, spacing: 8.0) {
+                        Text("Count.StartingValue")
+                            .font(.body)
+                            .bold()
+                        TextField("", value: $startingValue, format: .number)
+                            .textFieldStyle(.roundedBorder)
+                            .keyboardType(.numberPad)
+                            .focused($isTextFieldActive)
+                    }
+
+                    Toggle(isOn: $useRange) {
+                        Text("Count.UseRandomRange")
+                            .font(.body)
+                            .bold()
+                    }
+
+                    if useRange {
+                        RangeInputView(label: "Count.IncrementRange", rangeStart: $rangeStart, rangeEnd: $rangeEnd)
+                    } else {
+                        VStack(alignment: .leading, spacing: 8.0) {
+                            Text("Count.IncrementValue")
+                                .font(.body)
+                                .bold()
+                            TextField("", value: $incrementValue, format: .number)
+                                .textFieldStyle(.roundedBorder)
+                                .keyboardType(.numberPad)
+                                .focused($isTextFieldActive)
+                        }
+                    }
+                }
+                .padding()
+            }
+        }
+        .randomlyNavigation(title: "Count.Up")
+        .toolbar {
+            if !hasStarted {
+                ToolbarSpacer(.flexible, placement: .bottomBar)
+                ToolbarItemGroup(placement: .bottomBar) {
+                    Button("Count.Start", systemImage: "play.fill") {
+                        start()
+                    }
+                    .buttonStyle(.glassProminent)
+                    .disabled(useRange && rangeEnd <= rangeStart)
+                }
+            } else {
+                ToolbarItemGroup(placement: .bottomBar) {
+                    Button("Shared.Reset", systemImage: "arrow.counterclockwise") {
+                        reset()
+                    }
+                }
+                ToolbarSpacer(.flexible, placement: .bottomBar)
+                ToolbarItemGroup(placement: .bottomBar) {
+                    Button("Count.Increment", systemImage: "plus") {
+                        increment()
+                    }
+                    .buttonStyle(.glassProminent)
+                }
+            }
+        }
+    }
+
+    var legacyBody: some View {
         VStack(alignment: .center, spacing: 8.0) {
             Spacer()
             LargeDisplayTextView(String(currentValue), fontSize: 200, transitionDirection: .flipUp)

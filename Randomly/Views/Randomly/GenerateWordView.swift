@@ -30,6 +30,7 @@ struct GenerateWordView: View {
 
     @State var word: String = ""
     @State var wordLength: Float = 8
+    @State var isAnimating: Bool = false
 
     var body: some View {
         VStack(alignment: .center, spacing: 8.0) {
@@ -61,7 +62,7 @@ struct GenerateWordView: View {
             text: "Shared.Generate",
             icon: "sparkles",
             action: generateWord,
-            disabled: .constant(false),
+            disabled: $isAnimating,
             copyValue: .constant(word),
             copyDisabled: .constant(word.isEmpty)
         )
@@ -131,13 +132,22 @@ struct GenerateWordView: View {
             }
         }
 
-        // Clear the word with animation
-        withAnimation(.default.speed(2)) {
-            word = ""
-        }
-
-        // Animate each part being added
         Task {
+            isAnimating = true
+
+            // Animate word being erased
+            if !word.isEmpty {
+                repeat {
+                    try? await Task.sleep(for: .milliseconds(10))
+                    await MainActor.run {
+                        withAnimation(.default.speed(3)) {
+                            word = String(word.prefix(word.count - 1))
+                        }
+                    }
+                } while !word.isEmpty
+            }
+
+            // Animate word being typed in
             for part in parts {
                 try? await Task.sleep(for: .milliseconds(30))
                 await MainActor.run {
@@ -150,6 +160,8 @@ struct GenerateWordView: View {
                     }
                 }
             }
+
+            isAnimating = false
         }
     }
 }

@@ -19,6 +19,88 @@ struct CountDownView: View {
     @FocusState var isTextFieldActive: Bool
 
     var body: some View {
+        if #available(iOS 26.0, *) {
+            ios26Body
+        } else {
+            legacyBody
+        }
+    }
+
+    @available(iOS 26.0, *)
+    var ios26Body: some View {
+        VStack(alignment: .center, spacing: 8.0) {
+            Spacer()
+            LargeDisplayTextView(String(currentValue), fontSize: 200, transitionDirection: .flipDown)
+            Spacer()
+
+            if !hasStarted {
+                Divider()
+                VStack(alignment: .leading, spacing: 16.0) {
+                    VStack(alignment: .leading, spacing: 8.0) {
+                        Text("Count.StartingValue")
+                            .font(.body)
+                            .bold()
+                        TextField("", value: $startingValue, format: .number)
+                            .textFieldStyle(.roundedBorder)
+                            .keyboardType(.numberPad)
+                            .focused($isTextFieldActive)
+                    }
+
+                    Toggle(isOn: $useRange) {
+                        Text("Count.UseRandomRange")
+                            .font(.body)
+                            .bold()
+                    }
+
+                    if useRange {
+                        RangeInputView(label: "Count.DecrementRange", rangeStart: $rangeStart, rangeEnd: $rangeEnd)
+                    } else {
+                        VStack(alignment: .leading, spacing: 8.0) {
+                            Text("Count.DecrementValue")
+                                .font(.body)
+                                .bold()
+                            TextField("", value: $decrementValue, format: .number)
+                                .keyboardType(.numberPad)
+                                .textFieldStyle(.roundedBorder)
+                                .focused($isTextFieldActive)
+                        }
+                    }
+                }
+                .padding()
+                Divider()
+            } else {
+                Divider()
+            }
+        }
+        .randomlyNavigation(title: "Count.Down")
+        .toolbar {
+            if !hasStarted {
+                ToolbarSpacer(.flexible, placement: .bottomBar)
+                ToolbarItemGroup(placement: .bottomBar) {
+                    Button("Count.Start", systemImage: "play.fill") {
+                        start()
+                    }
+                    .buttonStyle(.glassProminent)
+                    .disabled(useRange && rangeEnd <= rangeStart)
+                }
+            } else {
+                ToolbarItemGroup(placement: .bottomBar) {
+                    Button("Shared.Reset", systemImage: "arrow.counterclockwise") {
+                        reset()
+                    }
+                }
+                ToolbarSpacer(.flexible, placement: .bottomBar)
+                ToolbarItemGroup(placement: .bottomBar) {
+                    Button("Count.Decrement", systemImage: "minus") {
+                        decrement()
+                    }
+                    .buttonStyle(.glassProminent)
+                }
+            }
+        }
+    }
+
+    var legacyBody: some View {
         VStack(alignment: .center, spacing: 8.0) {
             Spacer()
             LargeDisplayTextView(String(currentValue), fontSize: 200, transitionDirection: .flipDown)
