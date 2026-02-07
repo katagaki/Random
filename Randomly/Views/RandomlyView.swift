@@ -186,9 +186,9 @@ struct RandomlyView: View {
                 case .sortDict:
                     SortDictionaryView()
                 case .countUp:
-                    CountUpView()
+                    CountView(mode: .up)
                 case .countDown:
-                    CountDownView()
+                    CountView(mode: .down)
                 case .tossCoin:
                     TossCoinView()
                 case .rollDice:

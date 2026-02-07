@@ -1,5 +1,5 @@
 //
-//  CountUpView.swift
+//  CountView.swift
 //  Random
 //
 //  Created by シンジャスティン on 2023/08/26.
@@ -7,16 +7,23 @@
 
 import SwiftUI
 
-struct CountUpView: View {
-
+struct CountView: View {
+    
+    let mode: CountMode
+    
     @State var useRange: Bool = false
     @State var rangeStart: Int = 1
     @State var rangeEnd: Int = 10
-    @State var incrementValue: Int = 1
-    @State var startingValue: Int = 0
+    @State var changeValue: Int = 1
+    @State var startingValue: Int
     @State var currentValue: Int = 0
     @State var hasStarted: Bool = false
     @FocusState var isTextFieldActive: Bool
+    
+    init(mode: CountMode) {
+        self.mode = mode
+        self.startingValue = mode == .up ? 0 : 100
+    }
 
     var body: some View {
         if #available(iOS 26.0, *) {
@@ -30,7 +37,7 @@ struct CountUpView: View {
     var ios26Body: some View {
         VStack(alignment: .center, spacing: 8.0) {
             Spacer()
-            LargeDisplayTextView(String(currentValue), fontSize: 200, transitionDirection: .flipUp)
+            LargeDisplayTextView(String(currentValue), fontSize: 200, transitionDirection: mode == .up ? .flipUp : .flipDown)
             Spacer()
 
             if !hasStarted {
@@ -53,13 +60,13 @@ struct CountUpView: View {
                     }
 
                     if useRange {
-                        RangeInputView(label: "Count.IncrementRange", rangeStart: $rangeStart, rangeEnd: $rangeEnd)
+                        RangeInputView(label: mode == .up ? "Count.IncrementRange" : "Count.DecrementRange", rangeStart: $rangeStart, rangeEnd: $rangeEnd)
                     } else {
                         VStack(alignment: .leading, spacing: 8.0) {
-                            Text("Count.IncrementValue")
+                            Text(mode == .up ? "Count.IncrementValue" : "Count.DecrementValue")
                                 .font(.body)
                                 .bold()
-                            TextField("", value: $incrementValue, format: .number)
+                            TextField("", value: $changeValue, format: .number)
                                 .textFieldStyle(.roundedBorder)
                                 .keyboardType(.numberPad)
                                 .focused($isTextFieldActive)
@@ -69,7 +76,7 @@ struct CountUpView: View {
                 .padding()
             }
         }
-        .randomlyNavigation(title: "Count.Up")
+        .randomlyNavigation(title: mode == .up ? "Count.Up" : "Count.Down")
         .toolbar {
             if !hasStarted {
                 ToolbarSpacer(.flexible, placement: .bottomBar)
@@ -88,8 +95,8 @@ struct CountUpView: View {
                 }
                 ToolbarSpacer(.flexible, placement: .bottomBar)
                 ToolbarItemGroup(placement: .bottomBar) {
-                    Button("Count.Increment", systemImage: "plus") {
-                        increment()
+                    Button(mode == .up ? "Count.Increment" : "Count.Decrement", systemImage: mode == .up ? "plus" : "minus") {
+                        change()
                     }
                     .buttonStyle(.glassProminent)
                 }
@@ -100,7 +107,7 @@ struct CountUpView: View {
     var legacyBody: some View {
         VStack(alignment: .center, spacing: 8.0) {
             Spacer()
-            LargeDisplayTextView(String(currentValue), fontSize: 200, transitionDirection: .flipUp)
+            LargeDisplayTextView(String(currentValue), fontSize: 200, transitionDirection: mode == .up ? .flipUp : .flipDown)
             Spacer()
 
             if !hasStarted {
@@ -123,15 +130,15 @@ struct CountUpView: View {
                     }
 
                     if useRange {
-                        RangeInputView(label: "Count.IncrementRange", rangeStart: $rangeStart, rangeEnd: $rangeEnd)
+                        RangeInputView(label: mode == .up ? "Count.IncrementRange" : "Count.DecrementRange", rangeStart: $rangeStart, rangeEnd: $rangeEnd)
                     } else {
                         VStack(alignment: .leading, spacing: 8.0) {
-                            Text("Count.IncrementValue")
+                            Text(mode == .up ? "Count.IncrementValue" : "Count.DecrementValue")
                                 .font(.body)
                                 .bold()
-                            TextField("", value: $incrementValue, format: .number)
-                                .textFieldStyle(.roundedBorder)
+                            TextField("", value: $changeValue, format: .number)
                                 .keyboardType(.numberPad)
+                                .textFieldStyle(.roundedBorder)
                                 .focused($isTextFieldActive)
                         }
                     }
@@ -157,12 +164,12 @@ struct CountUpView: View {
                 .padding(.top, 8.0)
                 .padding(.bottom, 16.0)
             } else {
-                ActionBar(primaryActionText: "Count.Increment",
-                          primaryActionIconName: "plus",
+                ActionBar(primaryActionText: mode == .up ? "Count.Increment" : "Count.Decrement",
+                          primaryActionIconName: mode == .up ? "plus" : "minus",
                           copyDisabled: .constant(true),
                           copyHidden: true,
                           primaryActionDisabled: .constant(false)) {
-                    increment()
+                    change()
                 } copyAction: {
                     // Copy not available
                 }
@@ -182,7 +189,7 @@ struct CountUpView: View {
                 .padding(.bottom, 16.0)
             }
         }
-        .randomlyNavigation(title: "Count.Up")
+        .randomlyNavigation(title: mode == .up ? "Count.Up" : "Count.Down")
     }
 
     func start() {
@@ -199,13 +206,21 @@ struct CountUpView: View {
         }
     }
 
-    func increment() {
+    func change() {
         animateChange {
             if useRange {
-                let randomIncrement = Int.random(in: rangeStart...rangeEnd)
-                currentValue += randomIncrement
+                let randomChange = Int.random(in: rangeStart...rangeEnd)
+                if mode == .up {
+                    currentValue += randomChange
+                } else {
+                    currentValue -= randomChange
+                }
             } else {
-                currentValue += incrementValue
+                if mode == .up {
+                    currentValue += changeValue
+                } else {
+                    currentValue -= changeValue
+                }
             }
         }
     }
