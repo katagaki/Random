@@ -13,11 +13,7 @@ struct RollDiceView: View {
     let scene = SCNScene(named: "Scene Assets.scnassets/Sandbox.scn")!
 
     var body: some View {
-        SceneView(scene: scene,
-                  pointOfView: scene.rootNode.childNode(withName: "camera", recursively: false)!,
-                  preferredFramesPerSecond: 120,
-                  antialiasingMode: .multisampling4X)
-        .ignoresSafeArea(edges: [.top, .leading, .trailing])
+        SceneKitContainer(scene: scene)
         .safeAreaInset(edge: .bottom) {
             ScrollView(.horizontal) {
                 ActionBar(primaryActionText: "Shared.Do.RollDice.5",
@@ -37,8 +33,7 @@ struct RollDiceView: View {
                                   .padding(.horizontal, 4.0)
                                   .frame(minHeight: 42.0)
                           }
-                          .buttonStyle(.borderedProminent)
-                          .clipShape(RoundedRectangle(cornerRadius: 99))
+                          .prominentPillButton()
                           Button {
                               addDice(number: 2)
                           } label: {
@@ -47,8 +42,7 @@ struct RollDiceView: View {
                                   .padding(.horizontal, 4.0)
                                   .frame(minHeight: 42.0)
                           }
-                          .buttonStyle(.borderedProminent)
-                          .clipShape(RoundedRectangle(cornerRadius: 99))
+                          .prominentPillButton()
                           Button {
                               addDice(number: 3)
                           } label: {
@@ -57,8 +51,7 @@ struct RollDiceView: View {
                                   .padding(.horizontal, 4.0)
                                   .frame(minHeight: 42.0)
                           }
-                          .buttonStyle(.borderedProminent)
-                          .clipShape(RoundedRectangle(cornerRadius: 99))
+                          .prominentPillButton()
                           Button {
                               addDice(number: 4)
                           } label: {
@@ -67,27 +60,19 @@ struct RollDiceView: View {
                                   .padding(.horizontal, 4.0)
                                   .frame(minHeight: 42.0)
                           }
-                          .buttonStyle(.borderedProminent)
-                          .clipShape(RoundedRectangle(cornerRadius: 99))
+                          .prominentPillButton()
                         }
                     })
                     .frame(maxWidth: .infinity)
-                    .padding([.leading, .trailing])
+                    .horizontalPadding()
             }
             .scrollIndicators(.hidden)
-            .padding([.top, .bottom], 16.0)
-            .background(Material.bar)
-            .overlay(alignment: .top) {
-                Rectangle()
-                    .frame(height: 1/3)
-                    .foregroundColor(.primary.opacity(0.2))
-            }
+            .bottomBarBackground()
         }
         .onAppear {
             resetScene()
         }
-        .navigationTitle("Do.DiceRoll.ViewTitle")
-        .navigationBarTitleDisplayMode(.inline)
+        .randomlyNavigation(title: "Do.DiceRoll.ViewTitle")
     }
 
     func addDice(number: Int) {

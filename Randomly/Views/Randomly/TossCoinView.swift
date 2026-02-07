@@ -13,11 +13,7 @@ struct TossCoinView: View {
     let scene = SCNScene(named: "Scene Assets.scnassets/Sandbox.scn")!
 
     var body: some View {
-        SceneView(scene: scene,
-                  pointOfView: scene.rootNode.childNode(withName: "camera", recursively: false)!,
-                  preferredFramesPerSecond: 120,
-                  antialiasingMode: .multisampling4X)
-        .ignoresSafeArea(edges: [.top, .leading, .trailing])
+        SceneKitContainer(scene: scene)
         .safeAreaInset(edge: .bottom) {
                 ActionBar(primaryActionText: "Shared.Do.FlipCoin",
                           primaryActionIconName: "hands.sparkles.fill",
@@ -27,20 +23,12 @@ struct TossCoinView: View {
                     flipCoin()
                 }
                     .frame(maxWidth: .infinity)
-                    .padding([.leading, .trailing])
-                    .padding([.top, .bottom], 16.0)
-                    .background(Material.bar)
-                    .overlay(alignment: .top) {
-                        Rectangle()
-                            .frame(height: 1/3)
-                            .foregroundColor(.primary.opacity(0.2))
-                    }
+                    .bottomBarBackground()
         }
         .onAppear {
             resetScene()
         }
-        .navigationTitle("Do.CoinFlip.ViewTitle")
-        .navigationBarTitleDisplayMode(.inline)
+        .randomlyNavigation(title: "Do.CoinFlip.ViewTitle")
     }
 
     func flipCoin() {

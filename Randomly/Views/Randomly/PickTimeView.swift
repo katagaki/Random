@@ -15,14 +15,7 @@ struct PickTimeView: View {
     var body: some View {
         VStack(alignment: .center, spacing: 8.0) {
             Spacer()
-            Text(formattedTime())
-                .font(.system(size: 120.0, weight: .heavy, design: .rounded))
-                .lineLimit(1)
-                .minimumScaleFactor(0.01)
-                .textSelection(.enabled)
-                .padding()
-                .transition(.scale.combined(with: .opacity))
-                .id(generatedTime)
+            LargeDisplayTextView(formattedTime())
             Spacer()
             Divider()
             ActionBar(primaryActionText: "Shared.Pick",
@@ -34,19 +27,18 @@ struct PickTimeView: View {
                 UIPasteboard.general.string = formattedTime()
             }
             .frame(maxWidth: .infinity)
-            .padding([.leading, .trailing])
+            .horizontalPadding()
             .padding(.top, 8.0)
             .padding(.bottom, 16.0)
         }
         .task {
             regenerate()
         }
-        .navigationTitle("Generate.Time.ViewTitle")
-        .navigationBarTitleDisplayMode(.inline)
+        .randomlyNavigation(title: "Generate.Time.ViewTitle")
     }
 
     func regenerate() {
-        withAnimation(.default.speed(2)) {
+        animateChange {
             // Generate random hour (0-23) and minute (0-59)
             let randomHour = Int.random(in: 0...23)
             let randomMinute = Int.random(in: 0...59)

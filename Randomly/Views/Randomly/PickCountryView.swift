@@ -62,19 +62,18 @@ struct PickCountryView: View {
                 }
             }
             .frame(maxWidth: .infinity)
-            .padding([.leading, .trailing])
+            .horizontalPadding()
             .padding(.top, 8.0)
             .padding(.bottom, 16.0)
         }
-        .navigationTitle("Generate.Country.ViewTitle")
-        .navigationBarTitleDisplayMode(.inline)
+        .randomlyNavigation(title: "Generate.Country.ViewTitle")
         .task {
             regenerate()
         }
     }
 
     func regenerate() {
-        withAnimation(.default.speed(2)) {
+        animateChange {
             selectedCountry = Country.allCountries.randomElement()
         }
     }

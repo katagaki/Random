@@ -49,12 +49,8 @@ struct ExtractWordFromTextView: View {
 
     var body: some View {
         VStack(alignment: .center, spacing: 8.0) {
-            Text(selectedWord ?? "")
+            LargeDisplayTextView(selectedWord ?? "", fontSize: 200)
                 .frame(height: 70)
-                .font(.system(size: 200.0, weight: .heavy, design: .rounded))
-                .lineLimit(1)
-                .minimumScaleFactor(0.01)
-                .padding()
             Divider()
             VStack(alignment: .leading, spacing: 4.0) {
                 Text("Shared.EnterText")
@@ -91,7 +87,7 @@ struct ExtractWordFromTextView: View {
                 }
             }
             .frame(maxWidth: .infinity)
-            .padding([.leading, .trailing])
+            .horizontalPadding()
             .padding(.top, 8.0)
             .padding(.bottom, 16.0)
         }

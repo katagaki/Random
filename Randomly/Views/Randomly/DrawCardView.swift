@@ -56,14 +56,8 @@ struct DrawCardView: View {
                 }
                 .frame(maxWidth: .infinity)
             }
-            .padding([.top, .bottom], 16.0)
-            .padding([.leading, .trailing])
-            .background(Material.bar)
-            .overlay(alignment: .top) {
-                Rectangle()
-                    .frame(height: 1/3)
-                    .foregroundColor(.primary.opacity(0.2))
-            }
+            .horizontalPadding()
+            .bottomBarBackground()
         }
         .toolbarBackground(.hidden, for: .tabBar)
         .task {
@@ -72,12 +66,11 @@ struct DrawCardView: View {
         .onChange(of: numberOfCardsToDraw) {
             drawCards()
         }
-        .navigationTitle("Do.CardDraw.ViewTitle")
-        .navigationBarTitleDisplayMode(.inline)
+        .randomlyNavigation(title: "Do.CardDraw.ViewTitle")
     }
 
     func drawCards() {
-        withAnimation(.default.speed(2)) {
+        animateChange {
             resetDeck()
             for _ in 0..<Int(numberOfCardsToDraw) {
                 cardsDrawn.append(cardsInDeck.remove(at: (0..<cardsInDeck.count).randomElement()!))

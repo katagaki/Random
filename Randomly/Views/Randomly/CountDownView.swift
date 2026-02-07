@@ -21,14 +21,7 @@ struct CountDownView: View {
     var body: some View {
         VStack(alignment: .center, spacing: 8.0) {
             Spacer()
-            Text(String(currentValue))
-                .font(.system(size: 200.0, weight: .heavy, design: .rounded))
-                .lineLimit(1)
-                .minimumScaleFactor(0.01)
-                .textSelection(.enabled)
-                .padding()
-                .transition(.scale.combined(with: .opacity))
-                .id(currentValue)
+            LargeDisplayTextView(String(currentValue), fontSize: 200)
             Spacer()
 
             if !hasStarted {
@@ -51,24 +44,7 @@ struct CountDownView: View {
                     }
 
                     if useRange {
-                        VStack(alignment: .leading, spacing: 8.0) {
-                            Text("Count.DecrementRange")
-                                .font(.body)
-                                .bold()
-                            HStack(alignment: .center, spacing: 4.0) {
-                                Text("Shared.RangeFrom")
-                                    .font(.body)
-                                TextField("", value: $rangeStart, format: .number)
-                                    .keyboardType(.numberPad)
-                                    .focused($isTextFieldActive)
-                                Text("Shared.RangeTo")
-                                    .font(.body)
-                                TextField("", value: $rangeEnd, format: .number)
-                                    .keyboardType(.numberPad)
-                                    .focused($isTextFieldActive)
-                            }
-                            .textFieldStyle(.roundedBorder)
-                        }
+                        RangeInputView(label: "Count.DecrementRange", rangeStart: $rangeStart, rangeEnd: $rangeEnd)
                     } else {
                         VStack(alignment: .leading, spacing: 8.0) {
                             Text("Count.DecrementValue")
@@ -98,7 +74,7 @@ struct CountDownView: View {
                     // Copy not available before starting
                 }
                 .frame(maxWidth: .infinity)
-                .padding([.leading, .trailing])
+                .horizontalPadding()
                 .padding(.top, 8.0)
                 .padding(.bottom, 16.0)
             } else {
@@ -119,35 +95,33 @@ struct CountDownView: View {
                             .padding(.horizontal, 4.0)
                             .frame(minHeight: 42.0)
                     }
-                    .buttonStyle(.bordered)
-                    .clipShape(RoundedRectangle(cornerRadius: 99))
+                    .pillButton()
                 }
                 .frame(maxWidth: .infinity)
-                .padding([.leading, .trailing])
+                .horizontalPadding()
                 .padding(.top, 8.0)
                 .padding(.bottom, 16.0)
             }
         }
-        .navigationTitle("Count.Down")
-        .navigationBarTitleDisplayMode(.inline)
+        .randomlyNavigation(title: "Count.Down")
     }
 
     func start() {
-        withAnimation(.default.speed(2)) {
+        animateChange {
             currentValue = startingValue
             hasStarted = true
         }
     }
 
     func reset() {
-        withAnimation(.default.speed(2)) {
+        animateChange {
             startingValue = currentValue
             hasStarted = false
         }
     }
 
     func decrement() {
-        withAnimation(.default.speed(2)) {
+        animateChange {
             if useRange {
                 let randomDecrement = Int.random(in: rangeStart...rangeEnd)
                 currentValue -= randomDecrement

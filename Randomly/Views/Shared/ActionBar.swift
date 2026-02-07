@@ -32,12 +32,13 @@ struct ActionBar: View {
                     copyAction()
                 }
             } label: {
-                Label(.sharedCopy, systemImage: "doc.on.doc")
+                Image(systemName: "doc.on.doc")
                     .padding(.horizontal, 4.0)
-                    .frame(minHeight: 42.0)
+                    .frame(width: 42.0, height: 42.0, alignment: .center)
             }
+            .accessibilityLabel(Text(.sharedCopy))
             .buttonStyle(.bordered)
-            .clipShape(RoundedRectangle(cornerRadius: 99))
+            .clipShape(Circle())
             .disabled(copyDisabled)
         }
     }

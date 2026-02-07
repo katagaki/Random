@@ -59,12 +59,11 @@ struct GenerateWordView: View {
                 UIPasteboard.general.string = generatedWord
             }
             .frame(maxWidth: .infinity)
-            .padding([.leading, .trailing])
+            .horizontalPadding()
             .padding(.top, 8.0)
             .padding(.bottom, 16.0)
         }
-        .navigationTitle("Generate.Word.ViewTitle")
-        .navigationBarTitleDisplayMode(.inline)
+        .randomlyNavigation(title: "Generate.Word.ViewTitle")
         .onAppear {
             generateWord()
         }

@@ -17,14 +17,7 @@ struct PickDateView: View {
     var body: some View {
         VStack(alignment: .center, spacing: 8.0) {
             Spacer()
-            Text(formattedDate())
-                .font(.system(size: 120.0, weight: .heavy, design: .rounded))
-                .lineLimit(1)
-                .minimumScaleFactor(0.01)
-                .textSelection(.enabled)
-                .padding()
-                .transition(.scale.combined(with: .opacity))
-                .id(generatedDate)
+            LargeDisplayTextView(formattedDate())
             Spacer()
             Divider()
             VStack(alignment: .leading, spacing: 8.0) {
@@ -53,19 +46,18 @@ struct PickDateView: View {
                 UIPasteboard.general.string = formattedDate()
             }
             .frame(maxWidth: .infinity)
-            .padding([.leading, .trailing])
+            .horizontalPadding()
             .padding(.top, 8.0)
             .padding(.bottom, 16.0)
         }
         .task {
             regenerate()
         }
-        .navigationTitle("Generate.Date.ViewTitle")
-        .navigationBarTitleDisplayMode(.inline)
+        .randomlyNavigation(title: "Generate.Date.ViewTitle")
     }
 
     func regenerate() {
-        withAnimation(.default.speed(2)) {
+        animateChange {
             let startInterval = startDate.timeIntervalSince1970
             let endInterval = endDate.timeIntervalSince1970
             let randomInterval = TimeInterval.random(in: startInterval...endInterval)

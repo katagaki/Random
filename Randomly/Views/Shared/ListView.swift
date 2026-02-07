@@ -64,8 +64,7 @@ struct ListView<Content: View>: View {
                                 Label("Shared.Paste", systemImage: "doc.on.clipboard")
                                     .bold()
                             }
-                            .buttonStyle(.borderedProminent)
-                            .clipShape(RoundedRectangle(cornerRadius: 99))
+                            .prominentPillButton()
                         }
                     }
                 }
@@ -89,21 +88,14 @@ struct ListView<Content: View>: View {
                             Text("Shared.Add")
                                 .bold()
                         }
-                        .buttonStyle(.bordered)
-                        .clipShape(RoundedRectangle(cornerRadius: 99))
+                        .pillButton()
                         .disabled(newItem == "")
                     }
                     bottomView()
                         .frame(maxWidth: .infinity)
                 }
-                .padding([.top, .bottom], 16.0)
-                .padding([.leading, .trailing])
-                .background(Material.bar)
-                .overlay(alignment: .top) {
-                    Rectangle()
-                        .frame(height: 1/3)
-                        .foregroundColor(.primary.opacity(0.2))
-                }
+                .horizontalPadding()
+                .bottomBarBackground()
             }
         }
         .onAppear {

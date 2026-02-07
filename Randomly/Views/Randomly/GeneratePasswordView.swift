@@ -74,7 +74,7 @@ struct GeneratePasswordView: View {
                 UIPasteboard.general.string = password.generated
             }
             .frame(maxWidth: .infinity)
-            .padding([.leading, .trailing])
+            .horizontalPadding()
             .padding(.top, 8.0)
             .padding(.bottom, 16.0)
         }
@@ -90,8 +90,7 @@ struct GeneratePasswordView: View {
         .onChange(of: useSymbols) {
             evaluatePasswordPolicy()
         }
-        .navigationTitle("Generate.Password.ViewTitle")
-        .navigationBarTitleDisplayMode(.inline)
+        .randomlyNavigation(title: "Generate.Password.ViewTitle")
     }
 
     func evaluatePasswordPolicy() {

@@ -82,21 +82,14 @@ struct DictionaryView<Content: View>: View {
                             Text("Shared.Add")
                                 .bold()
                         }
-                        .buttonStyle(.bordered)
-                        .clipShape(RoundedRectangle(cornerRadius: 99))
+                        .pillButton()
                         .disabled(newItemKey == "" || newItemValue == "")
                     }
-                    .padding([.leading, .trailing])
+                    .horizontalPadding()
                     bottomView()
                         .frame(maxWidth: .infinity)
                 }
-                .padding([.top, .bottom], 16.0)
-                .background(Material.bar)
-                .overlay(alignment: .top) {
-                    Rectangle()
-                        .frame(height: 1/3)
-                        .foregroundColor(.primary.opacity(0.2))
-                }
+                .bottomBarBackground()
             }
         }
         .onAppear {

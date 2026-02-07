@@ -20,14 +20,7 @@ struct PickNumberLetterWordView: View {
     var body: some View {
         VStack(alignment: .center, spacing: 8.0) {
             Spacer()
-            Text(result)
-                .font(.system(size: 200.0, weight: .heavy, design: .rounded))
-                .lineLimit(1)
-                .minimumScaleFactor(0.01)
-                .textSelection(.enabled)
-                .padding()
-                .transition(.scale.combined(with: .opacity))
-                .id(result)
+            LargeDisplayTextView(result, fontSize: 200)
             Spacer()
             switch mode {
             case .number:
@@ -65,19 +58,18 @@ struct PickNumberLetterWordView: View {
                 UIPasteboard.general.string = result
             }
             .frame(maxWidth: .infinity)
-            .padding([.leading, .trailing])
+            .horizontalPadding()
             .padding(.top, 8.0)
             .padding(.bottom, 16.0)
         }
         .task {
             regenerate()
         }
-        .navigationTitle(NSLocalizedString(mode.rawValue, comment: ""))
-        .navigationBarTitleDisplayMode(.inline)
+        .randomlyNavigation(title: LocalizedStringKey(mode.rawValue))
     }
 
     func regenerate() {
-        withAnimation(.default.speed(2)) {
+        animateChange {
             switch mode {
             case .number:
                 result = String(Int.random(in: rangeStart...rangeEnd))
