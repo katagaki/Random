@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct CountView: View {
-    
+
     let mode: CountMode
-    
+
     @State var useRange: Bool = false
     @State var rangeStart: Int = 1
     @State var rangeEnd: Int = 10
@@ -19,7 +19,7 @@ struct CountView: View {
     @State var currentValue: Int = 0
     @State var hasStarted: Bool = false
     @FocusState var isTextFieldActive: Bool
-    
+
     init(mode: CountMode) {
         self.mode = mode
         self.startingValue = mode == .up ? 0 : 100
