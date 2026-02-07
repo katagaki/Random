@@ -60,7 +60,7 @@ struct CountView: View {
                     }
 
                     if useRange {
-                        RangeInputView(label: mode == .up ? "Count.IncrementRange" : "Count.DecrementRange", rangeStart: $rangeStart, rangeEnd: $rangeEnd)
+                        RangeInputView(label: mode == .up ? "Count.IncrementRange" : "Count.DecrementRange", rangeStart: $rangeStart, rangeEnd: $rangeEnd, isTextFieldActive: $isTextFieldActive)
                     } else {
                         VStack(alignment: .leading, spacing: 8.0) {
                             Text(mode == .up ? "Count.IncrementValue" : "Count.DecrementValue")
@@ -70,6 +70,19 @@ struct CountView: View {
                                 .textFieldStyle(.roundedBorder)
                                 .keyboardType(.numberPad)
                                 .focused($isTextFieldActive)
+                        }
+                    }
+                    
+                    HStack {
+                        Spacer()
+                        if isTextFieldActive {
+                            Button {
+                                isTextFieldActive = false
+                            } label: {
+                                Label("Shared.Done", systemImage: "keyboard.chevron.compact.down")
+                                    .labelStyle(.iconOnly)
+                            }
+                            .buttonStyle(.bordered)
                         }
                     }
                 }
@@ -130,7 +143,7 @@ struct CountView: View {
                     }
 
                     if useRange {
-                        RangeInputView(label: mode == .up ? "Count.IncrementRange" : "Count.DecrementRange", rangeStart: $rangeStart, rangeEnd: $rangeEnd)
+                        RangeInputView(label: mode == .up ? "Count.IncrementRange" : "Count.DecrementRange", rangeStart: $rangeStart, rangeEnd: $rangeEnd, isTextFieldActive: $isTextFieldActive)
                     } else {
                         VStack(alignment: .leading, spacing: 8.0) {
                             Text(mode == .up ? "Count.IncrementValue" : "Count.DecrementValue")
@@ -140,6 +153,19 @@ struct CountView: View {
                                 .keyboardType(.numberPad)
                                 .textFieldStyle(.roundedBorder)
                                 .focused($isTextFieldActive)
+                        }
+                    }
+                    
+                    HStack {
+                        Spacer()
+                        if isTextFieldActive {
+                            Button {
+                                isTextFieldActive = false
+                            } label: {
+                                Label("Shared.Done", systemImage: "keyboard.chevron.compact.down")
+                                    .labelStyle(.iconOnly)
+                            }
+                            .buttonStyle(.bordered)
                         }
                     }
                 }

@@ -32,23 +32,37 @@ struct PickNumberLetterWordView: View {
             case .number:
                 VStack(alignment: .center, spacing: 0.0) {
                     Divider()
-                    HStack(alignment: .center, spacing: 4.0) {
-                        Text("Shared.RangeFrom")
-                            .font(.body)
-                            .bold()
-                        TextField("", value: $rangeStart, format: .number)
-                            .limitInputLength(value: $rangeStart, length: 17)
-                            .keyboardType(.numberPad)
-                            .focused($isTextFieldActive)
-                        Text("Shared.RangeTo")
-                            .font(.body)
-                            .bold()
-                        TextField("", value: $rangeEnd, format: .number)
-                            .limitInputLength(value: $rangeEnd, length: 17)
-                            .keyboardType(.numberPad)
-                            .focused($isTextFieldActive)
+                    VStack(alignment: .leading, spacing: 8.0) {
+                        HStack(alignment: .center, spacing: 4.0) {
+                            Text("Shared.RangeFrom")
+                                .font(.body)
+                                .bold()
+                            TextField("", value: $rangeStart, format: .number)
+                                .limitInputLength(value: $rangeStart, length: 17)
+                                .keyboardType(.numberPad)
+                                .focused($isTextFieldActive)
+                            Text("Shared.RangeTo")
+                                .font(.body)
+                                .bold()
+                            TextField("", value: $rangeEnd, format: .number)
+                                .limitInputLength(value: $rangeEnd, length: 17)
+                                .keyboardType(.numberPad)
+                                .focused($isTextFieldActive)
+                        }
+                        .textFieldStyle(.roundedBorder)
+                        HStack {
+                            Spacer()
+                            if isTextFieldActive {
+                                Button {
+                                    isTextFieldActive = false
+                                } label: {
+                                    Label("Shared.Done", systemImage: "keyboard.chevron.compact.down")
+                                        .labelStyle(.iconOnly)
+                                }
+                                .buttonStyle(.bordered)
+                            }
+                        }
                     }
-                    .textFieldStyle(.roundedBorder)
                     .padding()
                 }
                 .frame(maxWidth: .infinity)
