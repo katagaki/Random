@@ -15,11 +15,14 @@ struct SelectItemFromListView: View {
     @FocusState var focusedField: FocusedField?
 
     var body: some View {
-        if #available(iOS 26.0, *) {
-            ios26Body
-        } else {
-            legacyBody
+        Group {
+            if #available(iOS 26.0, *) {
+                ios26Body
+            } else {
+                legacyBody
+            }
         }
+        .persistItems(key: "selectItems", items: $items)
     }
 
     @available(iOS 26.0, *)

@@ -22,7 +22,7 @@ struct RandomlyView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 28.0) {
                     VStack(alignment: .leading, spacing: 12) {
-                        ListSectionHeader(text: "Shared.Pick")
+                        ListSectionHeader(text: "Shared.Pickers")
                             .font(.body)
                             .padding(.horizontal)
 
@@ -41,6 +41,9 @@ struct RandomlyView: View {
                                              icon: "textformat.abc", iconColor: .teal)
                             }
 
+                            GridCardView(destination: ViewPath.pickEmoji, title: "Select.Emoji",
+                                         icon: "face.smiling.inverse", iconColor: .yellow)
+
                             GridCardView(destination: ViewPath.pickDate, title: "Generate.Date",
                                          icon: "calendar", iconColor: .red)
                             GridCardView(destination: ViewPath.pickTime, title: "Generate.Time",
@@ -52,11 +55,13 @@ struct RandomlyView: View {
                     }
 
                     VStack(alignment: .leading, spacing: 12) {
-                        ListSectionHeader(text: "Shared.Generate")
+                        ListSectionHeader(text: "Shared.Generators")
                             .font(.body)
                             .padding(.horizontal)
 
                         LazyVGrid(columns: columns, spacing: 12) {
+                            GridCardView(destination: ViewPath.generateLoremIpsum, title: "Generate.LoremIpsum",
+                                         icon: "text.alignleft", iconColor: .gray)
                             GridCardView(destination: ViewPath.generateWord, title: "Generate.Word",
                                          icon: "textformat.abc", iconColor: .teal)
                             GridCardView(destination: ViewPath.generatePassword, title: "Generate.Password",
@@ -75,63 +80,55 @@ struct RandomlyView: View {
                     }
 
                     VStack(alignment: .leading, spacing: 12) {
-                        ListSectionHeader(text: "Shared.Select")
+                        ListSectionHeader(text: "Shared.ListTools")
                             .font(.body)
                             .padding(.horizontal)
 
                         LazyVGrid(columns: columns, spacing: 12) {
                             GridCardView(destination: ViewPath.selectItemFromList, title: "Select.ItemFromList",
                                          icon: "list.bullet", iconColor: .indigo)
+                            GridCardView(destination: ViewPath.selectGroupFromList, title: "Select.Group",
+                                         icon: "person.3.fill", iconColor: .orange)
+                            GridCardView(destination: ViewPath.shuffleList, title: "Shuffle.List",
+                                         icon: "shuffle", iconColor: .mint)
+                            GridCardView(destination: ViewPath.sortList, title: "Sort.List",
+                                         icon: "arrow.up.arrow.down", iconColor: .mint)
+                            GridCardView(destination: ViewPath.groupList, title: "Group.List",
+                                         icon: "rectangle.3.group", iconColor: .cyan)
+                        }
+                        .padding(.horizontal)
+                    }
+
+                    VStack(alignment: .leading, spacing: 12) {
+                        ListSectionHeader(text: "Shared.DictionaryTools")
+                            .font(.body)
+                            .padding(.horizontal)
+
+                        LazyVGrid(columns: columns, spacing: 12) {
+                            GridCardView(destination: ViewPath.shuffleDict, title: "Shuffle.Dictionary",
+                                         icon: "shuffle", iconColor: .brown)
+                            GridCardView(destination: ViewPath.sortDict, title: "Sort.Dictionary",
+                                         icon: "arrow.up.arrow.down", iconColor: .brown)
+                        }
+                        .padding(.horizontal)
+                    }
+
+                    VStack(alignment: .leading, spacing: 12) {
+                        ListSectionHeader(text: "Shared.TextTools")
+                            .font(.body)
+                            .padding(.horizontal)
+
+                        LazyVGrid(columns: columns, spacing: 12) {
                             GridCardView(destination: ViewPath.selectWordFromText, title: "Select.WordFromText",
                                          icon: "doc.text", iconColor: .teal)
+                            GridCardView(destination: ViewPath.shuffleLetters, title: "Shuffle.Letters",
+                                         icon: "textformat.abc", iconColor: .pink)
                         }
                         .padding(.horizontal)
                     }
 
                     VStack(alignment: .leading, spacing: 12) {
-                        ListSectionHeader(text: "Shared.Shuffle")
-                            .font(.body)
-                            .padding(.horizontal)
-
-                        LazyVGrid(columns: columns, spacing: 12) {
-                            GridCardView(destination: ViewPath.shuffleList, title: "Shuffle.List",
-                                         icon: "list.bullet", iconColor: .mint)
-                            GridCardView(destination: ViewPath.shuffleDict, title: "Shuffle.Dictionary",
-                                         icon: "tablecells", iconColor: .brown)
-                        }
-                        .padding(.horizontal)
-                    }
-
-                    VStack(alignment: .leading, spacing: 12) {
-                        ListSectionHeader(text: "Shared.Sort")
-                            .font(.body)
-                            .padding(.horizontal)
-
-                        LazyVGrid(columns: columns, spacing: 12) {
-                            GridCardView(destination: ViewPath.sortList, title: "Sort.List",
-                                         icon: "list.bullet", iconColor: .mint)
-                            GridCardView(destination: ViewPath.sortDict, title: "Sort.Dictionary",
-                                         icon: "tablecells", iconColor: .brown)
-                        }
-                        .padding(.horizontal)
-                    }
-
-                    VStack(alignment: .leading, spacing: 12) {
-                        ListSectionHeader(text: "Shared.Count")
-                            .font(.body)
-                            .padding(.horizontal)
-
-                        LazyVGrid(columns: columns, spacing: 12) {
-                            GridCardView(destination: ViewPath.countUp, title: "Count.Up",
-                                         icon: "plus.circle.fill", iconColor: Locale.current.language.languageCode == .japanese ? .red : .green)
-                            GridCardView(destination: ViewPath.countDown, title: "Count.Down",
-                                         icon: "minus.circle.fill", iconColor: Locale.current.language.languageCode == .japanese ? .blue : .red)
-                        }
-                        .padding(.horizontal)
-                    }
-
-                    VStack(alignment: .leading, spacing: 12) {
-                        ListSectionHeader(text: "Shared.OtherFeatures")
+                        ListSectionHeader(text: "Shared.Simulators")
                             .font(.body)
                             .padding(.horizontal)
 
@@ -145,10 +142,31 @@ struct RandomlyView: View {
                         }
                         .padding(.horizontal)
                     }
+
+                    VStack(alignment: .leading, spacing: 12) {
+                        ListSectionHeader(text: "Shared.Counters")
+                            .font(.body)
+                            .padding(.horizontal)
+
+                        LazyVGrid(columns: columns, spacing: 12) {
+                            GridCardView(destination: ViewPath.countUp, title: "Count.Up",
+                                         icon: "plus.circle.fill", iconColor: Locale.current.language.languageCode == .japanese ? .red : .green)
+                            GridCardView(destination: ViewPath.countDown, title: "Count.Down",
+                                         icon: "minus.circle.fill", iconColor: Locale.current.language.languageCode == .japanese ? .blue : .red)
+                        }
+                        .padding(.horizontal)
+                    }
                 }
                 .padding(.vertical)
             }
-            .background(Color(.systemGroupedBackground))
+            .background(
+                LinearGradient(
+                    colors: [Color("BackgroundGradientTop"), Color("BackgroundGradientBottom")],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                .ignoresSafeArea()
+            )
             .navigationDestination(for: ViewPath.self, destination: { viewPath in
                 switch viewPath {
                 case .pickNumber:
@@ -159,6 +177,8 @@ struct RandomlyView: View {
                     PickNumberLetterWordView(mode: .englishWord)
                 case .pickWordJapanese:
                     PickNumberLetterWordView(mode: .japaneseWord)
+                case .pickEmoji:
+                    PickEmojiView()
                 case .pickDate:
                     PickDateView()
                 case .pickTime:
@@ -171,20 +191,30 @@ struct RandomlyView: View {
                     GenerateColorView()
                 case .generateCoordinate:
                     GenerateCoordinateView()
+                case .generateLoremIpsum:
+                    GenerateLoremIpsumView()
                 case .generateWord:
                     GenerateWordView()
                 case .selectItemFromList:
                     SelectItemFromListView()
                 case .selectWordFromText:
                     SelectWordFromTextView()
+                case .selectGroupFromList:
+                    SelectGroupFromListView()
                 case .shuffleList:
                     SortShuffleListView(mode: .shuffle)
                 case .shuffleDict:
                     SortShuffleDictionaryView(mode: .shuffle)
+                case .shuffleLetters:
+                    ShuffleLettersView()
                 case .sortList:
                     SortShuffleListView(mode: .sort)
                 case .sortDict:
                     SortShuffleDictionaryView(mode: .sort)
+                case .groupList:
+                    GroupListView()
+                case .groupDict:
+                    GroupDictionaryView()
                 case .countUp:
                     CountView(mode: .up)
                 case .countDown:
@@ -214,7 +244,7 @@ struct RandomlyView: View {
                     MoreList(repoName: "katagaki/Random", viewPath: ViewPath.moreAttributions) {
                         Section {
                             NavigationLink(value: ViewPath.moreDatasets) {
-                                Label("More.Datasets", systemImage: "cylinder.split.1x2")
+                                Text("More.Datasets")
                             }
                         } header: {
                             ListSectionHeader(text: "More.General")
@@ -258,6 +288,7 @@ License information can be found at https://creativecommons.org/licenses/by/2.5/
                         }
                     }
                 }
+                .presentationDetents([.medium, .large])
             }
         }
     }

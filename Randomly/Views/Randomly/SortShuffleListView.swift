@@ -15,12 +15,19 @@ struct SortShuffleListView: View {
     @State var newItem: String = ""
     @FocusState var focusedField: FocusedField?
 
+    var persistenceKey: String {
+        mode == .shuffle ? "shuffleListItems" : "sortListItems"
+    }
+
     var body: some View {
-        if #available(iOS 26.0, *) {
-            ios26Body
-        } else {
-            legacyBody
+        Group {
+            if #available(iOS 26.0, *) {
+                ios26Body
+            } else {
+                legacyBody
+            }
         }
+        .persistItems(key: persistenceKey, items: $items)
     }
 
     @available(iOS 26.0, *)

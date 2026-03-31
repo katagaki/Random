@@ -72,7 +72,7 @@ struct CountView: View {
                                 .focused($isTextFieldActive)
                         }
                     }
-                    
+
                     HStack {
                         Spacer()
                         if isTextFieldActive {
@@ -155,7 +155,7 @@ struct CountView: View {
                                 .focused($isTextFieldActive)
                         }
                     }
-                    
+
                     HStack {
                         Spacer()
                         if isTextFieldActive {

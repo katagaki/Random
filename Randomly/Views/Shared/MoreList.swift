@@ -20,22 +20,22 @@ struct MoreList<Content: View>: View {
             Section {
                 Link(destination: URL(string: "https://github.com/\(repoName)")!) {
                     HStack {
-                        Label("More.ViewOnGitHub", systemImage: "link")
+                        Text("More.SourceCode")
                         Spacer()
-                        Image(systemName: "arrow.up.forward")
-                            .font(.body)
+                        Text(repoName)
                             .foregroundStyle(.secondary)
                     }
                 }
+                .tint(.primary)
 
                 NavigationLink(value: viewPath) {
-                    Label("More.Attributions", systemImage: "doc.text")
+                    Text("More.Attributions")
                 }
             } header: {
                 ListSectionHeader(text: "More.About")
                     .font(.body)
             }
-
         }
+        .navigationBarTitleDisplayMode(.inline)
     }
 }

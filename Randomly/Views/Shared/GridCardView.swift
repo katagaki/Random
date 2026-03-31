@@ -52,21 +52,19 @@ struct GridCardView<Destination: Hashable>: View {
 
     var body: some View {
         NavigationLink(value: destination) {
-            VStack(alignment: .leading, spacing: 8) {
+            HStack(alignment: .center, spacing: 10) {
                 Image(systemName: icon)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 20.0, height: 20.0)
-                    .padding(2.0)
                     .foregroundStyle(iconGradient != nil ? AnyShapeStyle(iconGradient!) : AnyShapeStyle(iconColor ?? .primary))
-                Spacer(minLength: 0.0)
                 Text(title)
                     .font(.subheadline)
                     .fontWeight(.medium)
-                    .multilineTextAlignment(.center)
+                    .lineLimit(1)
                     .foregroundStyle(.primary)
             }
-            .frame(maxWidth: .infinity, minHeight: 60.0, maxHeight: 60.0, alignment: .leading)
+            .frame(maxWidth: .infinity, alignment: .leading)
             .padding(padding)
             .background(isPressed ? Color(.tertiarySystemGroupedBackground) : Color(.secondarySystemGroupedBackground))
             .clipShape(RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))

@@ -12,6 +12,7 @@ enum ViewPath {
     case pickLetter
     case pickWordEnglish
     case pickWordJapanese
+    case pickEmoji
     case pickDate
     case pickTime
     case pickCountry
@@ -19,12 +20,17 @@ enum ViewPath {
     case generatePassword
     case generateColor
     case generateCoordinate
+    case generateLoremIpsum
     case selectItemFromList
     case selectWordFromText
+    case selectGroupFromList
     case shuffleList
     case shuffleDict
+    case shuffleLetters
     case sortList
     case sortDict
+    case groupList
+    case groupDict
     case countUp
     case countDown
     case tossCoin

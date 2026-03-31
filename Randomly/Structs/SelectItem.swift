@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SelectItem: Identifiable, Hashable {
+struct SelectItem: Identifiable, Hashable, Codable {
     var id: String
     var value: String
 }

@@ -12,6 +12,10 @@ struct SortShuffleDictionaryView: View {
     @State var mode: DictionaryOperationMode
     @State var items: [SelectItem] = []
 
+    var persistenceKey: String {
+        mode == .shuffle ? "shuffleDictItems" : "sortDictItems"
+    }
+
     var body: some View {
         DictionaryView(items: $items) {
             switch mode {
@@ -71,5 +75,6 @@ struct SortShuffleDictionaryView: View {
                 }
             }
         }
+        .persistItems(key: persistenceKey, items: $items)
     }
 }
