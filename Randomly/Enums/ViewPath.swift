@@ -23,10 +23,14 @@ enum ViewPath {
     case generateLoremIpsum
     case selectItemFromList
     case selectWordFromText
+    case selectGroupFromList
     case shuffleList
     case shuffleDict
+    case shuffleLetters
     case sortList
     case sortDict
+    case groupList
+    case groupDict
     case countUp
     case countDown
     case tossCoin

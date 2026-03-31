@@ -88,6 +88,8 @@ struct RandomlyView: View {
                                          icon: "list.bullet", iconColor: .indigo)
                             GridCardView(destination: ViewPath.selectWordFromText, title: "Select.WordFromText",
                                          icon: "doc.text", iconColor: .teal)
+                            GridCardView(destination: ViewPath.selectGroupFromList, title: "Select.Group",
+                                         icon: "person.3.fill", iconColor: .orange)
                         }
                         .padding(.horizontal)
                     }
@@ -102,6 +104,8 @@ struct RandomlyView: View {
                                          icon: "list.bullet", iconColor: .mint)
                             GridCardView(destination: ViewPath.shuffleDict, title: "Shuffle.Dictionary",
                                          icon: "tablecells", iconColor: .brown)
+                            GridCardView(destination: ViewPath.shuffleLetters, title: "Shuffle.Letters",
+                                         icon: "textformat.abc", iconColor: .pink)
                         }
                         .padding(.horizontal)
                     }
@@ -115,6 +119,20 @@ struct RandomlyView: View {
                             GridCardView(destination: ViewPath.sortList, title: "Sort.List",
                                          icon: "list.bullet", iconColor: .mint)
                             GridCardView(destination: ViewPath.sortDict, title: "Sort.Dictionary",
+                                         icon: "tablecells", iconColor: .brown)
+                        }
+                        .padding(.horizontal)
+                    }
+
+                    VStack(alignment: .leading, spacing: 12) {
+                        ListSectionHeader(text: "Shared.Group")
+                            .font(.body)
+                            .padding(.horizontal)
+
+                        LazyVGrid(columns: columns, spacing: 12) {
+                            GridCardView(destination: ViewPath.groupList, title: "Group.List",
+                                         icon: "list.bullet", iconColor: .cyan)
+                            GridCardView(destination: ViewPath.groupDict, title: "Group.Dictionary",
                                          icon: "tablecells", iconColor: .brown)
                         }
                         .padding(.horizontal)
@@ -192,14 +210,22 @@ struct RandomlyView: View {
                     SelectItemFromListView()
                 case .selectWordFromText:
                     SelectWordFromTextView()
+                case .selectGroupFromList:
+                    SelectGroupFromListView()
                 case .shuffleList:
                     SortShuffleListView(mode: .shuffle)
                 case .shuffleDict:
                     SortShuffleDictionaryView(mode: .shuffle)
+                case .shuffleLetters:
+                    ShuffleLettersView()
                 case .sortList:
                     SortShuffleListView(mode: .sort)
                 case .sortDict:
                     SortShuffleDictionaryView(mode: .sort)
+                case .groupList:
+                    GroupListView()
+                case .groupDict:
+                    GroupDictionaryView()
                 case .countUp:
                     CountView(mode: .up)
                 case .countDown:

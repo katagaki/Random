@@ -1,33 +1,32 @@
 //
-//  SortShuffleListView.swift
+//  SelectGroupFromListView.swift
 //  Random
 //
-//  Created by シンジャスティン on 2023/08/27.
+//  Created by Claude on 2026/03/31.
 //
 
 import SwiftUI
 
-struct SortShuffleListView: View {
-
-    let mode: ListOperationMode
+struct SelectGroupFromListView: View {
 
     @State var items: [SelectItem] = []
+    @State var selectedItems: [SelectItem] = []
+    @State var groupSize: Float = 2
     @State var newItem: String = ""
     @FocusState var focusedField: FocusedField?
 
-    var persistenceKey: String {
-        mode == .shuffle ? "shuffleListItems" : "sortListItems"
+    var maxGroupSize: Float {
+        max(Float(items.count), 1)
     }
 
     var body: some View {
-        Group {
-            if #available(iOS 26.0, *) {
-                ios26Body
-            } else {
-                legacyBody
-            }
+        if #available(iOS 26.0, *) {
+            ios26Body
+                .persistItems(key: "selectGroupItems", items: $items)
+        } else {
+            legacyBody
+                .persistItems(key: "selectGroupItems", items: $items)
         }
-        .persistItems(key: persistenceKey, items: $items)
     }
 
     @available(iOS 26.0, *)
@@ -35,8 +34,16 @@ struct SortShuffleListView: View {
         ScrollViewReader { scrollView in
             List {
                 ForEach(items, id: \.self) { item in
-                    Text(item.value)
-                        .font(.body)
+                    HStack {
+                        Text(item.value)
+                            .font(.body)
+                        Spacer()
+                        if selectedItems.contains(item) {
+                            Image(systemName: "checkmark.circle.fill")
+                                .foregroundStyle(.green)
+                                .transition(.scale.combined(with: .opacity))
+                        }
+                    }
                 }
                 .onDelete { indexSet in
                     items.remove(atOffsets: indexSet)
@@ -47,6 +54,7 @@ struct SortShuffleListView: View {
                 if items.count > 0 {
                     scrollView.scrollTo(items.last!, anchor: .bottom)
                 }
+                groupSize = min(groupSize, maxGroupSize)
             }
             .overlay {
                 if items.count == 0 {
@@ -62,16 +70,7 @@ struct SortShuffleListView: View {
                         }
                         if UIPasteboard.general.hasStrings {
                             Button {
-                                if let string = UIPasteboard.general.string {
-                                    let stringComponents = string.components(separatedBy: .newlines)
-                                    for stringComponent in stringComponents where
-                                    stringComponent.trimmingCharacters(in: .whitespacesAndNewlines) != "" {
-                                        items.append(
-                                            SelectItem(id: UUID().uuidString,
-                                                       value: stringComponent.trimmingCharacters(in:
-                                                            .whitespacesAndNewlines)))
-                                    }
-                                }
+                                pasteFromClipboard()
                             } label: {
                                 Label("Shared.Paste", systemImage: "doc.on.clipboard")
                                     .bold()
@@ -82,12 +81,13 @@ struct SortShuffleListView: View {
                 }
             }
         }
-        .navigationTitle(navigationTitle)
+        .navigationTitle("Select.Group.ViewTitle")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
                     items.removeAll()
+                    selectedItems.removeAll()
                 } label: {
                     Text("Shared.Clear")
                 }
@@ -106,16 +106,21 @@ struct SortShuffleListView: View {
             }
             ToolbarSpacer(.fixed, placement: .bottomBar)
             ToolbarItemGroup(placement: .bottomBar) {
+                Text("Select.Group.Size.\(String(Int(groupSize)))")
+                    .font(.caption)
+                Stepper("", value: $groupSize, in: 1...maxGroupSize, step: 1)
+                    .labelsHidden()
+            }
+            ToolbarSpacer(.fixed, placement: .bottomBar)
+            ToolbarItemGroup(placement: .bottomBar) {
                 Button(.sharedCopy, systemImage: "doc.on.doc") {
-                    UIPasteboard.general.string = items.reduce(into: "", { result, item in
-                        result += "\(item.value)\n"
-                    })
+                    UIPasteboard.general.string = selectedItems.map(\.value).joined(separator: "\n")
                 }
-                .disabled(items.isEmpty)
+                .disabled(selectedItems.isEmpty)
             }
             ToolbarItemGroup(placement: .bottomBar) {
-                Button(operationButtonLabel, systemImage: operationButtonIcon) {
-                    performOperation()
+                Button(.sharedSelect, systemImage: "lasso.sparkles") {
+                    selectGroup()
                 }
                 .buttonStyle(.glassProminent)
                 .disabled(items.isEmpty)
@@ -130,77 +135,46 @@ struct SortShuffleListView: View {
         VStack(alignment: .center, spacing: 8.0) {
             ListView(selectedItem: .constant(nil),
                      items: $items) {
-                ActionBar(primaryActionText: operationButtonLabelKey,
-                          primaryActionIconName: operationButtonIcon,
-                          copyDisabled: .constant(items.count == 0),
-                          primaryActionDisabled: .constant(items.count == 0)) {
-                    performOperation()
-                } copyAction: {
-                    UIPasteboard.general.string = items.reduce(into: "", { result, item in
-                        result += "\(item.value)\n"
-                    })
+                VStack(spacing: 8.0) {
+                    HStack {
+                        Text("Select.Group.Size.\(String(Int(groupSize)))")
+                            .font(.body)
+                        Spacer()
+                        Stepper("", value: $groupSize, in: 1...maxGroupSize, step: 1)
+                            .labelsHidden()
+                    }
+                    .padding(.horizontal)
+                    ActionBar(primaryActionText: "Shared.Select",
+                              primaryActionIconName: "lasso.sparkles",
+                              copyDisabled: .constant(selectedItems.isEmpty),
+                              primaryActionDisabled: .constant(items.isEmpty)) {
+                        selectGroup()
+                    } copyAction: {
+                        UIPasteboard.general.string = selectedItems.map(\.value).joined(separator: "\n")
+                    }
                 }
             }
         }
-        .navigationTitle(navigationTitle)
+        .navigationTitle("Select.Group.ViewTitle")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
                     items.removeAll()
+                    selectedItems.removeAll()
                 } label: {
                     Text("Shared.Clear")
                 }
             }
         }
-    }
-
-    // Computed properties for mode-specific values
-    private var navigationTitle: LocalizedStringKey {
-        switch mode {
-        case .sort:
-            return "Shared.Sort.List.ViewTitle"
-        case .shuffle:
-            return "Shared.Shuffle.List.ViewTitle"
+        .onChange(of: items) {
+            groupSize = min(groupSize, maxGroupSize)
         }
     }
 
-    private var operationButtonLabel: LocalizedStringKey {
-        switch mode {
-        case .sort:
-            return "Shared.Sort"
-        case .shuffle:
-            return "Shared.Shuffle"
-        }
-    }
-
-    private var operationButtonLabelKey: LocalizedStringKey {
-        switch mode {
-        case .sort:
-            return "Shared.Sort"
-        case .shuffle:
-            return "Shared.Shuffle"
-        }
-    }
-
-    private var operationButtonIcon: String {
-        switch mode {
-        case .sort:
-            return "arrow.up.and.down"
-        case .shuffle:
-            return "arrow.up.and.down.and.sparkles"
-        }
-    }
-
-    // Operation execution
-    private func performOperation() {
-        switch mode {
-        case .sort:
-            items.sort { lhs, rhs in
-                lhs.value < rhs.value
-            }
-        case .shuffle:
-            items.shuffle()
+    func selectGroup() {
+        animateChange {
+            selectedItems = Array(items.shuffled().prefix(Int(groupSize)))
         }
     }
 
@@ -210,6 +184,18 @@ struct SortShuffleListView: View {
                 SelectItem(id: UUID().uuidString,
                            value: newItem))
             newItem = ""
+        }
+    }
+
+    func pasteFromClipboard() {
+        if let string = UIPasteboard.general.string {
+            let stringComponents = string.components(separatedBy: .newlines)
+            for stringComponent in stringComponents where
+            stringComponent.trimmingCharacters(in: .whitespacesAndNewlines) != "" {
+                items.append(
+                    SelectItem(id: UUID().uuidString,
+                               value: stringComponent.trimmingCharacters(in: .whitespacesAndNewlines)))
+            }
         }
     }
 
