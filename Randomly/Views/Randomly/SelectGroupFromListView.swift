@@ -33,26 +33,20 @@ struct SelectGroupFromListView: View {
     var ios26Body: some View {
         ScrollViewReader { scrollView in
             List {
-                Section {
-                    ForEach(items, id: \.self) { item in
-                        HStack {
-                            Text(item.value)
-                                .font(.body)
-                            Spacer()
-                            if selectedItems.contains(item) {
-                                Image(systemName: "checkmark.circle.fill")
-                                    .foregroundStyle(.green)
-                                    .transition(.scale.combined(with: .opacity))
-                            }
+                ForEach(items, id: \.self) { item in
+                    HStack {
+                        Text(item.value)
+                            .font(.body)
+                        Spacer()
+                        if selectedItems.contains(item) {
+                            Image(systemName: "checkmark.circle.fill")
+                                .foregroundStyle(.green)
+                                .transition(.scale.combined(with: .opacity))
                         }
                     }
-                    .onDelete { indexSet in
-                        items.remove(atOffsets: indexSet)
-                    }
                 }
-                Section {
-                    Stepper("Select.Group.Size.\(String(Int(groupSize)))",
-                            value: $groupSize, in: 1...maxGroupSize, step: 1)
+                .onDelete { indexSet in
+                    items.remove(atOffsets: indexSet)
                 }
             }
             .listStyle(.plain)
@@ -85,6 +79,39 @@ struct SelectGroupFromListView: View {
                         }
                     }
                 }
+            }
+            .safeAreaInset(edge: .bottom) {
+                HStack {
+                    Spacer()
+                    HStack(spacing: 12) {
+                        Button {
+                            if groupSize > 1 {
+                                groupSize -= 1
+                            }
+                        } label: {
+                            Image(systemName: "minus")
+                        }
+                        .disabled(groupSize <= 1)
+                        Text("\(Int(groupSize))")
+                            .font(.body)
+                            .fontWeight(.semibold)
+                            .monospacedDigit()
+                            .contentTransition(.numericText())
+                        Button {
+                            if groupSize < maxGroupSize {
+                                groupSize += 1
+                            }
+                        } label: {
+                            Image(systemName: "plus")
+                        }
+                        .disabled(groupSize >= maxGroupSize)
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 10)
+                    .glassEffect(.regular.interactive, in: .capsule)
+                }
+                .padding(.trailing)
+                .padding(.bottom, 8)
             }
         }
         .navigationTitle("Select.Group.ViewTitle")

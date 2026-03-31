@@ -45,18 +45,47 @@ struct GroupDictionaryView: View {
                     EmptyView()
                 }
             }
-            VStack(alignment: .center, spacing: 0.0) {
-                Divider()
-                VStack(alignment: .leading, spacing: 8.0) {
-                    HStack {
-                        Text("Group.GroupCount.\(String(Int(groupCount)))")
-                            .font(.body)
-                        Spacer()
-                        Stepper("", value: $groupCount, in: 2...maxGroupCount, step: 1)
-                            .labelsHidden()
+        }
+        .overlay(alignment: .bottomTrailing) {
+            if #available(iOS 26.0, *) {
+                HStack(spacing: 12) {
+                    Button {
+                        if groupCount > 2 {
+                            groupCount -= 1
+                        }
+                    } label: {
+                        Image(systemName: "minus")
                     }
+                    .disabled(groupCount <= 2)
+                    Text("\(Int(groupCount))")
+                        .font(.body)
+                        .fontWeight(.semibold)
+                        .monospacedDigit()
+                        .contentTransition(.numericText())
+                    Button {
+                        if groupCount < maxGroupCount {
+                            groupCount += 1
+                        }
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                    .disabled(groupCount >= maxGroupCount)
+                }
+                .padding(.horizontal, 16)
+                .padding(.vertical, 10)
+                .glassEffect(.regular.interactive, in: .capsule)
+                .padding(.trailing)
+                .padding(.bottom, 8)
+            } else {
+                HStack {
+                    Text("Group.GroupCount.\(String(Int(groupCount)))")
+                        .font(.body)
+                    Spacer()
+                    Stepper("", value: $groupCount, in: 2...maxGroupCount, step: 1)
+                        .labelsHidden()
                 }
                 .padding()
+                .background(.bar)
             }
         }
         .safeAreaInset(edge: .bottom, spacing: 0.0) {

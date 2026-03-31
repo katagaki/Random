@@ -46,19 +46,13 @@ struct GroupListView: View {
                         }
                     }
                 } else {
-                    Section {
-                        ForEach(items, id: \.self) { item in
-                            Text(item.value)
-                                .font(.body)
-                        }
-                        .onDelete { indexSet in
-                            items.remove(atOffsets: indexSet)
-                        }
+                    ForEach(items, id: \.self) { item in
+                        Text(item.value)
+                            .font(.body)
                     }
-                }
-                Section {
-                    Stepper("Group.GroupCount.\(String(Int(groupCount)))",
-                            value: $groupCount, in: 2...maxGroupCount, step: 1)
+                    .onDelete { indexSet in
+                        items.remove(atOffsets: indexSet)
+                    }
                 }
             }
             .listStyle(.plain)
@@ -91,6 +85,39 @@ struct GroupListView: View {
                         }
                     }
                 }
+            }
+            .safeAreaInset(edge: .bottom) {
+                HStack {
+                    Spacer()
+                    HStack(spacing: 12) {
+                        Button {
+                            if groupCount > 2 {
+                                groupCount -= 1
+                            }
+                        } label: {
+                            Image(systemName: "minus")
+                        }
+                        .disabled(groupCount <= 2)
+                        Text("\(Int(groupCount))")
+                            .font(.body)
+                            .fontWeight(.semibold)
+                            .monospacedDigit()
+                            .contentTransition(.numericText())
+                        Button {
+                            if groupCount < maxGroupCount {
+                                groupCount += 1
+                            }
+                        } label: {
+                            Image(systemName: "plus")
+                        }
+                        .disabled(groupCount >= maxGroupCount)
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 10)
+                    .glassEffect(.regular.interactive, in: .capsule)
+                }
+                .padding(.trailing)
+                .padding(.bottom, 8)
             }
         }
         .navigationTitle("Group.List.ViewTitle")
