@@ -11,6 +11,7 @@ git clone --depth 1 "$ASSETS_REPO" "$ASSETS_DIR"
 echo "Copying scene models..."
 cp "$ASSETS_DIR/Dice.scn" "$SCENE_ASSETS_DIR/Dice.scn"
 cp "$ASSETS_DIR/Coin.scn" "$SCENE_ASSETS_DIR/Coin.scn"
+cp "$ASSETS_DIR/Red_Transparent_Dice_Sharp_Diffuse.png" "$SCENE_ASSETS_DIR/Red_Transparent_Dice_Sharp_Diffuse.png"
 
 echo "Cleaning up..."
 rm -rf "$ASSETS_DIR"
