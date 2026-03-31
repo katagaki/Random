@@ -47,6 +47,8 @@ struct RandomlyView: View {
                                          icon: "clock.fill", iconColor: .red)
                             GridCardView(destination: ViewPath.pickCountry, title: "Generate.Country",
                                          icon: "globe", iconColor: .purple)
+                            GridCardView(destination: ViewPath.pickEmoji, title: "Select.Emoji",
+                                         icon: "face.smiling.inverse", iconColor: .yellow)
                         }
                         .padding(.horizontal)
                     }
@@ -165,6 +167,8 @@ struct RandomlyView: View {
                     PickTimeView()
                 case .pickCountry:
                     PickCountryView()
+                case .pickEmoji:
+                    PickEmojiView()
                 case .generatePassword:
                     GeneratePasswordView()
                 case .generateColor:

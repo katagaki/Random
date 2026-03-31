@@ -15,6 +15,7 @@ enum ViewPath {
     case pickDate
     case pickTime
     case pickCountry
+    case pickEmoji
     case generateWord
     case generatePassword
     case generateColor
