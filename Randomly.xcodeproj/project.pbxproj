@@ -29,6 +29,11 @@
 			path = Randomly;
 			sourceTree = "<group>";
 		};
+		E42E49FF2F7C01140084E87F /* ci_scripts */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ci_scripts;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +50,7 @@
 		E4DDD3D9266C8FC0003CC064 = {
 			isa = PBXGroup;
 			children = (
+				E42E49FF2F7C01140084E87F /* ci_scripts */,
 				E420AC8B2F34E3E900918578 /* Randomly */,
 				E4DDD3E3266C8FC0003CC064 /* Products */,
 			);
