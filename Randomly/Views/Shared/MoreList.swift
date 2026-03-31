@@ -29,13 +29,13 @@ struct MoreList<Content: View>: View {
                 .tint(.primary)
 
                 NavigationLink(value: viewPath) {
-                    Label("More.Attributions", systemImage: "doc.text")
+                    Text("More.Attributions")
                 }
             } header: {
                 ListSectionHeader(text: "More.About")
                     .font(.body)
             }
-
         }
+        .navigationBarTitleDisplayMode(.inline)
     }
 }

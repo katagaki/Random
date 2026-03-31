@@ -16,7 +16,7 @@ struct GroupListView: View {
     @FocusState var focusedField: FocusedField?
 
     var maxGroupCount: Float {
-        max(Float(items.count), 1)
+        max(Float(items.count), 2)
     }
 
     var body: some View {

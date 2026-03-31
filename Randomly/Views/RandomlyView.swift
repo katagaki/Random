@@ -41,14 +41,15 @@ struct RandomlyView: View {
                                              icon: "textformat.abc", iconColor: .teal)
                             }
 
+                            GridCardView(destination: ViewPath.pickEmoji, title: "Select.Emoji",
+                                         icon: "face.smiling.inverse", iconColor: .yellow)
+
                             GridCardView(destination: ViewPath.pickDate, title: "Generate.Date",
                                          icon: "calendar", iconColor: .red)
                             GridCardView(destination: ViewPath.pickTime, title: "Generate.Time",
                                          icon: "clock.fill", iconColor: .red)
                             GridCardView(destination: ViewPath.pickCountry, title: "Generate.Country",
                                          icon: "globe", iconColor: .purple)
-                            GridCardView(destination: ViewPath.pickEmoji, title: "Select.Emoji",
-                                         icon: "face.smiling.inverse", iconColor: .yellow)
                         }
                         .padding(.horizontal)
                     }
@@ -59,6 +60,8 @@ struct RandomlyView: View {
                             .padding(.horizontal)
 
                         LazyVGrid(columns: columns, spacing: 12) {
+                            GridCardView(destination: ViewPath.generateLoremIpsum, title: "Generate.LoremIpsum",
+                                         icon: "text.alignleft", iconColor: .gray)
                             GridCardView(destination: ViewPath.generateWord, title: "Generate.Word",
                                          icon: "textformat.abc", iconColor: .teal)
                             GridCardView(destination: ViewPath.generatePassword, title: "Generate.Password",
@@ -72,8 +75,6 @@ struct RandomlyView: View {
                                          ))
                             GridCardView(destination: ViewPath.generateCoordinate, title: "Generate.Coordinate",
                                          icon: "mappin.and.ellipse", iconColor: .blue)
-                            GridCardView(destination: ViewPath.generateLoremIpsum, title: "Generate.LoremIpsum",
-                                         icon: "text.alignleft", iconColor: .gray)
                         }
                         .padding(.horizontal)
                     }
@@ -188,14 +189,14 @@ struct RandomlyView: View {
                     PickNumberLetterWordView(mode: .englishWord)
                 case .pickWordJapanese:
                     PickNumberLetterWordView(mode: .japaneseWord)
+                case .pickEmoji:
+                    PickEmojiView()
                 case .pickDate:
                     PickDateView()
                 case .pickTime:
                     PickTimeView()
                 case .pickCountry:
                     PickCountryView()
-                case .pickEmoji:
-                    PickEmojiView()
                 case .generatePassword:
                     GeneratePasswordView()
                 case .generateColor:
@@ -255,7 +256,7 @@ struct RandomlyView: View {
                     MoreList(repoName: "katagaki/Random", viewPath: ViewPath.moreAttributions) {
                         Section {
                             NavigationLink(value: ViewPath.moreDatasets) {
-                                Label("More.Datasets", systemImage: "cylinder.split.1x2")
+                                Text("More.Datasets")
                             }
                         } header: {
                             ListSectionHeader(text: "More.General")
@@ -299,6 +300,7 @@ License information can be found at https://creativecommons.org/licenses/by/2.5/
                         }
                     }
                 }
+                .presentationDetents([.medium, .large])
             }
         }
     }

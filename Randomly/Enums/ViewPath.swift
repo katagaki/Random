@@ -12,10 +12,10 @@ enum ViewPath {
     case pickLetter
     case pickWordEnglish
     case pickWordJapanese
+    case pickEmoji
     case pickDate
     case pickTime
     case pickCountry
-    case pickEmoji
     case generateWord
     case generatePassword
     case generateColor
