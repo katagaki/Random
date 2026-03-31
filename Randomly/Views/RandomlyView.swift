@@ -150,7 +150,14 @@ struct RandomlyView: View {
                 }
                 .padding(.vertical)
             }
-            .background(Color(.systemGroupedBackground))
+            .background(
+                LinearGradient(
+                    colors: [Color("BackgroundGradientTop"), Color("BackgroundGradientBottom")],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                .ignoresSafeArea()
+            )
             .navigationDestination(for: ViewPath.self, destination: { viewPath in
                 switch viewPath {
                 case .pickNumber:
