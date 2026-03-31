@@ -5171,19 +5171,19 @@
         }
       }
     },
-    "Shared.Count" : {
+    "Shared.Counters" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Count"
+            "value" : "Counters"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "カウント"
+            "value" : "カウンター"
           }
         }
       }
@@ -5358,36 +5358,36 @@
         }
       }
     },
-    "Shared.Group" : {
+    "Shared.DictionaryTools" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Group"
+            "value" : "Dictionary Tools"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "グループ化"
+            "value" : "辞書ツール"
           }
         }
       }
     },
-    "Shared.Generate" : {
+    "Shared.Generators" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Generate"
+            "value" : "Generators"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "生成"
+            "value" : "ジェネレーター"
           }
         }
       }
@@ -5511,23 +5511,6 @@
         }
       }
     },
-    "Shared.OtherFeatures" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Do"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "その他"
-          }
-        }
-      }
-    },
     "Shared.Paste" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -5545,19 +5528,36 @@
         }
       }
     },
-    "Shared.Pick" : {
+    "Shared.ListTools" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pick"
+            "value" : "List Tools"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "選択"
+            "value" : "リストツール"
+          }
+        }
+      }
+    },
+    "Shared.Pickers" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pickers"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ピッカー"
           }
         }
       }
@@ -5641,6 +5641,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "抽出"
+          }
+        }
+      }
+    },
+    "Shared.TextTools" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text Tools"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "テキストツール"
+          }
+        }
+      }
+    },
+    "Shared.Simulators" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simulators"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "シミュレーター"
           }
         }
       }
