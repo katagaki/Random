@@ -4803,13 +4803,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Group Items"
+            "value" : "Select Multiple"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "項目をグループ化"
+            "value" : "複数選択"
           }
         }
       }
