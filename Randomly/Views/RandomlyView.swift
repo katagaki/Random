@@ -109,8 +109,6 @@ struct RandomlyView: View {
                                          icon: "shuffle", iconColor: .brown)
                             GridCardView(destination: ViewPath.sortDict, title: "Sort.Dictionary",
                                          icon: "arrow.up.arrow.down", iconColor: .brown)
-                            GridCardView(destination: ViewPath.groupDict, title: "Group.Dictionary",
-                                         icon: "rectangle.3.group", iconColor: .brown)
                         }
                         .padding(.horizontal)
                     }
