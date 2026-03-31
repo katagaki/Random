@@ -45,9 +45,12 @@ struct GenerateLoremIpsumView: View {
     ]
     // swiftlint:enable line_length
 
+    private static let classicOpening = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+
     @State var result: String = ""
     @State var mode: LoremMode = .sentences
     @State var count: Float = 3
+    @State var isFirstGeneration: Bool = true
 
     var countRange: ClosedRange<Float> {
         switch mode {
@@ -107,12 +110,42 @@ struct GenerateLoremIpsumView: View {
 
     func generate() -> String {
         let amount = Int(count)
+        let useOpening = isFirstGeneration
+        isFirstGeneration = false
+
         switch mode {
         case .words:
+            if useOpening {
+                let openingWords = Self.classicOpening
+                    .replacingOccurrences(of: ".", with: "")
+                    .replacingOccurrences(of: ",", with: "")
+                    .components(separatedBy: " ")
+                if amount <= openingWords.count {
+                    return openingWords.prefix(amount).joined(separator: " ").capitalizingFirst() + "."
+                }
+                let remaining = generateWords(amount - openingWords.count)
+                return openingWords.joined(separator: " ") + " " + remaining + "."
+            }
             return generateWords(amount).capitalizingFirst() + "."
         case .sentences:
+            if useOpening {
+                if amount == 1 {
+                    return Self.classicOpening
+                }
+                let rest = (1..<amount).map { _ in generateSentence() }.joined(separator: " ")
+                return Self.classicOpening + " " + rest
+            }
             return (0..<amount).map { _ in generateSentence() }.joined(separator: " ")
         case .paragraphs:
+            if useOpening {
+                let firstParagraph = Self.classicOpening + " " +
+                    (1..<Int.random(in: 3...6)).map { _ in generateSentence() }.joined(separator: " ")
+                if amount == 1 {
+                    return firstParagraph
+                }
+                let rest = (1..<amount).map { _ in generateParagraph() }.joined(separator: "\n\n")
+                return firstParagraph + "\n\n" + rest
+            }
             return (0..<amount).map { _ in generateParagraph() }.joined(separator: "\n\n")
         }
     }
