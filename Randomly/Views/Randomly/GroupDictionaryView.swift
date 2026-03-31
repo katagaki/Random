@@ -14,28 +14,20 @@ struct GroupDictionaryView: View {
     @State var groupCount: Float = 2
 
     var maxGroupCount: Float {
-        max(Float(items.count), 1)
+        max(Float(items.count), 2)
     }
 
     var body: some View {
         VStack(alignment: .center, spacing: 8.0) {
             if !groupedItems.isEmpty {
                 List {
-                    ForEach(Array(groupedItems.enumerated()), id: \.offset) { index, group in
+                    ForEach(groupedItems.indices, id: \.self) { index in
                         Section {
-                            ForEach(group, id: \.self) { item in
-                                HStack(alignment: .center, spacing: 8.0) {
-                                    Text(item.id)
-                                        .font(.body)
-                                        .foregroundStyle(.secondary)
-                                    Spacer()
-                                    Text(item.value)
-                                        .font(.body)
-                                }
+                            ForEach(groupedItems[index]) { item in
+                                dictionaryRow(item: item)
                             }
                         } header: {
-                            Text("Group.GroupLabel.\(String(index + 1))")
-                                .font(.headline)
+                            sectionHeader(index: index)
                         }
                     }
                 }
@@ -73,7 +65,7 @@ struct GroupDictionaryView: View {
                 }
                 .padding(.horizontal, 16)
                 .padding(.vertical, 10)
-                .glassEffect(.regular.interactive, in: .capsule)
+                .glassEffect(.regular.interactive(), in: .capsule)
                 .padding(.trailing)
                 .padding(.bottom, 8)
             } else {
@@ -117,6 +109,24 @@ struct GroupDictionaryView: View {
             groupedItems.removeAll()
         }
         .persistItems(key: "groupDictItems", items: $items)
+    }
+
+    @ViewBuilder
+    func sectionHeader(index: Int) -> some View {
+        Text("Group.GroupLabel.\(String(index + 1))")
+            .font(.headline)
+    }
+
+    @ViewBuilder
+    func dictionaryRow(item: SelectItem) -> some View {
+        HStack(alignment: .center, spacing: 8.0) {
+            Text(item.id)
+                .font(.body)
+                .foregroundStyle(.secondary)
+            Spacer()
+            Text(item.value)
+                .font(.body)
+        }
     }
 
     func group() {

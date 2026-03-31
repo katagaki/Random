@@ -34,15 +34,14 @@ struct GroupListView: View {
         ScrollViewReader { scrollView in
             List {
                 if !groupedItems.isEmpty {
-                    ForEach(Array(groupedItems.enumerated()), id: \.offset) { index, group in
+                    ForEach(groupedItems.indices, id: \.self) { index in
                         Section {
-                            ForEach(group, id: \.self) { item in
+                            ForEach(groupedItems[index]) { item in
                                 Text(item.value)
                                     .font(.body)
                             }
                         } header: {
-                            Text("Group.GroupLabel.\(String(index + 1))")
-                                .font(.headline)
+                            sectionHeader(index: index)
                         }
                     }
                 } else {
@@ -114,7 +113,7 @@ struct GroupListView: View {
                     }
                     .padding(.horizontal, 16)
                     .padding(.vertical, 10)
-                    .glassEffect(.regular.interactive, in: .capsule)
+                    .glassEffect(.regular.interactive(), in: .capsule)
                 }
                 .padding(.trailing)
                 .padding(.bottom, 8)
@@ -223,6 +222,12 @@ struct GroupListView: View {
         .onChange(of: items) {
             groupCount = min(groupCount, maxGroupCount)
         }
+    }
+
+    @ViewBuilder
+    func sectionHeader(index: Int) -> some View {
+        Text("Group.GroupLabel.\(String(index + 1))")
+            .font(.headline)
     }
 
     func group() {
