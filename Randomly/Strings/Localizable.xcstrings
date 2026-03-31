@@ -5974,13 +5974,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Letters"
+            "value" : "Anagram"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "文字"
+            "value" : "アナグラム"
           }
         }
       }
