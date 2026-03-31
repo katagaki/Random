@@ -4712,19 +4712,19 @@
         }
       }
     },
-    "More.ViewOnGitHub" : {
+    "More.SourceCode" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "View on GitHub"
+            "value" : "Source Code"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "GitHubでソースコードを閲覧"
+            "value" : "ソースコード"
           }
         }
       }
