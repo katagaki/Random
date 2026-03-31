@@ -5838,13 +5838,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dictionary"
+            "value" : "Group"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "辞書"
+            "value" : "グループ化"
           }
         }
       }
@@ -5906,13 +5906,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "List"
+            "value" : "Group"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "リスト"
+            "value" : "グループ化"
           }
         }
       }
@@ -5940,13 +5940,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dictionary"
+            "value" : "Shuffle"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "辞書"
+            "value" : "シャッフル"
           }
         }
       }
@@ -5957,13 +5957,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "List"
+            "value" : "Shuffle"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "リスト"
+            "value" : "シャッフル"
           }
         }
       }
@@ -6025,13 +6025,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dictionary"
+            "value" : "Sort"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "辞書"
+            "value" : "並べ替え"
           }
         }
       }
@@ -6042,13 +6042,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "List"
+            "value" : "Sort"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "リスト"
+            "value" : "並べ替え"
           }
         }
       }

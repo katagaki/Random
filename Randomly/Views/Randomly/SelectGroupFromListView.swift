@@ -33,20 +33,26 @@ struct SelectGroupFromListView: View {
     var ios26Body: some View {
         ScrollViewReader { scrollView in
             List {
-                ForEach(items, id: \.self) { item in
-                    HStack {
-                        Text(item.value)
-                            .font(.body)
-                        Spacer()
-                        if selectedItems.contains(item) {
-                            Image(systemName: "checkmark.circle.fill")
-                                .foregroundStyle(.green)
-                                .transition(.scale.combined(with: .opacity))
+                Section {
+                    ForEach(items, id: \.self) { item in
+                        HStack {
+                            Text(item.value)
+                                .font(.body)
+                            Spacer()
+                            if selectedItems.contains(item) {
+                                Image(systemName: "checkmark.circle.fill")
+                                    .foregroundStyle(.green)
+                                    .transition(.scale.combined(with: .opacity))
+                            }
                         }
                     }
+                    .onDelete { indexSet in
+                        items.remove(atOffsets: indexSet)
+                    }
                 }
-                .onDelete { indexSet in
-                    items.remove(atOffsets: indexSet)
+                Section {
+                    Stepper("Select.Group.Size.\(String(Int(groupSize)))",
+                            value: $groupSize, in: 1...maxGroupSize, step: 1)
                 }
             }
             .listStyle(.plain)
@@ -103,13 +109,6 @@ struct SelectGroupFromListView: View {
                     focusedField = .newItemField
                 }
                 .disabled(newItem.isEmpty)
-            }
-            ToolbarSpacer(.fixed, placement: .bottomBar)
-            ToolbarItemGroup(placement: .bottomBar) {
-                Text("Select.Group.Size.\(String(Int(groupSize)))")
-                    .font(.caption)
-                Stepper("", value: $groupSize, in: 1...maxGroupSize, step: 1)
-                    .labelsHidden()
             }
             ToolbarSpacer(.fixed, placement: .bottomBar)
             ToolbarItemGroup(placement: .bottomBar) {
