@@ -72,6 +72,8 @@ struct RandomlyView: View {
                                          ))
                             GridCardView(destination: ViewPath.generateCoordinate, title: "Generate.Coordinate",
                                          icon: "mappin.and.ellipse", iconColor: .blue)
+                            GridCardView(destination: ViewPath.generateLoremIpsum, title: "Generate.LoremIpsum",
+                                         icon: "text.alignleft", iconColor: .gray)
                         }
                         .padding(.horizontal)
                     }
@@ -182,6 +184,8 @@ struct RandomlyView: View {
                     GenerateColorView()
                 case .generateCoordinate:
                     GenerateCoordinateView()
+                case .generateLoremIpsum:
+                    GenerateLoremIpsumView()
                 case .generateWord:
                     GenerateWordView()
                 case .selectItemFromList:
