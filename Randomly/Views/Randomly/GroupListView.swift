@@ -46,13 +46,19 @@ struct GroupListView: View {
                         }
                     }
                 } else {
-                    ForEach(items, id: \.self) { item in
-                        Text(item.value)
-                            .font(.body)
+                    Section {
+                        ForEach(items, id: \.self) { item in
+                            Text(item.value)
+                                .font(.body)
+                        }
+                        .onDelete { indexSet in
+                            items.remove(atOffsets: indexSet)
+                        }
                     }
-                    .onDelete { indexSet in
-                        items.remove(atOffsets: indexSet)
-                    }
+                }
+                Section {
+                    Stepper("Group.GroupCount.\(String(Int(groupCount)))",
+                            value: $groupCount, in: 2...maxGroupCount, step: 1)
                 }
             }
             .listStyle(.plain)
@@ -109,13 +115,6 @@ struct GroupListView: View {
                     focusedField = .newItemField
                 }
                 .disabled(newItem.isEmpty)
-            }
-            ToolbarSpacer(.fixed, placement: .bottomBar)
-            ToolbarItemGroup(placement: .bottomBar) {
-                Text("Group.GroupCount.\(String(Int(groupCount)))")
-                    .font(.caption)
-                Stepper("", value: $groupCount, in: 2...maxGroupCount, step: 1)
-                    .labelsHidden()
             }
             ToolbarSpacer(.fixed, placement: .bottomBar)
             ToolbarItemGroup(placement: .bottomBar) {
