@@ -4735,13 +4735,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Item From List"
+            "value" : "Select"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "リストから項目"
+            "value" : "抽出"
           }
         }
       }
@@ -4803,13 +4803,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Group"
+            "value" : "Group Items"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "グループ"
+            "value" : "項目をグループ化"
           }
         }
       }
@@ -5838,13 +5838,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Group"
+            "value" : "Group Items"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "グループ化"
+            "value" : "項目をグループ化"
           }
         }
       }
@@ -5906,13 +5906,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Group"
+            "value" : "Group Items"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "グループ化"
+            "value" : "項目をグループ化"
           }
         }
       }

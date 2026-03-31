@@ -90,7 +90,7 @@ struct RandomlyView: View {
                             GridCardView(destination: ViewPath.selectGroupFromList, title: "Select.Group",
                                          icon: "person.3.fill", iconColor: .orange)
                             GridCardView(destination: ViewPath.shuffleList, title: "Shuffle.List",
-                                         icon: "arrow.up.and.down.and.sparkles", iconColor: .mint)
+                                         icon: "shuffle", iconColor: .mint)
                             GridCardView(destination: ViewPath.sortList, title: "Sort.List",
                                          icon: "arrow.up.arrow.down", iconColor: .mint)
                             GridCardView(destination: ViewPath.groupList, title: "Group.List",
@@ -106,7 +106,7 @@ struct RandomlyView: View {
 
                         LazyVGrid(columns: columns, spacing: 12) {
                             GridCardView(destination: ViewPath.shuffleDict, title: "Shuffle.Dictionary",
-                                         icon: "arrow.up.and.down.and.sparkles", iconColor: .brown)
+                                         icon: "shuffle", iconColor: .brown)
                             GridCardView(destination: ViewPath.sortDict, title: "Sort.Dictionary",
                                          icon: "arrow.up.arrow.down", iconColor: .brown)
                             GridCardView(destination: ViewPath.groupDict, title: "Group.Dictionary",
