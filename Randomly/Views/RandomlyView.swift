@@ -75,6 +75,12 @@ struct RandomlyView: View {
                                          ))
                             GridCardView(destination: ViewPath.generateCoordinate, title: "Generate.Coordinate",
                                          icon: "mappin.and.ellipse", iconColor: .blue)
+                            GridCardView(destination: ViewPath.generateUUID, title: "Generate.UUID",
+                                         icon: "number.square", iconColor: .indigo)
+                            GridCardView(destination: ViewPath.generateNumberSequence, title: "Generate.NumberSequence",
+                                         icon: "list.number", iconColor: .cyan)
+                            GridCardView(destination: ViewPath.generatePassphrase, title: "Generate.Passphrase",
+                                         icon: "lock.shield", iconColor: .green)
                         }
                         .padding(.horizontal)
                     }
@@ -139,6 +145,38 @@ struct RandomlyView: View {
                                          icon: "die.face.5.fill", iconColor: .red)
                             GridCardView(destination: ViewPath.drawCard, title: "Do.CardDraw",
                                          icon: "square.on.square.fill", iconColor: .gray)
+                        }
+                        .padding(.horizontal)
+                    }
+
+                    VStack(alignment: .leading, spacing: 12) {
+                        ListSectionHeader(text: "Shared.DateTimeTools")
+                            .font(.body)
+                            .padding(.horizontal)
+
+                        LazyVGrid(columns: columns, spacing: 12) {
+                            GridCardView(destination: ViewPath.pickDayOfWeek, title: "Pick.DayOfWeek",
+                                         icon: "calendar.day.timeline.left", iconColor: .orange)
+                            GridCardView(destination: ViewPath.pickMonth, title: "Pick.Month",
+                                         icon: "calendar.circle", iconColor: .pink)
+                        }
+                        .padding(.horizontal)
+                    }
+
+                    VStack(alignment: .leading, spacing: 12) {
+                        ListSectionHeader(text: "Shared.ChartTools")
+                            .font(.body)
+                            .padding(.horizontal)
+
+                        LazyVGrid(columns: columns, spacing: 12) {
+                            GridCardView(destination: ViewPath.chartBar, title: "Chart.Bar",
+                                         icon: "chart.bar.fill", iconColor: .blue)
+                            GridCardView(destination: ViewPath.chartPie, title: "Chart.Pie",
+                                         icon: "chart.pie.fill", iconColor: .orange)
+                            GridCardView(destination: ViewPath.chartLine, title: "Chart.Line",
+                                         icon: "chart.xyaxis.line", iconColor: .green)
+                            GridCardView(destination: ViewPath.chartScatter, title: "Chart.Scatter",
+                                         icon: "chart.dots.scatter", iconColor: .purple)
                         }
                         .padding(.horizontal)
                     }
@@ -225,6 +263,24 @@ struct RandomlyView: View {
                     RollDiceView()
                 case .drawCard:
                     DrawCardView()
+                case .pickDayOfWeek:
+                    PickDayOfWeekView()
+                case .pickMonth:
+                    PickMonthView()
+                case .generateUUID:
+                    GenerateUUIDView()
+                case .generateNumberSequence:
+                    GenerateNumberSequenceView()
+                case .generatePassphrase:
+                    GeneratePassphraseView()
+                case .chartBar:
+                    RandomBarChartView()
+                case .chartPie:
+                    RandomPieChartView()
+                case .chartLine:
+                    RandomLineChartView()
+                case .chartScatter:
+                    RandomScatterChartView()
                 default:
                     Color.clear
                 }

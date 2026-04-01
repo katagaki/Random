@@ -36,6 +36,15 @@ enum ViewPath {
     case tossCoin
     case rollDice
     case drawCard
+    case pickDayOfWeek
+    case pickMonth
+    case generateUUID
+    case generateNumberSequence
+    case generatePassphrase
+    case chartBar
+    case chartPie
+    case chartLine
+    case chartScatter
     case moreDatasets
     case moreAttributions
 }
