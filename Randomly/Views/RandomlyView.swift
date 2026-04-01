@@ -59,43 +59,28 @@ struct RandomlyView: View {
                                          icon: "textformat.abc", iconColor: .teal)
                             GridCardView(destination: ViewPath.generateLoremIpsum, title: "Generate.LoremIpsum",
                                          icon: "text.alignleft", iconColor: .gray)
+                            GridCardView(destination: ViewPath.selectWordFromText, title: "Select.WordFromText",
+                                         icon: "doc.text", iconColor: .teal)
+                            GridCardView(destination: ViewPath.shuffleLetters, title: "Shuffle.Letters",
+                                         icon: "textformat.abc", iconColor: .pink)
                         }
                         .padding(.horizontal)
                     }
 
                     VStack(alignment: .leading, spacing: 12) {
-                        ListSectionHeader(text: "Shared.Security")
+                        ListSectionHeader(text: "Shared.DateTimeTools")
                             .font(.body)
                             .padding(.horizontal)
 
                         LazyVGrid(columns: columns, spacing: 12) {
-                            GridCardView(destination: ViewPath.generatePassword, title: "Generate.Password",
-                                         icon: "key.fill", iconColor: .orange)
-                            GridCardView(destination: ViewPath.generatePassphrase, title: "Generate.Passphrase",
-                                         icon: "lock.shield", iconColor: .green)
-                            GridCardView(destination: ViewPath.generateUUID, title: "Generate.UUID",
-                                         icon: "number.square", iconColor: .indigo)
-                        }
-                        .padding(.horizontal)
-                    }
-
-                    VStack(alignment: .leading, spacing: 12) {
-                        ListSectionHeader(text: "Shared.Others")
-                            .font(.body)
-                            .padding(.horizontal)
-
-                        LazyVGrid(columns: columns, spacing: 12) {
-                            GridCardView(destination: ViewPath.pickCountry, title: "Generate.Country",
-                                         icon: "globe", iconColor: .purple)
-                            GridCardView(destination: ViewPath.generateColor, title: "Generate.Color",
-                                         icon: "paintpalette.fill",
-                                         iconGradient: LinearGradient(
-                                             colors: [.red, .orange, .yellow, .green, .cyan, .blue, .purple],
-                                             startPoint: .leading,
-                                             endPoint: .trailing
-                                         ))
-                            GridCardView(destination: ViewPath.generateCoordinate, title: "Generate.Coordinate",
-                                         icon: "mappin.and.ellipse", iconColor: .blue)
+                            GridCardView(destination: ViewPath.pickDate, title: "Generate.Date",
+                                         icon: "calendar", iconColor: .red)
+                            GridCardView(destination: ViewPath.pickTime, title: "Generate.Time",
+                                         icon: "clock.fill", iconColor: .red)
+                            GridCardView(destination: ViewPath.pickDayOfWeek, title: "Pick.DayOfWeek",
+                                         icon: "calendar.day.timeline.left", iconColor: .orange)
+                            GridCardView(destination: ViewPath.pickMonth, title: "Pick.Month",
+                                         icon: "calendar.circle", iconColor: .pink)
                         }
                         .padding(.horizontal)
                     }
@@ -135,15 +120,19 @@ struct RandomlyView: View {
                     }
 
                     VStack(alignment: .leading, spacing: 12) {
-                        ListSectionHeader(text: "Shared.TextTools")
+                        ListSectionHeader(text: "Shared.ChartTools")
                             .font(.body)
                             .padding(.horizontal)
 
                         LazyVGrid(columns: columns, spacing: 12) {
-                            GridCardView(destination: ViewPath.selectWordFromText, title: "Select.WordFromText",
-                                         icon: "doc.text", iconColor: .teal)
-                            GridCardView(destination: ViewPath.shuffleLetters, title: "Shuffle.Letters",
-                                         icon: "textformat.abc", iconColor: .pink)
+                            GridCardView(destination: ViewPath.chartBar, title: "Chart.Bar",
+                                         icon: "chart.bar.fill", iconColor: .blue)
+                            GridCardView(destination: ViewPath.chartPie, title: "Chart.Pie",
+                                         icon: "chart.pie.fill", iconColor: .orange)
+                            GridCardView(destination: ViewPath.chartLine, title: "Chart.Line",
+                                         icon: "chart.xyaxis.line", iconColor: .green)
+                            GridCardView(destination: ViewPath.chartScatter, title: "Chart.Scatter",
+                                         icon: "chart.dots.scatter", iconColor: .purple)
                         }
                         .padding(.horizontal)
                     }
@@ -165,42 +154,6 @@ struct RandomlyView: View {
                     }
 
                     VStack(alignment: .leading, spacing: 12) {
-                        ListSectionHeader(text: "Shared.DateTimeTools")
-                            .font(.body)
-                            .padding(.horizontal)
-
-                        LazyVGrid(columns: columns, spacing: 12) {
-                            GridCardView(destination: ViewPath.pickDate, title: "Generate.Date",
-                                         icon: "calendar", iconColor: .red)
-                            GridCardView(destination: ViewPath.pickTime, title: "Generate.Time",
-                                         icon: "clock.fill", iconColor: .red)
-                            GridCardView(destination: ViewPath.pickDayOfWeek, title: "Pick.DayOfWeek",
-                                         icon: "calendar.day.timeline.left", iconColor: .orange)
-                            GridCardView(destination: ViewPath.pickMonth, title: "Pick.Month",
-                                         icon: "calendar.circle", iconColor: .pink)
-                        }
-                        .padding(.horizontal)
-                    }
-
-                    VStack(alignment: .leading, spacing: 12) {
-                        ListSectionHeader(text: "Shared.ChartTools")
-                            .font(.body)
-                            .padding(.horizontal)
-
-                        LazyVGrid(columns: columns, spacing: 12) {
-                            GridCardView(destination: ViewPath.chartBar, title: "Chart.Bar",
-                                         icon: "chart.bar.fill", iconColor: .blue)
-                            GridCardView(destination: ViewPath.chartPie, title: "Chart.Pie",
-                                         icon: "chart.pie.fill", iconColor: .orange)
-                            GridCardView(destination: ViewPath.chartLine, title: "Chart.Line",
-                                         icon: "chart.xyaxis.line", iconColor: .green)
-                            GridCardView(destination: ViewPath.chartScatter, title: "Chart.Scatter",
-                                         icon: "chart.dots.scatter", iconColor: .purple)
-                        }
-                        .padding(.horizontal)
-                    }
-
-                    VStack(alignment: .leading, spacing: 12) {
                         ListSectionHeader(text: "Shared.Counters")
                             .font(.body)
                             .padding(.horizontal)
@@ -210,6 +163,33 @@ struct RandomlyView: View {
                                          icon: "plus.circle.fill", iconColor: Locale.current.language.languageCode == .japanese ? .red : .green)
                             GridCardView(destination: ViewPath.countDown, title: "Count.Down",
                                          icon: "minus.circle.fill", iconColor: Locale.current.language.languageCode == .japanese ? .blue : .red)
+                        }
+                        .padding(.horizontal)
+                    }
+
+                    VStack(alignment: .leading, spacing: 12) {
+                        ListSectionHeader(text: "Shared.Others")
+                            .font(.body)
+                            .padding(.horizontal)
+
+                        LazyVGrid(columns: columns, spacing: 12) {
+                            GridCardView(destination: ViewPath.generatePassword, title: "Generate.Password",
+                                         icon: "key.fill", iconColor: .orange)
+                            GridCardView(destination: ViewPath.generatePassphrase, title: "Generate.Passphrase",
+                                         icon: "lock.shield", iconColor: .green)
+                            GridCardView(destination: ViewPath.generateUUID, title: "Generate.UUID",
+                                         icon: "number.square", iconColor: .indigo)
+                            GridCardView(destination: ViewPath.pickCountry, title: "Generate.Country",
+                                         icon: "globe", iconColor: .purple)
+                            GridCardView(destination: ViewPath.generateColor, title: "Generate.Color",
+                                         icon: "paintpalette.fill",
+                                         iconGradient: LinearGradient(
+                                             colors: [.red, .orange, .yellow, .green, .cyan, .blue, .purple],
+                                             startPoint: .leading,
+                                             endPoint: .trailing
+                                         ))
+                            GridCardView(destination: ViewPath.generateCoordinate, title: "Generate.Coordinate",
+                                         icon: "mappin.and.ellipse", iconColor: .blue)
                         }
                         .padding(.horizontal)
                     }
