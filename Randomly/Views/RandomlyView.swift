@@ -62,6 +62,8 @@ struct RandomlyView: View {
                                          icon: "textformat.abc", iconColor: .teal)
                             GridCardView(destination: ViewPath.generatePassword, title: "Generate.Password",
                                          icon: "key.fill", iconColor: .orange)
+                            GridCardView(destination: ViewPath.generatePassphrase, title: "Generate.Passphrase",
+                                         icon: "lock.shield", iconColor: .green)
                             GridCardView(destination: ViewPath.generateColor, title: "Generate.Color",
                                          icon: "paintpalette.fill",
                                          iconGradient: LinearGradient(
@@ -75,8 +77,6 @@ struct RandomlyView: View {
                                          icon: "number.square", iconColor: .indigo)
                             GridCardView(destination: ViewPath.generateNumberSequence, title: "Generate.NumberSequence",
                                          icon: "list.number", iconColor: .cyan)
-                            GridCardView(destination: ViewPath.generatePassphrase, title: "Generate.Passphrase",
-                                         icon: "lock.shield", iconColor: .green)
                         }
                         .padding(.horizontal)
                     }
