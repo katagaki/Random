@@ -5625,7 +5625,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "日付・時刻ツール"
+            "value" : "日付・時刻"
           }
         }
       }
@@ -5812,7 +5812,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "辞書ツール"
+            "value" : "辞書"
           }
         }
       }
@@ -5982,7 +5982,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "リストツール"
+            "value" : "リスト"
           }
         }
       }
@@ -6201,7 +6201,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "テキストツール"
+            "value" : "テキスト"
           }
         }
       }
