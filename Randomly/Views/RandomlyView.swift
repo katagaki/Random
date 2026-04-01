@@ -120,6 +120,22 @@ struct RandomlyView: View {
                     }
 
                     VStack(alignment: .leading, spacing: 12) {
+                        ListSectionHeader(text: "Shared.Security")
+                            .font(.body)
+                            .padding(.horizontal)
+
+                        LazyVGrid(columns: columns, spacing: 12) {
+                            GridCardView(destination: ViewPath.generatePassword, title: "Generate.Password",
+                                         icon: "key.fill", iconColor: .orange)
+                            GridCardView(destination: ViewPath.generatePassphrase, title: "Generate.Passphrase",
+                                         icon: "lock.shield", iconColor: .green)
+                            GridCardView(destination: ViewPath.generateUUID, title: "Generate.UUID",
+                                         icon: "number.square", iconColor: .indigo)
+                        }
+                        .padding(.horizontal)
+                    }
+
+                    VStack(alignment: .leading, spacing: 12) {
                         ListSectionHeader(text: "Shared.ChartTools")
                             .font(.body)
                             .padding(.horizontal)
@@ -173,12 +189,6 @@ struct RandomlyView: View {
                             .padding(.horizontal)
 
                         LazyVGrid(columns: columns, spacing: 12) {
-                            GridCardView(destination: ViewPath.generatePassword, title: "Generate.Password",
-                                         icon: "key.fill", iconColor: .orange)
-                            GridCardView(destination: ViewPath.generatePassphrase, title: "Generate.Passphrase",
-                                         icon: "lock.shield", iconColor: .green)
-                            GridCardView(destination: ViewPath.generateUUID, title: "Generate.UUID",
-                                         icon: "number.square", iconColor: .indigo)
                             GridCardView(destination: ViewPath.pickCountry, title: "Generate.Country",
                                          icon: "globe", iconColor: .purple)
                             GridCardView(destination: ViewPath.generateColor, title: "Generate.Color",
