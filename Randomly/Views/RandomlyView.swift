@@ -44,10 +44,6 @@ struct RandomlyView: View {
                             GridCardView(destination: ViewPath.pickEmoji, title: "Select.Emoji",
                                          icon: "face.smiling.inverse", iconColor: .yellow)
 
-                            GridCardView(destination: ViewPath.pickDate, title: "Generate.Date",
-                                         icon: "calendar", iconColor: .red)
-                            GridCardView(destination: ViewPath.pickTime, title: "Generate.Time",
-                                         icon: "clock.fill", iconColor: .red)
                             GridCardView(destination: ViewPath.pickCountry, title: "Generate.Country",
                                          icon: "globe", iconColor: .purple)
                         }
@@ -155,6 +151,10 @@ struct RandomlyView: View {
                             .padding(.horizontal)
 
                         LazyVGrid(columns: columns, spacing: 12) {
+                            GridCardView(destination: ViewPath.pickDate, title: "Generate.Date",
+                                         icon: "calendar", iconColor: .red)
+                            GridCardView(destination: ViewPath.pickTime, title: "Generate.Time",
+                                         icon: "clock.fill", iconColor: .red)
                             GridCardView(destination: ViewPath.pickDayOfWeek, title: "Pick.DayOfWeek",
                                          icon: "calendar.day.timeline.left", iconColor: .orange)
                             GridCardView(destination: ViewPath.pickMonth, title: "Pick.Month",
