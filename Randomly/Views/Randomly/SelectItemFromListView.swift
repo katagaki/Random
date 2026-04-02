@@ -12,6 +12,8 @@ struct SelectItemFromListView: View {
     @State var selectedItem: SelectItem?
     @State var items: [SelectItem] = []
     @State var newItem: String = ""
+    @State var editingItem: SelectItem?
+    @State var editingValue: String = ""
     @FocusState var focusedField: FocusedField?
 
     var body: some View {
@@ -31,19 +33,6 @@ struct SelectItemFromListView: View {
             ScrollViewReader { scrollView in
                 listContent
                     .toolbar {
-                        ToolbarItemGroup(placement: .bottomBar) {
-                            TextField(.sharedListNewItem, text: $newItem)
-                                .submitLabel(.done)
-                                .focused($focusedField, equals: .newItemField)
-                                .onSubmit(addNewItem)
-                                .padding(.leading)
-                            Button(.sharedAdd, systemImage: "plus") {
-                                addNewItem()
-                                focusedField = .newItemField
-                            }
-                            .disabled(newItem == "")
-                        }
-                        ToolbarSpacer(.fixed, placement: .bottomBar)
                         ToolbarItemGroup(placement: .bottomBar) {
                             Button(.sharedCopy, systemImage: "doc.on.doc") {
                                 UIPasteboard.general.string = selectedItem!.value
@@ -110,18 +99,49 @@ struct SelectItemFromListView: View {
     var listContent: some View {
         ScrollViewReader { scrollView in
             List(selection: $selectedItem) {
-                ForEach(items, id: \.self) { item in
-                    Text(item.value)
-                        .font(.body)
+                ForEach($items, id: \.id) { $item in
+                    if editingItem?.id == item.id {
+                        TextField("", text: $editingValue)
+                            .font(.body)
+                            .focused($focusedField, equals: .editItemField)
+                            .submitLabel(.done)
+                            .onSubmit {
+                                commitEdit()
+                            }
+                    } else {
+                        Text(item.value)
+                            .font(.body)
+                            .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                                Button(role: .destructive) {
+                                    if let index = items.firstIndex(where: { $0.id == item.id }) {
+                                        items.remove(at: index)
+                                    }
+                                } label: {
+                                    Label("Shared.Delete", systemImage: "trash")
+                                }
+                                Button {
+                                    startEditing(item)
+                                } label: {
+                                    Label("Shared.Edit", systemImage: "pencil")
+                                }
+                                .tint(.orange)
+                            }
+                    }
                 }
-                .onDelete { indexSet in
-                    items.remove(atOffsets: indexSet)
+                Section {
+                    TextField("Shared.List.NewItem", text: $newItem)
+                        .font(.body)
+                        .focused($focusedField, equals: .newItemField)
+                        .submitLabel(.done)
+                        .onSubmit {
+                            addNewItem()
+                        }
                 }
             }
             .listStyle(.plain)
             .onChange(of: items) {
                 if items.count > 0 {
-                    scrollView.scrollTo(items.last!, anchor: .bottom)
+                    scrollView.scrollTo(items.last!.id, anchor: .bottom)
                 }
             }
             .overlay {
@@ -166,10 +186,30 @@ struct SelectItemFromListView: View {
                 SelectItem(id: UUID().uuidString,
                            value: newItem))
             newItem = ""
+            focusedField = .newItemField
         }
+    }
+
+    func startEditing(_ item: SelectItem) {
+        editingItem = item
+        editingValue = item.value
+        focusedField = .editItemField
+    }
+
+    func commitEdit() {
+        if let editingItem, let index = items.firstIndex(where: { $0.id == editingItem.id }) {
+            if editingValue.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                items.remove(at: index)
+            } else {
+                items[index].value = editingValue
+            }
+        }
+        editingItem = nil
+        editingValue = ""
     }
 
     enum FocusedField: Hashable {
         case newItemField
+        case editItemField
     }
 }

@@ -13,6 +13,8 @@ struct SelectGroupFromListView: View {
     @State var selectedItems: [SelectItem] = []
     @State var groupSize: Float = 2
     @State var newItem: String = ""
+    @State var editingItem: SelectItem?
+    @State var editingValue: String = ""
     @FocusState var focusedField: FocusedField?
 
     var maxGroupSize: Float {
@@ -33,26 +35,57 @@ struct SelectGroupFromListView: View {
     var ios26Body: some View {
         ScrollViewReader { scrollView in
             List {
-                ForEach(items, id: \.self) { item in
-                    HStack {
-                        Text(item.value)
+                ForEach($items, id: \.id) { $item in
+                    if editingItem?.id == item.id {
+                        TextField("", text: $editingValue)
                             .font(.body)
-                        Spacer()
-                        if selectedItems.contains(item) {
-                            Image(systemName: "checkmark.circle.fill")
-                                .foregroundStyle(.green)
-                                .transition(.scale.combined(with: .opacity))
+                            .focused($focusedField, equals: .editItemField)
+                            .submitLabel(.done)
+                            .onSubmit {
+                                commitEdit()
+                            }
+                    } else {
+                        HStack {
+                            Text(item.value)
+                                .font(.body)
+                            Spacer()
+                            if selectedItems.contains(item) {
+                                Image(systemName: "checkmark.circle.fill")
+                                    .foregroundStyle(.green)
+                                    .transition(.scale.combined(with: .opacity))
+                            }
+                        }
+                        .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                            Button(role: .destructive) {
+                                if let index = items.firstIndex(where: { $0.id == item.id }) {
+                                    items.remove(at: index)
+                                }
+                            } label: {
+                                Label("Shared.Delete", systemImage: "trash")
+                            }
+                            Button {
+                                startEditing(item)
+                            } label: {
+                                Label("Shared.Edit", systemImage: "pencil")
+                            }
+                            .tint(.orange)
                         }
                     }
                 }
-                .onDelete { indexSet in
-                    items.remove(atOffsets: indexSet)
+                Section {
+                    TextField("Shared.List.NewItem", text: $newItem)
+                        .font(.body)
+                        .focused($focusedField, equals: .newItemField)
+                        .submitLabel(.done)
+                        .onSubmit {
+                            addNewItem()
+                        }
                 }
             }
             .listStyle(.plain)
             .onChange(of: items) {
                 if items.count > 0 {
-                    scrollView.scrollTo(items.last!, anchor: .bottom)
+                    scrollView.scrollTo(items.last!.id, anchor: .bottom)
                 }
                 groupSize = min(groupSize, maxGroupSize)
             }
@@ -126,19 +159,6 @@ struct SelectGroupFromListView: View {
                 }
             }
             ToolbarItemGroup(placement: .bottomBar) {
-                TextField(.sharedListNewItem, text: $newItem)
-                    .submitLabel(.done)
-                    .focused($focusedField, equals: .newItemField)
-                    .onSubmit(addNewItem)
-                    .padding(.leading)
-                Button(.sharedAdd, systemImage: "plus") {
-                    addNewItem()
-                    focusedField = .newItemField
-                }
-                .disabled(newItem.isEmpty)
-            }
-            ToolbarSpacer(.fixed, placement: .bottomBar)
-            ToolbarItemGroup(placement: .bottomBar) {
                 Button(.sharedCopy, systemImage: "doc.on.doc") {
                     UIPasteboard.general.string = selectedItems.map(\.value).joined(separator: "\n")
                 }
@@ -210,7 +230,26 @@ struct SelectGroupFromListView: View {
                 SelectItem(id: UUID().uuidString,
                            value: newItem))
             newItem = ""
+            focusedField = .newItemField
         }
+    }
+
+    func startEditing(_ item: SelectItem) {
+        editingItem = item
+        editingValue = item.value
+        focusedField = .editItemField
+    }
+
+    func commitEdit() {
+        if let editingItem, let index = items.firstIndex(where: { $0.id == editingItem.id }) {
+            if editingValue.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                items.remove(at: index)
+            } else {
+                items[index].value = editingValue
+            }
+        }
+        editingItem = nil
+        editingValue = ""
     }
 
     func pasteFromClipboard() {
@@ -227,5 +266,6 @@ struct SelectGroupFromListView: View {
 
     enum FocusedField: Hashable {
         case newItemField
+        case editItemField
     }
 }
