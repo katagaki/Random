@@ -11,50 +11,14 @@ struct URLEncodeView: View {
 
     @State var inputText: String = ""
     @State var result: String = ""
-    @FocusState var isTextFieldActive: Bool
 
     var body: some View {
-        VStack(alignment: .center, spacing: 0.0) {
-            if !result.isEmpty {
-                ScrollView {
-                    Text(result)
-                        .font(.system(.body, design: .monospaced))
-                        .textSelection(.enabled)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding()
-                }
-            } else {
-                Spacer()
-                Text("Developer.URLEncode.Placeholder")
-                    .font(.body)
-                    .foregroundStyle(.secondary)
-                Spacer()
-            }
-            Divider()
-            VStack(alignment: .leading, spacing: 8.0) {
-                HStack(spacing: 8.0) {
-                    Button {
-                        if let string = UIPasteboard.general.string {
-                            inputText = string
-                            encode()
-                        }
-                    } label: {
-                        Label("Shared.Paste", systemImage: "doc.on.clipboard")
-                            .bold()
-                    }
-                    .prominentPillButton()
-                    Button {
-                        inputText = ""
-                        result = ""
-                    } label: {
-                        Label("Shared.Clear", systemImage: "xmark")
-                            .bold()
-                    }
-                    .pillButton()
-                }
-            }
-            .padding()
-        }
+        PasteToolView(
+            placeholder: "Developer.URLEncode.Placeholder",
+            result: $result,
+            onPaste: { inputText = $0; encode() },
+            onClear: { inputText = ""; result = "" }
+        )
         .randomlyNavigation(title: "Developer.URLEncode.ViewTitle")
         .actionBar(
             text: "Developer.Encode",

@@ -13,62 +13,20 @@ struct FormatJSONView: View {
     @State var result: String = ""
     @State var indentSize: Int = 2
     @State var errorMessage: String?
-    @FocusState var isTextFieldActive: Bool
 
     var body: some View {
-        VStack(alignment: .center, spacing: 0.0) {
-            if !result.isEmpty {
-                ScrollView {
-                    Text(result)
-                        .font(.system(.body, design: .monospaced))
-                        .textSelection(.enabled)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding()
-                }
-            } else if let errorMessage {
-                Spacer()
-                Text(errorMessage)
-                    .font(.body)
-                    .foregroundStyle(.secondary)
-                    .padding()
-                Spacer()
-            } else {
-                Spacer()
-                Text("Developer.FormatJSON.Placeholder")
-                    .font(.body)
-                    .foregroundStyle(.secondary)
-                Spacer()
+        PasteToolView(
+            placeholder: "Developer.FormatJSON.Placeholder",
+            result: $result,
+            errorMessage: errorMessage,
+            onPaste: { inputText = $0; formatJSON() },
+            onClear: { inputText = ""; result = ""; errorMessage = nil }
+        ) {
+            Picker("Developer.FormatJSON.Indent", selection: $indentSize) {
+                Text("Developer.FormatJSON.Indent.2").tag(2)
+                Text("Developer.FormatJSON.Indent.4").tag(4)
             }
-            Divider()
-            VStack(alignment: .leading, spacing: 8.0) {
-                Picker("Developer.FormatJSON.Indent", selection: $indentSize) {
-                    Text("Developer.FormatJSON.Indent.2").tag(2)
-                    Text("Developer.FormatJSON.Indent.4").tag(4)
-                }
-                .pickerStyle(.segmented)
-                HStack(spacing: 8.0) {
-                    Button {
-                        if let string = UIPasteboard.general.string {
-                            inputText = string
-                            formatJSON()
-                        }
-                    } label: {
-                        Label("Shared.Paste", systemImage: "doc.on.clipboard")
-                            .bold()
-                    }
-                    .prominentPillButton()
-                    Button {
-                        inputText = ""
-                        result = ""
-                        errorMessage = nil
-                    } label: {
-                        Label("Shared.Clear", systemImage: "xmark")
-                            .bold()
-                    }
-                    .pillButton()
-                }
-            }
-            .padding()
+            .pickerStyle(.segmented)
         }
         .onChange(of: indentSize) {
             if !inputText.isEmpty {
