@@ -129,8 +129,6 @@ struct RandomlyView: View {
                                          icon: "key.fill", iconColor: .orange)
                             GridCardView(destination: ViewPath.generatePassphrase, title: "Generate.Passphrase",
                                          icon: "lock.shield", iconColor: .green)
-                            GridCardView(destination: ViewPath.generateUUID, title: "Generate.UUID",
-                                         icon: "number.square", iconColor: .indigo)
                         }
                         .padding(.horizontal)
                     }
@@ -179,6 +177,28 @@ struct RandomlyView: View {
                                          icon: "plus.circle.fill", iconColor: Locale.current.language.languageCode == .japanese ? .red : .green)
                             GridCardView(destination: ViewPath.countDown, title: "Count.Down",
                                          icon: "minus.circle.fill", iconColor: Locale.current.language.languageCode == .japanese ? .blue : .red)
+                        }
+                        .padding(.horizontal)
+                    }
+
+                    VStack(alignment: .leading, spacing: 12) {
+                        ListSectionHeader(text: "Shared.Developer")
+                            .font(.body)
+                            .padding(.horizontal)
+
+                        LazyVGrid(columns: columns, spacing: 12) {
+                            GridCardView(destination: ViewPath.generateUUID, title: "Generate.UUID",
+                                         icon: "number.square", iconColor: .indigo)
+                            GridCardView(destination: ViewPath.formatJSON, title: "Developer.FormatJSON",
+                                         icon: "curlybraces", iconColor: .orange)
+                            GridCardView(destination: ViewPath.base64Encode, title: "Developer.Base64Encode",
+                                         icon: "lock", iconColor: .blue)
+                            GridCardView(destination: ViewPath.base64Decode, title: "Developer.Base64Decode",
+                                         icon: "lock.open", iconColor: .blue)
+                            GridCardView(destination: ViewPath.urlEncode, title: "Developer.URLEncode",
+                                         icon: "link", iconColor: .green)
+                            GridCardView(destination: ViewPath.urlDecode, title: "Developer.URLDecode",
+                                         icon: "link.badge.plus", iconColor: .green)
                         }
                         .padding(.horizontal)
                     }
@@ -290,6 +310,16 @@ struct RandomlyView: View {
                     RandomLineChartView()
                 case .chartScatter:
                     RandomScatterChartView()
+                case .formatJSON:
+                    FormatJSONView()
+                case .base64Encode:
+                    Base64EncodeView()
+                case .base64Decode:
+                    Base64DecodeView()
+                case .urlEncode:
+                    URLEncodeView()
+                case .urlDecode:
+                    URLDecodeView()
                 default:
                     Color.clear
                 }
