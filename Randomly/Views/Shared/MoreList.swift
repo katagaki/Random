@@ -31,9 +31,6 @@ struct MoreList<Content: View>: View {
                 NavigationLink(value: viewPath) {
                     Text("More.Attributions")
                 }
-            } header: {
-                ListSectionHeader(text: "More.About")
-                    .font(.body)
             }
         }
         .navigationBarTitleDisplayMode(.inline)

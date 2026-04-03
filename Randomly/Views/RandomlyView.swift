@@ -338,18 +338,33 @@ struct RandomlyView: View { // swiftlint:disable:this type_body_length
                 NavigationStack {
                     MoreList(repoName: "katagaki/Random", viewPath: ViewPath.moreAttributions) {
                         Section {
-                            NavigationLink(value: ViewPath.moreDatasets) {
-                                Text("More.Datasets")
+                            NavigationLink(value: ViewPath.moreWordlistEnglish) {
+                                Text(NSLocalizedString("Dataset.Wordlist", comment: ""))
+                            }
+                            NavigationLink(value: ViewPath.moreWordlistJapanese) {
+                                Text(NSLocalizedString("Dataset.Tangolist", comment: ""))
                             }
                         } header: {
-                            ListSectionHeader(text: "More.General")
+                            ListSectionHeader(text: "Dataset.Type.Wordlists")
+                                .font(.body)
+                        }
+                        Section {
+                            NavigationLink(value: ViewPath.moreCountries) {
+                                Text(NSLocalizedString("Dataset.Countries", comment: ""))
+                            }
+                        } header: {
+                            ListSectionHeader(text: "Dataset.Type.Countries")
                                 .font(.body)
                         }
                     }
                     .navigationDestination(for: ViewPath.self, destination: { viewPath in
                         switch viewPath {
-                        case .moreDatasets:
-                            DatasetsView()
+                        case .moreWordlistEnglish:
+                            DatasetView(dataset: Dataset(name: "Dataset.Wordlist", fileName: "Wordlist-EN", fileExtension: "txt"))
+                        case .moreWordlistJapanese:
+                            DatasetView(dataset: Dataset(name: "Dataset.Tangolist", fileName: "Wordlist-JP", fileExtension: "txt"))
+                        case .moreCountries:
+                            CountriesView()
                         case .moreAttributions:
                             LicensesView(licenses: [
                                 License(libraryName: "english-words", text:

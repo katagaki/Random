@@ -18,12 +18,14 @@ struct LicensesView: View {
                     Text(license.text)
                         .font(.body)
                         .textSelection(.enabled)
+                        .listRowBackground(Color.clear)
                 } header: {
                     ListSectionHeader(text: LocalizedStringKey(license.libraryName))
                         .font(.body)
                 }
             }
         }
+        .listStyle(.grouped)
         .navigationTitle("More.Attributions")
         .navigationBarTitleDisplayMode(.inline)
     }

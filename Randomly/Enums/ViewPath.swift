@@ -50,6 +50,8 @@ enum ViewPath {
     case base64Decode
     case urlEncode
     case urlDecode
-    case moreDatasets
+    case moreWordlistEnglish
+    case moreWordlistJapanese
+    case moreCountries
     case moreAttributions
 }
