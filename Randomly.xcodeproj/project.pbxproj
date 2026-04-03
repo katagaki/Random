@@ -6,7 +6,36 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E42E681C2F7F93980084E87F /* Intents.appex in Embed ExtensionKit Extensions */ = {isa = PBXBuildFile; fileRef = E42E68132F7F93980084E87F /* Intents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E42E681A2F7F93980084E87F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4DDD3DA266C8FC0003CC064 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E42E68122F7F93980084E87F;
+			remoteInfo = Intents;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E42E68212F7F93980084E87F /* Embed ExtensionKit Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(EXTENSIONS_FOLDER_PATH)";
+			dstSubfolderSpec = 16;
+			files = (
+				E42E681C2F7F93980084E87F /* Intents.appex in Embed ExtensionKit Extensions */,
+			);
+			name = "Embed ExtensionKit Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		E42E68132F7F93980084E87F /* Intents.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = Intents.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4DDD3E2266C8FC0003CC064 /* Randomly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Randomly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -17,6 +46,13 @@
 				Info.plist,
 			);
 			target = E4DDD3E1266C8FC0003CC064 /* Randomly */;
+		};
+		E42E68202F7F93980084E87F /* Exceptions for "Intents" folder in "Intents" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = E42E68122F7F93980084E87F /* Intents */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -34,9 +70,24 @@
 			path = ci_scripts;
 			sourceTree = "<group>";
 		};
+		E42E68142F7F93980084E87F /* Intents */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E42E68202F7F93980084E87F /* Exceptions for "Intents" folder in "Intents" target */,
+			);
+			path = Intents;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E42E68102F7F93980084E87F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E4DDD3DF266C8FC0003CC064 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -52,6 +103,7 @@
 			children = (
 				E42E49FF2F7C01140084E87F /* ci_scripts */,
 				E420AC8B2F34E3E900918578 /* Randomly */,
+				E42E68142F7F93980084E87F /* Intents */,
 				E4DDD3E3266C8FC0003CC064 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				E4DDD3E2266C8FC0003CC064 /* Randomly.app */,
+				E42E68132F7F93980084E87F /* Intents.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,6 +120,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E42E68122F7F93980084E87F /* Intents */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E42E681D2F7F93980084E87F /* Build configuration list for PBXNativeTarget "Intents" */;
+			buildPhases = (
+				E42E680F2F7F93980084E87F /* Sources */,
+				E42E68102F7F93980084E87F /* Frameworks */,
+				E42E68112F7F93980084E87F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				E42E68142F7F93980084E87F /* Intents */,
+			);
+			name = Intents;
+			packageProductDependencies = (
+			);
+			productName = Intents;
+			productReference = E42E68132F7F93980084E87F /* Intents.appex */;
+			productType = "com.apple.product-type.extensionkit-extension";
+		};
 		E4DDD3E1266C8FC0003CC064 /* Randomly */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E4DDD3F6266C8FC2003CC064 /* Build configuration list for PBXNativeTarget "Randomly" */;
@@ -75,10 +150,12 @@
 				E4DDD3DF266C8FC0003CC064 /* Frameworks */,
 				E4DDD3E0266C8FC0003CC064 /* Resources */,
 				E48B351F2AA48369007BC65F /* ShellScript */,
+				E42E68212F7F93980084E87F /* Embed ExtensionKit Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E42E681B2F7F93980084E87F /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				E420AC8B2F34E3E900918578 /* Randomly */,
@@ -97,9 +174,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastSwiftUpdateCheck = 1250;
+				LastSwiftUpdateCheck = 2640;
 				LastUpgradeCheck = 2600;
 				TargetAttributes = {
+					E42E68122F7F93980084E87F = {
+						CreatedOnToolsVersion = 26.4;
+					};
 					E4DDD3E1266C8FC0003CC064 = {
 						CreatedOnToolsVersion = 12.5;
 					};
@@ -122,11 +202,19 @@
 			projectRoot = "";
 			targets = (
 				E4DDD3E1266C8FC0003CC064 /* Randomly */,
+				E42E68122F7F93980084E87F /* Intents */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E42E68112F7F93980084E87F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E4DDD3E0266C8FC0003CC064 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -158,6 +246,13 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E42E680F2F7F93980084E87F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E4DDD3DE266C8FC0003CC064 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -167,7 +262,80 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		E42E681B2F7F93980084E87F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E42E68122F7F93980084E87F /* Intents */;
+			targetProxy = E42E681A2F7F93980084E87F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		E42E681E2F7F93980084E87F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Intents/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Intents;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tsubuzaki.Random.Intents;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E42E681F2F7F93980084E87F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Intents/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Intents;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tsubuzaki.Random.Intents;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		E4DDD3F4266C8FC2003CC064 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -302,6 +470,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = Randomly/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
@@ -330,6 +499,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = Randomly/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
@@ -351,6 +521,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E42E681D2F7F93980084E87F /* Build configuration list for PBXNativeTarget "Intents" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E42E681E2F7F93980084E87F /* Debug */,
+				E42E681F2F7F93980084E87F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E4DDD3DD266C8FC0003CC064 /* Build configuration list for PBXProject "Randomly" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

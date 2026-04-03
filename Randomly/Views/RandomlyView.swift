@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RandomlyView: View {
+struct RandomlyView: View { // swiftlint:disable:this type_body_length
 
     @EnvironmentObject var navigationManager: NavigationManager
     @State private var showingMoreSheet = false

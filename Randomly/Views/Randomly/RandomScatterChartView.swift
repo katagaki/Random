@@ -10,8 +10,8 @@ import Charts
 
 struct ScatterDataPoint: Identifiable {
     let id = UUID()
-    let x: Double
-    let y: Double
+    let xValue: Double // swiftlint:disable:this identifier_name
+    let yValue: Double // swiftlint:disable:this identifier_name
 }
 
 struct RandomScatterChartView: View {
@@ -24,8 +24,8 @@ struct RandomScatterChartView: View {
             Spacer()
             Chart(dataPoints) { point in
                 PointMark(
-                    x: .value("Chart.X", point.x),
-                    y: .value("Chart.Y", point.y)
+                    x: .value("Chart.X", point.xValue),
+                    y: .value("Chart.Y", point.yValue)
                 )
                 .symbolSize(50)
             }
@@ -51,7 +51,7 @@ struct RandomScatterChartView: View {
             icon: "sparkles",
             action: regenerate,
             disabled: .constant(false),
-            copyValue: .constant(dataPoints.map { "(\(String(format: "%.1f", $0.x)), \(String(format: "%.1f", $0.y)))" }.joined(separator: ", "))
+            copyValue: .constant(dataPoints.map { "(\(String(format: "%.1f", $0.xValue)), \(String(format: "%.1f", $0.yValue)))" }.joined(separator: ", "))
         )
     }
 
@@ -59,8 +59,8 @@ struct RandomScatterChartView: View {
         animateChange {
             dataPoints = (0..<Int(pointCount)).map { _ in
                 ScatterDataPoint(
-                    x: Double.random(in: 0...100),
-                    y: Double.random(in: 0...100)
+                    xValue: Double.random(in: 0...100),
+                    yValue: Double.random(in: 0...100)
                 )
             }
         }
