@@ -12,8 +12,8 @@ struct GroupListView: View {
     @State var items: [SelectItem] = []
     @State var groupedItems: [[SelectItem]] = []
     @State var groupCount: Float = 2
-    @State var newItem: String = ""
-    @FocusState var focusedField: FocusedField?
+    @State var editor = ListItemEditor()
+    @FocusState var focusedField: ListFocusedField?
 
     var maxGroupCount: Float {
         max(Float(items.count), 2)
@@ -45,43 +45,38 @@ struct GroupListView: View {
                         }
                     }
                 } else {
-                    ForEach(items, id: \.self) { item in
-                        Text(item.value)
-                            .font(.body)
+                    ForEach(items, id: \.id) { item in
+                        EditableListRow(
+                            item: item,
+                            editor: editor,
+                            focusedField: $focusedField,
+                            onDelete: {
+                                if let index = items.firstIndex(where: { $0.id == item.id }) {
+                                    items.remove(at: index)
+                                }
+                            }
+                        )
+                        .onSubmit {
+                            editor.commitEdit(items: &items)
+                        }
                     }
-                    .onDelete { indexSet in
-                        items.remove(atOffsets: indexSet)
+                    NewItemRow(editor: editor, focusedField: $focusedField) {
+                        groupedItems.removeAll()
+                        editor.addNewItem(items: &items)
                     }
                 }
             }
             .listStyle(.plain)
             .onChange(of: items) {
                 if items.count > 0 && groupedItems.isEmpty {
-                    scrollView.scrollTo(items.last!, anchor: .bottom)
+                    scrollView.scrollTo(items.last!.id, anchor: .bottom)
                 }
                 groupCount = min(groupCount, maxGroupCount)
             }
             .overlay {
                 if items.count == 0 {
-                    VStack(alignment: .center, spacing: 16.0) {
-                        VStack(alignment: .center, spacing: 8.0) {
-                            Image(systemName: "questionmark.square.dashed")
-                                .resizable()
-                                .frame(width: 32, height: 32)
-                                .foregroundStyle(.secondary)
-                            Text("Shared.List.NoItems")
-                                .font(.body)
-                                .foregroundStyle(.secondary)
-                        }
-                        if UIPasteboard.general.hasStrings {
-                            Button {
-                                pasteFromClipboard()
-                            } label: {
-                                Label("Shared.Paste", systemImage: "doc.on.clipboard")
-                                    .bold()
-                            }
-                            .prominentPillButton()
-                        }
+                    EmptyListOverlay {
+                        ListItemEditor.pasteFromClipboard(items: &items)
                     }
                 }
             }
@@ -130,19 +125,6 @@ struct GroupListView: View {
                     Text("Shared.Clear")
                 }
             }
-            ToolbarItemGroup(placement: .bottomBar) {
-                TextField(.sharedListNewItem, text: $newItem)
-                    .submitLabel(.done)
-                    .focused($focusedField, equals: .newItemField)
-                    .onSubmit(addNewItem)
-                    .padding(.leading)
-                Button(.sharedAdd, systemImage: "plus") {
-                    addNewItem()
-                    focusedField = .newItemField
-                }
-                .disabled(newItem.isEmpty)
-            }
-            ToolbarSpacer(.fixed, placement: .bottomBar)
             ToolbarItemGroup(placement: .bottomBar) {
                 Button(.sharedCopy, systemImage: "doc.on.doc") {
                     copyGroups()
@@ -250,31 +232,5 @@ struct GroupListView: View {
             text += "\n\n"
         }
         UIPasteboard.general.string = text.trimmingCharacters(in: .whitespacesAndNewlines)
-    }
-
-    func addNewItem() {
-        if newItem != "" {
-            groupedItems.removeAll()
-            items.append(
-                SelectItem(id: UUID().uuidString,
-                           value: newItem))
-            newItem = ""
-        }
-    }
-
-    func pasteFromClipboard() {
-        if let string = UIPasteboard.general.string {
-            let stringComponents = string.components(separatedBy: .newlines)
-            for stringComponent in stringComponents where
-            stringComponent.trimmingCharacters(in: .whitespacesAndNewlines) != "" {
-                items.append(
-                    SelectItem(id: UUID().uuidString,
-                               value: stringComponent.trimmingCharacters(in: .whitespacesAndNewlines)))
-            }
-        }
-    }
-
-    enum FocusedField: Hashable {
-        case newItemField
     }
 }

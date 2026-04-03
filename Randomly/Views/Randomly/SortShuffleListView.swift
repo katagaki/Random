@@ -12,8 +12,8 @@ struct SortShuffleListView: View {
     let mode: ListOperationMode
 
     @State var items: [SelectItem] = []
-    @State var newItem: String = ""
-    @FocusState var focusedField: FocusedField?
+    @State var editor = ListItemEditor()
+    @FocusState var focusedField: ListFocusedField?
 
     var persistenceKey: String {
         mode == .shuffle ? "shuffleListItems" : "sortListItems"
@@ -34,50 +34,35 @@ struct SortShuffleListView: View {
     var ios26Body: some View {
         ScrollViewReader { scrollView in
             List {
-                ForEach(items, id: \.self) { item in
-                    Text(item.value)
-                        .font(.body)
+                ForEach(items, id: \.id) { item in
+                    EditableListRow(
+                        item: item,
+                        editor: editor,
+                        focusedField: $focusedField,
+                        onDelete: {
+                            if let index = items.firstIndex(where: { $0.id == item.id }) {
+                                items.remove(at: index)
+                            }
+                        }
+                    )
+                    .onSubmit {
+                        editor.commitEdit(items: &items)
+                    }
                 }
-                .onDelete { indexSet in
-                    items.remove(atOffsets: indexSet)
+                NewItemRow(editor: editor, focusedField: $focusedField) {
+                    editor.addNewItem(items: &items)
                 }
             }
             .listStyle(.plain)
             .onChange(of: items) {
                 if items.count > 0 {
-                    scrollView.scrollTo(items.last!, anchor: .bottom)
+                    scrollView.scrollTo(items.last!.id, anchor: .bottom)
                 }
             }
             .overlay {
                 if items.count == 0 {
-                    VStack(alignment: .center, spacing: 16.0) {
-                        VStack(alignment: .center, spacing: 8.0) {
-                            Image(systemName: "questionmark.square.dashed")
-                                .resizable()
-                                .frame(width: 32, height: 32)
-                                .foregroundStyle(.secondary)
-                            Text("Shared.List.NoItems")
-                                .font(.body)
-                                .foregroundStyle(.secondary)
-                        }
-                        if UIPasteboard.general.hasStrings {
-                            Button {
-                                if let string = UIPasteboard.general.string {
-                                    let stringComponents = string.components(separatedBy: .newlines)
-                                    for stringComponent in stringComponents where
-                                    stringComponent.trimmingCharacters(in: .whitespacesAndNewlines) != "" {
-                                        items.append(
-                                            SelectItem(id: UUID().uuidString,
-                                                       value: stringComponent.trimmingCharacters(in:
-                                                            .whitespacesAndNewlines)))
-                                    }
-                                }
-                            } label: {
-                                Label("Shared.Paste", systemImage: "doc.on.clipboard")
-                                    .bold()
-                            }
-                            .prominentPillButton()
-                        }
+                    EmptyListOverlay {
+                        ListItemEditor.pasteFromClipboard(items: &items)
                     }
                 }
             }
@@ -92,19 +77,6 @@ struct SortShuffleListView: View {
                     Text("Shared.Clear")
                 }
             }
-            ToolbarItemGroup(placement: .bottomBar) {
-                TextField(.sharedListNewItem, text: $newItem)
-                    .submitLabel(.done)
-                    .focused($focusedField, equals: .newItemField)
-                    .onSubmit(addNewItem)
-                    .padding(.leading)
-                Button(.sharedAdd, systemImage: "plus") {
-                    addNewItem()
-                    focusedField = .newItemField
-                }
-                .disabled(newItem.isEmpty)
-            }
-            ToolbarSpacer(.fixed, placement: .bottomBar)
             ToolbarItemGroup(placement: .bottomBar) {
                 Button(.sharedCopy, systemImage: "doc.on.doc") {
                     UIPasteboard.general.string = items.reduce(into: "", { result, item in
@@ -155,7 +127,6 @@ struct SortShuffleListView: View {
         }
     }
 
-    // Computed properties for mode-specific values
     private var navigationTitle: LocalizedStringKey {
         switch mode {
         case .sort:
@@ -192,7 +163,6 @@ struct SortShuffleListView: View {
         }
     }
 
-    // Operation execution
     private func performOperation() {
         switch mode {
         case .sort:
@@ -202,18 +172,5 @@ struct SortShuffleListView: View {
         case .shuffle:
             items.shuffle()
         }
-    }
-
-    func addNewItem() {
-        if newItem != "" {
-            items.append(
-                SelectItem(id: UUID().uuidString,
-                           value: newItem))
-            newItem = ""
-        }
-    }
-
-    enum FocusedField: Hashable {
-        case newItemField
     }
 }

@@ -12,8 +12,8 @@ struct SelectGroupFromListView: View {
     @State var items: [SelectItem] = []
     @State var selectedItems: [SelectItem] = []
     @State var groupSize: Float = 2
-    @State var newItem: String = ""
-    @FocusState var focusedField: FocusedField?
+    @State var editor = ListItemEditor()
+    @FocusState var focusedField: ListFocusedField?
 
     var maxGroupSize: Float {
         max(Float(items.count), 1)
@@ -33,50 +33,59 @@ struct SelectGroupFromListView: View {
     var ios26Body: some View {
         ScrollViewReader { scrollView in
             List {
-                ForEach(items, id: \.self) { item in
-                    HStack {
-                        Text(item.value)
+                ForEach(items, id: \.id) { item in
+                    if editor.editingItemId == item.id {
+                        TextField("", text: $editor.editingValue)
                             .font(.body)
-                        Spacer()
-                        if selectedItems.contains(item) {
-                            Image(systemName: "checkmark.circle.fill")
-                                .foregroundStyle(.green)
-                                .transition(.scale.combined(with: .opacity))
+                            .focused($focusedField, equals: .editItemField)
+                            .submitLabel(.done)
+                            .onSubmit {
+                                editor.commitEdit(items: &items)
+                            }
+                    } else {
+                        HStack {
+                            Text(item.value)
+                                .font(.body)
+                            Spacer()
+                            if selectedItems.contains(item) {
+                                Image(systemName: "checkmark.circle.fill")
+                                    .foregroundStyle(.green)
+                                    .transition(.scale.combined(with: .opacity))
+                            }
+                        }
+                        .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                            Button(role: .destructive) {
+                                if let index = items.firstIndex(where: { $0.id == item.id }) {
+                                    items.remove(at: index)
+                                }
+                            } label: {
+                                Label("Shared.Delete", systemImage: "trash")
+                            }
+                            Button {
+                                editor.startEditing(item)
+                                focusedField = .editItemField
+                            } label: {
+                                Label("Shared.Edit", systemImage: "pencil")
+                            }
+                            .tint(.orange)
                         }
                     }
                 }
-                .onDelete { indexSet in
-                    items.remove(atOffsets: indexSet)
+                NewItemRow(editor: editor, focusedField: $focusedField) {
+                    editor.addNewItem(items: &items)
                 }
             }
             .listStyle(.plain)
             .onChange(of: items) {
                 if items.count > 0 {
-                    scrollView.scrollTo(items.last!, anchor: .bottom)
+                    scrollView.scrollTo(items.last!.id, anchor: .bottom)
                 }
                 groupSize = min(groupSize, maxGroupSize)
             }
             .overlay {
                 if items.count == 0 {
-                    VStack(alignment: .center, spacing: 16.0) {
-                        VStack(alignment: .center, spacing: 8.0) {
-                            Image(systemName: "questionmark.square.dashed")
-                                .resizable()
-                                .frame(width: 32, height: 32)
-                                .foregroundStyle(.secondary)
-                            Text("Shared.List.NoItems")
-                                .font(.body)
-                                .foregroundStyle(.secondary)
-                        }
-                        if UIPasteboard.general.hasStrings {
-                            Button {
-                                pasteFromClipboard()
-                            } label: {
-                                Label("Shared.Paste", systemImage: "doc.on.clipboard")
-                                    .bold()
-                            }
-                            .prominentPillButton()
-                        }
+                    EmptyListOverlay {
+                        ListItemEditor.pasteFromClipboard(items: &items)
                     }
                 }
             }
@@ -125,19 +134,6 @@ struct SelectGroupFromListView: View {
                     Text("Shared.Clear")
                 }
             }
-            ToolbarItemGroup(placement: .bottomBar) {
-                TextField(.sharedListNewItem, text: $newItem)
-                    .submitLabel(.done)
-                    .focused($focusedField, equals: .newItemField)
-                    .onSubmit(addNewItem)
-                    .padding(.leading)
-                Button(.sharedAdd, systemImage: "plus") {
-                    addNewItem()
-                    focusedField = .newItemField
-                }
-                .disabled(newItem.isEmpty)
-            }
-            ToolbarSpacer(.fixed, placement: .bottomBar)
             ToolbarItemGroup(placement: .bottomBar) {
                 Button(.sharedCopy, systemImage: "doc.on.doc") {
                     UIPasteboard.general.string = selectedItems.map(\.value).joined(separator: "\n")
@@ -202,30 +198,5 @@ struct SelectGroupFromListView: View {
         animateChange {
             selectedItems = Array(items.shuffled().prefix(Int(groupSize)))
         }
-    }
-
-    func addNewItem() {
-        if newItem != "" {
-            items.append(
-                SelectItem(id: UUID().uuidString,
-                           value: newItem))
-            newItem = ""
-        }
-    }
-
-    func pasteFromClipboard() {
-        if let string = UIPasteboard.general.string {
-            let stringComponents = string.components(separatedBy: .newlines)
-            for stringComponent in stringComponents where
-            stringComponent.trimmingCharacters(in: .whitespacesAndNewlines) != "" {
-                items.append(
-                    SelectItem(id: UUID().uuidString,
-                               value: stringComponent.trimmingCharacters(in: .whitespacesAndNewlines)))
-            }
-        }
-    }
-
-    enum FocusedField: Hashable {
-        case newItemField
     }
 }
