@@ -37,7 +37,11 @@ struct CountView: View {
     var ios26Body: some View {
         VStack(alignment: .center, spacing: 8.0) {
             Spacer()
-            LargeDisplayTextView(String(currentValue), fontSize: 200, transitionDirection: mode == .up ? .flipUp : .flipDown)
+            LargeDisplayTextView(
+                String(currentValue),
+                fontSize: 200,
+
+            )
             Spacer()
 
             if !hasStarted {
@@ -60,7 +64,12 @@ struct CountView: View {
                     }
 
                     if useRange {
-                        RangeInputView(label: mode == .up ? "Count.IncrementRange" : "Count.DecrementRange", rangeStart: $rangeStart, rangeEnd: $rangeEnd, isTextFieldActive: $isTextFieldActive)
+                        RangeInputView(
+                            label: mode == .up ? "Count.IncrementRange" : "Count.DecrementRange",
+                            rangeStart: $rangeStart,
+                            rangeEnd: $rangeEnd,
+                            isTextFieldActive: $isTextFieldActive
+                        )
                     } else {
                         VStack(alignment: .leading, spacing: 8.0) {
                             Text(mode == .up ? "Count.IncrementValue" : "Count.DecrementValue")
@@ -92,7 +101,6 @@ struct CountView: View {
         .randomlyNavigation(title: mode == .up ? "Count.Up" : "Count.Down")
         .toolbar {
             if !hasStarted {
-                ToolbarSpacer(.flexible, placement: .bottomBar)
                 ToolbarItemGroup(placement: .bottomBar) {
                     Button("Count.Start", systemImage: "play.fill") {
                         start()
@@ -106,9 +114,11 @@ struct CountView: View {
                         reset()
                     }
                 }
-                ToolbarSpacer(.flexible, placement: .bottomBar)
                 ToolbarItemGroup(placement: .bottomBar) {
-                    Button(mode == .up ? "Count.Increment" : "Count.Decrement", systemImage: mode == .up ? "plus" : "minus") {
+                    Button(
+                        mode == .up ? "Count.Increment" : "Count.Decrement",
+                        systemImage: mode == .up ? "plus" : "minus"
+                    ) {
                         change()
                     }
                     .buttonStyle(.glassProminent)
@@ -120,7 +130,13 @@ struct CountView: View {
     var legacyBody: some View {
         VStack(alignment: .center, spacing: 8.0) {
             Spacer()
-            LargeDisplayTextView(String(currentValue), fontSize: 200, transitionDirection: mode == .up ? .flipUp : .flipDown)
+            LargeDisplayTextView(
+                String(
+                    currentValue
+                ),
+                fontSize: 200,
+
+            )
             Spacer()
 
             if !hasStarted {
@@ -143,7 +159,12 @@ struct CountView: View {
                     }
 
                     if useRange {
-                        RangeInputView(label: mode == .up ? "Count.IncrementRange" : "Count.DecrementRange", rangeStart: $rangeStart, rangeEnd: $rangeEnd, isTextFieldActive: $isTextFieldActive)
+                        RangeInputView(
+                            label: mode == .up ? "Count.IncrementRange" : "Count.DecrementRange",
+                            rangeStart: $rangeStart,
+                            rangeEnd: $rangeEnd,
+                            isTextFieldActive: $isTextFieldActive
+                        )
                     } else {
                         VStack(alignment: .leading, spacing: 8.0) {
                             Text(mode == .up ? "Count.IncrementValue" : "Count.DecrementValue")

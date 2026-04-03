@@ -17,16 +17,17 @@ struct FormatJSONView: View {
     var body: some View {
         PasteToolView(
             placeholder: "Developer.FormatJSON.Placeholder",
+            inputText: $inputText,
             result: $result,
-            errorMessage: errorMessage,
-            onPaste: { inputText = $0; formatJSON() },
-            onClear: { inputText = ""; result = ""; errorMessage = nil }
+            errorMessage: errorMessage
         ) {
+            Divider()
             Picker("Developer.FormatJSON.Indent", selection: $indentSize) {
                 Text("Developer.FormatJSON.Indent.2").tag(2)
                 Text("Developer.FormatJSON.Indent.4").tag(4)
             }
             .pickerStyle(.segmented)
+            .padding()
         }
         .onChange(of: indentSize) {
             if !inputText.isEmpty {
@@ -40,14 +41,25 @@ struct FormatJSONView: View {
             action: formatJSON,
             disabled: .constant(inputText.isEmpty),
             copyValue: .constant(result),
-            copyDisabled: .constant(result.isEmpty)
+            copyDisabled: .constant(result.isEmpty),
+            pasteAction: {
+                if let string = UIPasteboard.general.string {
+                    inputText = string
+                    formatJSON()
+                }
+            }
         )
     }
 
     func formatJSON() {
         errorMessage = nil
         do {
-            let data = Data(inputText.utf8)
+            let sanitized = inputText
+                .replacingOccurrences(of: "\u{201C}", with: "\"")
+                .replacingOccurrences(of: "\u{201D}", with: "\"")
+                .replacingOccurrences(of: "\u{2018}", with: "'")
+                .replacingOccurrences(of: "\u{2019}", with: "'")
+            let data = Data(sanitized.utf8)
             let json = try JSONSerialization.jsonObject(with: data)
             let formatted = try JSONSerialization.data(
                 withJSONObject: json,

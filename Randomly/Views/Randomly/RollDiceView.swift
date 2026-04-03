@@ -42,7 +42,6 @@ struct RollDiceView: View {
                         addDice(number: 2)
                     }
                 }
-                ToolbarSpacer(.flexible, placement: .bottomBar)
                 ToolbarItem(placement: .bottomBar) {
                     Button("Shared.Do.RollDice", systemImage: "1.square.fill") {
                         addDice(number: 1)

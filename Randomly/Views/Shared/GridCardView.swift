@@ -57,7 +57,11 @@ struct GridCardView<Destination: Hashable>: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 20.0, height: 20.0)
-                    .foregroundStyle(iconGradient != nil ? AnyShapeStyle(iconGradient!) : AnyShapeStyle(iconColor ?? .primary))
+                    .foregroundStyle(
+                        iconGradient != nil ? AnyShapeStyle(iconGradient!) : AnyShapeStyle(
+                            iconColor ?? .primary
+                        )
+                    )
                 Text(title)
                     .font(.subheadline)
                     .fontWeight(.medium)

@@ -83,6 +83,9 @@ struct ActionBarModifier: ViewModifier {
     @State var copyHidden: Bool = false
     var copyDisabled: Binding<Bool>?
 
+    var pasteAction: (() -> Void)?
+    var pasteDisabled: Binding<Bool>?
+
     func body(content: Content) -> some View {
         if #available(iOS 26.0, *) {
             content
@@ -95,7 +98,14 @@ struct ActionBarModifier: ViewModifier {
                             .disabled(copyDisabled?.wrappedValue ?? false)
                         }
                     }
-                    ToolbarSpacer(.flexible, placement: .bottomBar)
+                    if let pasteAction {
+                        ToolbarItem(placement: .bottomBar) {
+                            Button(action: pasteAction) {
+                                Label(.sharedPaste, systemImage: "doc.on.clipboard")
+                            }
+                            .disabled(pasteDisabled?.wrappedValue ?? false)
+                        }
+                    }
                     ToolbarItem(placement: .bottomBar) {
                         Button(
                             LocalizedStringKey(text),
@@ -120,6 +130,17 @@ struct ActionBarModifier: ViewModifier {
                             .buttonStyle(.bordered)
                             .clipShape(Circle())
                             .disabled(copyDisabled?.wrappedValue ?? false)
+                        }
+                        if let pasteAction {
+                            Button(action: pasteAction) {
+                                Image(systemName: "doc.on.clipboard")
+                                    .padding(.horizontal, 4.0)
+                                    .frame(width: 42.0, height: 42.0, alignment: .center)
+                            }
+                            .accessibilityLabel(Text(.sharedPaste))
+                            .buttonStyle(.bordered)
+                            .clipShape(Circle())
+                            .disabled(pasteDisabled?.wrappedValue ?? false)
                         }
                         Button(action: action) {
                             Label(LocalizedStringKey(text), systemImage: icon)
@@ -152,7 +173,9 @@ extension View {
         disabled: Binding<Bool>,
         copyValue: Binding<Any>? = nil,
         copyHidden: Bool = false,
-        copyDisabled: Binding<Bool>? = .constant(false)
+        copyDisabled: Binding<Bool>? = .constant(false),
+        pasteAction: (() -> Void)? = nil,
+        pasteDisabled: Binding<Bool>? = .constant(false)
     ) -> some View {
         modifier(
             ActionBarModifier(
@@ -162,7 +185,9 @@ extension View {
                 disabled: disabled,
                 copyValue: copyValue,
                 copyHidden: copyHidden,
-                copyDisabled: copyDisabled
+                copyDisabled: copyDisabled,
+                pasteAction: pasteAction,
+                pasteDisabled: pasteDisabled
             )
         )
     }

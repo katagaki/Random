@@ -10,8 +10,8 @@ import Charts
 
 struct ScatterDataPoint: Identifiable {
     let id = UUID()
-    let xValue: Double // swiftlint:disable:this identifier_name
-    let yValue: Double // swiftlint:disable:this identifier_name
+    let xValue: Double
+    let yValue: Double
 }
 
 struct RandomScatterChartView: View {

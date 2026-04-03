@@ -52,7 +52,6 @@ struct DrawCardView: View {
                     Label(.sharedCopy, systemImage: "doc.on.doc")
                 }
             }
-            ToolbarSpacer(.flexible, placement: .bottomBar)
             ToolbarItem(placement: .bottomBar) {
                 Button("Shared.Draw", systemImage: "sparkles") {
                     drawCards()

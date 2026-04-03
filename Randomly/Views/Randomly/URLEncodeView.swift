@@ -15,9 +15,8 @@ struct URLEncodeView: View {
     var body: some View {
         PasteToolView(
             placeholder: "Developer.URLEncode.Placeholder",
-            result: $result,
-            onPaste: { inputText = $0; encode() },
-            onClear: { inputText = ""; result = "" }
+            inputText: $inputText,
+            result: $result
         )
         .randomlyNavigation(title: "Developer.URLEncode.ViewTitle")
         .actionBar(
@@ -26,7 +25,13 @@ struct URLEncodeView: View {
             action: encode,
             disabled: .constant(inputText.isEmpty),
             copyValue: .constant(result),
-            copyDisabled: .constant(result.isEmpty)
+            copyDisabled: .constant(result.isEmpty),
+            pasteAction: {
+                if let string = UIPasteboard.general.string {
+                    inputText = string
+                    encode()
+                }
+            }
         )
     }
 

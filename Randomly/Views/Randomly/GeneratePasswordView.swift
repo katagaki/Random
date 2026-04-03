@@ -83,7 +83,7 @@ struct GeneratePasswordView: View {
             text: "Shared.Generate",
             icon: "sparkles",
             action: { password.regenerate(animated: true) },
-            disabled: .constant(maxLength < minLength ||
+            disabled: .constant(password.isAnimating || maxLength < minLength ||
                                !useUppercase && !useLowercase && !useNumbers && !useSymbols),
             copyValue: .constant(password.generated)
         )

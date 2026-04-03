@@ -14,7 +14,6 @@ struct PickNumberLetterWordView: View {
     @State var result: String = ""
     @State var rangeStart: Int = 1
     @State var rangeEnd: Int = 100
-    @State var words: [String] = []
     @FocusState var isTextFieldActive: Bool
 
     var isPickDisabled: Bool {
@@ -93,28 +92,6 @@ struct PickNumberLetterWordView: View {
             case .letter:
                 let letterIndex: Int = Int.random(in: 0...25)
                 result = String(Character(UnicodeScalar(65 + letterIndex)!))
-            case .englishWord:
-                if words.count == 0 {
-                    let path = Bundle.main.path(forResource: "Wordlist-EN", ofType: "txt")!
-                    do {
-                        let wordlist: String = try String(contentsOfFile: path, encoding: .utf8)
-                        words = wordlist.components(separatedBy: .newlines)
-                    } catch {
-                        words.removeAll()
-                    }
-                }
-                result = words.randomElement()!
-            case .japaneseWord:
-                if words.count == 0 {
-                    let path = Bundle.main.path(forResource: "Wordlist-JP", ofType: "txt")!
-                    do {
-                        let wordlist: String = try String(contentsOfFile: path, encoding: .utf8)
-                        words = wordlist.components(separatedBy: .newlines)
-                    } catch {
-                        words.removeAll()
-                    }
-                }
-                result = words.randomElement()!
             }
         }
     }

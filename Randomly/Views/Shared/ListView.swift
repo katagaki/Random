@@ -20,18 +20,41 @@ struct ListView<Content: View>: View {
         ScrollViewReader { scrollView in
             List {
                 ForEach(items, id: \.id) { item in
-                    EditableListRow(
-                        item: item,
-                        editor: editor,
-                        focusedField: $focusedField,
-                        onDelete: {
-                            if let index = items.firstIndex(where: { $0.id == item.id }) {
-                                items.remove(at: index)
+                    if editor.editingItemId == item.id {
+                        TextField("", text: $editor.editingValue)
+                            .font(.body)
+                            .focused($focusedField, equals: .editItemField)
+                            .submitLabel(.done)
+                            .onSubmit {
+                                editor.commitEdit(items: &items)
+                            }
+                    } else {
+                        HStack {
+                            Text(item.value)
+                                .font(.body)
+                            Spacer()
+                            if selectedItem == item {
+                                Image(systemName: "checkmark.circle.fill")
+                                    .foregroundStyle(.green)
+                                    .transition(.scale.combined(with: .opacity))
                             }
                         }
-                    )
-                    .onSubmit {
-                        editor.commitEdit(items: &items)
+                        .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                            Button(role: .destructive) {
+                                if let index = items.firstIndex(where: { $0.id == item.id }) {
+                                    items.remove(at: index)
+                                }
+                            } label: {
+                                Label("Shared.Delete", systemImage: "trash")
+                            }
+                            Button {
+                                editor.startEditing(item)
+                                focusedField = .editItemField
+                            } label: {
+                                Label("Shared.Edit", systemImage: "pencil")
+                            }
+                            .tint(.orange)
+                        }
                     }
                 }
                 NewItemRow(editor: editor, focusedField: $focusedField) {

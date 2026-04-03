@@ -16,10 +16,9 @@ struct Base64DecodeView: View {
     var body: some View {
         PasteToolView(
             placeholder: "Developer.Base64Decode.Placeholder",
+            inputText: $inputText,
             result: $result,
-            errorMessage: errorMessage,
-            onPaste: { inputText = $0; decode() },
-            onClear: { inputText = ""; result = ""; errorMessage = nil }
+            errorMessage: errorMessage
         )
         .randomlyNavigation(title: "Developer.Base64Decode.ViewTitle")
         .actionBar(
@@ -28,7 +27,13 @@ struct Base64DecodeView: View {
             action: decode,
             disabled: .constant(inputText.isEmpty),
             copyValue: .constant(result),
-            copyDisabled: .constant(result.isEmpty)
+            copyDisabled: .constant(result.isEmpty),
+            pasteAction: {
+                if let string = UIPasteboard.general.string {
+                    inputText = string
+                    decode()
+                }
+            }
         )
     }
 

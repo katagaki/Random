@@ -10,13 +10,11 @@ import Foundation
 enum ViewPath {
     case pickNumber
     case pickLetter
-    case pickWordEnglish
-    case pickWordJapanese
+    case word
     case pickEmoji
     case pickDate
     case pickTime
     case pickCountry
-    case generateWord
     case generatePassword
     case generateColor
     case generateCoordinate
@@ -38,7 +36,8 @@ enum ViewPath {
     case drawCard
     case pickDayOfWeek
     case pickMonth
-    case generateUUID
+    case generateUUIDv4
+    case generateUUIDv7
     case generateNumberSequence
     case generatePassphrase
     case chartBar

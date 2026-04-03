@@ -143,7 +143,6 @@ struct GenerateLoremIpsum: AppIntent {
     @Parameter(title: "Intent.GenerateLoremIpsum.Count", default: 3, inclusiveRange: (1, 100))
     var count: Int
 
-    // swiftlint:disable line_length
     private static let vocabulary: [String] = [
         "lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit",
         "sed", "do", "eiusmod", "tempor", "incididunt", "ut", "labore", "et", "dolore",
@@ -171,7 +170,6 @@ struct GenerateLoremIpsum: AppIntent {
         "voluptatibus", "maiores", "numquam", "eius", "modi", "tempora", "incidunt",
         "magnam", "aliquam", "quaerat"
     ]
-    // swiftlint:enable line_length
 
     private static let classicOpening = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 

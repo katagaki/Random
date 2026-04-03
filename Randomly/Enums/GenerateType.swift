@@ -10,6 +10,4 @@ import Foundation
 enum GenerateType: String {
     case number = "Select.Number.ViewTitle"
     case letter = "Select.Letter.ViewTitle"
-    case englishWord = "Select.WordEN.ViewTitle"
-    case japaneseWord = "Select.WordJP.ViewTitle"
 }

@@ -20,7 +20,7 @@ struct GenerateNumberSequenceView: View {
             Spacer()
             ScrollView(.horizontal) {
                 Text(numbers.map(String.init).joined(separator: ", "))
-                    .font(.system(size: 30, weight: .heavy, design: .monospaced))
+                    .font(.system(size: 30, weight: .heavy, design: .rounded))
                     .lineLimit(1)
                     .textSelection(.enabled)
                     .padding()

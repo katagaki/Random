@@ -27,10 +27,18 @@ struct RandomlyView: View { // swiftlint:disable:this type_body_length
                             .padding(.horizontal)
 
                         LazyVGrid(columns: columns, spacing: 12) {
-                            GridCardView(destination: ViewPath.pickNumber, title: "Select.Number",
-                                         icon: "number", iconColor: .blue)
-                            GridCardView(destination: ViewPath.generateNumberSequence, title: "Generate.NumberSequence",
-                                         icon: "list.number", iconColor: .cyan)
+                            GridCardView(
+                                destination: ViewPath.pickNumber,
+                                title: "Select.Number",
+                                icon: "number",
+                                iconColor: .blue
+                            )
+                            GridCardView(
+                                destination: ViewPath.generateNumberSequence,
+                                title: "Generate.NumberSequence",
+                                icon: "list.number",
+                                iconColor: .blue
+                            )
                         }
                         .padding(.horizontal)
                     }
@@ -41,28 +49,42 @@ struct RandomlyView: View { // swiftlint:disable:this type_body_length
                             .padding(.horizontal)
 
                         LazyVGrid(columns: columns, spacing: 12) {
-                            GridCardView(destination: ViewPath.pickLetter, title: "Select.Letter",
-                                         icon: "character", iconColor: .green)
-
-                            switch Locale.current.language.languageCode ?? .english {
-                            case .japanese:
-                                GridCardView(destination: ViewPath.pickWordJapanese, title: "Select.Word",
-                                             icon: "textformat.abc", iconColor: .teal)
-                            default:
-                                GridCardView(destination: ViewPath.pickWordEnglish, title: "Select.Word",
-                                             icon: "textformat.abc", iconColor: .teal)
-                            }
-
-                            GridCardView(destination: ViewPath.pickEmoji, title: "Select.Emoji",
-                                         icon: "face.smiling.inverse", iconColor: .yellow)
-                            GridCardView(destination: ViewPath.generateWord, title: "Generate.Word",
-                                         icon: "textformat.abc", iconColor: .teal)
-                            GridCardView(destination: ViewPath.generateLoremIpsum, title: "Generate.LoremIpsum",
-                                         icon: "text.alignleft", iconColor: .gray)
-                            GridCardView(destination: ViewPath.selectWordFromText, title: "Select.WordFromText",
-                                         icon: "doc.text", iconColor: .teal)
-                            GridCardView(destination: ViewPath.shuffleLetters, title: "Shuffle.Letters",
-                                         icon: "textformat.abc", iconColor: .pink)
+                            GridCardView(
+                                destination: ViewPath.pickLetter,
+                                title: "Select.Letter",
+                                icon: "character",
+                                iconColor: .green
+                            )
+                            GridCardView(
+                                destination: ViewPath.word,
+                                title: "Generate.Word",
+                                icon: "textformat.abc",
+                                iconColor: .green
+                            )
+                            GridCardView(
+                                destination: ViewPath.pickEmoji,
+                                title: "Select.Emoji",
+                                icon: "face.smiling.inverse",
+                                iconColor: .yellow
+                            )
+                            GridCardView(
+                                destination: ViewPath.generateLoremIpsum,
+                                title: "Generate.LoremIpsum",
+                                icon: "text.alignleft",
+                                iconColor: .gray
+                            )
+                            GridCardView(
+                                destination: ViewPath.selectWordFromText,
+                                title: "Select.WordFromText",
+                                icon: "doc.text",
+                                iconColor: .gray
+                            )
+                            GridCardView(
+                                destination: ViewPath.shuffleLetters,
+                                title: "Shuffle.Letters",
+                                icon: "textformat.abc",
+                                iconColor: .gray
+                            )
                         }
                         .padding(.horizontal)
                     }
@@ -73,14 +95,30 @@ struct RandomlyView: View { // swiftlint:disable:this type_body_length
                             .padding(.horizontal)
 
                         LazyVGrid(columns: columns, spacing: 12) {
-                            GridCardView(destination: ViewPath.pickDate, title: "Generate.Date",
-                                         icon: "calendar", iconColor: .red)
-                            GridCardView(destination: ViewPath.pickTime, title: "Generate.Time",
-                                         icon: "clock.fill", iconColor: .red)
-                            GridCardView(destination: ViewPath.pickDayOfWeek, title: "Pick.DayOfWeek",
-                                         icon: "calendar.day.timeline.left", iconColor: .orange)
-                            GridCardView(destination: ViewPath.pickMonth, title: "Pick.Month",
-                                         icon: "calendar.circle", iconColor: .pink)
+                            GridCardView(
+                                destination: ViewPath.pickDate,
+                                title: "Generate.Date",
+                                icon: "calendar",
+                                iconColor: .red
+                            )
+                            GridCardView(
+                                destination: ViewPath.pickMonth,
+                                title: "Pick.Month",
+                                icon: "calendar.circle",
+                                iconColor: .red
+                            )
+                            GridCardView(
+                                destination: ViewPath.pickDayOfWeek,
+                                title: "Pick.DayOfWeek",
+                                icon: "calendar.day.timeline.left",
+                                iconColor: .red
+                            )
+                            GridCardView(
+                                destination: ViewPath.pickTime,
+                                title: "Generate.Time",
+                                icon: "clock",
+                                iconColor: .red
+                            )
                         }
                         .padding(.horizontal)
                     }
@@ -91,30 +129,58 @@ struct RandomlyView: View { // swiftlint:disable:this type_body_length
                             .padding(.horizontal)
 
                         LazyVGrid(columns: columns, spacing: 12) {
-                            GridCardView(destination: ViewPath.selectItemFromList, title: "Select.ItemFromList",
-                                         icon: "list.bullet", iconColor: .indigo)
-                            GridCardView(destination: ViewPath.selectGroupFromList, title: "Select.Group",
-                                         icon: "person.3.fill", iconColor: .orange)
-                            GridCardView(destination: ViewPath.shuffleList, title: "Shuffle.List",
-                                         icon: "shuffle", iconColor: .mint)
-                            GridCardView(destination: ViewPath.sortList, title: "Sort.List",
-                                         icon: "arrow.up.arrow.down", iconColor: .mint)
-                            GridCardView(destination: ViewPath.groupList, title: "Group.List",
-                                         icon: "rectangle.3.group", iconColor: .cyan)
+                            GridCardView(
+                                destination: ViewPath.selectItemFromList,
+                                title: "Select.ItemFromList",
+                                icon: "checkmark.circle",
+                                iconColor: .orange
+                            )
+                            GridCardView(
+                                destination: ViewPath.selectGroupFromList,
+                                title: "Select.Group",
+                                icon: "checkmark.rectangle.stack",
+                                iconColor: .orange
+                            )
+                            GridCardView(
+                                destination: ViewPath.shuffleList,
+                                title: "Shuffle.List",
+                                icon: "shuffle",
+                                iconColor: .mint
+                            )
+                            GridCardView(
+                                destination: ViewPath.sortList,
+                                title: "Sort.List",
+                                icon: "arrow.up.arrow.down",
+                                iconColor: .mint
+                            )
+                            GridCardView(
+                                destination: ViewPath.groupList,
+                                title: "Group.List",
+                                icon: "rectangle.3.group",
+                                iconColor: .cyan
+                            )
                         }
                         .padding(.horizontal)
                     }
 
                     VStack(alignment: .leading, spacing: 12) {
-                        ListSectionHeader(text: "Shared.DictionaryTools")
+                        ListSectionHeader(text: "Shared.Dictionaries")
                             .font(.body)
                             .padding(.horizontal)
 
                         LazyVGrid(columns: columns, spacing: 12) {
-                            GridCardView(destination: ViewPath.shuffleDict, title: "Shuffle.Dictionary",
-                                         icon: "shuffle", iconColor: .brown)
-                            GridCardView(destination: ViewPath.sortDict, title: "Sort.Dictionary",
-                                         icon: "arrow.up.arrow.down", iconColor: .brown)
+                            GridCardView(
+                                destination: ViewPath.shuffleDict,
+                                title: "Shuffle.Dictionary",
+                                icon: "shuffle",
+                                iconColor: .brown
+                            )
+                            GridCardView(
+                                destination: ViewPath.sortDict,
+                                title: "Sort.Dictionary",
+                                icon: "arrow.up.arrow.down",
+                                iconColor: .brown
+                            )
                         }
                         .padding(.horizontal)
                     }
@@ -125,10 +191,18 @@ struct RandomlyView: View { // swiftlint:disable:this type_body_length
                             .padding(.horizontal)
 
                         LazyVGrid(columns: columns, spacing: 12) {
-                            GridCardView(destination: ViewPath.generatePassword, title: "Generate.Password",
-                                         icon: "key.fill", iconColor: .orange)
-                            GridCardView(destination: ViewPath.generatePassphrase, title: "Generate.Passphrase",
-                                         icon: "lock.shield", iconColor: .green)
+                            GridCardView(
+                                destination: ViewPath.generatePassword,
+                                title: "Generate.Password",
+                                icon: "key.fill",
+                                iconColor: .teal
+                            )
+                            GridCardView(
+                                destination: ViewPath.generatePassphrase,
+                                title: "Generate.Passphrase",
+                                icon: "lock.shield",
+                                iconColor: .teal
+                            )
                         }
                         .padding(.horizontal)
                     }
@@ -139,14 +213,30 @@ struct RandomlyView: View { // swiftlint:disable:this type_body_length
                             .padding(.horizontal)
 
                         LazyVGrid(columns: columns, spacing: 12) {
-                            GridCardView(destination: ViewPath.chartBar, title: "Chart.Bar",
-                                         icon: "chart.bar.fill", iconColor: .blue)
-                            GridCardView(destination: ViewPath.chartPie, title: "Chart.Pie",
-                                         icon: "chart.pie.fill", iconColor: .orange)
-                            GridCardView(destination: ViewPath.chartLine, title: "Chart.Line",
-                                         icon: "chart.xyaxis.line", iconColor: .green)
-                            GridCardView(destination: ViewPath.chartScatter, title: "Chart.Scatter",
-                                         icon: "chart.dots.scatter", iconColor: .purple)
+                            GridCardView(
+                                destination: ViewPath.chartBar,
+                                title: "Chart.Bar",
+                                icon: "chart.bar.fill",
+                                iconColor: .purple
+                            )
+                            GridCardView(
+                                destination: ViewPath.chartPie,
+                                title: "Chart.Pie",
+                                icon: "chart.pie.fill",
+                                iconColor: .purple
+                            )
+                            GridCardView(
+                                destination: ViewPath.chartLine,
+                                title: "Chart.Line",
+                                icon: "chart.xyaxis.line",
+                                iconColor: .purple
+                            )
+                            GridCardView(
+                                destination: ViewPath.chartScatter,
+                                title: "Chart.Scatter",
+                                icon: "chart.dots.scatter",
+                                iconColor: .purple
+                            )
                         }
                         .padding(.horizontal)
                     }
@@ -157,12 +247,24 @@ struct RandomlyView: View { // swiftlint:disable:this type_body_length
                             .padding(.horizontal)
 
                         LazyVGrid(columns: columns, spacing: 12) {
-                            GridCardView(destination: ViewPath.tossCoin, title: "Do.CoinFlip",
-                                         icon: "centsign.circle.fill", iconColor: .yellow)
-                            GridCardView(destination: ViewPath.rollDice, title: "Do.DiceRoll",
-                                         icon: "die.face.5.fill", iconColor: .red)
-                            GridCardView(destination: ViewPath.drawCard, title: "Do.CardDraw",
-                                         icon: "square.on.square.fill", iconColor: .gray)
+                            GridCardView(
+                                destination: ViewPath.tossCoin,
+                                title: "Do.CoinFlip",
+                                icon: "centsign.circle.fill",
+                                iconColor: .yellow
+                            )
+                            GridCardView(
+                                destination: ViewPath.rollDice,
+                                title: "Do.DiceRoll",
+                                icon: "die.face.5.fill",
+                                iconColor: .red
+                            )
+                            GridCardView(
+                                destination: ViewPath.drawCard,
+                                title: "Do.CardDraw",
+                                icon: "square.on.square.fill",
+                                iconColor: .gray
+                            )
                         }
                         .padding(.horizontal)
                     }
@@ -173,10 +275,18 @@ struct RandomlyView: View { // swiftlint:disable:this type_body_length
                             .padding(.horizontal)
 
                         LazyVGrid(columns: columns, spacing: 12) {
-                            GridCardView(destination: ViewPath.countUp, title: "Count.Up",
-                                         icon: "plus.circle.fill", iconColor: Locale.current.language.languageCode == .japanese ? .red : .green)
-                            GridCardView(destination: ViewPath.countDown, title: "Count.Down",
-                                         icon: "minus.circle.fill", iconColor: Locale.current.language.languageCode == .japanese ? .blue : .red)
+                            GridCardView(
+                                destination: ViewPath.countUp,
+                                title: "Count.Up",
+                                icon: "plus.circle.fill",
+                                iconColor: Locale.current.language.languageCode == .japanese ? .red : .green
+                            )
+                            GridCardView(
+                                destination: ViewPath.countDown,
+                                title: "Count.Down",
+                                icon: "minus.circle.fill",
+                                iconColor: Locale.current.language.languageCode == .japanese ? .blue : .red
+                            )
                         }
                         .padding(.horizontal)
                     }
@@ -187,18 +297,48 @@ struct RandomlyView: View { // swiftlint:disable:this type_body_length
                             .padding(.horizontal)
 
                         LazyVGrid(columns: columns, spacing: 12) {
-                            GridCardView(destination: ViewPath.generateUUID, title: "Generate.UUID",
-                                         icon: "number.square", iconColor: .indigo)
-                            GridCardView(destination: ViewPath.formatJSON, title: "Developer.FormatJSON",
-                                         icon: "curlybraces", iconColor: .orange)
-                            GridCardView(destination: ViewPath.base64Encode, title: "Developer.Base64Encode",
-                                         icon: "lock", iconColor: .blue)
-                            GridCardView(destination: ViewPath.base64Decode, title: "Developer.Base64Decode",
-                                         icon: "lock.open", iconColor: .blue)
-                            GridCardView(destination: ViewPath.urlEncode, title: "Developer.URLEncode",
-                                         icon: "link", iconColor: .green)
-                            GridCardView(destination: ViewPath.urlDecode, title: "Developer.URLDecode",
-                                         icon: "link.badge.plus", iconColor: .green)
+                            GridCardView(
+                                destination: ViewPath.generateUUIDv4,
+                                title: "Generate.UUIDv4",
+                                icon: "number.square",
+                                iconColor: .indigo
+                            )
+                            GridCardView(
+                                destination: ViewPath.generateUUIDv7,
+                                title: "Generate.UUIDv7",
+                                icon: "number.square",
+                                iconColor: .indigo
+                            )
+                            GridCardView(
+                                destination: ViewPath.base64Encode,
+                                title: "Developer.Base64Encode",
+                                icon: "lock",
+                                iconColor: .blue
+                            )
+                            GridCardView(
+                                destination: ViewPath.base64Decode,
+                                title: "Developer.Base64Decode",
+                                icon: "lock.open",
+                                iconColor: .blue
+                            )
+                            GridCardView(
+                                destination: ViewPath.urlEncode,
+                                title: "Developer.URLEncode",
+                                icon: "link",
+                                iconColor: .green
+                            )
+                            GridCardView(
+                                destination: ViewPath.urlDecode,
+                                title: "Developer.URLDecode",
+                                icon: "link.badge.plus",
+                                iconColor: .green
+                            )
+                            GridCardView(
+                                destination: ViewPath.formatJSON,
+                                title: "Developer.FormatJSON",
+                                icon: "curlybraces",
+                                iconColor: .yellow
+                            )
                         }
                         .padding(.horizontal)
                     }
@@ -209,17 +349,36 @@ struct RandomlyView: View { // swiftlint:disable:this type_body_length
                             .padding(.horizontal)
 
                         LazyVGrid(columns: columns, spacing: 12) {
-                            GridCardView(destination: ViewPath.pickCountry, title: "Generate.Country",
-                                         icon: "globe", iconColor: .purple)
-                            GridCardView(destination: ViewPath.generateColor, title: "Generate.Color",
-                                         icon: "paintpalette.fill",
-                                         iconGradient: LinearGradient(
-                                             colors: [.red, .orange, .yellow, .green, .cyan, .blue, .purple],
-                                             startPoint: .leading,
-                                             endPoint: .trailing
-                                         ))
-                            GridCardView(destination: ViewPath.generateCoordinate, title: "Generate.Coordinate",
-                                         icon: "mappin.and.ellipse", iconColor: .blue)
+                            GridCardView(
+                                destination: ViewPath.pickCountry,
+                                title: "Generate.Country",
+                                icon: "globe",
+                                iconColor: .gray
+                            )
+                            GridCardView(
+                                destination: ViewPath.generateColor,
+                                title: "Generate.Color",
+                                icon: "paintpalette.fill",
+                                iconGradient: LinearGradient(
+                                    colors: [
+                                        .red,
+                                        .orange,
+                                        .yellow,
+                                        .green,
+                                        .cyan,
+                                        .blue,
+                                        .purple
+                                    ],
+                                    startPoint: .leading,
+                                    endPoint: .trailing
+                                )
+                            )
+                            GridCardView(
+                                destination: ViewPath.generateCoordinate,
+                                title: "Generate.Coordinate",
+                                icon: "mappin.and.ellipse",
+                                iconColor: .red
+                            )
                         }
                         .padding(.horizontal)
                     }
@@ -240,10 +399,8 @@ struct RandomlyView: View { // swiftlint:disable:this type_body_length
                     PickNumberLetterWordView(mode: .number)
                 case .pickLetter:
                     PickNumberLetterWordView(mode: .letter)
-                case .pickWordEnglish:
-                    PickNumberLetterWordView(mode: .englishWord)
-                case .pickWordJapanese:
-                    PickNumberLetterWordView(mode: .japaneseWord)
+                case .word:
+                    WordView()
                 case .pickEmoji:
                     PickEmojiView()
                 case .pickDate:
@@ -260,8 +417,6 @@ struct RandomlyView: View { // swiftlint:disable:this type_body_length
                     GenerateCoordinateView()
                 case .generateLoremIpsum:
                     GenerateLoremIpsumView()
-                case .generateWord:
-                    GenerateWordView()
                 case .selectItemFromList:
                     SelectItemFromListView()
                 case .selectWordFromText:
@@ -296,8 +451,10 @@ struct RandomlyView: View { // swiftlint:disable:this type_body_length
                     PickDayOfWeekView()
                 case .pickMonth:
                     PickMonthView()
-                case .generateUUID:
-                    GenerateUUIDView()
+                case .generateUUIDv4:
+                    GenerateUUIDv4View()
+                case .generateUUIDv7:
+                    GenerateUUIDv7View()
                 case .generateNumberSequence:
                     GenerateNumberSequenceView()
                 case .generatePassphrase:
@@ -357,13 +514,27 @@ struct RandomlyView: View { // swiftlint:disable:this type_body_length
                                 .font(.body)
                         }
                     }
-                    .navigationDestination(for: ViewPath.self, destination: { viewPath in
-                        switch viewPath {
-                        case .moreWordlistEnglish:
-                            DatasetView(dataset: Dataset(name: "Dataset.Wordlist", fileName: "Wordlist-EN", fileExtension: "txt"))
-                        case .moreWordlistJapanese:
-                            DatasetView(dataset: Dataset(name: "Dataset.Tangolist", fileName: "Wordlist-JP", fileExtension: "txt"))
-                        case .moreCountries:
+                    .navigationDestination(
+                        for: ViewPath.self,
+                        destination: { viewPath in
+                            switch viewPath {
+                                case .moreWordlistEnglish:
+                                    DatasetView(
+                                        dataset: Dataset(
+                                            name: "Dataset.Wordlist",
+                                            fileName: "Wordlist-EN",
+                                            fileExtension: "txt"
+                                        )
+                                    )
+                                case .moreWordlistJapanese:
+                                    DatasetView(
+                                        dataset: Dataset(
+                                            name: "Dataset.Tangolist",
+                                            fileName: "Wordlist-JP",
+                                            fileExtension: "txt"
+                                        )
+                                    )
+                            case .moreCountries:
                             CountriesView()
                         case .moreAttributions:
                             LicensesView(licenses: [

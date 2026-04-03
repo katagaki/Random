@@ -9,7 +9,7 @@
 // https://github.com/katagaki/Guru
 
 import Foundation
-import UIKit
+import SwiftUI
 
 class Password: ObservableObject {
 
@@ -17,6 +17,7 @@ class Password: ObservableObject {
     @Published var minLength: Int = 8
     @Published var maxLength: Int = 16
     @Published var policies: [Policy] = [.containsUppercase, .containsLowercase, .containsNumbers, .containsSymbols]
+    @Published var isAnimating: Bool = false
 
     init(forPolicies policies: [Policy],
          withMinLength lengthMin: Int,
@@ -42,17 +43,32 @@ class Password: ObservableObject {
         } while (!acceptability(ofPassword: newPassword))
 
         if animated {
-            // Clear the password with animation
-            generated = ""
-
-            // Animate character-by-character addition
             Task {
+                isAnimating = true
+
+                // Animate password being erased
+                if !generated.isEmpty {
+                    repeat {
+                        try? await Task.sleep(for: .milliseconds(10))
+                        await MainActor.run {
+                            withAnimation(.default.speed(3)) {
+                                generated = String(generated.prefix(generated.count - 1))
+                            }
+                        }
+                    } while !generated.isEmpty
+                }
+
+                // Animate password being typed in
                 for char in newPassword {
                     try? await Task.sleep(for: .milliseconds(30))
                     await MainActor.run {
-                        generated.append(char)
+                        withAnimation(.default.speed(2)) {
+                            generated.append(char)
+                        }
                     }
                 }
+
+                isAnimating = false
             }
         } else {
             generated = newPassword

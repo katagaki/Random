@@ -1,5 +1,5 @@
 //
-//  GenerateUUIDView.swift
+//  GenerateUUIDv4View.swift
 //  Random
 //
 //  Created by Claude on 2026/04/01.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct GenerateUUIDView: View {
+struct GenerateUUIDv4View: View {
 
     @State var generatedUUID: String = ""
 
@@ -28,7 +28,7 @@ struct GenerateUUIDView: View {
         .task {
             regenerate()
         }
-        .randomlyNavigation(title: "Generate.UUID.ViewTitle")
+        .randomlyNavigation(title: "Generate.UUIDv4.ViewTitle")
         .actionBar(
             text: "Shared.Generate",
             icon: "sparkles",

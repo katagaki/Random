@@ -15,9 +15,8 @@ struct Base64EncodeView: View {
     var body: some View {
         PasteToolView(
             placeholder: "Developer.Base64Encode.Placeholder",
-            result: $result,
-            onPaste: { inputText = $0; encode() },
-            onClear: { inputText = ""; result = "" }
+            inputText: $inputText,
+            result: $result
         )
         .randomlyNavigation(title: "Developer.Base64Encode.ViewTitle")
         .actionBar(
@@ -26,7 +25,13 @@ struct Base64EncodeView: View {
             action: encode,
             disabled: .constant(inputText.isEmpty),
             copyValue: .constant(result),
-            copyDisabled: .constant(result.isEmpty)
+            copyDisabled: .constant(result.isEmpty),
+            pasteAction: {
+                if let string = UIPasteboard.general.string {
+                    inputText = string
+                    encode()
+                }
+            }
         )
     }
 

@@ -15,9 +15,8 @@ struct URLDecodeView: View {
     var body: some View {
         PasteToolView(
             placeholder: "Developer.URLDecode.Placeholder",
-            result: $result,
-            onPaste: { inputText = $0; decode() },
-            onClear: { inputText = ""; result = "" }
+            inputText: $inputText,
+            result: $result
         )
         .randomlyNavigation(title: "Developer.URLDecode.ViewTitle")
         .actionBar(
@@ -26,7 +25,13 @@ struct URLDecodeView: View {
             action: decode,
             disabled: .constant(inputText.isEmpty),
             copyValue: .constant(result),
-            copyDisabled: .constant(result.isEmpty)
+            copyDisabled: .constant(result.isEmpty),
+            pasteAction: {
+                if let string = UIPasteboard.general.string {
+                    inputText = string
+                    decode()
+                }
+            }
         )
     }
 
