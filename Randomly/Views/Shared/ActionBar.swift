@@ -88,73 +88,82 @@ struct ActionBarModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         if #available(iOS 26.0, *) {
-            content
-                .toolbar {
-                    if !copyHidden, copyValue != nil {
-                        ToolbarItem(placement: .bottomBar) {
-                            Button(action: copy) {
-                                Label(.sharedCopy, systemImage: "doc.on.doc")
-                            }
-                            .disabled(copyDisabled?.wrappedValue ?? false)
+            toolbarBody(content)
+        } else {
+            legacyBody(content)
+        }
+    }
+
+    @available(iOS 26.0, *)
+    private func toolbarBody(_ content: Content) -> some View {
+        content
+            .toolbar {
+                if !copyHidden, copyValue != nil {
+                    ToolbarItem(placement: .bottomBar) {
+                        Button(action: copy) {
+                            Label(.sharedCopy, systemImage: "doc.on.doc")
                         }
+                        .disabled(copyDisabled?.wrappedValue ?? false)
+                    }
+                }
+                if let pasteAction {
+                    ToolbarItem(placement: .bottomBar) {
+                        Button(action: pasteAction) {
+                            Label(.sharedPaste, systemImage: "doc.on.clipboard")
+                        }
+                        .disabled(pasteDisabled?.wrappedValue ?? false)
+                    }
+                }
+                ToolbarItem(placement: .bottomBar) {
+                    Button(
+                        LocalizedStringKey(text),
+                        systemImage: icon,
+                        action: action
+                    )
+                    .buttonStyle(.glassProminent)
+                    .disabled(disabled)
+                }
+            }
+    }
+
+    private func legacyBody(_ content: Content) -> some View {
+        content
+            .safeAreaInset(edge: .bottom, spacing: 0.0) {
+                HStack(alignment: .center, spacing: 8.0) {
+                    if !copyHidden, copyValue != nil {
+                        Button(action: copy) {
+                            Image(systemName: "doc.on.doc")
+                                .padding(.horizontal, 4.0)
+                                .frame(width: 42.0, height: 42.0, alignment: .center)
+                        }
+                        .accessibilityLabel(Text(.sharedCopy))
+                        .buttonStyle(.bordered)
+                        .clipShape(Circle())
+                        .disabled(copyDisabled?.wrappedValue ?? false)
                     }
                     if let pasteAction {
-                        ToolbarItem(placement: .bottomBar) {
-                            Button(action: pasteAction) {
-                                Label(.sharedPaste, systemImage: "doc.on.clipboard")
-                            }
-                            .disabled(pasteDisabled?.wrappedValue ?? false)
-                        }
-                    }
-                    ToolbarItem(placement: .bottomBar) {
-                        Button(
-                            LocalizedStringKey(text),
-                            systemImage: icon,
-                            action: action
-                        )
-                        .buttonStyle(.glassProminent)
-                        .disabled(disabled)
-                    }
-                }
-        } else {
-            content
-                .safeAreaInset(edge: .bottom, spacing: 0.0) {
-                    HStack(alignment: .center, spacing: 8.0) {
-                        if !copyHidden, copyValue != nil {
-                            Button(action: copy) {
-                                Image(systemName: "doc.on.doc")
-                                    .padding(.horizontal, 4.0)
-                                    .frame(width: 42.0, height: 42.0, alignment: .center)
-                            }
-                            .accessibilityLabel(Text(.sharedCopy))
-                            .buttonStyle(.bordered)
-                            .clipShape(Circle())
-                            .disabled(copyDisabled?.wrappedValue ?? false)
-                        }
-                        if let pasteAction {
-                            Button(action: pasteAction) {
-                                Image(systemName: "doc.on.clipboard")
-                                    .padding(.horizontal, 4.0)
-                                    .frame(width: 42.0, height: 42.0, alignment: .center)
-                            }
-                            .accessibilityLabel(Text(.sharedPaste))
-                            .buttonStyle(.bordered)
-                            .clipShape(Circle())
-                            .disabled(pasteDisabled?.wrappedValue ?? false)
-                        }
-                        Button(action: action) {
-                            Label(LocalizedStringKey(text), systemImage: icon)
-                                .bold()
+                        Button(action: pasteAction) {
+                            Image(systemName: "doc.on.clipboard")
                                 .padding(.horizontal, 4.0)
-                                .frame(maxWidth: .infinity, minHeight: 42.0)
+                                .frame(width: 42.0, height: 42.0, alignment: .center)
                         }
-                        .buttonStyle(.borderedProminent)
-                        .clipShape(RoundedRectangle(cornerRadius: 99))
-                        .disabled(disabled)
+                        .accessibilityLabel(Text(.sharedPaste))
+                        .buttonStyle(.bordered)
+                        .clipShape(Circle())
+                        .disabled(pasteDisabled?.wrappedValue ?? false)
                     }
-                    .bottomBarBackground()
+                    Button(action: action) {
+                        Label(LocalizedStringKey(text), systemImage: icon)
+                            .bold()
+                            .padding(.horizontal, 4.0)
+                            .frame(maxWidth: .infinity, minHeight: 42.0)
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .clipShape(RoundedRectangle(cornerRadius: 99))
+                    .disabled(disabled)
                 }
-        }
+                .bottomBarBackground()
+            }
     }
 
     func copy() {

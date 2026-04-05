@@ -51,7 +51,9 @@ struct RandomScatterChartView: View {
             icon: "sparkles",
             action: regenerate,
             disabled: .constant(false),
-            copyValue: .constant(dataPoints.map { "(\(String(format: "%.1f", $0.xValue)), \(String(format: "%.1f", $0.yValue)))" }.joined(separator: ", "))
+            copyValue: .constant(dataPoints.map {
+                "(\(String(format: "%.1f", $0.xValue)), \(String(format: "%.1f", $0.yValue)))"
+            }.joined(separator: ", "))
         )
     }
 

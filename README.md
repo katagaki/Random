@@ -1,10 +1,6 @@
 # Randomly
 
-![Banner image depicting the Randomly app showing various features.](github/banner.png?raw=true "Randomly")
-
 An app that helps you randomly (and neatly) generate, sort, select, and more.
-
-**Download: [App Store](https://apps.apple.com/app/id1573431626)**
 
 ## Dice Model Specifications
 

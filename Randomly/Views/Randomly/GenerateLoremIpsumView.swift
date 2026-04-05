@@ -43,6 +43,7 @@ struct GenerateLoremIpsumView: View {
         "magnam", "aliquam", "quaerat"
     ]
 
+    // swiftlint:disable:next line_length
     private static let classicOpening = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 
     @State var result: String = ""

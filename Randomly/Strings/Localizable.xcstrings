@@ -6395,6 +6395,23 @@
         }
       }
     },
+    "Shared.Generate" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Generate"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "生成"
+          }
+        }
+      }
+    },
     "Shared.Generators" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -6629,6 +6646,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ペースト"
+          }
+        }
+      }
+    },
+    "Shared.Pick" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pick"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選ぶ"
           }
         }
       }

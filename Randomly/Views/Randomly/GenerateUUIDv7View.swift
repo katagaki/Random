@@ -70,7 +70,9 @@ struct GenerateUUIDv7View: View {
 
         // Format as UUID string
         let hex = bytes.map { String(format: "%02x", $0) }.joined()
-        let uuid = "\(hex.prefix(8))-\(hex.dropFirst(8).prefix(4))-\(hex.dropFirst(12).prefix(4))-\(hex.dropFirst(16).prefix(4))-\(hex.dropFirst(20))"
+        let uuid = "\(hex.prefix(8))-\(hex.dropFirst(8).prefix(4))" +
+            "-\(hex.dropFirst(12).prefix(4))-\(hex.dropFirst(16).prefix(4))" +
+            "-\(hex.dropFirst(20))"
         return uuid.uppercased()
     }
 }

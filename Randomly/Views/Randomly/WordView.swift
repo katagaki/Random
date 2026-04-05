@@ -121,9 +121,7 @@ struct WordView: View {
         }
     }
 
-    func generateWord() {
-        let length = Int(wordLength)
-
+    private func buildWordParts(length: Int) -> [String] {
         var parts: [String] = []
         var lastWasVowel = false
         var currentLength = 0
@@ -133,63 +131,69 @@ struct WordView: View {
                 parts.append(cluster)
                 currentLength += cluster.count
             }
-        } else {
-            if let consonant = Self.consonants.randomElement() {
-                parts.append(consonant)
-                currentLength += 1
-            }
+        } else if let consonant = Self.consonants.randomElement() {
+            parts.append(consonant)
+            currentLength += 1
         }
 
         while currentLength < length {
             let remaining = length - currentLength
-
             if lastWasVowel {
-                if remaining >= 2 && Bool.random() && currentLength < length - 1 {
-                    if let cluster = Self.middleClusters.randomElement() {
-                        let addCount = min(cluster.count, remaining)
-                        let part = String(cluster.prefix(addCount))
-                        parts.append(part)
-                        currentLength += part.count
-                    }
-                } else {
-                    if let consonant = Self.consonants.randomElement() {
-                        parts.append(consonant)
-                        currentLength += 1
-                    }
-                }
+                appendConsonantPart(
+                    &parts, &currentLength, remaining: remaining, length: length
+                )
                 lastWasVowel = false
             } else {
-                if remaining >= 2 && Int.random(in: 1...10) <= 3 {
-                    if let doubleVowel = Self.doubleVowels.randomElement() {
-                        let addCount = min(doubleVowel.count, remaining)
-                        let part = String(doubleVowel.prefix(addCount))
-                        parts.append(part)
-                        currentLength += part.count
-                    }
-                } else {
-                    if let vowel = Self.vowels.randomElement() {
-                        parts.append(vowel)
-                        currentLength += 1
-                    }
-                }
+                appendVowelPart(&parts, &currentLength, remaining: remaining)
                 lastWasVowel = true
             }
         }
+        return parts
+    }
+
+    private func appendConsonantPart(
+        _ parts: inout [String], _ currentLength: inout Int,
+        remaining: Int, length: Int
+    ) {
+        if remaining >= 2 && Bool.random() && currentLength < length - 1,
+           let cluster = Self.middleClusters.randomElement() {
+            let part = String(cluster.prefix(min(cluster.count, remaining)))
+            parts.append(part)
+            currentLength += part.count
+        } else if let consonant = Self.consonants.randomElement() {
+            parts.append(consonant)
+            currentLength += 1
+        }
+    }
+
+    private func appendVowelPart(
+        _ parts: inout [String], _ currentLength: inout Int, remaining: Int
+    ) {
+        if remaining >= 2 && Int.random(in: 1...10) <= 3,
+           let doubleVowel = Self.doubleVowels.randomElement() {
+            let part = String(doubleVowel.prefix(min(doubleVowel.count, remaining)))
+            parts.append(part)
+            currentLength += part.count
+        } else if let vowel = Self.vowels.randomElement() {
+            parts.append(vowel)
+            currentLength += 1
+        }
+    }
+
+    func generateWord() {
+        let length = Int(wordLength)
+        let parts = buildWordParts(length: length)
 
         Task {
             isAnimating = true
-
-            if !word.isEmpty {
-                repeat {
-                    try? await Task.sleep(for: .milliseconds(10))
-                    await MainActor.run {
-                        withAnimation(.default.speed(3)) {
-                            word = String(word.prefix(word.count - 1))
-                        }
+            while !word.isEmpty {
+                try? await Task.sleep(for: .milliseconds(10))
+                await MainActor.run {
+                    withAnimation(.default.speed(3)) {
+                        word = String(word.prefix(word.count - 1))
                     }
-                } while !word.isEmpty
+                }
             }
-
             for part in parts {
                 try? await Task.sleep(for: .milliseconds(30))
                 await MainActor.run {
@@ -201,7 +205,6 @@ struct WordView: View {
                     }
                 }
             }
-
             isAnimating = false
         }
     }

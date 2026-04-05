@@ -8,6 +8,6 @@
 import Foundation
 
 enum CountMode {
-    case up
+    case up // swiftlint:disable:this identifier_name
     case down
 }
